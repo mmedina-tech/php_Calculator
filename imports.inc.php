@@ -58,7 +58,7 @@ function formSelect($sele, $myAttrs=array(), $selected=null){
 		$attrString .= $idStr;
 	}
 
-	$select = "<select onchange='redire(category, Formule)'$attrString\n";
+	$select = "<select onchange='redire(category, Formula)'$attrString\n";
 
 	foreach ( $sele as $key=>$value){
 		if ( $key == $selected ) {
@@ -91,7 +91,7 @@ function cateSelect($sel, $myAttrs=array(), $selected=null){
 	return $select;
 }
 
-$CALCPATH = basename($CALCPATH);
+$CALCPATH = basename("/var/www/html/php_Calculator");
 #echo cateSelect($cats, $attrib);
 #echo formSelect($accel->function_list, $attribs);
 

@@ -23,37 +23,31 @@
 #
 #
 
-require("./imports.inc.php");
+require_once("./imports.inc.php");
 
 
-$action = "./answer.php";
+$action = "./input.php";
 $outputfp = file_get_contents("calculator_template.html");
-$cat = $_POST['category'];
+$cat = $_GET['category'];
 $active_cats = $cats[$cat];
-$sfunc_list = sort($active_cats->function_list);
-
-$title = $sfunc_list[0];
-
-#$inputs = $active_cats->for_loop($title);
-$show_formulas = $active_cats->show_Formulas($title);
-$formula = formSelect($active_cats->function_list, $attribs, $title);
+$formula = formSelect($active_cats->function_list, $attribs);
 $category = cateSelect($cats, $attrib, $cat);
 
-$outputtxt = str_replace('CALCPATH', '/'.$CALCPATH);
-$outputtxt .= str_replace('TITLE', $title);
-$outputtxt .= str_replace('CATEGORY', $category);
-$outputtxt .= str_replace('ACTION', $action);
-$outputtxt .= str_replace('INPUT', $inputs);
-$outputtxt .= str_replace('FORMULA', $show_formulas);
-$outputtxt .= str_replace('FORM_SELECT', $formula);
+$outputfp = str_replace('CALCPATH', '/php_Calculator', $outputfp);
+$outputfp = str_replace('TITLE', '', $outputfp);
+$outputfp = str_replace('CATEGORY', $category, $outputfp);
+$outputfp = str_replace('ACTION', $action, $outputfp);
+$outputfp = str_replace('INPUT', '', $outputfp);
+$outputfp = str_replace('FORMULA', '', $outputfp);
+$outputfp = str_replace('FORM_SELECT', $formula, $outputfp);
 
 try{
-	$outputtxt .= str_replace('ANSWER', '');
-	$outputtxt .= str_replace('ERROR', '');
-	echo $outputtxt;
+	$outputfp = str_replace('ANSWER', '', $outputfp);
+	$outputfp = str_replace('ERROR', '', $outputfp);
+	echo $outputfp;
 } catch (Exception $e) {
-	$outputtxt .= str_replace('ANSWER', '');
-	$outputtxt .= str_replace('ERROR', '<h1>Please try Again</h1>');
-	print $outputtxt;
+	$outputfp = str_replace('ANSWER', '');
+	$outputfp = str_replace('ERROR', '<h1>Please try Again</h1>');
+	print $outputfp;
 }
 
