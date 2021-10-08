@@ -91,7 +91,7 @@ function cateSelect($sel, $myAttrs=array(), $selected=null){
 	return $select;
 }
 
-$CALCPATH = basename(CALCPATH);
+$CALCPATH = basename($CALCPATH);
 #echo cateSelect($cats, $attrib);
 #echo formSelect($accel->function_list, $attribs);
 

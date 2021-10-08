@@ -1,0 +1,76 @@
+/* SYNOPSIS: styling for about page
+
+ about.css
+
+ Author: Marcus Medina
+ Date: Fri 04 Sep 2020 01:33:56 PM PDT
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or 
+ (at your option) any later version.
+
+ This Program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+ GNU General Public License for more details.
+
+ You Should have recieved a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+
+*/
+
+section{
+	background-color: black;
+	color: white;
+	max-width: 50%;
+	margin: auto;
+}
+marquee{
+	max-width: 25%;
+	background-image: linear-gradient(to top left, #053C4A, #9F9F9F);
+	color: white;
+	border-radius: 5px;
+}
+.history, .future{
+	color: white;
+	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
+	border-radius: 5px;
+	margin: auto;
+}
+.acknowledge{
+	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
+	color: white;
+	max-width: 15%;
+	margin: auto;
+}
+@media screen and (max-width: 960px) and (min-width: 620px){
+	.acknowledge{
+		max-width: 15%;
+	}
+	.history, .future{
+		max-width: 50%;
+	}
+	footer{
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 620px) and (min-width: 320px){
+	section{
+		max-width: 75%;
+	}
+	.acknowledge{
+		max-width: 100%;
+	}
+	.history, .future{
+		max-width: 100%;
+	}
+	footer{
+		font-size: 14px;
+	}
+	marquee{
+		max-width: 100%;
+	}
+}

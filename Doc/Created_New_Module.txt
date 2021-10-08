@@ -1,0 +1,22 @@
+Create A New Calculator Module
+--------------------------------------------------
+
+1) go to the Massive_Calculator.cgi/modules directory
+
+2) use the mkcalc_mod.sh file in the utils directory.
+	you will need to call it like this $> ./utils/mkcalc_mod.sh -t <module_name> -[flag]
+	it is recommended that you use the -a flag for creating the module.
+	-a allows you to have a shebang line, synopsis line, author block, copyright block, and the structure for 
+	the module that yo need to follow.
+
+3) fill out the module.
+
+4) add the module title to the imports file. 
+	from modules.<module_name> import <module_name>
+
+5) initialize the module with an easy to use name for the dictionary call.
+
+6) add easy module name to the category dictionary. does not need to be alphabetical. will be alphabetized automatically.
+
+7) go to the calculator_front.html file in the Massive_Calculator.web directory. this is so that your new module gets
+seen by the program from the gate.

@@ -1,0 +1,227 @@
+body{
+    font-family: Arial, serif;
+    background-image: url('../images/physics_stairs.jpg');
+}
+#mainHeader{
+	color: white;
+	text-align: center;
+	font-family: courier;
+    margin: auto;
+    border-style: outset;
+    border-color: red;
+    background-color: #44525f;
+    background: rgb(68, 82, 95, 0.75);
+    padding: 20px;
+    text-shadow: 3px 3px 6px red;
+
+}
+#mainLink:hover{
+	color: white;
+	text-align: center;
+	font-family: courier;
+    margin: auto;
+    background-color: #758ea3;
+    text-shadow: 4px 4px 8px black;
+    padding: 15px;
+}
+#mainLink:visited{
+	color: white;
+	text-align: center;
+	font-family: courier;
+    margin: auto;
+    background-color: #758ea3;
+    text-shadow: 4px 4px 8px black;
+    padding: 15px;
+}
+
+#mainBody{
+    position: absolute;
+    height: 74%;
+    right: 55%;
+    left: 0.5%;
+	color: white;
+	font-family: courier;
+    margin: auto;
+    border-style: outset;
+    border-color: red;
+    background-color: #44525f;
+    background: rgb(68, 82, 95, 0.95);
+    text-shadow: 2px 2px 4px black;
+    padding: 20px;
+    line-height: 220%;
+}
+#mainBody2{
+    position: absolute;
+    height: 74%;
+    left: 49%;
+    right: 0.5%;
+	color: white;
+	font-family: courier;
+    margin: auto;
+    border-style: outset;
+    border-color: red;
+    background-color: #44525f;
+    padding: 20px;
+    text-shadow: 1px 1px 2.5px black;
+    background: rgb(68, 82, 95, 0.95);
+    font-size: 15px;
+    line-height: 150%;
+}
+#mainlogo{
+	width: 10%;
+	height: 10%;
+	text-align: center;
+}
+
+p{
+    font-weight: bold;
+}
+
+#arrow{
+    font-size: 50px;
+}
+
+li{
+    font-weight: bold;
+}
+@media only screen and (min-width: 380px){
+    #mainHeader{
+        color: white;
+        text-align: center;
+        font-family: courier;
+        margin: auto;
+        border-style: outset;
+        border-color: red;
+        background-color: #44525f;
+        background: rgb(68, 82, 95, 0.75);
+        padding: 20px;
+        text-shadow: 3px 3px 6px red;
+
+    }
+    #mainLink:hover{
+        color: white;
+        text-align: center;
+        font-family: courier;
+        margin: auto;
+        background-color: #758ea3;
+        text-shadow: 4px 4px 8px black;
+        padding: 15px;
+    }
+    #mainLink:visited{
+        color: white;
+        text-align: center;
+        font-family: courier;
+        margin: auto;
+        background-color: #758ea3;
+        text-shadow: 4px 4px 8px black;
+        padding: 15px;
+    }
+
+    #mainBody{
+        position: absolute;
+        height: 76%;
+        right: 55%;
+        left: 0.5%;
+        color: white;
+        font-family: courier;
+        margin: auto;
+        border-style: outset;
+        border-color: red;
+        background-color: #44525f;
+        background: rgb(68, 82, 95, 0.95);
+        text-shadow: 2px 2px 4px black;
+        padding: 20px;
+        line-height: 220%;
+    }
+    #mainBody2{
+        position: absolute;
+        height: 110%;
+        left: 49%;
+        right: 0.5%;
+        color: white;
+        font-family: courier;
+        margin: auto;
+        border-style: outset;
+        border-color: red;
+        background-color: #44525f;
+        padding: 20px;
+        text-shadow: 1px 1px 2.5px black;
+        background: rgb(68, 82, 95, 0.95);
+        font-size: 15px;
+        line-height: 150%;
+    }
+    #mainlogo{
+        width: 10%;
+        height: 10%;
+        text-align: center;
+    }
+	#tablogo{
+		width: 10%;
+		height: 10%;
+		text-align: center;
+	}
+	.description{
+		font-size: 20%;
+	}
+}
+@media only screen and (max-width: 500px){
+    #mainHeader{
+        font-size: 14px;
+    }
+    #mainLink:hover{
+        color: white;
+        text-align: center;
+        font-family: courier;
+        margin: auto;
+        background-color: #758ea3;
+        text-shadow: 4px 4px 8px black;
+        padding: 15px;
+    }
+    #mainlogo{
+        width: 10%;
+        height: 10%;
+        text-align: center;
+    }
+    #mainBody{
+        font-size: 12px;
+        position: absolute;
+        height: 310%;
+        right: 55%;
+        left: 0.5%;
+        color: white;
+        font-family: courier;
+        margin: auto;
+        border-style: outset;
+        border-color: red;
+        background-color: #44525f;
+        background: rgb(68, 82, 95, 0.95);
+        text-shadow: 2px 2px 4px black;
+        padding: 20px;
+        line-height: 220%;
+    }
+    #mainBody2{
+        font-size: 12px;
+        position: absolute;
+        height: 450%;
+        left: 49%;
+        right: 0.5%;
+        color: white;
+        font-family: courier;
+        margin: auto;
+        border-style: outset;
+        border-color: red;
+        background-color: #44525f;
+        padding: 20px;
+        text-shadow: 1px 1px 2.5px black;
+        background: rgb(68, 82, 95, 0.95);
+        line-height: 150%;
+    }
+	#tablogo{
+		width: 10%;
+		height: 10%;
+		text-align: center;
+	}
+	h3.description{
+		font-size: 20%;
+	}
+}

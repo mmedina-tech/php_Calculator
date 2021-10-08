@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+		<meta charset='UTF-8'>
+		<meta name='author' content='Marcus Medina'>
+		<meta name'description' content='A Massive Calculator that centralizes all mathematical formulas'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>The Massive Calculator!</title>
+		<link rel="stylesheet" type="text/css" href="CALCPATH/css/calculator.css">
+		<link rel="stylesheet" href="CALCPATH/css/header.css" type="text/css" media="" title="" charset="" />
+        <script src="CALCPATH/js/calculator.js"></script>
+		<script src='CALCPATH/js/jquery-3.3.1.min.js'></script>
+		<script src="CALCPATH/js/testing.js"></script>
+    </head>
+    <body>
+        <div id="maindisplay">
+            <div class='Head-Column'>
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='CALCPATH/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+            </div>
+			<div class="Head-Column">
+				<div class='menuItem'>
+					<a id='tabitem' href='CALCPATH/about/about.php'>About</a>
+					<a id='tabitem' href='CALCPATH/index.php'>Instructions</a>
+					<a id='tabitem' href='CALCPATH/comments/comments_r.php'>Leave a Comment</a>
+					<a id='tabitem' href='CALCPATH/f_suggestions/suggestion_r.php'>Suggest a Formula</a>
+				</div>
+            </div>
+		</div>
+        <br>
+		<div id='test'></div>
+		<div id='container'>
+		<form id="userInput" name="userInput" action="ACTION" method="post">
+			<div class='column'>
+				<p class='titles'>Select Category:</p>
+				CATEGORY<br>
+				<p class='titles'>Select Formula:</p>
+				FORM_SELECT<br>
+			</div>
+			<div class='column'>
+				<h2 class='header_titles'>TITLE</h2>
+				<br>
+				<div class='inputs'>
+					INPUT&nbsp;
+				</div>
+				<br>
+				<input type="submit" value="Submit"><br>
+			</div>
+			<div class='column'>
+				<p class='titles'>Formula:</p>
+				<div class='ansdiv'>
+				FORMULA<br>
+				<br>
+				</div>
+				<br>
+				<p class='titles'>Answer:</p>
+				<div class="ansdiv">
+				ANSWER<br>
+				<br>Results are only as accurate as the numbers provided.
+				</div>
+				<br>
+				ERROR<br>
+			</div>
+		</form>
+    </body>
+</html>
+

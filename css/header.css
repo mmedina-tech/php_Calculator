@@ -1,0 +1,93 @@
+/* SYNOPSIS: main header for every page
+
+ header.css
+
+ Author: Marcus Medina
+ Date: Fri 10 Sep 2021 08:09:36 PM PDT
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or 
+ (at your option) any later version.
+
+ This Program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+ GNU General Public License for more details.
+
+ You Should have recieved a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+
+*/
+
+.mainHeader{
+	color: white;
+	text-align: left;
+	font-family: courier;
+	padding: 5px;
+}
+#maindisplay {
+	/*padding: 5px;*/
+	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
+	overflow: hidden;
+	border-radius: 5px;
+	width: 100%;
+}
+img{
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+#tabitem{
+	font-size: 16px;
+	padding: 8px;
+}
+.menuItem{
+	padding-top: 10%;
+	overflow: hidden;
+	float: center;
+	padding-bottom: 10px;
+	padding-right: 16px;
+}
+.Head-Column{
+	float: left;
+	width: 50%;
+}
+#tabitem {
+	color: white;
+	font-weight: bold;
+}
+#tabitem:hover{
+	background-image: linear-gradient(to top left, #053C4A, #9F9F9F);
+	border: 2px solid black;
+	border-radius: 5px;
+}
+@media screen and (max-width: 960px) and (min-width: 620px){
+	.Head-Column{
+		width: 50%;
+	}
+	#mainHeader{
+		font-size: 26px;
+	}
+	img{
+		height: 75px;
+		width: 75px;
+	}
+}
+@media screen and (max-width: 620px) and (min-width: 320px){
+	.Head-Column{
+		width: 100%;
+	}
+	#mainHeader{
+		font-size: 24px;
+	}
+	img{
+		height: 50px;
+		width: 50px;
+	}
+	#tabitem{
+		font-size: 14px;
+	}
+}
