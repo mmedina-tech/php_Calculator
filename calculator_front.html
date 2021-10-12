@@ -33,7 +33,7 @@
         <title>The Massive Calculator!</title>
         <link rel="stylesheet" type="text/css" href="/php_Calculator/css/calculator.css">
         <link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
-        <script src="/php_Calculator/js/calculator.js"></script>
+		<script src="/php_Calculator/js/calculator.js"></script>
     </head>
     <body>
         <div id="maindisplay">
@@ -42,8 +42,8 @@
             </div>
             <div class='Head-Column'>
                 <nav class="menuItem">
-                    <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
                     <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
+                    <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
                     <a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
                     <a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
                 </nav>
@@ -54,7 +54,7 @@
                 calculator centralizes all the mathematical formulas into one
                 location, so that you don't have to go looking for a formula.
                 You dont have to do any arithmetic yourself. It does it all for you.</h3>
-            <form name='category' action='/php_Calculator/form_select.php' method='get'>
+            <form name='category' action='/php_Calculator/form_select.php' method='post'>
                 <p class='titles'>Select Category:</p>
                 <select onchange="redir(this)" name='category'>
                     <option value=''>-- Select Category --</option>
@@ -86,6 +86,7 @@
                     <option value='Torque'>Torque</option>
                     <option value='Velocity'>Velocity</option>
                 </select>
+				<input type="submit" name="" value="submit" />
             </form>
         </div><!-- End Main -->
     </body>

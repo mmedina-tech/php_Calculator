@@ -23,19 +23,16 @@
 #
 #
 #
-require("Acceleration.php");
+require_once("modules/Acceleration.php");
+require_once("modules/Accounting.php");
 
 $accel = new Acceleration();
+$account = new Accounting();
 
 $cats = array(
-	'Acceleration' => $accel
+	'Acceleration' => $accel,
+	"Accounting" => $account
 );
-
-$two_input = array();
-$three_input = array();
-$four_input = array();
-$five_input = array();
-$fourteen_input = array();
 
 $attribs = array(
 	'id' => 'Formula',
@@ -58,13 +55,14 @@ function formSelect($sele, $myAttrs=array(), $selected=null){
 		$attrString .= $idStr;
 	}
 
-	$select = "<select onchange='redire(category, Formula)'$attrString\n";
+	$select = "<select onchange='redire(category, Formula)'$attrString>\n";
+	$select .= "\t<option value=''>--Select a Formula--</option>\n";
 
 	foreach ( $sele as $key=>$value){
 		if ( $key == $selected ) {
-			$select .= "\t<option value='$key' selected>$key</option>";
+			$select .= "\t<option value='$key' selected>$key</option>\n";
 		} else {
-			$select .= "\t<option value='$key'>$key</option>";
+			$select .= "\t<option value='$key'>$key</option>\n";
 		}
 	}
 	$select .= "</select>\n";
@@ -84,7 +82,7 @@ function cateSelect($sel, $myAttrs=array(), $selected=null){
 		if ( $key == $selected ) {
 			$select .= "\t<option value='$key' selected>$key</option>\n";
 		} else {
-			$select .= "\t<option value='$key'>$key</option>";
+			$select .= "\t<option value='$key'>$key</option>\n";
 		}
 	}
 	$select .= "</select>\n";

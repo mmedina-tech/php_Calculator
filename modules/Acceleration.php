@@ -23,22 +23,34 @@
 #
 #
 #
-require('FormulaBase.php');
 
+require_once("FormulaBase.php");
 class Acceleration extends FormulaBase{
 	function __construct(){
 		$this->function_strings = array(
-			1 => 'Feet/Sec Squared to Meters/Sec Squared',
-			2 => 'Inches/Sec Squared to Meters/Sec Squared',
-			3 => 'Meters/Sec Squared to Feet/Sec Squared',
-			4 => 'Meters/Sec Squared to Inches/Sec Squared',
+			1 => "Feet/Sec Squared to Meters/Sec Squared",
+			2 => "Inches/Sec Squared to Meters/Sec Squared",
+			3 => "Meters/Sec Squared to Feet/Sec Squared",
+			4 => "Meters/Sec Squared to Inches/Sec Squared",
 		);
 
 		$this->function_list = array(
-			$this->function_strings[1] => $this->feet,
-			$this->function_strings[2] => $this->inch,
-			$this->function_strings[3] => $this->meters,
-			$this->function_strings[4] => $this->meters2,
+			$this->function_strings[1] => function($num=NULL){
+				$result = $num * 0.03048;
+				return array($this->prec($result, 2), $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
+			},
+			$this->function_strings[2] => function($num=NULL){
+				$result = $num * 0.0254;
+				return array($this->prec($result, 2), $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
+			},
+			$this->function_strings[3] => function ($num=NULL){
+				$result = $num * 3.281;
+				return array($this->prec($result, 2), $this->pluralize($result, 'Foot/Sec<sup>2</sup>'));
+			},
+			$this->function_strings[4] => function($num=NULL){
+				$result = $num * 39.37;
+				return array($this->prec($result, 2), $this->pluralize($result, 'Inch/Sec<sup>2</sup>'));
+			}
 		);
 
 		$this->functionInputs = array(
@@ -52,7 +64,7 @@ class Acceleration extends FormulaBase{
 				'number_input' => 'Meters/Sec<sup>2</sup> (input): ')
 		);
 
-		$formula_list = array(
+		$this->formula_list = array(
 			$this->function_strings[1] => array(
 				'Formula:<br> ' => 'Feet/Sec<sup>2</sup> * 0.0348'),
 			$this->function_strings[2] => array(
@@ -62,21 +74,5 @@ class Acceleration extends FormulaBase{
 			$this->function_strings[4] => array(
 				'Formula:<br> ' => 'Meters/Sec<sup>2</sup> * 39.37')
 		);
-	}
-	function feet($num=null){
-		$result = $num * 0.03048;
-		return array($result, $this->pluralize($result, 'Meters/Sec<sup>2</sup>'));
-	}
-	function meters($num=null){
-		$result = $num * 3.281;
-		return array($result, $this->pluralize($result, 'Feet/Sec<sup>2</sup>'));
-	}
-	function inch($num=null){
-		$result = $num * 0.0254;
-		return array($result, $this->pluralize($result, 'Meters/Sec<sup>2</sup>'));
-	}
-	function meters2($num=null){
-		$result = $num * 39.37;
-		return array($result, $this->pluralize($result, 'Inches/Sec<sup>2</sup>'));
 	}
 }
