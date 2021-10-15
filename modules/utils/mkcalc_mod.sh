@@ -72,7 +72,6 @@ require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
-		parent::__construct();
 
 		#{{{ Function Titles
 		\$this->function_strings = array();
@@ -120,7 +119,6 @@ require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
-		parent::__construct();
 
 		#{{{ Function Titles
 		\$this->function_strings = array();
@@ -154,7 +152,7 @@ require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
-		parent::__construct();
+		
 
 		#{{{ Function Titles
 		\$this->function_strings = array();
@@ -185,7 +183,7 @@ require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
-		parent::__construct();
+		
 
 		#{{{ Function Titles
 		\$this->function_strings = array();
@@ -217,7 +215,7 @@ require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
-		parent::__construct();
+		
 
 		#{{{ Function Titles
 		\$this->function_strings = array();
@@ -252,7 +250,7 @@ require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
-		parent::__construct();
+		
 
 		#{{{ Function Titles
 		\$this->function_strings = array();
