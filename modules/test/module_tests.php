@@ -36,19 +36,32 @@ function test_Acceleration(){
 		$formula = $iterator->offsetGet($key);
 		$formula = $formula(234);
 		$outscreen = "{$formula[0]} {$formula[1]}";
-		if (!$outscreen ===  "7.13 Meters/Sec<sup>2</sup>"){
-			print "Feet/Sec Squared to Meters/Sec Squared: Fail\n";
+		if ($outscreen !==  "7.13 Meters/Sec<sup>2</sup>"){
+			print "$key: Fail\n";
+		} else {
+			print "$key: Pass\n";
 		}
-		if(!$outscreen === "5.94 Meters/Sec<sup>2</sup>"){
-			print "Inches/Sec Squared to Meters/Sec Squared: Fail\n";
+		
+		if($outscreen !== "5.94 Meters/Sec<sup>2</sup>"){
+			print "$key: Fail\n";
+		} else {
+			print "$key: Pass\n";
 		}
-		if ( !$outscreen === "767.75 Feet/Sec<sup>2</sup>" ) {
-			print "Meters/Sec Squared to Feet/Sec Squared: Fail\n";
+		
+		if ( $outscreen !== "767.75 Feet/Sec<sup>2</sup>" ) {
+			print "$key: Fail\n";
+		} else {
+			print "$key: Pass\n";
 		}
-		if ( !$outscreen === "9212.58 Inches/Sec<sup>2</sup>" ) {
-			print "Meters/Sec Squared to Inches/Sec Squared: Fail\n";
+		
+		if ( $outscreen !== "9212.58 Inches/Sec<sup>2</sup>" ) {
+			print "$key: Fail\n";
+		} else{
+			print "$key: Pass\n";
 		}
+		
 	}
+	
 }
 function test_Accounting(){
 	global $account;
@@ -56,11 +69,30 @@ function test_Accounting(){
 	foreach( $iterator as $key => $value )
 	{
 		$formula = $iterator->offsetGet($key);
-		$formula = $formula(234, 234);
-		$outscreen = "{$formula[0]} {$formula[1]}";
-		if ( !$outscreen === "1% Equity" ) {
-			print "The Equity Ratio: Fail\n";
+		if ( count($account->functionInputs[$key]) === 2 ) {
+			$formula = $formula(234, 234);
+			$outscreen = "{$formula[0]} {$formula[1]}";
+			if ( $key === "The Equity Ratio" ) {
+				print assert($outscreen, "1% Equity");
+			}
+			
+		} elseif ( count($account->functionInputs[$key]) === 3 ) {
+			$formula = $formula(234, 234, 234);
+			$outscreen = "{$formula[0]} {$formula[1]}";
+			if ( $key === "Trend Percentage" ) {
+				print assert($outscren, "1% Trend Percentage");
+			}
+		} elseif ( count($account->functionInputs[$key]) === 4 ){
+			$formula = $formula(234, 234, 234, 234);
+			$outscreen = "{$formula[0]} {$formula[1]}";
+			if ( $key ){
+				print assert($outscreen, "");
+			}
+			
 		}
+		
+		
+		
 		/*
 		$formula = $formula(234, 234);
 		$outscreen = "{$formula[0]} {$formula[1]}";
@@ -79,6 +111,5 @@ function test_Accounting(){
 		 */
 	}
 }
-pass_fail(test_Acceleration(), $accel);
-print "\n";
-pass_fail(test_Accounting(), $account);
+test_Acceleration();
+#pass_fail(test_Accounting(), $account);
