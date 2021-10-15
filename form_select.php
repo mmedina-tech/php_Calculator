@@ -24,6 +24,7 @@
 #
 
 require_once("./imports.inc.php");
+include("./log.php");
 
 
 $action = "./input.php";

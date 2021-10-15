@@ -25,6 +25,7 @@
 #
 
 require_once("./imports.inc.php");
+require_once("./log.php");
 
 $cat = $_GET['category'];
 $forms = $_GET['Formula'];

@@ -24,9 +24,9 @@
 #
 #
 
-$dbname = 'Massive_Calculator';
-$user   = 'icio_ems';
-$passwd = 'icio_ems';
+$dbname = "Massive_Calculator";
+$user = "icio_ems";
+$passwd = "icio_ems";
 
 try{
 	$db = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $passwd);

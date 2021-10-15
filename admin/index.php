@@ -31,28 +31,28 @@
 		<meta name="author" content="Marcus Medina">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Installation form for DB">
-		<link rel="stylesheet" href="/Massive_Calculator.web/css/calculator.css" type="text/css" media="" title="" charset="" />
-		<link rel="stylesheet" href="/Massive_Calculator.web/css/install.css" type="text/css" media="" title="" charset="" />
-		<link rel="stylesheet" href="/Massive_Calculator.web/css/DataGridView.css" type="text/css" media="" title="" charset="" />
-		<link rel="stylesheet" href="/Massive_Calculator.web/css/header.css" type="text/css" media="" title="" charset="" />
+		<link rel="stylesheet" href="/php_Calculator/css/calculator.css" type="text/css" media="" title="" charset="" />
+		<link rel="stylesheet" href="/php_Calculator/css/install.css" type="text/css" media="" title="" charset="" />
+		<link rel="stylesheet" href="/php_Calculator/css/DataGridView.css" type="text/css" media="" title="" charset="" />
+		<link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
 	</head>
 	<body>
 		<div id="maindisplay">
 			<div class='Head-Column'>
-				<h1 class='mainHeader'><img id='mainlogo' align='center' src='/Massive_Calculator.web/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+				<h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
 			</div>
 			<div class='Head-Column'>
 				<nav class="menuItem">
-					<a id='tabitem' href='/Massive_Calculator.web/about.php'>About</a>
-					<a id='tabitem' href='/Massive_Calculator.web/index.php'>Instructions</a>
-					<a id='tabitem' href='/Massive_Calculator.web/comments/comments_r.php'>Leave Comment</a>
-					<a id='tabitem' href='/Massive_Calculator.web/f_suggestions/suggestions.html'>Suggest Formula</a>
+					<a id='tabitem' href='/php_Calculator/about.php'>About</a>
+					<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
+					<a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave Comment</a>
+					<a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest Formula</a>
 				</nav>
 			</div>
 		</div>
 		<div>
 			<br>
-			<form action="/cgi-bin/Massive_Calculator.cgi/DataBase/createMassive_Calculator.py" method="post">
+			<form action="/php_Calculator/DB/DB_install.php" method="post">
 				<label>Username:</label>
 				<input type="text" name="user" value="" />
 				<br>

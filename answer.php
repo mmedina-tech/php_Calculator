@@ -24,7 +24,8 @@
 #
 #
 
-require("imports.inc.php");
+require_once("imports.inc.php");
+require_once("log.php");
 
 $outputfp = file_get_contents("calculator_template.html");
 $cat = $_POST['category'];
@@ -35,11 +36,7 @@ $inputs = $active_cats->for_loop($forms);
 $formula = formSelect($active_cats->function_list, $attribs, $forms);
 $category = cateSelect($cats, $attrib, $cat);
 $show_formula = $active_cats->show_Formulas($forms);
-
-
 $action = "./answer.php";
-
-$formula_fields = array();
 
 $outputfp = str_replace("CALCPATH", "/php_Calculator", $outputfp);
 $outputfp = str_replace("CATEGORY", $category, $outputfp);
@@ -51,8 +48,7 @@ try{
 	if ( count($cats[$cat]->functionInputs[$forms]) === 2 ) {
 		$number = $_POST['number_input'];
 		$number2 = $_POST['number_input2'];
-		$formula_fields[] = $number;
-		$formula_fields[] = $number2;
+		$formula_fields = "$number, $number2";
 
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
@@ -62,9 +58,7 @@ try{
 		$number = $_POST['number_input'];
 		$number2 = $_POST['number_input2'];
 		$number3 = $_POST['number_input3'];
-		$formula_fields[] = $number;
-		$formula_fields[] = $number2;
-		$formula_fields[] = $number3;
+		$formula_fields = "$number, $number2, $number3";
 
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
@@ -75,11 +69,7 @@ try{
 		$number2 = $_POST['number_input2'];
 		$number3 = $_POST['number_input3'];
 		$number4 = $_POST['number_input4'];
-
-		$formula_fields[] = $number;
-		$formula_fields[] = $number2;
-		$formula_fields[] = $number3;
-		$formula_fields[] = $number4;
+		$formula_fields = "$number, $number2, $number3, $number4";
 
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
@@ -91,12 +81,7 @@ try{
 		$number3 = $_POST['number_input3'];
 		$number4 = $_POST['number_input4'];
 		$number5 = $_POST['number_input5'];
-
-		$formula_fields[] = $number;
-		$formula_fields[] = $number2;
-		$formula_fields[] = $number3;
-		$formula_fields[] = $number4;
-		$formula_fields[] = $number5;
+		$formula_fields = "$number, $number2, $number3, $number4, $number5";
 
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
@@ -117,21 +102,7 @@ try{
 		$number12 = $_POST['number_input12'];
 		$number13 = $_POST['number_input13'];
 		$number14 = $_POST['number_input14'];
-
-		$formula_fields[] = $number;
-		$formula_fields[] = $number2;
-		$formula_fields[] = $number3;
-		$formula_fields[] = $number4;
-		$formula_fields[] = $number5;
-		$formula_fields[] = $number6;
-		$formula_fields[] = $number7;
-		$formula_fields[] = $number8;
-		$formula_fields[] = $number9;
-		$formula_fields[] = $number10;
-		$formula_fields[] = $number11;
-		$formula_fields[] = $number12;
-		$formula_fields[] = $number13;
-		$formula_fields[] = $number14;
+		$formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
 
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
@@ -139,7 +110,7 @@ try{
 
 	} else {
 		$number = $_POST['number_input'];
-		$formula_fields[] = $number;
+		$formula_fields = "$number";
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
 		$answer = $answer($number);
@@ -148,11 +119,13 @@ try{
 	$outputfp = str_replace("INPUT", $inputs, $outputfp);
 	$outputfp = str_replace("ANSWER", $outscreen, $outputfp);
 	$outputfp = str_replace("ERROR", '', $outputfp);
+	statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
 	print $outputfp;
 } catch (Exception $e){
 	$outputfp = str_replace("INPUT", $inputs, $outputfp);
 	$outputfp = str_replace("ANSWER", '', $outputfp);
 	$outputfp = str_replace("ERROR", "<h1 class='error'>$e</h1>", $outputfp);
+	statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
 	print $outputfp;
 }
 

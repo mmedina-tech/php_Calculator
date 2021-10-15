@@ -29,6 +29,7 @@
 # Functions
 
 outfile=${outfile:-made.php}
+in_outfile=$( echo "$outfile" | sed -e 's/.php//')
 function pmessage() {
     for phrase in "$@"
     do
@@ -38,7 +39,6 @@ function pmessage() {
 }
 
 function all(){
-	in_outfile=$( echo "$outfile" | sed -e 's/.php//')
 	echo "Enter Description: "
 	read -r myDescription
 	cat <<EOF > $outfile
@@ -68,7 +68,7 @@ function all(){
 #
 #
 
-require ("FormulaBase.php");
+require_once ("FormulaBase.php");
 
 class $in_outfile extends FormulaBase{
     function __construct(){
@@ -116,9 +116,9 @@ function license(){
 #
 #
 
-require ("FormulaBase.php");
+require_once ("FormulaBase.php");
 
-class $outfile extends FormulaBase{
+class $in_outfile extends FormulaBase{
     function __construct(){
 		parent::__construct();
 
@@ -150,9 +150,9 @@ function author(){
 # Date: $(date)
 #
 
-require ("FormulaBase.php");
+require_once ("FormulaBase.php");
 
-class $outfile extends FormulaBase{
+class $in_outfile extends FormulaBase{
     function __construct(){
 		parent::__construct();
 
@@ -181,9 +181,9 @@ function default(){
 <?php
 #
 
-require ("FormulaBase.php");
+require_once ("FormulaBase.php");
 
-class $outfile extends FormulaBase{
+class $in_outfile extends FormulaBase{
     function __construct(){
 		parent::__construct();
 
@@ -213,9 +213,9 @@ function program(){
 # $outfile
 #
 
-require ("FormulaBase.php");
+require_once ("FormulaBase.php");
 
-class $outfile extends FormulaBase{
+class $in_outfile extends FormulaBase{
     function __construct(){
 		parent::__construct();
 
@@ -248,9 +248,9 @@ function syn(){
 # $outfile
 #
 
-require ("FormulaBase.php");
+require_once ("FormulaBase.php");
 
-class $outfile extends FormulaBase{
+class $in_outfile extends FormulaBase{
     function __construct(){
 		parent::__construct();
 
