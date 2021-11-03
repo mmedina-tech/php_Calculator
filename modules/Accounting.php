@@ -24,7 +24,7 @@
 #
 #
 
-require_once("FormulaBase.php");
+include_once("FormulaBase.php");
 
 class Accounting extends FormulaBase{
     function __construct(){
@@ -55,10 +55,7 @@ class Accounting extends FormulaBase{
 	
         #{{{ Function List
 		$this->function_list = array(
-			$this->function_strings[1] => function($num=NULL, $num2=NULL){
-				$result = $num / $num2;
-				return array($this->prec($result, 2)."%", $this->pluralize($result, "Equity"));
-			},
+			$this->function_strings[1] => $this->equity($num, $num2),
 			$this->function_strings[2] => function($num=NULL, $num2=NULL){
 				$result = $num / $num2;
 				return array($this->prec($result, 2)."%", $this->pluralize($result, "Trend Percentage"));
@@ -126,7 +123,7 @@ class Accounting extends FormulaBase{
 			$this->function_strings[18] => function($num=NULL, $num2=NULL){
 				$result = $num / $num2;
 				return array($this->prec($result, 2)."%", $this->pluralize($result, "Equity"));
-			}
+			},
 		);
         #}}}
 
@@ -272,4 +269,10 @@ class Accounting extends FormulaBase{
         #}}}
 
 	}
+	#{{{ Functions
+	function equity($num=NULL, $num2=NULL){
+		$result = $num / $num2;
+		return array($this->prec($result, 2)."%", $this->pluralize($result, "Equity"));
+	}
+	#}}}
 }
