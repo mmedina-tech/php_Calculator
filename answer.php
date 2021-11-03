@@ -46,8 +46,6 @@ $outputfp = str_replace("FORMULA", $show_formula, $outputfp);
 $outputfp = str_replace("FORM_SELECT", $formula, $outputfp);
 try{
 	if ( count($cats[$cat]->functionInputs[$forms]) === 2 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
 		$formula_fields = "$number, $number2";
 
 		$iterator = new ArrayObject($active_cats->function_list);
@@ -55,9 +53,6 @@ try{
 		$answer = $answer($number, $number2);
 
 	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 3 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
 		$formula_fields = "$number, $number2, $number3";
 
 		$iterator = new ArrayObject($active_cats->function_list);
@@ -65,10 +60,6 @@ try{
 		$answer = $answer($number, $number2, $number3);
 
 	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 4 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$number4 = $_POST['number_input4'];
 		$formula_fields = "$number, $number2, $number3, $number4";
 
 		$iterator = new ArrayObject($active_cats->function_list);
@@ -76,11 +67,6 @@ try{
 		$answer = $answer($number, $number2, $number3, $number4);
 
 	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 5 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$number4 = $_POST['number_input4'];
-		$number5 = $_POST['number_input5'];
 		$formula_fields = "$number, $number2, $number3, $number4, $number5";
 
 		$iterator = new ArrayObject($active_cats->function_list);
@@ -88,20 +74,6 @@ try{
 		$answer = $answer($number, $number2, $number3, $number4, $number5);
 
 	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 14 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$number4 = $_POST['number_input4'];
-		$number5 = $_POST['number_input5'];
-		$number6 = $_POST['number_input6'];
-		$number7 = $_POST['number_input7'];
-		$number8 = $_POST['number_input8'];
-		$number9 = $_POST['number_input9'];
-		$number10 = $_POST['number_input10'];
-		$number11 = $_POST['number_input11'];
-		$number12 = $_POST['number_input12'];
-		$number13 = $_POST['number_input13'];
-		$number14 = $_POST['number_input14'];
 		$formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
 
 		$iterator = new ArrayObject($active_cats->function_list);
@@ -109,7 +81,6 @@ try{
 		$answer = $answer($number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14);
 
 	} else {
-		$number = $_POST['number_input'];
 		$formula_fields = "$number";
 		$iterator = new ArrayObject($active_cats->function_list);
 		$answer = $iterator->offsetGet($forms);
