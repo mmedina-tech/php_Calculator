@@ -34,6 +34,20 @@ $cats = array(
 	"Accounting" => $account
 );
 
+$number = $_POST['number_input'];
+$number2 = $_POST['number_input2'];
+$number3 = $_POST['number_input3'];
+$number4 = $_POST['number_input4'];
+$number5 = $_POST['number_input5'];
+$number6 = $_POST['number_input6'];
+$number7 = $_POST['number_input7'];
+$number8 = $_POST['number_input8'];
+$number9 = $_POST['number_input9'];
+$number10 = $_POST['number_input10'];
+$number11 = $_POST['number_input11'];
+$number12 = $_POST['number_input12'];
+$number13 = $_POST['number_input13'];
+$number14 = $_POST['number_input14'];
 $attribs = array(
 	'id' => 'Formula',
 	'name' => 'Formula',
@@ -90,6 +104,4 @@ function cateSelect($sel, $myAttrs=array(), $selected=null){
 }
 
 $CALCPATH = basename("/var/www/html/php_Calculator");
-#echo cateSelect($cats, $attrib);
-#echo formSelect($accel->function_list, $attribs);
 
