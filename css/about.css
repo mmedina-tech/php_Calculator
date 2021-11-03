@@ -22,19 +22,13 @@
 
 */
 
-section{
+article{
 	background-color: black;
 	color: white;
-	max-width: 50%;
 	margin: auto;
+	max-width: 75%;
 }
-marquee{
-	max-width: 25%;
-	background-image: linear-gradient(to top left, #053C4A, #9F9F9F);
-	color: white;
-	border-radius: 5px;
-}
-.history, .future{
+.history-header, .future-header{
 	color: white;
 	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
 	border-radius: 5px;
@@ -43,34 +37,27 @@ marquee{
 .acknowledge{
 	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
 	color: white;
-	max-width: 15%;
 	margin: auto;
+	max-width: 25%;
+}
+.thanks{
+	max-width: 25%;
+	margin: auto;
+	color: white;
 }
 @media screen and (max-width: 960px) and (min-width: 620px){
-	.acknowledge{
-		max-width: 15%;
-	}
-	.history, .future{
-		max-width: 50%;
-	}
 	footer{
 		font-size: 16px;
 	}
+	.thanks, .acknowledge, .history, .future{
+		max-width: 50%;
+	}
 }
 @media screen and (max-width: 620px) and (min-width: 320px){
-	section{
-		max-width: 75%;
-	}
-	.acknowledge{
-		max-width: 100%;
-	}
-	.history, .future{
-		max-width: 100%;
-	}
 	footer{
 		font-size: 14px;
 	}
-	marquee{
+	.thanks, .acknowledge, .history, .future{
 		max-width: 100%;
 	}
 }

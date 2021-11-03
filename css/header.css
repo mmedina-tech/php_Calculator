@@ -29,33 +29,26 @@
 	padding: 5px;
 }
 #maindisplay {
-	/*padding: 5px;*/
 	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
 	overflow: hidden;
 	border-radius: 5px;
-	width: 100%;
 }
 img{
 	width: 100px;
 	height: 100px;
 	text-align: center;
 }
-#tabitem{
-	font-size: 16px;
-	padding: 8px;
-}
 .menuItem{
-	padding-top: 10%;
+	padding: 6%;
 	overflow: hidden;
-	float: center;
-	padding-bottom: 10px;
-	padding-right: 16px;
 }
 .Head-Column{
-	float: left;
 	width: 50%;
+	float: left;
 }
-#tabitem {
+#tabitem{
+	font-size: 24px;
+	padding: 2px;
 	color: white;
 	font-weight: bold;
 }
@@ -66,21 +59,34 @@ img{
 }
 @media screen and (max-width: 960px) and (min-width: 620px){
 	.Head-Column{
-		width: 50%;
+		width: 100%;
+		margin: auto;
 	}
-	#mainHeader{
+	.menuItem{
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+	.mainHeader{
 		font-size: 26px;
+		margin: auto;
 	}
 	img{
 		height: 75px;
 		width: 75px;
+	}
+	#tabitem:hover{
+		padding: 8px;
 	}
 }
 @media screen and (max-width: 620px) and (min-width: 320px){
 	.Head-Column{
 		width: 100%;
 	}
-	#mainHeader{
+	.menuItem{
+		padding-top: 0%;
+		padding-bottom: 2%;
+	}
+	.mainHeader{
 		font-size: 24px;
 	}
 	img{
@@ -88,6 +94,10 @@ img{
 		width: 50px;
 	}
 	#tabitem{
-		font-size: 14px;
+		font-size: 10px;
+		padding: 4px;
+	}
+	#tabitem:hover{
+		padding: 4px;
 	}
 }

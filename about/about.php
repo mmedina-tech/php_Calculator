@@ -24,7 +24,16 @@
 #
 #
 
-$token = file_get_contents('./Doc/Special_Thanks.txt');
+$token = file_get_contents('./Special_Thanks.txt');
+/*
+$lists = "<ul>";
+foreach( $names as $name)
+{
+	$lists .= "<li>$name</li>";
+	
+}
+$lists .= "</ul>";
+ */
 $page = file_get_contents('./about.html');
 $page = str_replace("{THNX}", $token, $page);
 print $page;
