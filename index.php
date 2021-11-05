@@ -59,61 +59,62 @@ body{
     <body>
 		<div id='links'>
 			<center><a href='calculator_front.html'>The Massive Calculator</a></center>
-<center><p>&#8593;</p></center>
-<center><p>Click to get started</p></center>
+			<center><p>&#8593;</p></center>
+			<center><p>Click to get started</p></center>
 		</div>
 		<br>
 		<div id='mainBody'>
-			<p>Welcome to The Massive Calculator. </p>
-			<hr>
-	<p>
-	There are a few things that you need to know before we get started. First, this is not a calculator that teaches.
-	Second, the results are only as accurate as the numbers that are given.
-	</p>
+			<section>
+				<p>Welcome to The Massive Calculator. </p>
+				<hr>
+			</section>
+			<section>
+				<p>
+				There are a few things that you need to know before we get started. First, this is not a calculator that teaches.
+				Second, the results are only as accurate as the numbers that are given.
+				</p>
 
-	<p>
-	Now that we have all that out of the way let's get started.
-	</p>
+				<p>
+				Now that we have all that out of the way let's get started.
+				</p>
 
-	<p>
-	Here are the steps to using the calculator.
-	</p>
+				<p>
+				Here are the steps to using the calculator.
+				</p>
 
-	<p>
-	<ol>
-		<li>Select a Category
-		<li>Select a Formula
-		<li>Fill out all input fields with your numbers and repeat.
-	</ol>
-	</p>
+				<p>
+				<ol>
+					<li>Select a Category
+					<li>Select a Formula
+					<li>Fill out all input fields with your numbers and repeat.
+				</ol>
+				</p>
 
-	<p>
-	When you click on the drop list for the category you will see an extensive list of categories. 
-	After you select a category a second drop list will appear, this is the list of Formulas for the category that you have selected.
-	When you select a formula there will be the corresponding inputs that appear for you to fill out.
-	If you have any comments or suggestions there are links for doing just that.
-	We would urge you to please leave comments and suggestions that way we can make any changes that you have requested.
-	</p>
-
-	<hr>
-	<p>Leaving a Comment</p>
-	<br>
-	<p>
-	When leaving a comment please make sure that all comments are constructive. You will have to leave your name that way we can then add you into the special Thanks Section for any suggestions for updating look and feel.
-	</p>
-	<hr>
-	<p>
-	Suggesting a Formula
-	</p>
-	<br>
-	<p>
-	You will have to give your name just like for the comments, but you will also have to give the name of the category, name of the formula, and the formula itself. If you are getting a formula from a book please be sure to fill out the book section of the form. That way we can minimize any risk of copyright infringement and plagerism.
-	</p>
-	<hr>
-
-<!--			<form>
-				<p><input type='checkbox'>If you would like to skip this page</p>
-</form> -->
+				<p>
+				When you click on the drop list for the category you will see an extensive list of categories. 
+				After you select a category a second drop list will appear, this is the list of Formulas for the category that you have selected.
+				When you select a formula there will be the corresponding inputs that appear for you to fill out.
+				If you have any comments or suggestions there are links for doing just that.
+				We would urge you to please leave comments and suggestions that way we can make any changes that you have requested.
+				</p>
+				<hr>
+			</section>
+			<section>
+				<p>Leaving a Comment</p>
+				<p>
+				When leaving a comment please make sure that all comments are constructive. You will have to leave your name that way we can then add you into the special Thanks Section for any suggestions for updating look and feel.
+				</p>
+				<hr>
+			</section>
+			<section>
+				<p>
+				Suggesting a Formula
+				</p>
+				<p>
+				You will have to give your name just like for the comments, but you will also have to give the name of the category, name of the formula, and the formula itself. If you are getting a formula from a book please be sure to fill out the book section of the form. That way we can minimize any risk of copyright infringement and plagerism.
+				</p>
+				<hr>
+			</section>
 		</div>
     </body>
 </html>
