@@ -89,7 +89,8 @@ class $in_outfile extends FormulaBase{
 		\$this->formula_list = array();
         #}}}
 
-
+	}
+}
 EOF
 }
 
@@ -136,7 +137,8 @@ class $in_outfile extends FormulaBase{
 		\$this->formula_list = array();
         #}}}
 
-
+	}
+}
 EOF
 }
 
@@ -170,7 +172,8 @@ class $in_outfile extends FormulaBase{
 		\$this->formula_list = array();
         #}}}
 
-
+	}
+}
 EOF
 }
 
@@ -201,6 +204,8 @@ class $in_outfile extends FormulaBase{
 		\$this->formula_list = array();
         #}}}
 
+	}
+}
 EOF
 }
 
@@ -233,6 +238,8 @@ class $in_outfile extends FormulaBase{
 		\$this->formula_list = array();
         #}}}
 
+	}
+}
 EOF
 }
 
@@ -268,6 +275,8 @@ class $in_outfile extends FormulaBase{
 		\$this->formula_list = array();
         #}}}
 
+	}
+}
 EOF
 }
 
