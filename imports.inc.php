@@ -25,13 +25,23 @@
 #
 require_once("modules/Acceleration.php");
 require_once("modules/Accounting.php");
+require_once('modules/Area.php');
+require_once('modules/Astronomic_Units.php');
+require_once('modules/Budget.php');
+
 
 $accel = new Acceleration();
 $account = new Accounting();
+$area = new Area();
+$astro = new Astronomic_Units();
+$budget = new Budget();
 
 $cats = array(
 	'Acceleration' => $accel,
-	"Accounting" => $account
+	"Accounting" => $account,
+	'Area' => $area,
+	'Astronomic Units' => $astro,
+	'Budgeting' => $budget,
 );
 
 $number = $_POST['number_input'];
@@ -63,6 +73,7 @@ $attrib = array(
 
 function formSelect($sele, $myAttrs=array(), $selected=null){
 	$attrString = "";
+	ksort($sele);
 
 	foreach($myAttrs as $key=>$value){
 		$idStr = " $key='$value'";
@@ -70,9 +81,9 @@ function formSelect($sele, $myAttrs=array(), $selected=null){
 	}
 
 	$select = "<select onchange='redire(category, Formula)'$attrString>\n";
-	$select .= "\t<option value=''>--Select a Formula--</option>\n";
+	$select .= "<option value=''>-- Select Formula --</option>";
 
-	foreach ( $sele as $key=>$value){
+	foreach ( $sele as $key => $val){
 		if ( $key == $selected ) {
 			$select .= "\t<option value='$key' selected>$key</option>\n";
 		} else {
@@ -85,6 +96,7 @@ function formSelect($sele, $myAttrs=array(), $selected=null){
 
 function cateSelect($sel, $myAttrs=array(), $selected=null){
 	$attrString = "";
+	ksort($sel);
 	foreach($myAttrs as $key=>$value){
 		$idStr = " $key='$value'";
 		$attrString .= $idStr;

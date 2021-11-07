@@ -29,7 +29,7 @@
 # Functions
 
 outfile=${outfile:-made.php}
-in_outfile=$( echo "$outfile" | sed -e 's/.php//')
+in_outfile=$( echo $outfile | sed -e 's/.php//')
 function pmessage() {
     for phrase in "$@"
     do
@@ -70,7 +70,7 @@ function all(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 
 		#{{{ Function Titles
@@ -118,7 +118,7 @@ function license(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 
 		#{{{ Function Titles
@@ -152,7 +152,7 @@ function author(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 		
 
@@ -184,7 +184,7 @@ function default(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 		
 
@@ -218,7 +218,7 @@ function program(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 		
 
@@ -255,7 +255,7 @@ function syn(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 		
 

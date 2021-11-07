@@ -28,9 +28,8 @@
 		<meta name="author" content="Marcus Medina">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name='description' content=''>
+		<link rel='icon' href="/php_Calculator/images/massive.png" type='image/x-icon'>
         <title>Instructions</title>
-        <script>
-        </script>
         <style>
 #links{
 	background-color: lightblue;

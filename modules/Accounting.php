@@ -28,7 +28,6 @@ include_once("FormulaBase.php");
 
 class Accounting extends FormulaBase{
     function __construct(){
-		parent::__construct();
 
 		#{{{ Function Titles
 		$this->function_strings = array(

@@ -31,7 +31,7 @@ h5 {
 	color: white;
 	font-weight: bold;
 	margin: auto;
-	width: 23%;
+	width: 20%;
 }
 .header_titles {
 	color: white;
@@ -65,6 +65,14 @@ select.selForm {
 	margin: auto;
 	background-color: #c0f1ff;
 }
+.income{
+	color: green;
+	font-weight: bold;
+}
+.expenses{
+	color: red;
+	font-weight: bold;
+}
 .error{
 	min-width: 200px;
 	width: 250px;
@@ -90,19 +98,20 @@ footer{
 }
 @media screen and (max-width: 960px) and (min-width: 620px){
 	.column{
-		width: 50%;
+		width: 100%;
+		margin: auto;
 	}
 	.titles{
 		font-size: 25px;
 	}
 	h2{
-		width: 20%;
-		font-size: 40px;
+		font-size: 20px;
 	}
 }
 @media screen and (max-width: 620px) and (min-width: 320px){
 	.column{
 		width: 100%;
+		float: center;
 	}
 	.titles{
 		font-size: 18px;
