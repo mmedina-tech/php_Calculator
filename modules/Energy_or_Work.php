@@ -142,8 +142,43 @@ class Energy_or_Work extends FormulaBase{
 
         #{{{ Formula List
 		$this->formula_list = array(
+			$this->function_strings[1] => array(
+				'Formula:<br>' => 'BUT * 778.2'
+			),
+			$this->function_strings[2] => array(
+				'Formula:<br>' => 'Mega Joule * 0.27777778'
+			),
+			$this->function_strings[3] => array(
+				'Formula:<br>' => 'BTU * 252'
+			),
+			$this->function_strings[4] => array(
+				'Formula:<br>' => 'BTU * 1055.0559'
+			),
+			$this->function_strings[5] => array(
+				'Formula:<br>' => 'Joule * 0.00027777778'
+			),
+			$this->function_strings[6] => array(
+				'Formula:<br>' => 'Calories * 4.184'
+			),
+			$this->function_strings[7] => array(
+				'Formula:<br>' => 'Foot/Pound * 1.3558'
+			),
+			$this->function_strings[8] => array(
+				'Formula:<br>' => 'Joule * 0.00094781712'
+			),
+			$this->function_strings[9] => array(
+				'Formula:<br>' => 'WAtt Hour * 3600'
+			),
+			$this->function_strings[10] => array(
+				'Formula:<br>' => 'Joule * 0.23900574'
+			),
+			$this->function_strings[11] => array(
+				'Formula:<br>' => 'Joule * .7376'
+			),
+			$this->function_strings[12] => array(
+				'Formula:<br>' => 'KiloWatt HOur * 3.6'
+			),
 		);
         #}}}
-
 	}
 }
