@@ -171,7 +171,7 @@ class Culinary extends FormulaBase{
 				$result = $num / $num2;
 				return array(money_format("$", $result), $this->pluralize($result, 'Cost Per Portion'));
 			},
-			$this->function_strings[27] => function($num, $num){
+			$this->function_strings[27] => function($num, $num2){
 				$result = $num / ($num2 / 100);
 				return array(money_format("$", $result), $this->pluralize($result, 'Selling Price'));
 			},
