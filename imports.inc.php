@@ -28,6 +28,11 @@ require_once("modules/Accounting.php");
 require_once('modules/Area.php');
 require_once('modules/Astronomic_Units.php');
 require_once('modules/Budget.php');
+require_once('modules/Culinary.php');
+require_once('modules/Energy_or_Work.php');
+require_once('modules/Fuel_Economy.php');
+require_once('modules/GED_Practice.php');
+require_once('modules/Imperial_to_Imperial.php');
 
 
 $accel = new Acceleration();
@@ -35,6 +40,11 @@ $account = new Accounting();
 $area = new Area();
 $astro = new Astronomic_Units();
 $budget = new Budget();
+$cook = new Culinary();
+$energy = new Energy_or_Work();
+$fuel = new Fuel_Economy();
+$ged = new GED_Practice();
+$imp = new Imperial_to_Imperial();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -42,6 +52,12 @@ $cats = array(
 	'Area' => $area,
 	'Astronomic Units' => $astro,
 	'Budgeting' => $budget,
+	'Culinary' => $cook,
+	'Energy or Work' => $energy,
+	'Fuel Economy' => $fuel,
+	'GED Practice' => $ged,
+	'Imperial to Imperial' => $imp,
+
 );
 
 $number = $_POST['number_input'];
