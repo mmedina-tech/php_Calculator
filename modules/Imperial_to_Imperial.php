@@ -84,7 +84,7 @@ class Imperial_to_Imperial extends FormulaBase{
 				return array($this->prec($result, 4), $this->pluralize($result, 'Inch'));
 			},
 			$this->function_strings[9] => function($num){
-				$result = $num * 0.833333333333;
+				$result = $num * 0.0833333333333;
 				return array($this->prec($result, 4), $this->pluralize($result, 'Foot'));
 			},
 			$this->function_strings[10] => function($num){
