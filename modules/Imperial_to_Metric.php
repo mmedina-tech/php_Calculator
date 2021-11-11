@@ -97,6 +97,18 @@ class Imperial_to_Metric extends FormulaBase{
 			64 => 'Teaspoons to Centiliters',
 			65 => 'Teaspoons to Deciliters',
 			66 => 'Teaspoons to Liters',	
+			67 => 'Cubic Inches to Cubic Millimeters',
+			68 => 'Cubic Inches to Cubic Centimeters',
+			69 => 'Cubic Inches to Cubic Meters',
+			70 => 'Cubic Inches to Cubic Kilometers',
+			71 => 'Cubic Feet to Cubic Millimeters',
+			72 => 'Cubic Feet to Cubic Centimeters',
+			73 => 'Cubic Feet to Cubic Meters',
+			74 => 'Cubic Feet to Cubic Kilometers',
+			75 => 'Cubic Miles to Cubic Millimeters',
+			76 => 'Cubic Miles to Cubic Centimeters',
+			77 => 'Cubic Miles to Cubic Meters',
+			78 => 'Cubic Miles to Cubic Kilometers',
 		);
 		#}}}
 	
@@ -175,7 +187,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($this->prec($result, 4), $this->pluralize($result, 'Meter'));
 			},
 			$this->function_strings[19] => function($num){
-				$result = $num * 0.0000254;
+				$result = $num * pow(2.54, -5);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer'));
 			},
 			$this->function_strings[20] => function($num){
@@ -255,15 +267,15 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[39] => function($num){
-				$result = $num * 0.00000009290304;
+				$result = $num * pow(9.290304, -8);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[40] => function($num){
-				$result = $num * 2589988100;
+				$result = $num * pow(2.5899881, 10);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[41] => function($num){
-				$result = $num * 2589988100000;
+				$result = $num * pow(2.5899881, 12);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[42] => function($num){
@@ -279,7 +291,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[45] => function($num){
-				$result = $num * 0.00000083612736;
+				$result = $num * pow(8.3612736, -7);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[46] => function($num){
@@ -295,7 +307,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[49] => function($num){
-				$result = $num * 0.00000000064516;
+				$result = $num * pow(6.4516, -10);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[50] => function($num){
@@ -315,7 +327,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[54] => function($num){
-				$result = $num * 0.00000000076455486;
+				$result = $num * pow(7.6455486, -10);
 				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[55] => function($num){
@@ -365,6 +377,54 @@ class Imperial_to_Metric extends FormulaBase{
 			$this->function_strings[66] => function($num){
 				$result = $num * 0.0049289216;
 				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+			},
+			$this->function_strings[67] => function($num){
+				$result = $num * 16387.064;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>3</sup>'));
+			},
+			$this->function_strings[68] => function($num){
+				$result = $num * 16.387064;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>3</sup>'));
+			},
+			$this->function_strings[69] => function($num){
+				$result = $num * pow(1.6387064, -5);
+				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+			},
+			$this->function_strings[70] => function($num){
+				$result = $num * pow(1.6387064, -14);
+				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+			},
+			$this->function_strings[71] => function($num){
+				$result = $num * 28316847;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>3</sup>'));
+			},
+			$this->function_strings[72] => function($num){
+				$result = $num * 28316.847;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>3</sup>'));
+			},
+			$this->function_strings[73] => function($nunm){
+				$result = $num * 0.028316847;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+			},
+			$this->function_strings[74] => function($num){
+				$result = $num * pow(2.8316847, -11);
+				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+			},
+			$this->function_strings[75] => function($num){
+				$result = $num * pow(4.1681818, 18);
+				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>3</sup>'));
+			},
+			$this->function_strings[76] => function($num){
+				$result = $num * pow(4.1681818, 15);
+				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>3</sup>'));
+			},
+			$this->function_strings[77] => function($num){
+				$result = $num * pow(4.1681818, 9);
+				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+			},
+			$this->function_strings[78] => function($num){
+				$result = $num * 4.1681818;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 		);
         #}}}
@@ -569,6 +629,42 @@ class Imperial_to_Metric extends FormulaBase{
 			$this->function_strings[66] => array(
 				'number_input' => 'Teaspoons (input): ',
 			),
+			$this->function_strings[67] => array(
+				'number_input' => 'Cubic Inches (input): ',
+			),
+			$this->function_strings[68] => array(
+				'number_input' => 'Cubic Inches (input): ',
+			),
+			$this->function_strings[69] => array(
+				'number_input' => 'Cubic Inches (input): ',
+			),
+			$this->function_strings[70] => array(
+				'number_input' => 'Cubic Inches (input): ',
+			),
+			$this->function_strings[71] => array(
+				'number_input' => 'Cubic Feet (input): ',
+			),
+			$this->function_strings[72] => array(
+				'number_input' => 'Cubic Feet (input): ',
+			),
+			$this->function_strings[73] => array(
+				'number_input' => 'Cubic Feet (input): ',
+			),
+			$this->function_strings[74] => array(
+				'number_input' => 'Cubic Feet (input): ',
+			),
+			$this->function_strings[75] => array(
+				'number_input' => 'Cubic Miles (input): ',
+			),
+			$this->function_strings[76] => array(
+				'number_input' => 'Cubic Miles (input): ',
+			),
+			$this->function_strings[77] => array(
+				'number_input' => 'Cubic Miles (input): ',
+			),
+			$this->function_strings[78] => array(
+				'number_input' => 'Cubic Miles (input): ',
+			),
 		);
         #}}}
 
@@ -771,6 +867,42 @@ class Imperial_to_Metric extends FormulaBase{
 			),
 			$this->function_strings[66] => array(
 				'Formula:<br>' => 'Teaspoons * 0.0049289216'
+			),
+			$this->function_strings[67] => array(
+				'Formula:<br>' => 'Inch<sup>3</sup> * 16387.064'
+			),
+			$this->function_strings[68] => array(
+				'Formula:<br>' => 'Inch<sup>3</sup> * 16.387064'
+			),
+			$this->function_strings[69] => array(
+				'Formula:<br>' => 'Inch<sup>3</sup> * 0.000016387064'
+			),
+			$this->function_strings[70] => array(
+				'Formula:<br>' => 'Inch<sup>3</sup> * 0.000000000000016387064'
+			),
+			$this->function_strings[71] => array(
+				'Formula:<br>' => 'Feet<sup>3</sup> * 28316847'
+			),
+			$this->function_strings[72] => array(
+				'Formula:<br>' => 'Feet<sup>3</sup> * 28316.847'
+			),
+			$this->function_strings[73] => array(
+				'Formula:<br>' => 'Feet<sup>3</sup> * 0.028316847'
+			),
+			$this->function_strings[74] => array(
+				'Formula:<br>' => 'Feet<sup>3</sup> * 2.8316847e-11'
+			),
+			$this->function_strings[75] => array(
+				'Formula:<br>' => 'Miles<sup>3</sup> * 4.1681818e+18'
+			),
+			$this->function_strings[76] => array(
+				'Formula:<br>' => 'Miles<sup>3</sup> * 4.1681818e+15'
+			),
+			$this->function_strings[77] => array(
+				'Formula:<br>' => 'Miles<sup>3</sup> * 4.1681818e+9'
+			),
+			$this->function_strings[78] => array(
+				'Formula:<br>' => 'Miles<sup>3</sup> * 4.1681818'
 			),
 		);
         #}}}

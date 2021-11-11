@@ -33,6 +33,7 @@ require_once('modules/Energy_or_Work.php');
 require_once('modules/Fuel_Economy.php');
 require_once('modules/GED_Practice.php');
 require_once('modules/Imperial_to_Imperial.php');
+require_once('modules/Imperial_to_Metric.php');
 
 
 $accel = new Acceleration();
@@ -45,6 +46,7 @@ $energy = new Energy_or_Work();
 $fuel = new Fuel_Economy();
 $ged = new GED_Practice();
 $imp = new Imperial_to_Imperial();
+$impm = new Imperial_to_Metric();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -57,6 +59,7 @@ $cats = array(
 	'Fuel Economy' => $fuel,
 	'GED Practice' => $ged,
 	'Imperial to Imperial' => $imp,
+	'Imperial to Metric' => $impm,
 
 );
 
