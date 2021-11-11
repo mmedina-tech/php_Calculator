@@ -314,6 +314,58 @@ class Imperial_to_Metric extends FormulaBase{
 				$result = $num * 0.76455486;
 				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
+			$this->function_strings[54] => function($num){
+				$result = $num * 0.00000000076455486;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+			},
+			$this->function_strings[55] => function($num){
+				$result = $num * 236.58824;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+			},
+			$this->function_strings[56] => function($num){
+				$result = $num * 23.658824;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+			},
+			$this->function_strings[57] => function($num){
+				$result = $num * 2.3658824;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+			},
+			$this->function_strings[58] => function($num){
+				$result = $num * 0.23658824;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+			},
+			$this->function_strings[59] => function($num){
+				$result = $num * 14.786765;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+			},
+			$this->function_strings[60] => function($num){
+				$result = $num * 1.4786765;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+			},
+			$this->function_strings[61] => function($num){
+				$result = $num * 0.14786765;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+			},
+			$this->function_strings[62] => function($num){
+				$result = $num * 0.014786765;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+			},
+			$this->function_strings[63] => function($num){
+				$result = $num * 4.9289216;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+			},
+			$this->function_strings[64] => function($num){
+				$result = $num * 0.49289216;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+			},
+			$this->function_strings[65] => function($num){
+				$result = $num * 0.049289216;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+			},
+			$this->function_strings[66] => function($num){
+				$result = $num * 0.0049289216;
+				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+			},
 		);
         #}}}
 
