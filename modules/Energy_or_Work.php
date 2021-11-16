@@ -50,51 +50,51 @@ class Energy_or_Work extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num * 778.2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Foot/Pound'));
+				return array($result, $this->pluralize($result, 'Foot/Pound'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 0.27777778;
-				return array($this->prec($result, 4), $this->pluralize($result, 'KiloWatt Hour'));
+				return array($result, $this->pluralize($result, 'KiloWatt Hour'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 252;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Gram/Calorie'));
+				return array($result, $this->pluralize($result, 'Gram/Calorie'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 1055.0559;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Joule'));
+				return array($result, $this->pluralize($result, 'Joule'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 0.00027777778;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Watt Hour'));
+				return array($result, $this->pluralize($result, 'Watt Hour'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 4.184;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Joule'));
+				return array($result, $this->pluralize($result, 'Joule'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 1.3558;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Joule'));
+				return array($result, $this->pluralize($result, 'Joule'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 0.00094781712;
-				return array($this->prec($result, 4), $this->pluralize($result, 'BTU'));
+				return array($result, $this->pluralize($result, 'BTU'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num * 3600;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Joule'));
+				return array($result, $this->pluralize($result, 'Joule'));
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.23900574;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Calories'));
+				return array($result, $this->pluralize($result, 'Calories'));
 			},
 			$this->function_strings[11] => function($num){
 				$result = $num * .7376;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Foot/Pound'));
+				return array($result, $this->pluralize($result, 'Foot/Pound'));
 			},
 			$this->function_strings[12] => function($num){
 				$result = $num * 3.6;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mega Joule'));
+				return array($result, $this->pluralize($result, 'Mega Joule'));
 			},
 		);
         #}}}

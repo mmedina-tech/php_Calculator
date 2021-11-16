@@ -98,243 +98,243 @@ class Area extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num * 0.4047;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Hectare'));
+				return array($result, $this->pluralize($result, 'Hectare'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 2.471;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 0.006944444;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Foot'));
+				return array($result, $this->pluralize($result, 'Square Foot'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 0.11111111;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Yard'));
+				return array($result, $this->pluralize($result, 'Square Yard'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 0.003673095;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Rod'));
+				return array($result, $this->pluralize($result, 'Square Rod'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 0.00625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 0.0015625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Mile'));
+				return array($result, $this->pluralize($result, 'Square Mile'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num / 27878400;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Mile'));
+				return array($result, $this->pluralize($result, 'Square Mile'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num / 43560;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.000645161;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Inch<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Inch<sup>2</sup>'));
 			},
 			$this->function_strings[11] => function($num){
 				$result = $num * 0.008361204;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Yard<sup>2</sup>'));
 			},
 			$this->function_strings[12] => function($num){
 				$result = $num * 0.004046863;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[13] => function($num){
 				$result = $num * 0.015941336;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Inch<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Inch<sup>2</sup>'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = $num * 0.002417052;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[15] => function($num){
 				$result = $num * 0.0016;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Link<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Link<sup>2</sup>'));
 			},
 			$this->function_strings[16] => function($num){
 				$result = $num * 0.033057851;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Yard<sup>2</sup>'));
 			},
 			$this->function_strings[17] => function($num){
 				$result = $num * 0.029536631;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[18] => function($num){
 				$result = $num * 0.0625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pole<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Pole<sup>2</sup>'));
 			},
 			$this->function_strings[19] => function($num){
 				$result = $num * 0.002066116;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Yard<sup>2</sup>'));
 			},
 			$this->function_strings[20] => function($num){
 				$result = $num * 0.002471052;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[21] => function($num){
 				$result = $num * 0.01;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Chain<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Chain<sup>2</sup>'));
 			},
 			$this->function_strings[22] => function($num){
 				$result = $num * 0.000206612;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Yard<sup>2</sup>'));
 			},
 			$this->function_strings[23] => function($num){
 				$result = $num * 0.0002471052;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[24] => function($num){
 				$result = $num * 0.0015625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[25] => function($num){
 				$result = $num * 0.0015625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Mile<sup>2</sup>'));
 			},
 			$this->function_strings[26] => function($num){
 				$result = $num * 1;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[27] => function($num){
 				$result = $num * 0.027777778;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Section'));
+				return array($result, $this->pluralize($result, 'Section'));
 			},
 			$this->function_strings[28] => function($num){
 				$result = $num * 0.027777778;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Mile<sup>2</sup>'));
 			},
 			$this->function_strings[29] => function($num){
 				$result = $num * 0.010725011;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[30] => function($num){
 				$result = $num * 0.00064516;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiare'));
+				return array($result, $this->pluralize($result, 'Centiare'));
 			},
 			$this->function_strings[31] => function($num){
 				$result = $num * 0.0083612736;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Are'));
+				return array($result, $this->pluralize($result, 'Are'));
 			},
 			$this->function_strings[32] => function($num){
 				$result = $num * 0.0040468554;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[33] => function($num){
 				$result = $num * 0.38610216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Mile<sup>2</sup>'));
 			},
 			$this->function_strings[34] => function($num){
 				$result = $num * 0.15500031;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Inch<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Inch<sup>2</sup>'));
 			},
 			$this->function_strings[35] => function($num){
 				$result = $num * 0.015942251;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Link<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Link<sup>2</sup>'));
 			},
 			$this->function_strings[36] => function($num){
 				$result = $num * 1.19599;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Yard<sup>2</sup>'));
 			},
 			$this->function_strings[37] => function($num){
 				$result = $num * 20.661157;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Link<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Link<sup>2</sup>'));
 			},
 			$this->function_strings[38] => function($num){
 				$result = $num * 0.0016000056;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pole<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Pole<sup>2</sup>'));
 			},
 			$this->function_strings[39] => function($num){
 				$result = $num * 0.033057966;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pole<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Pole<sup>2</sup>'));
 			},
 			$this->function_strings[40] => function($num){
 				$result = $num * 0.062499783;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Chain<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Chain<sup>2</sup>'));
 			},
 			$this->function_strings[41] => function($num){
 				$result = $num * 0.1;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[42] => function($num){
 				$result = $num * 0.0015625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Section'));
+				return array($result, $this->pluralize($result, 'Section'));
 			},
 			$this->function_strings[43] => function($num){
 				$result = $num * 0.027777778;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Township'));
+				return array($result, $this->pluralize($result, 'Township'));
 			},
 			$this->function_strings[44] => function($num){
 				$result = $num * 43560;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Foot<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Foot<sup>2</sup>'));
 			},
 			$this->function_strings[45] => function($num){
 				$result = $num * 100;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiare'));
+				return array($result, $this->pluralize($result, 'Centiare'));
 			},
 			$this->function_strings[46] => function($num){
 				$result = $num * 0.01;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Are'));
+				return array($result, $this->pluralize($result, 'Are'));
 			},
 			$this->function_strings[47] => function($num){
 				$result = $num * 100;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Are'));
+				return array($result, $this->pluralize($result, 'Are'));
 			},
 			$this->function_strings[48] => function($num){
 				$result = $num * 40.468564;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Are'));
+				return array($result, $this->pluralize($result, 'Are'));
 			},
 			$this->function_strings[49] => function($num){
 				$result = $num * 0.01;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Hectare'));
+				return array($result, $this->pluralize($result, 'Hectare'));
 			},
 			$this->function_strings[50] => function($num){
 				$result = $num * 100;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Hectare'));
+				return array($result, $this->pluralize($result, 'Hectare'));
 			},
 			$this->function_strings[51] => function($num){
 				$result = $num * 2.5899881;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[52] => function($num){
 				$result = $num * 0.01;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[53] => function($num){
 				$result = $num * 0.0024710538;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Link<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Link<sup>2</sup>'));
 			},
 			$this->function_strings[54] => function($num){
 				$result = $num * 0.039536999;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pole<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Pole<sup>2</sup>'));
 			},
 			$this->function_strings[55] => function($num){
 				$result = $num * 0.0024710538;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Chain<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Chain<sup>2</sup>'));
 			},
 			$this->function_strings[56] => function($num){
 				$result = $num * 0.0020661157;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Chain<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Chain<sup>2</sup>'));
 			},
 			$this->function_strings[57] => function($num){
 				$result = $num * 0.00024710538;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[58] => function($num){
 				$result = $num * 0.00020661157;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Acre'));
+				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[59] => function($num){
 				$result = $num * 0.38610216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Section'));
+				return array($result, $this->pluralize($result, 'Section'));
 			},
 			$this->function_strings[60] => function($num){
 				$result = $num * 1;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Section'));
+				return array($result, $this->pluralize($result, 'Section'));
 			},
 		);
         #}}}

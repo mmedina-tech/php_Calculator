@@ -53,63 +53,63 @@ class GED_Practice extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num, $num2){
 				$result = 0.5 * $num * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Triangle Area'));
+				return array($result, $this->pluralize($result, 'Triangle Area'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = 3.14159 * $num^2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Circle Area'));
+				return array($result, $this->pluralize($result, 'Circle Area'));
 			},
 			$this->function_strings[3] => function($num, $num2){
 				$result = $num * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Rectangle Area'));
+				return array($result, $this->pluralize($result, 'Rectangle Area'));
 			},
 			$this->function_strings[4] => function($num, $num2){
 				$result = $num * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Parallelogram Area'));
+				return array($result, $this->pluralize($result, 'Parallelogram Area'));
 			},
 			$this->function_strings[5] => function($num, $num2, $num3){
 				$result = 0.5 * $num * ($num2 + $num3);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Trapezoid Area'));
+				return array($result, $this->pluralize($result, 'Trapezoid Area'));
 			},
 			$this->function_strings[6] => function($num, $num2, $num3){
 				$result = $num * $num2 + (2 * $num3);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Surface Area'));
+				return array($result, $this->pluralize($result, 'Surface Area'));
 			},
 			$this->function_strings[7] => function($num, $num2){
 				$result = $num * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Rectangle/Right Prism Volume'));
+				return array($result, $this->pluralize($result, 'Rectangle/Right Prism Volume'));
 			},
 			$this->function_strings[8] => function($num, $num2){
 				$result = (2 * 3.14159 * $num * $num2) + (2 * 3.14159 * $num2^2);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cylinder Surface Area'));
+				return array($result, $this->pluralize($result, 'Cylinder Surface Area'));
 			},
 			$this->function_strings[9] => function($num, $num2){
 				$result = 3.14159 * $num^2 * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cylinder Volume'));
+				return array($result, $this->pluralize($result, 'Cylinder Volume'));
 			},
 			$this->function_strings[10] => function($num, $num2, $num3){
 				$result = 0.5 * $num * $num2 + $num3;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pyramid Surface Area'));
+				return array($result, $this->pluralize($result, 'Pyramid Surface Area'));
 			},
 			$this->function_strings[11] => function($num, $num2){
 				$result = 0.333333333333 * $num * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pyramid Volume'));
+				return array($result, $this->pluralize($result, 'Pyramid Volume'));
 			},
 			$this->function_strings[12] => function($num, $num2){
 				$result = (3.14159 * $num * $num2) + (3.14159 * $num2);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cone Surface Area'));
+				return array($result, $this->pluralize($result, 'Cone Surface Area'));
 			},
 			$this->function_strings[13] => function($num, $num2){
 				$result = 0.333333333333 * $num^2 * $num2;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cone Volume'));
+				return array($result, $this->pluralize($result, 'Cone Volume'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = 4 * 3.14159 * $num;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Sphere Surface Area'));
+				return array($result, $this->pluralize($result, 'Sphere Surface Area'));
 			},
 			$this->function_strings[15] => function($num){
 				$result = 1.333333333333 * 3.14159 * $num;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Sphere Volume'));
+				return array($result, $this->pluralize($result, 'Sphere Volume'));
 			},
 		);
         #}}}

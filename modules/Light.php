@@ -30,7 +30,8 @@ class Light extends FormulaBase{
     function __construct(){
 
 		#{{{ Function Titles
-		$this->function_strings = array();
+		$this->function_strings = array(
+		);
 		#}}}
 	
         #{{{ Function List

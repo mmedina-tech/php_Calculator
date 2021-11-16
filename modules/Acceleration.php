@@ -38,19 +38,19 @@ class Acceleration extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num=NULL){
 				$result = $num * 0.03048;
-				return array($this->prec($result, 2), $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
 			},
 			$this->function_strings[2] => function($num=NULL){
 				$result = $num * 0.0254;
-				return array($this->prec($result, 2), $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
 			},
 			$this->function_strings[3] => function ($num=NULL){
 				$result = $num * 3.281;
-				return array($this->prec($result, 2), $this->pluralize($result, 'Foot/Sec<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Foot/Sec<sup>2</sup>'));
 			},
 			$this->function_strings[4] => function($num=NULL){
 				$result = $num * 39.37;
-				return array($this->prec($result, 2), $this->pluralize($result, 'Inch/Sec<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Inch/Sec<sup>2</sup>'));
 			}
 		);
 

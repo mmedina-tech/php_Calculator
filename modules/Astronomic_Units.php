@@ -48,43 +48,43 @@ class Astronomic_Units extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num + 270;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kelvin'));
+				return array($result, $this->pluralize($result, 'Kelvin'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = (($num - 32) * 5/9) + 270 ;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kelvin'));
+				return array($result, $this->pluralize($result, 'Kelvin'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 63239.726;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Astronomic Units'));
+				return array($result, $this->pluralize($result, 'Astronomic Units'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 0.000015812845;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Light Year'));
+				return array($result, $this->pluralize($result, 'Light Year'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 0.30659485;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Parsec'));
+				return array($result, $this->pluralize($result, 'Parsec'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 3.2616334;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Light Year'));
+				return array($result, $this->pluralize($result, 'Light Year'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 1.8;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Rankine'));
+				return array($result, $this->pluralize($result, 'Rankine'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 0.55555556;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Celsius'));
+				return array($result, $this->pluralize($result, 'Celsius'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num * 0.55555556;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kelvin'));
+				return array($result, $this->pluralize($result, 'Kelvin'));
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 1.8;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Rankine'));
+				return array($result, $this->pluralize($result, 'Rankine'));
 			},
 		);
         #}}}

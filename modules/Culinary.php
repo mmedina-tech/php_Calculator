@@ -66,67 +66,67 @@ class Culinary extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num * 0.23658824;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 0.5;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pint'));
+				return array($result, $this->pluralize($result, 'Pint'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 0.125;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Teaspoon'));
+				return array($result, $this->pluralize($result, 'Teaspoon'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 29.57353 ;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 3.7854118;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 0.4296835;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Peck'));
+				return array($result, $this->pluralize($result, 'Peck'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 0.035273962;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Ounce'));
+				return array($result, $this->pluralize($result, 'Ounce'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 0.0022046226;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pound'));
+				return array($result, $this->pluralize($result, 'Pound'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num * 2.2046226;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pound'));
+				return array($result, $this->pluralize($result, 'Pound'));
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.26417205;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Gallon'));
+				return array($result, $this->pluralize($result, 'Gallon'));
 			},
 			$this->function_strings[11] => function($num){
 				$result = $num * 2.1133764;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pint'));
+				return array($result, $this->pluralize($result, 'Pint'));
 			},
 			$this->function_strings[12] => function($num){
 				$result = $num * 1.0566882;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Quart'));
+				return array($result, $this->pluralize($result, 'Quart'));
 			},
 			$this->function_strings[13] => function($num){
 				$result = $num * 0.25;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Bushel'));
+				return array($result, $this->pluralize($result, 'Bushel'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = $num * 0.47317647;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[15] => function($num){
 				$result = $num * 0.5;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Quart'));
+				return array($result, $this->pluralize($result, 'Quart'));
 			},
 			$this->function_strings[16] => function($num){
 				$result = $num * 0.45359237;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilogram'));
+				return array($result, $this->pluralize($result, 'Kilogram'));
 			},
 			$this->function_strings[17] => function($num, $num2, $num3, $num4, $num5){
 				$old_yield = $num * $num2;
@@ -137,31 +137,31 @@ class Culinary extends FormulaBase{
 			},
 			$this->function_strings[18] => function($num){
 				$result = $num * 0.25;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Gallon'));
+				return array($result, $this->pluralize($result, 'Gallon'));
 			},
 			$this->function_strings[19] => function($num){
 				$result = $num * 0.94635295;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[20] => function($num){
 				$result = $num * 0.0625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cup'));
+				return array($result, $this->pluralize($result, 'Cup'));
 			},
 			$this->function_strings[21] => function($num){
 				$result = $num * 0.5;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Fluid Ounce'));
+				return array($result, $this->pluralize($result, 'Fluid Ounce'));
 			},
 			$this->function_strings[22] => function($num){
 				$result = $num * 14.786765;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[23] => function($num){
 				$result = $num * 0.33333333;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Tablespoon'));
+				return array($result, $this->pluralize($result, 'Tablespoon'));
 			},
 			$this->function_strings[24] => function($num){
 				$result = $num * 4.9289216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[25] => function($num, $num2){
 				$result = $num / $num;
@@ -177,7 +177,7 @@ class Culinary extends FormulaBase{
 			},
 			$this->function_strings[28] => function($num){
 				$result = $num * 28.349523;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Gram'));
+				return array($result, $this->pluralize($result, 'Gram'));
 			},
 		);
         #}}}

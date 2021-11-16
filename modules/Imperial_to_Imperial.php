@@ -53,63 +53,63 @@ class Imperial_to_Imperial extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num * 0.00018939394;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile'));
+				return array($result, $this->pluralize($result, 'Mile'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 5280;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Foot'));
+				return array($result, $this->pluralize($result, 'Foot'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 0.0625;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pound'));
+				return array($result, $this->pluralize($result, 'Pound'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 16;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Ounce'));
+				return array($result, $this->pluralize($result, 'Ounce'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 2000;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Pound'));
+				return array($result, $this->pluralize($result, 'Pound'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 0.00056818182;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile'));
+				return array($result, $this->pluralize($result, 'Mile'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 0.333333333333;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard'));
+				return array($result, $this->pluralize($result, 'Yard'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 12;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Inch'));
+				return array($result, $this->pluralize($result, 'Inch'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num * 0.0833333333333;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Foot'));
+				return array($result, $this->pluralize($result, 'Foot'));
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.027777778;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Yard'));
+				return array($result, $this->pluralize($result, 'Yard'));
 			},
 			$this->function_strings[11] => function($num){
 				$result = $num * 0.0000015782828;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile'));
+				return array($result, $this->pluralize($result, 'Mile'));
 			},
 			$this->function_strings[12] => function($num){
 				$result = $num * 3;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Foot'));
+				return array($result, $this->pluralize($result, 'Foot'));
 			},
 			$this->function_strings[13] => function($num){
 				$result = $num * 36;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Inch'));
+				return array($result, $this->pluralize($result, 'Inch'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = $num * 0.000003125;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Ton'));
+				return array($result, $this->pluralize($result, 'Ton'));
 			},
 			$this->function_strings[15] => function($num){
 				$result = $num * 32000;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Ounce'));
+				return array($result, $this->pluralize($result, 'Ounce'));
 			},
 		);
         #}}}

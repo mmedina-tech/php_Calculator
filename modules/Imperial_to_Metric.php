@@ -116,315 +116,315 @@ class Imperial_to_Metric extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = ($num - 32) * 5/9;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Celsius'));
+				return array($result, $this->pluralize($result, 'Celsius'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 0.76455486;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cubic Meter'));
+				return array($result, $this->pluralize($result, 'Cubic Meter'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 0.3048;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter'));
+				return array($result, $this->pluralize($result, 'Meter'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 3.7854118;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 25.4;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter'));
+				return array($result, $this->pluralize($result, 'Millimeter'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 2.54;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter'));
+				return array($result, $this->pluralize($result, 'Centimeter'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 1.609344;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer'));
+				return array($result, $this->pluralize($result, 'Kilometer'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 28.349523;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Gram'));
+				return array($result, $this->pluralize($result, 'Gram'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num * 0.47317647;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.94635295;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[11] => function($num){
 				$result = $num * 0.45359237;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilogram'));
+				return array($result, $this->pluralize($result, 'Kilogram'));
 			},
 			$this->function_strings[12] => function($num){
 				$result = $num * 0.09290304;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Meter'));
+				return array($result, $this->pluralize($result, 'Square Meter'));
 			},
 			$this->function_strings[13] => function($num){
 				$result = $num * 2.5899881;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Kilometer'));
+				return array($result, $this->pluralize($result, 'Square Kilometer'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = $num * 0.83612736;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Square Meter'));
+				return array($result, $this->pluralize($result, 'Square Meter'));
 			},
 			$this->function_strings[15] => function($num){
 				$result = $num * 0.9144;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter'));
+				return array($result, $this->pluralize($result, 'Meter'));
 			},
 			$this->function_strings[16] => function($num){
 				$result = $num * 764554.86;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cubic Centimeter'));
+				return array($result, $this->pluralize($result, 'Cubic Centimeter'));
 			},
 			$this->function_strings[17] => function($num){
 				$result = $num * 764554860;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Cubic Millimeter'));
+				return array($result, $this->pluralize($result, 'Cubic Millimeter'));
 			},
 			$this->function_strings[18] => function($num){
 				$result = $num * 0.0254;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter'));
+				return array($result, $this->pluralize($result, 'Meter'));
 			},
 			$this->function_strings[19] => function($num){
 				$result = $num * pow(2.54, -5);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer'));
+				return array($result, $this->pluralize($result, 'Kilometer'));
 			},
 			$this->function_strings[20] => function($num){
 				$result = $num * 304.8;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter'));
+				return array($result, $this->pluralize($result, 'Millimeter'));
 			},
 			$this->function_strings[21] => function($num){
 				$result = $num * 30.48;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter'));
+				return array($result, $this->pluralize($result, 'Centimeter'));
 			},
 			$this->function_strings[22] => function($num){
 				$result = $num * 0.0003048;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer'));
+				return array($result, $this->pluralize($result, 'Kilometer'));
 			},
 			$this->function_strings[23] => function($num){
 				$result = $num * 378.54118;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+				return array($result, $this->pluralize($result, 'Centiliter'));
 			},
 			$this->function_strings[24] => function($num){
 				$result = $num * 37.854118;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+				return array($result, $this->pluralize($result, 'Deciliter'));
 			},
 			$this->function_strings[25] => function($num){
 				$result = $num * 3785.4118;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[26] => function($num){
 				$result = $num * 1609344;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter'));
+				return array($result, $this->pluralize($result, 'Millimeter'));
 			},
 			$this->function_strings[27] => function($num){
 				$result = $num * 160934.4;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter'));
+				return array($result, $this->pluralize($result, 'Centimeter'));
 			},
 			$this->function_strings[28] => function($num){
 				$result =  $num * 1603.344;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter'));
+				return array($result, $this->pluralize($result, 'Meter'));
 			},
 			$this->function_strings[29] => function($num){
 				$result = $num * 0.028349523;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilogram'));
+				return array($result, $this->pluralize($result, 'Kilogram'));
 			},
 			$this->function_strings[30] => function($num){
 				$result = $num * 47.317647;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+				return array($result, $this->pluralize($result, 'Centiliter'));
 			},
 			$this->function_strings[31] => function($num){
 				$result = $num * 4.7317647;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+				return array($result, $this->pluralize($result, 'Deciliter'));
 			},
 			$this->function_strings[32] => function($num){
 				$result = $num * 473.17647;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[33] => function($num){
 				$result = $num * 94.635295;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+				return array($result, $this->pluralize($result, 'Centiliter'));
 			},
 			$this->function_strings[34] => function($num){
 				$result = $num * 946.35295;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[35] => function($num){
 				$result = $num * 9.4635295;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+				return array($result, $this->pluralize($result, 'Deciliter'));
 			},
 			$this->function_strings[36] => function($num){
 				$result = $num * 453.59237;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Gram'));
+				return array($result, $this->pluralize($result, 'Gram'));
 			},
 			$this->function_strings[37] => function($num){
 				$result = $num * 929.0304;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[38] => function($num){
 				$result = $num * 92903.04;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[39] => function($num){
 				$result = $num * pow(9.290304, -8);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[40] => function($num){
 				$result = $num * pow(2.5899881, 10);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[41] => function($num){
 				$result = $num * pow(2.5899881, 12);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[42] => function($num){
 				$result = $num * 2589988.1;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[43] => function($num){
 				$result = $num * 8361.2736;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[44] => function($num){
 				$result = $num * 836127.36;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[45] => function($num){
 				$result = $num * pow(8.3612736, -7);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[46] => function($num){
 				$result = $num * 645.16;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[47] => function($num){
 				$result = $num * 6.4516;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[48] => function($num){
 				$result = $num * 0.00064516;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[49] => function($num){
 				$result = $num * pow(6.4516, -10);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>2</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[50] => function($num){
 				$result = $num * 914.4;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter'));
+				return array($result, $this->pluralize($result, 'Millimeter'));
 			},
 			$this->function_strings[51] => function($num){
 				$result = $num * 91.44;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter'));
+				return array($result, $this->pluralize($result, 'Centimeter'));
 			},
 			$this->function_strings[52] => function($num){
 				$result = $num * 0.0009144;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer'));
+				return array($result, $this->pluralize($result, 'Kilometer'));
 			},
 			$this->function_strings[53] => function($num){
 				$result = $num * 0.76455486;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[54] => function($num){
 				$result = $num * pow(7.6455486, -10);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[55] => function($num){
 				$result = $num * 236.58824;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[56] => function($num){
 				$result = $num * 23.658824;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+				return array($result, $this->pluralize($result, 'Centiliter'));
 			},
 			$this->function_strings[57] => function($num){
 				$result = $num * 2.3658824;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+				return array($result, $this->pluralize($result, 'Deciliter'));
 			},
 			$this->function_strings[58] => function($num){
 				$result = $num * 0.23658824;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[59] => function($num){
 				$result = $num * 14.786765;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[60] => function($num){
 				$result = $num * 1.4786765;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+				return array($result, $this->pluralize($result, 'Centiliter'));
 			},
 			$this->function_strings[61] => function($num){
 				$result = $num * 0.14786765;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+				return array($result, $this->pluralize($result, 'Deciliter'));
 			},
 			$this->function_strings[62] => function($num){
 				$result = $num * 0.014786765;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[63] => function($num){
 				$result = $num * 4.9289216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Milliliter'));
+				return array($result, $this->pluralize($result, 'Milliliter'));
 			},
 			$this->function_strings[64] => function($num){
 				$result = $num * 0.49289216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centiliter'));
+				return array($result, $this->pluralize($result, 'Centiliter'));
 			},
 			$this->function_strings[65] => function($num){
 				$result = $num * 0.049289216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Deciliter'));
+				return array($result, $this->pluralize($result, 'Deciliter'));
 			},
 			$this->function_strings[66] => function($num){
 				$result = $num * 0.0049289216;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Liter'));
+				return array($result, $this->pluralize($result, 'Liter'));
 			},
 			$this->function_strings[67] => function($num){
 				$result = $num * 16387.064;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>3</sup>'));
 			},
 			$this->function_strings[68] => function($num){
 				$result = $num * 16.387064;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
 			$this->function_strings[69] => function($num){
 				$result = $num * pow(1.6387064, -5);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[70] => function($num){
 				$result = $num * pow(1.6387064, -14);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[71] => function($num){
 				$result = $num * 28316847;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>3</sup>'));
 			},
 			$this->function_strings[72] => function($num){
 				$result = $num * 28316.847;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
 			$this->function_strings[73] => function($nunm){
 				$result = $num * 0.028316847;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[74] => function($num){
 				$result = $num * pow(2.8316847, -11);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[75] => function($num){
 				$result = $num * pow(4.1681818, 18);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Millimeter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>3</sup>'));
 			},
 			$this->function_strings[76] => function($num){
 				$result = $num * pow(4.1681818, 15);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Centimeter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
 			$this->function_strings[77] => function($num){
 				$result = $num * pow(4.1681818, 9);
-				return array($this->prec($result, 4), $this->pluralize($result, 'Meter<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[78] => function($num){
 				$result = $num * 4.1681818;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer<sup>3</sup>'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 		);
         #}}}

@@ -40,11 +40,11 @@ class Fuel_Economy extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num * 0.42514371;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Kilometer/Liter'));
+				return array($result, $this->pluralize($result, 'Kilometer/Liter'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 2.3521458;
-				return array($this->prec($result, 4), $this->pluralize($result, 'Mile/Gal'));
+				return array($result, $this->pluralize($result, 'Mile/Gal'));
 			},
 		);
         #}}}
