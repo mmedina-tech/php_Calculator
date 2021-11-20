@@ -5,6 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
+# Last update: 2021-11-20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +21,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
-#
 #
 #
 #ARGS::  -t test -a
@@ -49,6 +49,7 @@ function all(){
 #
 # Author: $user
 # Date: $(date)
+# Last update: $(date)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -148,6 +149,7 @@ function author(){
 #
 # Author: $user
 # Date: $(date)
+# Last update: $(date)
 #
 
 require_once ("FormulaBase.php");
