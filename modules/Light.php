@@ -31,19 +31,44 @@ class Light extends FormulaBase{
 
 		#{{{ Function Titles
 		$this->function_strings = array(
+			1 => 'Foot Candles to Lumens/Meter Squared',
+			2 => 'Lumens/Meter Squared to Foot Candles'
 		);
 		#}}}
 	
         #{{{ Function List
-		$this->function_list = array();
+		$this->function_list = array(
+			$this->function_strings[1] => function($num){
+				$result = $num * 10.76391;
+				return array($result, $this->pluralize($result, 'Lumens/Meter<sup>2</sup>'));
+			},
+			$this->function_strings[2] => function($num){
+				$result = $num * 0.0929;
+				return array($result, $this->pluralize($result, 'Foot Candles'));
+			},
+		);
         #}}}
 
         #{{{ Inputs
-		$this->functionInputs = array();
+		$this->functionInputs = array(
+			$this->function_strings[1] => array(
+				'number_input' => 'Foot Candles (input): ',
+			),
+			$this->function_strings[2] => array(
+				'number_input' => 'Lumens/Meter<sup>2</sup> (input): ',
+			),
+		);
         #}}}
 
         #{{{ Formula List
-		$this->formula_list = array();
+		$this->formula_list = array(
+			$this->function_strings[1] => array(
+				'Formula:<br>' => 'Foot Candle * 10.76391'
+			),
+			$this->function_strings[2] => array(
+				'Formula:<br>' => 'Lumens/Meter<sup>2</sup> * 0.0929'
+			),
+		);
         #}}}
 
 	}
