@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:39 PM PDT
-# Last Update: 2021-11-20: 17:32
+# Last Update: 2021-11-22: 11:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +31,14 @@ class PlaneAngle extends FormulaBase{
     function __construct(){
 
 		#{{{ Function Titles
-		$this->function_strings = array();
+		$this->function_strings = array(
+			1 => 'Degrees to Radians',
+			2 => 'Minutes to Degrees',
+			3 => 'Quadrants to Degrees',
+			4 => 'Quadrants to Radians',
+			5 => 'Radians to Degrees',
+			6 => 'Minutes to Radians',
+		);
 		#}}}
 	
         #{{{ Function List
@@ -39,11 +46,49 @@ class PlaneAngle extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-		$this->functionInputs = array();
+		$this->functionInputs = array(
+			$this->function_strings[1] => array(
+				'number_input' => 'Degrees (input): ',
+			),
+			$this->function_strings[2] => array(
+				'number_input' => 'Minutes (input): ',
+			),
+			$this->function_strings[3] => array(
+				'number_input' => 'Quadrants (input): ',
+			),
+			$this->function_strings[4] => array(
+				'number_input' => 'Quadrants (input): ',
+			),
+			$this->function_strings[5] => array(
+				'number_input' => 'Radians (input): ',
+			),
+			$this->function_strings[6] => array(
+				'number_input' => 'Minutes (input): ',
+			),
+		);
         #}}}
 
         #{{{ Formula List
-		$this->formula_list = array();
+		$this->formula_list = array(
+			$this->function_strings[1] => array(
+				'Formula:<br>' => 'Degree * 0.017453293'
+			),
+			$this->function_strings[2] => array(
+				'Formula:<br>' => 'Minute * 0.16666667'
+			),
+			$this->function_strings[3] => array(
+				'Formula:<br>' => 'Quadrant * 90'
+			),
+			$this->function_strings[4] => array(
+				'Formula:<br>' => 'Quadrant * 1.5707963'
+			),
+			$this->function_strings[5] => array(
+				'Formula:<br>' => 'Radian * 57.29578'
+			),
+			$this->function_strings[6] => array(
+				'Formula:<br>' => 'Minute * 0.00029088821'
+			),
+		);
         #}}}
 
 	}
