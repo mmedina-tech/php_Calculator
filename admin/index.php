@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 10 Sep 2021 09:00:45 PM PDT
-# Last Update: 2021-11-20: 17:25
+# Last Update: 2021-11-22: 18:50
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -54,17 +54,18 @@
 		<div>
 			<br>
 			<form action="/php_Calculator/DB/DB_install.php" method="post">
+				<h2>The following fields are for setting the config file for the proper connections moving forward.</h2>
+				<label>Connection:</label>
+				<input type='text' name='conn' value='' />
+				<br>
+				<label>Database Name:</label>
+				<input type='text' name='dbname' value='Massive_Calculator' />
+				<br>
 				<label>Username:</label>
 				<input type="text" name="user" value="" />
 				<br>
 				<label>Password:</label>
 				<input type="password" name="passwd" value="" />
-				<br>
-				<label>Web Root:</label>
-				<input type="text" name="webroot" value="" />
-				<br>
-				<label>Cgi Root:</label>
-				<input type='text' name='cgiroot' value='' />
 				<br>
 				<label>Full Calculator Web Path:</label>
 				<input type="text" name="calcpath" value="" />

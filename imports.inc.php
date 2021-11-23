@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-11-20: 17:23
+# Last Update: 2021-11-22: 20:15
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@
 #
 #
 #
+include_once("./DB/calcualtor.config.php");
 require_once("modules/Acceleration.php");
 require_once("modules/Accounting.php");
 require_once('modules/Area.php');
@@ -36,6 +37,7 @@ require_once('modules/GED_Practice.php');
 require_once('modules/Imperial_to_Imperial.php');
 require_once('modules/Imperial_to_Metric.php');
 
+$CALCPATH = basename($CALCPATH);
 
 $accel = new Acceleration();
 $account = new Accounting();
@@ -134,6 +136,3 @@ function cateSelect($sel, $myAttrs=array(), $selected=null){
 	$select .= "</select>\n";
 	return $select;
 }
-
-$CALCPATH = basename("/var/www/html/php_Calculator");
-

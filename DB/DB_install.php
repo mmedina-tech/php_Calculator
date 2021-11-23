@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Thu 09 Sep 2021 08:11:27 PM PDT
-# Last Update: 2021-11-20: 17:27
+# Last Update: 2021-11-22: 20:43
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,10 +24,46 @@
 #
 #
 #
+
 $page = file_get_contents('../admin/index.php');
 
-function pdo_conn($hostname, $user, $passwd, $page, $dbname){
-	$conn = new mysqli($hostname, $_POST['user'], $_POST['passwd']);
+function pdo_conn(){
+	global $page;
+	if ( !file_exists("./calculator.config.php") ) {
+		$config = fopen('./calculator.config.php', 'a+');
+		$param = "<?php\n";
+		$param .= "\$CONNECTION = '{$_POST['conn']}';\n"; 
+		$param .= "\$CALCPATH = '{$_POST['calcpath']}';\n";
+		$param .= "\$USER = '{$_POST['user']}';\n";
+		$param .= "\$PASSWD = '{$_POST['passwd']}';\n";
+		$param .= "\$DBNAME = '{$_POST['dbname']}';\n";
+
+		fwrite($config, $param);
+		fclose($config);
+	}
+	
+	
+	include_once('./calculator.config.php');
+	$CALCPATH = basename($CALCPATH);
+
+	if ( ! file_exists("$CALCPATH/Logs") ){
+		mkdir("$CALCPATH/Logs");
+		chdir("$CALCPATH/Logs");
+		$logs_dir = "<pre>Log: Logs Directory Created</pre>";
+	} else {
+		$logs_dir = "<pre>Log: Logs Directory Already Exists</pre>";
+	}
+
+	if ( ! file_exists("$CAlCPATH/Logs/Calculator.log") ) {
+		chdir("$CALCPATH/Logs");
+		touch("Calculator.log");
+		$logs = "<pre>Log: Calculator.log created</pre>";
+	} else {
+		$logs = "<pre>Log: Calculator.log already Exists</pre>";
+	}
+	$page = str_replace("{LOGS}", $logs_dir, $page);
+	$page = str_replace("{LOGS2}", $logs, $page);
+	$conn = new mysqli($CONNECTION, $USER, $PASSWD);
 	if ($conn->connect_error){
 		$error = "Connection Failed: ".$conn->connect_error;
 		$page = str_replace("{ERROR}", $error, $page);
@@ -36,15 +72,15 @@ function pdo_conn($hostname, $user, $passwd, $page, $dbname){
 		exit();
 	}
 
-	$sql = "CREATE DATABASE if not exists `$dbname`";
+	$sql = "CREATE DATABASE if not exists `$DBNAME`";
 	if ($conn->query($sql)){
-		$database = "<pre>Database Created: $dbname</pre>";
+		$database = "<pre>Database Created: $DBNAME</pre>";
 	} else {
-		$database = "<pre>Datebase Created: $dbname Already Exists</pre>";
+		$database = "<pre>Datebase Created: $DBNAME Already Exists</pre>";
 	}
 	$conn->close();
 	try{
-		$db = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $user, $passwd);
+		$db = new PDO('mysql:host='.$CONNECTION.';dbname='.$DBNAME, $USER, $PASSWD);
 	}catch (PDOException $e){
 		$error = "<p>Couldn't connect to the database: ".$e->getMessage()."</p>";
 		$page .= str_replace("{ERROR}", $error, $page);
@@ -101,22 +137,7 @@ function pdo_conn($hostname, $user, $passwd, $page, $dbname){
 		} else {
 			$table3 = "<pre>Table: Calculator_Log Already Exists</pre>";
 		}
-		if ( ! file_exists("../Logs") ){
-			mkdir("../Logs");
-			chdir("../Logs");
-			$logs_dir = "<pre>Log: Logs Directory Created</pre>";
-		} else {
-			$logs_dir = "<pre>Log: Logs Directory Already Exists</pre>";
-		}
 
-		if ( ! file_exists("../Logs/Calculator.log") ) {
-			touch("Calculator.log");
-			$logs = "<pre>Log: Calculator.log created</pre>";
-		} else {
-			$logs = "<pre>Log: Calculator.log already Exists</pre>";
-		}
-
-		
 
 	}catch (PDOException $e){
 		print $e;
@@ -127,17 +148,13 @@ function pdo_conn($hostname, $user, $passwd, $page, $dbname){
 	$page = str_replace("{TABLE}", $table1, $page);
 	$page = str_replace("{TABLE1}", $table2, $page);
 	$page = str_replace("{TABLE2}", $table3, $page);
-	$page = str_replace("{LOGS}", $logs_dir, $page);
-	$page = str_replace("{LOGS2}", $logs, $page);
 	$page = str_replace("<div hidden>", "<div>", $page);
 	$page = str_replace("{START}", "<br><br><button id='tabitem'><a href='/php_Calculator/calculator_front.html'>Start Calculator</a></button>", $page);
 	return $page;
 }
 
 
-$hostname = "localhost";
-$dbname   = "Massive_Calculator";
 
-$page = pdo_conn($hostname, $_POST['user'], $_POST['passwd'], $page, $dbname);
-print $page;
+$page = pdo_conn();
+echo $page;
 

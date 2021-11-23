@@ -1,0 +1,47 @@
+/* SYNOPSIS: index page
+
+ index.css
+
+ Author: Marcus Medina
+ Date: Mon 22 Nov 2021 08:45:36 PM PST
+ Last Update: 2021-11-22: 20:46
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or 
+ (at your option) any later version.
+
+ This Program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+ GNU General Public License for more details.
+
+ You Should have recieved a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+
+*/
+
+#links{
+	background-color: lightblue;
+	border: 1px solid black;
+	border-radius: 5px;
+	min-width: 20px;
+	font-size: 24px;
+}
+a{
+	color: black;
+	font-size: 48px;
+}
+#mainBody{
+	font-size: 14px;
+	font-weight: bold;
+	background-color: lightblue;
+	width: 75%;
+	padding: 20px;
+	margin: auto;
+}
+body{
+	background-image: url('/php_Calculator/images/yellow_ruler_2.jpg');
+}

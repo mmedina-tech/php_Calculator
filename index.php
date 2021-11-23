@@ -5,7 +5,7 @@
 	index.php
 
 	Date: copyright 2020
-	Last Update: 2021-11-20: 17:24
+	Last Update: 2021-11-22: 20:50
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -30,35 +30,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name='description' content=''>
 		<link rel='icon' href="/php_Calculator/images/massive.png" type='image/x-icon'>
+		<link rel="stylesheet" href="/php_Calculator/css/index.css" type="text/css" media="" title="" charset="" />
         <title>Instructions</title>
-        <style>
-#links{
-	background-color: lightblue;
-	border: 1px solid black;
-	border-radius: 5px;
-	min-width: 20px;
-	font-size: 24px;
-}
-a{
-	color: black;
-	font-size: 48px;
-}
-#mainBody{
-	font-size: 14px;
-	font-weight: bold;
-	background-color: lightblue;
-	width: 75%;
-	padding: 20px;
-	margin: auto;
-}
-body{
-	background-image: url('images/yellow_ruler_2.jpg');
-}
-        </style>
     </head>
     <body>
 		<div id='links'>
-			<center><a href='calculator_front.html'>The Massive Calculator</a></center>
+		<center><a href='/php_Calculator/calculator_front.php'>The Massive Calculator</a></center>
 			<center><p>&#8593;</p></center>
 			<center><p>Click to get started</p></center>
 		</div>
