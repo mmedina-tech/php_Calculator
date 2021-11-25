@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2021-11-20: 17:30
+# Last Update: 2021-11-25: 14:59
 
 class FormulaBase{
 	function __construct($name=null){
@@ -100,8 +100,8 @@ class FormulaBase{
         'Rectangle Area' => 'Rectangle Area',
         'Parallelogram Area' => 'Parallelogram Area',
         'Trapezoid Area' => 'Trapezoid Area',
-        'Miles/hr' => 'Miles/hr',
-        'Kilometers/hr' => 'Kilometers/hr',
+        'Miles/Hr' => 'Miles/Hr',
+        'Kilometers/Hr' => 'Kilometers/Hr',
         'Meters/Sec' => 'Meters/Sec',
         'Feet/Sec' => 'Feet/Sec',
         'Are' => 'Ares',
