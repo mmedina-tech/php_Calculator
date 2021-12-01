@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-11-22: 20:15
+# Last Update: 2021-12-01: 11:20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 #
 #
 #
-include_once("./DB/calcualtor.config.php");
+include_once("DB/calculator.config.php");
 require_once("modules/Acceleration.php");
 require_once("modules/Accounting.php");
 require_once('modules/Area.php');

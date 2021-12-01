@@ -24,24 +24,18 @@
 #
 #
 
-require_once("pass_fail.php");
-require_once("../../imports.inc.php");
+#require_once("pass_fail.php");
+require_once("imports.inc.php");
 
 function test_Acceleration(){
 	global $accel;
-	$pass = array();
-	$iterator = new ArrayObject($accel->function_list);
-	foreach( $iterator as $key => $value )
-	{
-		$formula = $iterator->offsetGet($key);
-		$formula = $formula(234);
-		$outscreen = "{$formula[0]} {$formula[1]}";
-		if ($outscreen !==  "7.13 Meters/Sec<sup>2</sup>"){
-			print "$key: Fail\n";
-		} else {
-			print "$key: Pass\n";
-		}
-		
+	if (assert($accel->function_list[$accel->function_strings[1]](234), "7.13 Meters/Sec<sup>2</sup>")){
+		echo "Passed";
+	} else {
+		echo "Failed";
+	}
+		;
+	exit();
 		if($outscreen !== "5.94 Meters/Sec<sup>2</sup>"){
 			print "$key: Fail\n";
 		} else {
