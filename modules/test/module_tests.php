@@ -5,6 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 09:31:45 PM PDT
+# Last Update: 2021-12-02: 17:06
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,86 +25,43 @@
 #
 #
 
-#require_once("pass_fail.php");
+require_once("pass_fail.php");
 require_once("imports.inc.php");
 
 function test_Acceleration(){
 	global $accel;
-	if (assert($accel->function_list[$accel->function_strings[1]](234), "7.13 Meters/Sec<sup>2</sup>")){
-		echo "Passed";
+	$class_name = get_class($accel);
+	if (assert($accel->function_list[$accel->function_strings[1]](234), array("7.13", "Meters/Sec<sup>2</sup>"))){
+		echo strval($accel->function_strings[1]).": Pass\n";
 	} else {
-		echo "Failed";
+		echo strval($accel->function_strings[1]).": Fail\n";
 	}
-		;
-	exit();
-		if($outscreen !== "5.94 Meters/Sec<sup>2</sup>"){
-			print "$key: Fail\n";
-		} else {
-			print "$key: Pass\n";
-		}
-		
-		if ( $outscreen !== "767.75 Feet/Sec<sup>2</sup>" ) {
-			print "$key: Fail\n";
-		} else {
-			print "$key: Pass\n";
-		}
-		
-		if ( $outscreen !== "9212.58 Inches/Sec<sup>2</sup>" ) {
-			print "$key: Fail\n";
-		} else{
-			print "$key: Pass\n";
-		}
-		
+
+	if(assert($accel->function_list[$accel->function_strings[2]](234), array("5.94", "Meters/Sec<sup>2</sup>"))){
+		print strval($accel->function_strings[2]).": Pass\n";
+	} else {
+		print strval($accel->function_strings[2]).": Fail\n";
 	}
 	
+	if (assert($accel->function_list[$accel->function_strings[3]](234), array("767.75", "Feet/Sec<sup>2</sup>")) ) {
+		print strval($accel->function_strings[3]).": Pass\n";
+	} else {
+		print strval($accel->function_strings[3]).": Fail\n";
+	}
+	
+	if (assert($accel->function_list[$accel->function_strings[4]](234), array("9212.58", "Inches/Sec<sup>2</sup>")) ) {
+		print strval($accel->function_strings[4]).": Pass\n";
+	} else{
+		print strval($accel->function_strings[4]).": Fail\n";
+	}
 }
 function test_Accounting(){
 	global $account;
-	$iterator = new ArrayObject($account->function_list);
-	foreach( $iterator as $key => $value )
-	{
-		$formula = $iterator->offsetGet($key);
-		if ( count($account->functionInputs[$key]) === 2 ) {
-			$formula = $formula(234, 234);
-			$outscreen = "{$formula[0]} {$formula[1]}";
-			if ( $key === "The Equity Ratio" ) {
-				print assert($outscreen, "1% Equity");
-			}
-			
-		} elseif ( count($account->functionInputs[$key]) === 3 ) {
-			$formula = $formula(234, 234, 234);
-			$outscreen = "{$formula[0]} {$formula[1]}";
-			if ( $key === "Trend Percentage" ) {
-				print assert($outscren, "1% Trend Percentage");
-			}
-		} elseif ( count($account->functionInputs[$key]) === 4 ){
-			$formula = $formula(234, 234, 234, 234);
-			$outscreen = "{$formula[0]} {$formula[1]}";
-			if ( $key ){
-				print assert($outscreen, "");
-			}
-			
-		}
-		
-		
-		
-		/*
-		$formula = $formula(234, 234);
-		$outscreen = "{$formula[0]} {$formula[1]}";
-		if ( !$outscreen === "" ){
-			print "Trend Percentage: Fail\n";
-		}
-		$formula = $formula(234, 234);
-		$outscreen = "{$formula[0]} {$formula[1]}";
-		if ( !$outscreen === "" ){
-			print "Current Ratio: Fail\n";
-		}
-		$formula = $formula(234, 234);
-		$outscreen = "{$formula[0]} {$formula[1]}";
-		if ( !$outscreen === "" ){
-		}
-		 */
+	if ( assert($account->function_list[$account->function_strings[1]](234, 234), array("1%", "Equity"))){
+		echo strval($account->function_strings[1]).": Pass\n";
+	} else {
+		echo strval($account->function_strings[1]).": Fail\n";
 	}
 }
-test_Acceleration();
-#pass_fail(test_Accounting(), $account);
+pass_fail($accel, test_Acceleration());
+pass_fail($account, test_Accounting());
