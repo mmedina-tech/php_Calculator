@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 09:31:45 PM PDT
-# Last Update: 2021-12-02: 17:06
+# Last Update: 2021-12-03: 13:26
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,11 +27,12 @@
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+assert_options(ASSERT_ACTIVE, true);
+assert_options(ASSERT_WARNING, true);
 
 function test_Acceleration(){
 	global $accel;
-	$class_name = get_class($accel);
-	if (assert($accel->function_list[$accel->function_strings[1]](234), array("7.13", "Meters/Sec<sup>2</sup>"))){
+	if ( assert($accel->function_list[$accel->function_strings[1]](234) === array("7.13", "Meters/Sec<sup>2</sup>"))){
 		echo strval($accel->function_strings[1]).": Pass\n";
 	} else {
 		echo strval($accel->function_strings[1]).": Fail\n";
@@ -62,6 +63,15 @@ function test_Accounting(){
 	} else {
 		echo strval($account->function_strings[1]).": Fail\n";
 	}
+	if ( assert($account->function_list[$account->function_strings[2]](234, 234), array("$101.00", "Company Valuations")) ){
+		echo strval($account->function_strings[2]).": Pass\n";
+	}else{
+		echo strval($account->function_strings[2]).": Fail\n";
+	}
+	
 }
+
+
+
 pass_fail($accel, test_Acceleration());
 pass_fail($account, test_Accounting());
