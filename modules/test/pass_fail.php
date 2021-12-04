@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 08:53:57 PM PDT
-# Last Update: 2021-12-02: 17:04
+# Last Update: 2021-12-03: 22:55
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +26,13 @@
 #
 
 
+function set_pass($funct){
+	echo "Pass : ".strval($funct)."\n";
+}
+function set_fail($funct){
+	echo "Fail : ".strval($funct)."\n";
+}
+
 function pass_fail($main, $funct){
 	$fail_list = array();
 	$single_input = array();
@@ -36,9 +43,9 @@ function pass_fail($main, $funct){
 	$fourteen_input = array();
 
 	if ( $funct === null ) {
-		echo get_class($main).": Pass\n";
+		echo "Pass : ".get_class($main)."\n";
 	} else {
-		echo get_class($main).": Fail\n";
+		echo "Fail : ".get_class($main)."\n";
 	}
 
 	foreach( $main->function_list as $key => $value ) {
@@ -52,7 +59,7 @@ function pass_fail($main, $funct){
 			$four_input[] = $key;
 		} elseif ( count($main->functionInputs[$key]) === 5 and $main->formula_list[$key] ) {
 			$five_input[] = $key;
-		} elseif ( count($main->functionInputs[$key]) === 14 and $main->function_list[$key] ) {
+		} elseif ( count($main->functionInputs[$key]) === 14 and $main->formula_list[$key] ) {
 			$fourteen_input[] = $key;
 		} else {
 			$fail_list[] = $key;
@@ -66,7 +73,7 @@ function pass_fail($main, $funct){
 	Show Formula: ".strval($main->formula_list[$key])."\n";
 		}
 	} else {
-		print "All Formulas: Pass\n\n";
+		print "Pass : All Formula Inputs\n\n";
 	}
 }
 

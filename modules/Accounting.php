@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Mon 11 Oct 2021 08:15:45 PM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-03: 22:31
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -85,7 +85,7 @@ class Accounting extends FormulaBase{
 			},
 			$this->function_strings[8] => function ($num=NULL, $num2=NULL){
 				$result = $num / $num2;
-				return array($this->prec($result, 2), $this->pluralize($result, "Receivable Turn-Over"));
+				return array($this->prec($result, 2), $this->pluralize($result, $this->function_strings[8]));
 			},
 			$this->function_strings[9] => function ($num=NULL, $num2=NULL){
 				$result = 365 / ($num / $num2);
