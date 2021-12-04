@@ -5,6 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 08:53:57 PM PDT
+# Last Update: 2021-12-02: 17:04
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +26,7 @@
 #
 
 
-function pass_fail($funct, $main){
+function pass_fail($main, $funct){
 	$fail_list = array();
 	$single_input = array();
 	$two_input = array();
@@ -35,9 +36,9 @@ function pass_fail($funct, $main){
 	$fourteen_input = array();
 
 	if ( $funct === null ) {
-		print get_class($main).": Pass\n";
+		echo get_class($main).": Pass\n";
 	} else {
-		print get_class($main).": Fail\n";
+		echo get_class($main).": Fail\n";
 	}
 
 	foreach( $main->function_list as $key => $value ) {
@@ -58,14 +59,14 @@ function pass_fail($funct, $main){
 		}
 	}
 	if (count($fail_list) !== 0){
-		print "\nFail (".strval(count($fail_list))."): \n";
+		echo "\nFail (".strval(count($fail_list))."): \n";
 		foreach( $fail_list as $key => $value ) {
-			print $key."
+			echo $key."
 	Inputs: ".strval(count($main->functionInputs[$key]))."
 	Show Formula: ".strval($main->formula_list[$key])."\n";
 		}
 	} else {
-		print "All Formulas: Pass\n";
+		print "All Formulas: Pass\n\n";
 	}
 }
 

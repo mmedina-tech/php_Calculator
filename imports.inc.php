@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-11-22: 20:15
+# Last Update: 2021-12-02: 11:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 #
 #
 #
-include_once("./DB/calcualtor.config.php");
+include_once("DB/calculator.config.php");
 require_once("modules/Acceleration.php");
 require_once("modules/Accounting.php");
 require_once('modules/Area.php');
@@ -66,20 +66,21 @@ $cats = array(
 
 );
 
-$number = $_POST['number_input'];
-$number2 = $_POST['number_input2'];
-$number3 = $_POST['number_input3'];
-$number4 = $_POST['number_input4'];
-$number5 = $_POST['number_input5'];
-$number6 = $_POST['number_input6'];
-$number7 = $_POST['number_input7'];
-$number8 = $_POST['number_input8'];
-$number9 = $_POST['number_input9'];
-$number10 = $_POST['number_input10'];
-$number11 = $_POST['number_input11'];
-$number12 = $_POST['number_input12'];
-$number13 = $_POST['number_input13'];
-$number14 = $_POST['number_input14'];
+$number = $_POST['number_input'] ?? null;
+$number2 = $_POST['number_input2'] ?? null;
+$number3 = $_POST['number_input3'] ?? null;
+$number4 = $_POST['number_input4'] ?? null;
+$number5 = $_POST['number_input5'] ?? null;
+$number6 = $_POST['number_input6'] ?? null;
+$number7 = $_POST['number_input7'] ?? null;
+$number8 = $_POST['number_input8'] ?? null;
+$number9 = $_POST['number_input9'] ?? null;
+$number10 = $_POST['number_input10'] ?? null;
+$number11 = $_POST['number_input11'] ?? null;
+$number12 = $_POST['number_input12'] ?? null;
+$number13 = $_POST['number_input13'] ?? null;
+$number14 = $_POST['number_input14'] ?? null;
+
 $attribs = array(
 	'id' => 'Formula',
 	'name' => 'Formula',
