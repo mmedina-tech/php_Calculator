@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 09:31:45 PM PDT
-# Last Update: 2021-12-03: 22:58
+# Last Update: 2021-12-05: 16:20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -32,50 +32,29 @@ require_once("imports.inc.php");
 function test_Acceleration(){
 	#{{{
 	global $accel;
-	if ( $accel->function_list[$accel->function_strings[1]](234) === array(7.13232, "Meters/Sec<sup>2</sup>")){
-		set_pass($accel->function_strings[1]);
-	} else {
+	if ( $accel->function_list[$accel->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
 		set_fail($accel->function_strings[1]);
-	}
-
-	if($accel->function_list[$accel->function_strings[2]](234) === array(5.9436, "Meters/Sec<sup>2</sup>")){
-		set_pass($accel->function_strings[2]);
 	} else {
+		set_pass($accel->function_strings[1]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
 		set_fail($accel->function_strings[2]);
-	}
-	
-	if ($accel->function_list[$accel->function_strings[3]](234) === array(767.754, "Feet/Sec<sup>2</sup>") ) {
-		set_pass($accel->function_strings[3]);
 	} else {
+		set_pass($accel->function_strings[2]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
 		set_fail($accel->function_strings[3]);
+	} else {
+		set_pass($accel->function_strings[3]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
+		set_fail($accel->function_strings[4]);
+	} else {
+		set_pass($accel->function_strings[4]);	
 	}
 	
-	if ($accel->function_list[$accel->function_strings[4]](234) === array(9212.58, "Inches/Sec<sup>2</sup>") ) {
-		set_pass($accel->function_strings[4]);
-	} else{
-		set_fail($accel->function_strings[4]);
-	}
 	#}}}
 }
 
 
-function test_Astro(){
-	global $astro;
-	$list = new ArrayObject($astro->function_list);
-	$test = $list->offsetGet($astro->function_strings[2]);
-	$inputs = strval(count($astro->functionInputs[$astro->function_strings[2]]));
-	$test = var_dump($test(234));
-	echo $test;
-	if ( $astro->function_list[$astro->function_strings[1]](234) === array(504, "Kelvin")){
-		set_pass($astro->function_strings[1]);
-	} 
-	if ( $astro->function_list[$astro->function_strings[2]](234) === array(382.222222222, "Kelvin")){
-		set_pass($astro->function_strings[2]);
-	}
-	
-}
-
-
-
-#pass_fail($accel, test_Acceleration());
-pass_fail($astro, test_Astro());
+pass_fail($accel, test_Acceleration());

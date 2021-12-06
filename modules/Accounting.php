@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Mon 11 Oct 2021 08:15:45 PM PDT
-# Last Update: 2021-12-03: 22:31
+# Last Update: 2021-12-05: 15:44
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@ include_once("FormulaBase.php");
 
 class Accounting extends FormulaBase{
     function __construct(){
+		setlocale(LC_MONETARY, 'en_US');
 
 		#{{{ Function Titles
 		$this->function_strings = array(
@@ -97,15 +98,16 @@ class Accounting extends FormulaBase{
 			},
 			$this->function_strings[11] => function ($num=NULL, $num2=NULL){
 				$result = $num / $num2;
-				return array(money_format("$", $result), $this->pluralize($result, "Total Assets Turn-Over"));
+				$result = money_format("$%i", $result);
+				return array($result, $this->pluralize($result, "Total Assets Turn-Over"));
 			},
 			$this->function_strings[12] => function ($num=NULL, $num2=NULL){
 				$result = $num / $num2;
-				return array(money_format("$", $result), $this->pluralize($result, "Earnings Per Share"));
+				return array(money_format("$%i", $result), $this->pluralize($result, "Earnings Per Share"));
 			},
 			$this->function_strings[13] => function($num=NULL, $num2=NULL){
 				$result = $num / $num2;
-				return array(money_format("$", $result), $this->pluralize($result, "Dividend Yield"));
+				return array(money_format("$%i", $result), $this->pluralize($result, "Dividend Yield"));
 			},
 			$this->function_strings[14] => function($num=NULL, $num2=NULL){
 				$result = $num / $num2;
@@ -121,7 +123,7 @@ class Accounting extends FormulaBase{
 			},
 			$this->function_strings[17] => function($num=NULL, $num2=NULL){
 				$result = $num / ($num2 * (10**-2));
-				return array(money_format("$", $result), $this->pluralize($result, "Company Valuation"));
+				return array(money_format("$%i", $result), $this->pluralize($result, "Company Valuation"));
 			},
 			$this->function_strings[18] => function($num=NULL, $num2=NULL){
 				$result = $num / $num2;

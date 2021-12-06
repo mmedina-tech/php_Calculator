@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 08:53:57 PM PDT
-# Last Update: 2021-12-03: 22:55
+# Last Update: 2021-12-05: 16:30
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ function pass_fail($main, $funct){
 	$fourteen_input = array();
 
 	if ( $funct === null ) {
-		echo "Pass : ".get_class($main)."\n";
+		echo "\nPass : ".get_class($main)."\n";
 	} else {
 		echo "Fail : ".get_class($main)."\n";
 	}

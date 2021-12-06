@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:42:14 PM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-05: 16:23
 #
 #{{{ Legal Section
 # This program is free software; you can redistribute it and/or modify
@@ -52,12 +52,12 @@ class Astronomic_Units extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Kelvin'));
 			},
 			$this->function_strings[2] => function($num){
-				$result = (($num - 32) * 5/9) + 270 ;
-				return array($result, $this->pluralize($result, 'Kelvin'));
+				$result = (($num - 32) * 5/9) + 270;
+				return array($result, $this->pluralize($result, "Kelvin"));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 63239.726;
-				return array($result, $this->pluralize($result, 'Astronomic Units'));
+				return array($result, $this->pluralize($result, 'Astronomic Unit'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 0.000015812845;

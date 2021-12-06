@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 05 Nov 2021 08:08:27 AM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-05: 18:31
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -99,35 +99,43 @@ class Area extends FormulaBase{
 		$this->function_list = array(
 			$this->function_strings[1] => function($num){
 				$result = $num * 0.4047;
+				$result = floatval($result);
 				return array($result, $this->pluralize($result, 'Hectare'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 2.471;
+				$result = floatval($result);
 				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 0.006944444;
+				$result = floatval($result);
 				return array($result, $this->pluralize($result, 'Square Foot'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 0.11111111;
+				$result = floatval($result);
 				return array($result, $this->pluralize($result, 'Square Yard'));
 			},
 			$this->function_strings[5] => function($num){
 				$result = $num * 0.003673095;
+				$result = floatval($result);
 				return array($result, $this->pluralize($result, 'Square Rod'));
 			},
 			$this->function_strings[6] => function($num){
 				$result = $num * 0.00625;
+				$result = floatval($result);
 				return array($result, $this->pluralize($result, 'Acre'));
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 0.0015625;
-				return array($result, $this->pluralize($result, 'Square Mile'));
+				$result = floatval($result);
+				return array($result, $this->pluralize($result, "Square Mile"));
 			},
 			$this->function_strings[8] => function($num){
-				$result = $num / 27878400;
-				return array($result, $this->pluralize($result, 'Square Mile'));
+				$result = $num * 3.5870064e-08;
+				$result = floatval($result);
+				return array($result, $this->pluralize($result, "Square Mile"));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num / 43560;

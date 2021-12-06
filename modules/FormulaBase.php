@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2021-12-03: 22:33
+# Last Update: 2021-12-05: 17:15
 
 class FormulaBase{
 	function __construct($name=null){
@@ -128,15 +128,15 @@ class FormulaBase{
         "Pyramid Volume" => "Pyramid Volume",
         "Pounds per Square Foot" => "Pounds per Square Foot",
         "Inductive Reactance Rating" => "Inductive Reactance Rating",
+		"Company Valuation" => "Company Valuation",
 		#}}}
 		);
 
 		if ( $a > 1 ) {
-			if ( $oddplur[$b] ) {
+			if ( array_key_exists($b, $oddplur) ) {
 				return $oddplur[$b];
-			} elseif ( $b == "" ) {
+			} else if ( $b === "" ) {
 				return $b;
-
 			} else {
 				return $b."s";
 			}
