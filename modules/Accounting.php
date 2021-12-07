@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Mon 11 Oct 2021 08:15:45 PM PDT
-# Last Update: 2021-12-05: 15:44
+# Last Update: 2021-12-06: 11:43
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -271,8 +271,9 @@ class Accounting extends FormulaBase{
 				'' => "Company Worth / Amount Put In"
 			),
 		);
-        #}}}
 	}
+	#}}}
+	
 	#{{{ Functions
 	function equity($num=NULL, $num2=NULL){
 		$result = $num / $num2;

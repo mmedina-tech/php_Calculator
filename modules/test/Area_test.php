@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 04:24:28 PM PST
-# Last Update: 2021-12-05: 18:37
+# Last Update: 2021-12-06: 11:42
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ function test_Area(){
 		set_pass($area->function_strings[7]);
 	}
 	$number = 8.393594976E-6;
-	if ( $area->function_list[$area->function_strings[8]](234) !== array($number, "Square Mile")){
+	if ( $area->function_list[$area->function_strings[8]](234) !== array("", "Square Mile")){
 		set_fail($area->function_strings[8]);
 	} else {
 		set_pass($area->function_strings[8]);
