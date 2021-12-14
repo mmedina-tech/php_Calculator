@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2021-12-05: 17:15
+# Last Update: 2021-12-13: 14:54
 
 class FormulaBase{
 	function __construct($name=null){
@@ -147,6 +147,9 @@ class FormulaBase{
 	function prec ($result, $precise=1){
 		$result = round($result, $precise);
 		return $result;
+	}
+	function money($result){
+		return money_format("$%i", $result);
 	}
 	function for_loop($fname){
 		$mystr = "";

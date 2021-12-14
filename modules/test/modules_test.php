@@ -1,11 +1,11 @@
 <?php
-# SYNOPSIS: Test for Area Module
+# SYNOPSIS: Main Test Harness for Modules
 # 
-# Area_test.php
+# module_tests.php
 #
 # Author: Marcus Medina
-# Date: Sun 05 Dec 2021 04:24:28 PM PST
-# Last Update: 2021-12-13: 15:54
+# Date: Tue 12 Oct 2021 09:31:45 PM PDT
+# Last Update: 2021-12-13: 16:18
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,18 +14,48 @@
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
 # GNU General Public License for more details.
 #
-# You Should have received a copy of the GNU General Public License
+# You Should have recieved a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 #
 #
 #
-require_once("imports.inc.php");
+
 require_once("pass_fail.php");
+require_once("imports.inc.php");
+
+
+function test_Acceleration(){
+	#{{{
+	global $accel;
+	echo "\nAccleration
+----------------------------\n";
+	if ( $accel->function_list[$accel->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
+		set_fail($accel->function_strings[1]);
+	} else {
+		set_pass($accel->function_strings[1]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
+		set_fail($accel->function_strings[2]);
+	} else {
+		set_pass($accel->function_strings[2]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
+		set_fail($accel->function_strings[3]);
+	} else {
+		set_pass($accel->function_strings[3]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
+		set_fail($accel->function_strings[4]);
+	} else {
+		set_pass($accel->function_strings[4]);	
+	}
+	#}}}
+}
 
 function test_Area(){
 	#{{{
@@ -332,18 +362,192 @@ function test_Area(){
 	} else {
 		set_pass($area->function_strings[60]);
 	}
-	/*
-	$list = new ArrayObject($area->function_list);
-	$test = $list->offsetGet($area->function_strings[61]);
-	$inputs = strval(count($area->functionInputs[$area->function_strings[61]]));
-	$title = strval($area->function_strings[61]);
-	echo "\nTitle: $title\n";
-	echo "Inputs: $inputs\n";
-	$test = var_dump($test(234));
-	echo $test;
-	 */
-
 	#}}}
 }
 
+function test_Accounting(){
+	#{{{
+	global $account;
+	echo "\nAccounting
+-----------------------\n";
+	if ( $account->function_list[$account->function_strings[1]](234, 234) !== array("1%", "Equity")){
+		set_fail($account->function_strings[1]);
+	} else {
+		set_pass($account->function_strings[1]);
+	}
+	if ( $account->function_list[$account->function_strings[2]](234, 234) !== array("1%", "Trend Percentage") ){
+		set_fail($account->function_strings[2]);
+	} else {
+		set_pass($account->function_strings[2]);
+	}
+	if ( $account->function_list[$account->function_strings[3]](234, 234) !== array("1%", "Current Ratio") ){
+		set_fail($account->function_strings[3]);
+	} else {
+		set_pass($account->function_strings[3]);
+	}
+	if ( $account->function_list[$account->function_strings[4]](234, 234) !== array("1%", "Gross Margin Percentage") ){
+		set_fail($account->function_strings[4]);
+	} else {
+		set_pass($account->function_strings[4]);
+	}
+	if ( $account->function_list[$account->function_strings[5]](234, 234) !== array("1 : 1", "Gross Margin Ratio") ){
+		set_fail($account->function_strings[5]);
+	} else {
+		set_pass($account->function_strings[5]);
+	}
+	if ( $account->function_list[$account->function_strings[6]](234, 234) !== array("1 : 1", "Turn-Over Ratio") ){
+		set_fail($account->function_strings[6]);
+	} else {
+		set_pass($account->function_strings[6]);
+	}
+	if ( $account->function_list[$account->function_strings[7]](234, 234, 234, 234, 234) !== array("4 : 1", "Quick Ratio")){
+		set_fail($account->function_strings[7]);
+	} else {
+		set_pass($account->function_strings[7]);
+	}
+	if ( $account->function_list[$account->function_strings[8]](234, 234) !== array(1.0, "Accounts Receivable Turn-Over") ){
+		set_fail($account->function_strings[8]);
+	} else {
+		set_pass($account->function_strings[8]);
+	}
+	if ( $account->function_list[$account->function_strings[9]](234, 234) !== array(365.0, "Days")){
+		set_fail($account->function_strings[9]);
+	} else {
+		set_pass($account->function_strings[9]);
+	}
+	if ( $account->function_list[$account->function_strings[10]](234, 234) !== array(1.0, "Rate of Return")){
+		set_fail($account->function_strings[10]);
+	} else {
+		set_pass($account->function_strings[10]);
+	}
+	if ( $account->function_list[$account->function_strings[11]](234, 234) !== array("$1.00", "Total Assets Turn-Over")){
+		set_fail($account->function_strings[11]);
+	} else {
+		set_pass($account->function_strings[11]);
+	}
+	if ( $account->function_list[$account->function_strings[12]](234, 234) !== array("$1.00", "Earnings Per Share")){
+		set_fail($account->function_strings[12]);
+	} else {
+		set_pass($account->function_strings[12]);
+	}
+	if ( $account->function_list[$account->function_strings[13]](234, 234) !== array('$1.00', "Dividend Yield")){
+		set_fail($account->function_strings[13]);
+	} else {
+		set_pass($account->function_strings[13]);
+	}
+	if ( $account->function_list[$account->function_strings[14]](234, 234) !== array("1 : 1", "Payout Ratio")){
+		set_fail($account->function_strings[14]);
+	} else {
+		set_pass($account->function_strings[14]);
+	}
+	if ( $account->function_list[$account->function_strings[15]](234, 234, 234, 234) !== array("-1 : 1", "Quick Ratio")){
+		set_fail($account->function_strings[15]);
+	} else {
+		set_pass($account->function_strings[15]);
+	}
+	if ( $account->function_list[$account->function_strings[16]](234, 234) !== array("0%", "Gross Margin")){
+		set_fail($account->function_strings[16]);
+	} else {
+		set_pass($account->function_strings[16]);
+	}
+	if ( $account->function_list[$account->function_strings[17]](234, 234) !== array("$100.00", "Company Valuation")){
+		set_fail($account->function_strings[17]);
+	} else {
+		set_pass($account->function_strings[17]);
+	}
+	if ( $account->function_list[$account->function_strings[18]](234, 234) !== array("1%", "Equity")){
+		set_fail($account->function_strings[18]);
+	} else {
+		set_pass($account->function_strings[18]);
+	}
+	#}}}
+}
+
+function test_Astro(){
+	#{{{
+	global $astro;
+	echo "\nAstronomic Units
+-------------------------------\n";
+	if ( $astro->function_list[$astro->function_strings[1]](234) !== array(504, "Kelvin")){
+		set_fail($astro->function_strings[1]);
+	} else {
+		set_pass($astro->function_strings[1]);
+	}
+	if ( $astro->function_list[$astro->function_strings[2]](234) !== array(((234 - 32) * 5/9) + 270, "Kelvin")){
+		set_fail($astro->function_strings[2]);
+	} else {
+		set_pass($astro->function_strings[2]);
+	}
+	if ( $astro->function_list[$astro->function_strings[3]](234) !== array(234 * 63239.726, "Astronomic Units")){
+		set_fail($astro->function_strings[3]);
+	} else {
+		set_pass($astro->function_strings[3]);
+	}
+	if ( $astro->function_list[$astro->function_strings[4]](234) !== array(234*0.000015812845, "Light Year")){
+		set_fail($astro->function_strings[4]);
+	} else {
+		set_pass($astro->function_strings[4]);
+	}
+	if ( $astro->function_list[$astro->function_strings[5]](234) !== array(234*0.30659485, "Parsecs")){
+		set_fail($astro->function_strings[5]);
+	} else {
+		set_pass($astro->function_strings[5]);
+	}
+	if ( $astro->function_list[$astro->function_strings[6]](234) !== array(234*3.2616334, "Light Years")){
+		set_fail($astro->function_strings[6]);
+	} else {
+		set_pass($astro->function_strings[6]);
+	}
+	if ( $astro->function_list[$astro->function_strings[7]](234) !== array(421.2, "Rankine")){
+		set_fail($astro->function_strings[7]);
+	} else {
+		set_pass($astro->function_strings[7]);
+	}
+	if ( $astro->function_list[$astro->function_strings[8]](234) !== array(234*0.55555556, "Celsius")){
+		set_fail($astro->function_strings[8]);
+	} else {
+		set_pass($astro->function_strings[8]);
+	}
+	if ( $astro->function_list[$astro->function_strings[9]](234) !== array(234*0.55555556, "Kelvin")){
+		set_fail($astro->function_strings[9]);
+	} else {
+		set_pass($astro->function_strings[9]);
+	}
+	if ( $astro->function_list[$astro->function_strings[10]](234) !== array(421.2, "Rankine")){
+		set_fail($astro->function_strings[10]);
+	} else {
+		set_pass($astro->function_strings[10]);
+	}
+	#}}}	
+}
+
+function test_Budget(){
+	global $budget;
+	echo "\nBudgeting
+---------------------------\n";
+	if ( $budget->function_list[$budget->function_strings[1]](234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234) !== array("<span class='income'>Income $54756.00</span><br><br><span class='expenses'>Expenses $2808.00</span><br><br><span class='income'>$51948.00 after Expenses Paid</span>", "")){
+		set_fail($budget->function_strings[1]);
+	} else {
+		set_pass($budget->function_strings[1]);
+	}
+}
+
+function test_Culinary(){
+	global $cook;
+	echo "\nCulinary
+---------------------------\n";
+	$list = new ArrayObject($cook->function_list);
+	$test = $list->offsetGet($cook->function_strings[1]);
+	$inputs = strval(count($cook->functionInputs[$cook->function_strings[1]]));
+	echo "Inputs: $inputs\n";
+	$test = var_dump($test(234));
+	echo $test;
+}
+
+pass_fail($accel, test_Acceleration());
 pass_fail($area, test_Area());
+pass_fail($account, test_Accounting());
+pass_fail($astro, test_Astro());
+pass_fail($budget, test_Budget());
+pass_fail($cook, test_Culinary());
+

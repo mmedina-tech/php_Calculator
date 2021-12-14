@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 03:45:39 PM PST
-# Last Update: 2021-12-05: 16:24
+# Last Update: 2021-12-13: 16:00
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,22 +29,29 @@ require_once("imports.inc.php");
 
 function test_Astro(){
 	global $astro;
-	$list = new ArrayObject($astro->function_list);
-	$test = $list->offsetGet($astro->function_strings[2]);
-	$inputs = strval(count($astro->functionInputs[$astro->function_strings[2]]));
-	echo "Inputs: $inputs\n";
-	$test = var_dump($test(234));
-	echo $test;
+	echo "\nAstronomic Units
+-------------------------------\n";
 	if ( $astro->function_list[$astro->function_strings[1]](234) !== array(504, "Kelvin")){
 		set_fail($astro->function_strings[1]);
 	} else {
 		set_pass($astro->function_strings[1]);
 	}
-	if ( $astro->function_list[$astro->function_strings[2]](234) !== array(382.22222222222, "Kelvin")){
+	if ( $astro->function_list[$astro->function_strings[2]](234) !== array(((234 - 32) * 5/9) + 270, "Kelvin")){
 		set_fail($astro->function_strings[2]);
 	} else {
 		set_pass($astro->function_strings[2]);
 	}
+	if ( $astro->function_list[$astro->function_strings[3]](234) !== array(234 * 63239.726, "Astronomic Units")){
+		set_fail($astro->function_strings[3]);
+	} else {
+		set_pass($astro->function_strings[3]);
+	}
+	$list = new ArrayObject($astro->function_list);
+	$test = $list->offsetGet($astro->function_strings[3]);
+	$inputs = strval(count($astro->functionInputs[$astro->function_strings[3]]));
+	echo "Inputs: $inputs\n";
+	$test = var_dump($test(234));
+	echo $test;
 	
 }
 pass_fail($astro, test_Astro());

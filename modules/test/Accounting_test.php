@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 03 Dec 2021 10:57:14 PM PST
-# Last Update: 2021-12-05: 15:58
+# Last Update: 2021-12-13: 15:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,10 @@ require_once("imports.inc.php");
 
 
 function test_Accounting(){
+	#{{{
 	global $account;
+	echo "\nAccounting
+-----------------------\n";
 	if ( $account->function_list[$account->function_strings[1]](234, 234) !== array("1%", "Equity")){
 		set_fail($account->function_strings[1]);
 	} else {
@@ -120,6 +123,7 @@ function test_Accounting(){
 	} else {
 		set_pass($account->function_strings[18]);
 	}
+	#}}}
 }
 
 pass_fail($account, test_Accounting());

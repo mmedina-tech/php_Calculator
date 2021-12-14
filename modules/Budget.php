@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:42:54 PM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-13: 14:54
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -41,12 +41,12 @@ class Budget extends FormulaBase{
 			$this->function_strings[1] => function($num, $num2, $num3, $num4, $num5, $num6, $num7, $num8, $num9, $num10, $num11, $num12, $num13, $num14){
 				$income     = $num * $num2;
 				$expenses   = $num3 + $num4 + $num5 + $num6 + $num7 + $num8 + $num9 + $num10 + $num11 + $num12 + $num13 + $num14;
+				$income     = $this->prec($income, 2);
+				$expenses   = $this->prec($expenses, 2);
 				$result     = $income - $expenses;
-				$income     = round($income, 2);
-				$expenses   = round($expenses, 2);
-				$result     = round($result, 2);
-				$pos_result = "<span class='income'>Income $$income</span><br><br><span class='expenses'>Expenses $$expenses</span><br><br><span class='income'>$$result after Expenses Paid</span>";
-				$neg_result = "<span class='income'>Income $$income</span><br><br><span class='expenses'>Expenses $$expenses</span><br><br><span class='expenses'>$$result after Expenses Paid</span>";
+				$result     = $this->prec($result, 2);
+				$pos_result = "<span class='income'>Income {$this->money($income)}</span><br><br><span class='expenses'>Expenses {$this->money($expenses)}</span><br><br><span class='income'>{$this->money($result)} after Expenses Paid</span>";
+				$neg_result = "<span class='income'>Income {$this->money($income)}</span><br><br><span class='expenses'>Expenses {$this->money($expenses)}</span><br><br><span class='expenses'>{$this->money($result)} after Expenses Paid</span>";
 				if ( $result > 1 ) {
 					return array($pos_result, "");
 				} else {
