@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:20 PM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-13: 19:17
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -166,15 +166,15 @@ class Culinary extends FormulaBase{
 			},
 			$this->function_strings[25] => function($num, $num2){
 				$result = $num / $num;
-				return array(money_format("$", $result), $this->pluralize($result, 'Cost per Unit'));
+				return array($this->money($result), $this->pluralize($result, 'Cost per Unit'));
 			},
 			$this->function_strings[26] => function($num, $num2){
 				$result = $num / $num2;
-				return array(money_format("$", $result), $this->pluralize($result, 'Cost Per Portion'));
+				return array($this->money($result), $this->pluralize($result, 'Cost Per Portion'));
 			},
 			$this->function_strings[27] => function($num, $num2){
 				$result = $num / ($num2 / 100);
-				return array(money_format("$", $result), $this->pluralize($result, 'Selling Price'));
+				return array($this->money($result), $this->pluralize($result, 'Selling Price'));
 			},
 			$this->function_strings[28] => function($num){
 				$result = $num * 28.349523;

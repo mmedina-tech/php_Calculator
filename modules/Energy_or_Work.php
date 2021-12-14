@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:48 PM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-13: 19:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -87,7 +87,7 @@ class Energy_or_Work extends FormulaBase{
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.23900574;
-				return array($result, $this->pluralize($result, 'Calories'));
+				return array($result, $this->pluralize($result, 'Calorie'));
 			},
 			$this->function_strings[11] => function($num){
 				$result = $num * .7376;
