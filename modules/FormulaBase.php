@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2021-12-13: 14:54
+# Last Update: 2021-12-14: 19:59
 
 class FormulaBase{
 	function __construct($name=null){
@@ -36,6 +36,8 @@ class FormulaBase{
 	function pluralize ($a, $b) {
 		$oddplur = array(
 		#{{{
+		"Kilometer/Liter" => "Kilometers/Liter",
+		"Mile/Gallon" => "Miles/Gallon",
         "Celsius" => "Celsius",
         "Fahrenheit" => "Fahrenheit",
         "Rankine" => "Rankine",

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:45:16 PM PDT
-# Last Update: 2021-11-20: 17:30
+# Last Update: 2021-12-14: 20:33
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ class GED_Practice extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Triangle Area'));
 			},
 			$this->function_strings[2] => function($num){
-				$result = 3.14159 * $num^2;
+				$result = pi() * $num^2;
 				return array($result, $this->pluralize($result, 'Circle Area'));
 			},
 			$this->function_strings[3] => function($num, $num2){
@@ -81,11 +81,11 @@ class GED_Practice extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Rectangle/Right Prism Volume'));
 			},
 			$this->function_strings[8] => function($num, $num2){
-				$result = (2 * 3.14159 * $num * $num2) + (2 * 3.14159 * $num2^2);
+				$result = (2 * pi() * $num * $num2) + (2 * pi() * $num2^2);
 				return array($result, $this->pluralize($result, 'Cylinder Surface Area'));
 			},
 			$this->function_strings[9] => function($num, $num2){
-				$result = 3.14159 * $num^2 * $num2;
+				$result = pi() * $num^2 * $num2;
 				return array($result, $this->pluralize($result, 'Cylinder Volume'));
 			},
 			$this->function_strings[10] => function($num, $num2, $num3){
@@ -97,7 +97,7 @@ class GED_Practice extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Pyramid Volume'));
 			},
 			$this->function_strings[12] => function($num, $num2){
-				$result = (3.14159 * $num * $num2) + (3.14159 * $num2);
+				$result = (pi() * $num * $num2) + (pi() * $num2);
 				return array($result, $this->pluralize($result, 'Cone Surface Area'));
 			},
 			$this->function_strings[13] => function($num, $num2){
@@ -105,11 +105,11 @@ class GED_Practice extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Cone Volume'));
 			},
 			$this->function_strings[14] => function($num){
-				$result = 4 * 3.14159 * $num;
+				$result = 4 * pi() * $num;
 				return array($result, $this->pluralize($result, 'Sphere Surface Area'));
 			},
 			$this->function_strings[15] => function($num){
-				$result = 1.333333333333 * 3.14159 * $num;
+				$result = 1.333333333333 * pi() * $num;
 				return array($result, $this->pluralize($result, 'Sphere Volume'));
 			},
 		);

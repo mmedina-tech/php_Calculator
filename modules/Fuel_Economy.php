@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:44:27 PM PDT
-# Last Update: 2021-11-20: 17:30
+# Last Update: 2021-12-14: 20:01
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ class Fuel_Economy extends FormulaBase{
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 2.3521458;
-				return array($result, $this->pluralize($result, 'Mile/Gal'));
+				return array($result, $this->pluralize($result, 'Mile/Gallon'));
 			},
 		);
         #}}}
