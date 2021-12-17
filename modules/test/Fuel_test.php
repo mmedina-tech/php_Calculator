@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:41:16 PM PST
-# Last Update: 2021-12-17: 12:41
+# Last Update: 2021-12-17: 13:05
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,25 @@
 #
 #
 
+require_once("pass_fail.php");
+require_once("imports.inc.php");
+
+function test_Fuel(){
+	global $fuel;
+	echo "\nFuel Economy
+-------------------------------\n";
+	if ( $fuel->function_list[$fuel->function_strings[1]](234) !== array(234*0.42514371, "Kilometers/Liter")){
+		set_fail($fuel->function_strings[1]);
+	} else {
+		set_pass($fuel->function_strings[1]);
+	}
+	if ( $fuel->function_list[$fuel->function_strings[2]](234) !== array(234*2.3521458, "Miles/Gallon")){
+		set_fail($fuel->function_strings[2]);
+	} else {
+		set_pass($fuel->function_strings[2]);
+	}
+}
+
+echo "Preparing Fuel Economy...";
+sleep(1);
+pass_fail($fuel, test_Fuel());
