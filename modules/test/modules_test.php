@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 09:31:45 PM PDT
-# Last Update: 2021-12-13: 23:34
+# Last Update: 2021-12-16: 22:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -683,6 +683,7 @@ function test_Culinary(){
 }
 
 function test_Energy(){
+	#{{{
 	global $energy;
 	echo "\nEnergy or Work
 -----------------------------------\n";
@@ -746,9 +747,99 @@ function test_Energy(){
 	} else {
 		set_pass($energy->function_strings[12]);
 	}
-	$list = new ArrayObject($energy->function_list);
-	$test = $list->offsetGet($energy->function_strings[12]);
-	$inputs = strval(count($energy->functionInputs[$energy->function_strings[12]]));
+	#}}}
+}
+
+function test_Imp_to_Imp(){
+	#{{{
+	global $imp;
+	echo "\nImperial to Imperial
+--------------------------------------\n";
+	if ( $imp->function_list[$imp->function_strings[1]](234) !== array(234*0.00018939394, "Mile")){
+		set_fail($imp->function_strings[1]);
+	} else {
+		set_pass($imp->function_strings[1]);
+	}
+	if ( $imp->function_list[$imp->function_strings[2]](234) !== array(234*5280, "Feet")){
+		set_fail($imp->function_strings[2]);
+	} else {
+		set_pass($imp->function_strings[2]);
+	}
+	if ( $imp->function_list[$imp->function_strings[3]](234) !== array(234*0.0625, "Pounds")){
+		set_fail($imp->function_strings[3]);
+	} else {
+		set_pass($imp->function_strings[3]);
+	}
+	if ( $imp->function_list[$imp->function_strings[4]](234) !== array(234*16, "Ounces")){
+		set_fail($imp->function_strings[4]);
+	} else {
+		set_pass($imp->function_strings[4]);
+	}
+	if ( $imp->function_list[$imp->function_strings[5]](234) !== array(234*2000, "Pounds")){
+		set_fail($imp->function_strings[5]);
+	} else {
+		set_pass($imp->function_strings[5]);
+	}
+	if ( $imp->function_list[$imp->function_strings[6]](234) !== array(234*0.00056818182, "Mile")){
+		set_fail($imp->function_strings[6]);
+	} else {
+		set_pass($imp->function_strings[6]);
+	}
+	if ( $imp->function_list[$imp->function_strings[7]](234) !== array(234*0.333333333333, "Yards")){
+		set_fail($imp->function_strings[7]);
+	} else {
+		set_pass($imp->function_strings[7]);
+	}
+	if ( $imp->function_list[$imp->function_strings[8]](234) !== array(234*12, "Inches")){
+		set_fail($imp->function_strings[8]);
+	} else {
+		set_pass($imp->function_strings[8]);
+	}
+	if ( $imp->function_list[$imp->function_strings[9]](234) !== array(234*0.0833333333333, "Feet")){
+		set_fail($imp->function_strings[9]);
+	} else {
+		set_pass($imp->function_strings[9]);
+	}
+	if ( $imp->function_list[$imp->function_strings[10]](234) !== array(234*0.027777778, "Yards")){
+		set_fail($imp->function_strings[10]);
+	} else {
+		set_pass($imp->function_strings[10]);
+	}
+	if ( $imp->function_list[$imp->function_strings[11]](234) !== array(234*0.0000015782828, "Mile")){
+		set_fail($imp->function_strings[11]);
+	} else {
+		set_pass($imp->function_strings[11]);
+	}
+	if ( $imp->function_list[$imp->function_strings[12]](234) !== array(234*3, "Feet")){
+		set_fail($imp->function_strings[12]);
+	} else {
+		set_pass($imp->function_strings[12]);
+	}
+	if ( $imp->function_list[$imp->function_strings[13]](234) !== array(234*36, "Inches")){
+		set_fail($imp->function_strings[13]);
+	} else {
+		set_pass($imp->function_strings[13]);
+	}
+	if ( $imp->function_list[$imp->function_strings[14]](234) !== array(234*0.000003125, "Ton")){
+		set_fail($imp->function_strings[14]);
+	} else {
+		set_pass($imp->function_strings[14]);
+	}
+	if ( $imp->function_list[$imp->function_strings[15]](234) !== array(234*32000, "Ounces")){
+		set_fail($imp->function_strings[15]);
+	} else {
+		set_pass($imp->function_strings[15]);
+	}
+	#}}}
+}
+
+function test_Imp_to_Met(){
+	global $impm;
+	echo "\nImperial to Metric
+----------------------------------\n";
+	$list = new ArrayObject($impm->function_list);
+	$test = $list->offsetGet($impm->function_strings[1]);
+	$inputs = strval(count($impm->functionInputs[$impm->function_strings[1]]));
 	echo "\nInputs: $inputs\n";
 	$test = var_dump($test(234));
 	echo $test;
@@ -761,4 +852,6 @@ pass_fail($astro, test_Astro());
 pass_fail($budget, test_Budget());
 pass_fail($cook, test_Culinary());
 pass_fail($energy, test_Energy());
+pass_fail($imp, test_Imp_to_Imp());
+pass_fail($impm, test_Imp_to_Met());
 
