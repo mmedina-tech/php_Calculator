@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:46:12 PM PDT
-# Last Update: 2021-11-20: 17:31
+# Last Update: 2021-12-17: 10:53
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -121,7 +121,7 @@ class Imperial_to_Metric extends FormulaBase{
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 0.76455486;
-				return array($result, $this->pluralize($result, 'Cubic Meter'));
+				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 0.3048;
@@ -161,15 +161,15 @@ class Imperial_to_Metric extends FormulaBase{
 			},
 			$this->function_strings[12] => function($num){
 				$result = $num * 0.09290304;
-				return array($result, $this->pluralize($result, 'Square Meter'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[13] => function($num){
 				$result = $num * 2.5899881;
-				return array($result, $this->pluralize($result, 'Square Kilometer'));
+				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = $num * 0.83612736;
-				return array($result, $this->pluralize($result, 'Square Meter'));
+				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[15] => function($num){
 				$result = $num * 0.9144;
@@ -177,11 +177,11 @@ class Imperial_to_Metric extends FormulaBase{
 			},
 			$this->function_strings[16] => function($num){
 				$result = $num * 764554.86;
-				return array($result, $this->pluralize($result, 'Cubic Centimeter'));
+				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
 			$this->function_strings[17] => function($num){
 				$result = $num * 764554860;
-				return array($result, $this->pluralize($result, 'Cubic Millimeter'));
+				return array($result, $this->pluralize($result, 'Millimeter<sup>3</sup>'));
 			},
 			$this->function_strings[18] => function($num){
 				$result = $num * 0.0254;
