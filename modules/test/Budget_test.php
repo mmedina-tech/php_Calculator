@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:39:04 PM PST
-# Last Update: 2021-12-17: 12:39
+# Last Update: 2021-12-17: 12:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,22 @@
 #
 #
 
+require_once("pass_fail.php");
+require_once("imports.inc.php");
+
+function test_Budget(){
+	#{{{
+	global $budget;
+	echo "\nBudgeting
+---------------------------\n";
+	if ( $budget->function_list[$budget->function_strings[1]](234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234) !== array("<span class='income'>Income $54756.00</span><br><br><span class='expenses'>Expenses $2808.00</span><br><br><span class='income'>$51948.00 after Expenses Paid</span>", "")){
+		set_fail($budget->function_strings[1]);
+	} else {
+		set_pass($budget->function_strings[1]);
+	}
+	#}}}
+}
+
+echo "Preparing Budgeting...";
+sleep(1);
+pass_fail($budget, test_Budget());

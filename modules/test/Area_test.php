@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 04:24:28 PM PST
-# Last Update: 2021-12-13: 15:54
+# Last Update: 2021-12-17: 12:56
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -332,18 +332,9 @@ function test_Area(){
 	} else {
 		set_pass($area->function_strings[60]);
 	}
-	/*
-	$list = new ArrayObject($area->function_list);
-	$test = $list->offsetGet($area->function_strings[61]);
-	$inputs = strval(count($area->functionInputs[$area->function_strings[61]]));
-	$title = strval($area->function_strings[61]);
-	echo "\nTitle: $title\n";
-	echo "Inputs: $inputs\n";
-	$test = var_dump($test(234));
-	echo $test;
-	 */
-
 	#}}}
 }
 
+echo "Preparing Area...";
+sleep(1);
 pass_fail($area, test_Area());

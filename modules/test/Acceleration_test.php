@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:35:28 PM PST
-# Last Update: 2021-12-17: 12:35
+# Last Update: 2021-12-17: 12:54
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,37 @@
 #
 #
 
+require_once("pass_fail.php");
+require_once("imports.inc.php");
+
+function test_Acceleration(){
+	#{{{
+	global $accel;
+	echo "\nAccleration
+----------------------------\n";
+	if ( $accel->function_list[$accel->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
+		set_fail($accel->function_strings[1]);
+	} else {
+		set_pass($accel->function_strings[1]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
+		set_fail($accel->function_strings[2]);
+	} else {
+		set_pass($accel->function_strings[2]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
+		set_fail($accel->function_strings[3]);
+	} else {
+		set_pass($accel->function_strings[3]);	
+	}
+	if ( $accel->function_list[$accel->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
+		set_fail($accel->function_strings[4]);
+	} else {
+		set_pass($accel->function_strings[4]);	
+	}
+	#}}}
+}
+
+echo "Preparing Acceleration...";
+sleep(1);
+pass_fail($accel, test_Acceleration());

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 03 Dec 2021 10:57:14 PM PST
-# Last Update: 2021-12-13: 15:57
+# Last Update: 2021-12-17: 12:55
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -126,5 +126,7 @@ function test_Accounting(){
 	#}}}
 }
 
+echo "Preparing Accounting...";
+sleep(1);
 pass_fail($account, test_Accounting());
 
