@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:46:12 PM PDT
-# Last Update: 2021-12-17: 10:53
+# Last Update: 2021-12-17: 13:43
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -188,7 +188,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Meter'));
 			},
 			$this->function_strings[19] => function($num){
-				$result = $num * pow(2.54, -5);
+				$result = $num * 2.54e-5;
 				return array($result, $this->pluralize($result, 'Kilometer'));
 			},
 			$this->function_strings[20] => function($num){
@@ -268,15 +268,15 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[39] => function($num){
-				$result = $num * pow(9.290304, -8);
+				$result = $num * 9.290304E-8;
 				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[40] => function($num){
-				$result = $num * pow(2.5899881, 10);
+				$result = $num * 2.5899881e10;
 				return array($result, $this->pluralize($result, 'Centimeter<sup>2</sup>'));
 			},
 			$this->function_strings[41] => function($num){
-				$result = $num * pow(2.5899881, 12);
+				$result = $num * 2.5899881e12;
 				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[42] => function($num){
@@ -292,7 +292,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Millimeter<sup>2</sup>'));
 			},
 			$this->function_strings[45] => function($num){
-				$result = $num * pow(8.3612736, -7);
+				$result = $num * 8.3612736e-7;
 				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[46] => function($num){
@@ -308,7 +308,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
 			},
 			$this->function_strings[49] => function($num){
-				$result = $num * pow(6.4516, -10);
+				$result = $num * 6.4516e-10;
 				return array($result, $this->pluralize($result, 'Kilometer<sup>2</sup>'));
 			},
 			$this->function_strings[50] => function($num){
@@ -328,7 +328,7 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[54] => function($num){
-				$result = $num * pow(7.6455486, -10);
+				$result = $num * 7.6455486e-10;
 				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[55] => function($num){
@@ -388,11 +388,11 @@ class Imperial_to_Metric extends FormulaBase{
 				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
 			$this->function_strings[69] => function($num){
-				$result = $num * pow(1.6387064, -5);
+				$result = $num * 1.6387064e-5;
 				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[70] => function($num){
-				$result = $num * pow(1.6387064, -14);
+				$result = $num * 1.6387064e-14;
 				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[71] => function($num){
@@ -403,24 +403,24 @@ class Imperial_to_Metric extends FormulaBase{
 				$result = $num * 28316.847;
 				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
-			$this->function_strings[73] => function($nunm){
+			$this->function_strings[73] => function($num){
 				$result = $num * 0.028316847;
 				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[74] => function($num){
-				$result = $num * pow(2.8316847, -11);
+				$result = $num * 2.8316847e-11;
 				return array($result, $this->pluralize($result, 'Kilometer<sup>3</sup>'));
 			},
 			$this->function_strings[75] => function($num){
-				$result = $num * pow(4.1681818, 18);
+				$result = $num * 4.1681818e18;
 				return array($result, $this->pluralize($result, 'Millimeter<sup>3</sup>'));
 			},
 			$this->function_strings[76] => function($num){
-				$result = $num * pow(4.1681818, 15);
+				$result = $num * 4.1681818e15;
 				return array($result, $this->pluralize($result, 'Centimeter<sup>3</sup>'));
 			},
 			$this->function_strings[77] => function($num){
-				$result = $num * pow(4.1681818, 9);
+				$result = $num * 4.1681818e9;
 				return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
 			},
 			$this->function_strings[78] => function($num){

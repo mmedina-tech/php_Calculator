@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:44:11 PM PST
-# Last Update: 2021-12-17: 12:44
+# Last Update: 2021-12-17: 15:15
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,20 @@
 #
 #
 
+require_once("pass_fail.php");
+require_once("imports.inc.php");
+
+function test_Light(){
+	global $light;
+	echo "\nLight
+----------------------\n";
+	if ( $light->function_list[$light->function_strings[1]](234) !== array(234*10.76391, "Lumens/Meter<sup>2</sup>")){
+		set_fail($light->function_strings[1]);
+	} else {
+		set_pass($light->function_strings[1]);
+	}
+}
+
+echo "Preparing for Light...";
+sleep(1);
+pass_fail($light, test_Light());

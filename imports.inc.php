@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-02: 11:36
+# Last Update: 2021-12-17: 16:07
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,6 +36,7 @@ require_once('modules/Fuel_Economy.php');
 require_once('modules/GED_Practice.php');
 require_once('modules/Imperial_to_Imperial.php');
 require_once('modules/Imperial_to_Metric.php');
+require_once('modules/Light.php');
 
 $CALCPATH = basename($CALCPATH);
 
@@ -50,6 +51,7 @@ $fuel = new Fuel_Economy();
 $ged = new GED_Practice();
 $imp = new Imperial_to_Imperial();
 $impm = new Imperial_to_Metric();
+$light = new Light();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -63,6 +65,7 @@ $cats = array(
 	'GED Practice' => $ged,
 	'Imperial to Imperial' => $imp,
 	'Imperial to Metric' => $impm,
+	'Light' => $light,
 
 );
 

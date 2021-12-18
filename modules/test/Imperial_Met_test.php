@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:43:44 PM PST
-# Last Update: 2021-12-17: 13:07
+# Last Update: 2021-12-17: 13:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -123,7 +123,7 @@ function test_Imp_to_Met(){
 	} else {
 		set_pass($impm->function_strings[18]);
 	}
-	if ( $impm->function_list[$impm->function_strings[19]](234) !== array(234*pow(2.54, -5), "Kilometers")){
+	if ( $impm->function_list[$impm->function_strings[19]](234) !== array(234*2.54e-5, "Kilometer")){
 		set_fail($impm->function_strings[19]);
 	} else {
 		set_pass($impm->function_strings[19]);
@@ -218,14 +218,212 @@ function test_Imp_to_Met(){
 	} else {
 		set_pass($impm->function_strings[37]);
 	}
+	if ( $impm->function_list[$impm->function_strings[38]](234) !== array(234*92903.04, "Millimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[38]);
+	} else {
+		set_pass($impm->function_strings[38]);
+	}
+	if ( $impm->function_list[$impm->function_strings[39]](234) !== array(234*9.290304E-8, "Kilometer<sup>2</sup>")){
+		set_fail($impm->function_strings[39]);
+	} else {
+		set_pass($impm->function_strings[39]);
+	}
+	if ( $impm->function_list[$impm->function_strings[40]](234) !== array(234*2.5899881e10, "Centimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[40]);
+	} else {
+		set_pass($impm->function_strings[40]);
+	}
+	if ( $impm->function_list[$impm->function_strings[41]](234) !== array(234*2.5899881e12, "Millimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[41]);
+	} else {
+		set_pass($impm->function_strings[41]);
+	}
+	if ( $impm->function_list[$impm->function_strings[42]](234) !== array(234*2589988.1, "Meters<sup>2</sup>")){
+		set_fail($impm->function_strings[42]);
+	} else {
+		set_pass($impm->function_strings[42]);
+	}
+	if ( $impm->function_list[$impm->function_strings[43]](234) !== array(234*8361.2736, "Centimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[43]);
+	} else {
+		set_pass($impm->function_strings[43]);
+	}
+	if ( $impm->function_list[$impm->function_strings[44]](234) !== array(234*836127.36, "Millimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[44]);
+	} else {
+		set_pass($impm->function_strings[44]);
+	}
+	if ( $impm->function_list[$impm->function_strings[45]](234) !== array(234*8.3612736e-7, "Kilometer<sup>2</sup>")){
+		set_fail($impm->function_strings[45]);
+	} else {
+		set_pass($impm->function_strings[45]);
+	}
+	if ( $impm->function_list[$impm->function_strings[46]](234) !== array(234*645.16, "Millimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[46]);
+	} else {
+		set_pass($impm->function_strings[46]);
+	}
+	if ( $impm->function_list[$impm->function_strings[47]](234) !== array(234*6.4516, "Centimeters<sup>2</sup>")){
+		set_fail($impm->function_strings[47]);
+	} else {
+		set_pass($impm->function_strings[47]);
+	}
+	if ( $impm->function_list[$impm->function_strings[48]](234) !== array(234*0.00064516, "Meter<sup>2</sup>")){
+		set_fail($impm->function_strings[48]);
+	} else {
+		set_pass($impm->function_strings[48]);
+	}
+	if ( $impm->function_list[$impm->function_strings[49]](234) !== array(234*6.4516e-10, "Kilometer<sup>2</sup>")){
+		set_fail($impm->function_strings[49]);
+	} else {
+		set_pass($impm->function_strings[49]);
+	}
+	if ( $impm->function_list[$impm->function_strings[50]](234) !== array(234*914.4, "Millimeters")){
+		set_fail($impm->function_strings[50]);
+	} else {
+		set_pass($impm->function_strings[50]);
+	}
+	if ( $impm->function_list[$impm->function_strings[51]](234) !== array(234*91.44, "Centimeters")){
+		set_fail($impm->function_strings[51]);
+	} else {
+		set_pass($impm->function_strings[51]);
+	}
+	if ( $impm->function_list[$impm->function_strings[52]](234) !== array(234*0.0009144, "Kilometer")){
+		set_fail($impm->function_strings[52]);
+	} else {
+		set_pass($impm->function_strings[52]);
+	}
+	if ( $impm->function_list[$impm->function_strings[53]](234) !== array(234*0.76455486, "Meters<sup>3</sup>")){
+		set_fail($impm->function_strings[53]);
+	} else {
+		set_pass($impm->function_strings[53]);
+	}
+	if ( $impm->function_list[$impm->function_strings[54]](234) !== array(234*7.6455486e-10, "Kilometer<sup>3</sup>")){
+		set_fail($impm->function_strings[54]);
+	} else {
+		set_pass($impm->function_strings[54]);
+	}
+	if ( $impm->function_list[$impm->function_strings[55]](234) !== array(234*236.58824, "Milliliters")){
+		set_fail($impm->function_strings[55]);
+	} else {
+		set_pass($impm->function_strings[55]);
+	}
+	if ( $impm->function_list[$impm->function_strings[56]](234) !== array(234*23.658824, "Centiliters")){
+		set_fail($impm->function_strings[56]);
+	} else {
+		set_pass($impm->function_strings[56]);
+	}
+	if ( $impm->function_list[$impm->function_strings[57]](234) !== array(234*2.3658824, "Deciliters")){
+		set_fail($impm->function_strings[57]);
+	} else {
+		set_pass($impm->function_strings[57]);
+	}
+	if ( $impm->function_list[$impm->function_strings[58]](234) !== array(234*0.23658824, "Liters")){
+		set_fail($impm->function_strings[58]);
+	} else {
+		set_pass($impm->function_strings[58]);
+	}
+	if ( $impm->function_list[$impm->function_strings[59]](234) !== array(234*14.786765, "Milliliters")){
+		set_fail($impm->function_strings[59]);
+	} else {
+		set_pass($impm->function_strings[59]);
+	}
+	if ( $impm->function_list[$impm->function_strings[60]](234) !== array(234*1.4786765, "Centiliters")){
+		set_fail($impm->function_strings[60]);
+	} else {
+		set_pass($impm->function_strings[60]);
+	}
+	if ( $impm->function_list[$impm->function_strings[61]](234) !== array(234*0.14786765, "Deciliters")){
+		set_fail($impm->function_strings[61]);
+	} else {
+		set_pass($impm->function_strings[61]);
+	}
+	if ( $impm->function_list[$impm->function_strings[62]](234) !== array(234*0.014786765, "Liters")){
+		set_fail($impm->function_strings[62]);
+	} else {
+		set_pass($impm->function_strings[62]);
+	}
+	if ( $impm->function_list[$impm->function_strings[63]](234) !== array(234*4.9289216, "Milliliters")){
+		set_fail($impm->function_strings[63]);
+	} else {
+		set_pass($impm->function_strings[63]);
+	}
+	if ( $impm->function_list[$impm->function_strings[64]](234) !== array(234*0.49289216, "Centiliters")){
+		set_fail($impm->function_strings[64]);
+	} else {
+		set_pass($impm->function_strings[64]);
+	}
+	if ( $impm->function_list[$impm->function_strings[65]](234) !== array(234*0.049289216, "Deciliters")){
+		set_fail($impm->function_strings[65]);
+	} else {
+		set_pass($impm->function_strings[65]);
+	}
+	if ( $impm->function_list[$impm->function_strings[66]](234) !== array(234*0.0049289216, "Liters")){
+		set_fail($impm->function_strings[66]);
+	} else {
+		set_pass($impm->function_strings[66]);
+	}
+	if ( $impm->function_list[$impm->function_strings[67]](234) !== array(234*16387.064, "Millimeters<sup>3</sup>")){
+		set_fail($impm->function_strings[67]);
+	} else {
+		set_pass($impm->function_strings[67]);
+	}
+	if ( $impm->function_list[$impm->function_strings[68]](234) !== array(234*16.387064, "Centimeters<sup>3</sup>")){
+		set_fail($impm->function_strings[68]);
+	} else {
+		set_pass($impm->function_strings[68]);
+	}
+	if ( $impm->function_list[$impm->function_strings[69]](234) !== array(234*1.6387064e-5, "Meter<sup>3</sup>")){
+		set_fail($impm->function_strings[69]);
+	} else {
+		set_pass($impm->function_strings[69]);
+	}
+	if ( $impm->function_list[$impm->function_strings[70]](234) !== array(234*1.6387064e-14, "Kilometer<sup>3</sup>")){
+		set_fail($impm->function_strings[70]);
+	} else {
+		set_pass($impm->function_strings[70]);
+	}
+	if ( $impm->function_list[$impm->function_strings[71]](234) !== array(234*28316847, "Millimeters<sup>3</sup>")){
+		set_fail($impm->function_strings[71]);
+	} else {
+		set_pass($impm->function_strings[71]);
+	}
+	if ( $impm->function_list[$impm->function_strings[72]](234) !== array(234*28316.847, "Centimeters<sup>3</sup>")){
+		set_fail($impm->function_strings[72]);
+	} else {
+		set_pass($impm->function_strings[72]);
+	}
+	if ( $impm->function_list[$impm->function_strings[73]](234) !== array(234*0.028316847, "Meters<sup>3</sup>")){
+		set_fail($impm->function_strings[73]);
+	} else {
+		set_pass($impm->function_strings[73]);
+	}
+	if ( $impm->function_list[$impm->function_strings[74]](234) !== array(234*2.8316847e-11, "Kilometer<sup>3</sup>")){
+		set_fail($impm->function_strings[74]);
+	} else {
+		set_pass($impm->function_strings[74]);
+	}
+	if ( $impm->function_list[$impm->function_strings[75]](234) !== array(234*4.1681818e18, "Millimeters<sup>3</sup>")){
+		set_fail($impm->function_strings[75]);
+	} else {
+		set_pass($impm->function_strings[75]);
+	}
+	if ( $impm->function_list[$impm->function_strings[76]](234) !== array(234*4.1681818e15, "Centimeters<sup>3</sup>")){
+		set_fail($impm->function_strings[76]);
+	} else {
+		set_pass($impm->function_strings[76]);
+	}
+	if ( $impm->function_list[$impm->function_strings[77]](234) !== array(234*4.1681818e9, "Meters<sup>3</sup>")){
+		set_fail($impm->function_strings[77]);
+	} else {
+		set_pass($impm->function_strings[77]);
+	}
+	if ( $impm->function_list[$impm->function_strings[78]](234) !== array(234*4.1681818, "Kilometers<sup>3</sup>")){
+		set_fail($impm->function_strings[78]);
+	} else {
+		set_pass($impm->function_strings[78]);
+	}
 	#}}}
-	$list = new ArrayObject($impm->function_list);
-	$test = $list->offsetGet($impm->function_strings[12]);
-	$inputs = strval(count($impm->functionInputs[$impm->function_strings[12]]));
-	echo "\nInputs: $inputs\n";
-	$test = var_dump($test(234));
-	echo $test;
-
 }
 
 echo "Preping for Imperial to Metric...";

@@ -4,7 +4,7 @@
 
  Author: Marcus Medina
  Date: Fri 10 Sep 2021 08:09:36 PM PDT
- Last Update: 
+ Last Update: 2021-12-17: 17:06
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -24,10 +24,11 @@
 */
 
 .mainHeader{
+	margin: auto;
 	color: white;
-	text-align: left;
 	font-family: courier;
-	padding: 5px;
+	font-size: 60px;
+	padding-bottom: 5px;
 }
 #maindisplay {
 	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
@@ -35,12 +36,11 @@
 	border-radius: 5px;
 }
 img{
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	text-align: center;
 }
 .menuItem{
-	padding: 6%;
 	overflow: hidden;
 }
 .Head-Column{
@@ -49,7 +49,7 @@ img{
 }
 #tabitem{
 	font-size: 24px;
-	padding: 2px;
+	padding: 5px;
 	color: white;
 	font-weight: bold;
 }
@@ -58,17 +58,18 @@ img{
 	border: 2px solid black;
 	border-radius: 5px;
 }
-@media screen and (max-width: 960px) and (min-width: 620px){
+@media screen and (max-device-width: 960px){
 	.Head-Column{
 		width: 100%;
 		margin: auto;
 	}
 	#tabitem{
-		font-size: 20px;
+		font-size: 15px;
 	}
 	.menuItem{
 		padding-top: 2%;
 		padding-bottom: 2%;
+		font-size: 18px;
 	}
 	.mainHeader{
 		font-size: 26px;
@@ -82,13 +83,14 @@ img{
 		padding: 8px;
 	}
 }
-@media screen and (max-width: 620px) and (min-width: 320px){
+@media screen and (max-width: 620px){
 	.Head-Column{
 		width: 100%;
 	}
 	.menuItem{
 		padding-top: 0%;
 		padding-bottom: 2%;
+		font-size: 10px;
 	}
 	.mainHeader{
 		font-size: 24px;
@@ -99,14 +101,21 @@ img{
 	}
 	#tabitem{
 		font-size: 10px;
-		padding: 4px;
 	}
 	#tabitem:hover{
 		padding: 4px;
 	}
 }
-@media screen and (max-width: 1080px) and (min-width: 960px){
+@media screen and (max-width: 1080px){
 	#tabitem{
 		font-size: 20px;
+	}
+}
+@media only screen and (max-width: 1370px){
+	#tabitem{
+		font-size: 18px;
+	}
+	.menuItem{
+		overflow: hidden;
 	}
 }

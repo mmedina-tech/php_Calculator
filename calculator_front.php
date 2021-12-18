@@ -4,7 +4,7 @@
     calculator_front.html
 
     Date: copyright 2019
-	Last Update: 2021-11-22: 20:09
+	Last Update: 2021-12-17: 17:06
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
         <meta charset='UTF-8'>
         <meta name='author' content='Marcus Medina'>
         <meta name='description' content='A Massive Calculator that centralizes all mathematical formulas'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
         <title>The Massive Calculator!</title>
 		<link rel="icon" href="/php_Calculator/images/massive.png" type="image/x-icon">
 		<link ref="shortcut icon" href="/php_Calculator/images/massive.png" type='image/x-icon'>
@@ -40,17 +40,13 @@
     </head>
     <body>
         <div id="maindisplay">
-            <div class='Head-Column'>
-                <h1 class='mainHeader'><img id='mainlogo' align='center' src='images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
-            </div>
-            <div class='Head-Column'>
-                <nav class="menuItem">
-                    <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-                    <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-                    <a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
-                    <a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
-                </nav>
-            </div>
+				<h1 class='mainHeader'><img id='mainlogo' align='center' src='images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+			<nav class="menuItem">
+				<a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
+				<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
+				<a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
+				<a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
+			</nav>
         </div>
         <div>
             <h3 class='description'>This Calculator is not like any that you have seen before. This
