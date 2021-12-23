@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 03:45:39 PM PST
-# Last Update: 2021-12-17: 12:57
+# Last Update: 2021-12-23: 09:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,61 +26,63 @@
 #
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+$test = new TestSuite();
 
 function test_Astro(){
 	#{{{
 	global $astro;
+	global $test;
 	echo "\nAstronomic Units
 -------------------------------\n";
 	if ( $astro->function_list[$astro->function_strings[1]](234) !== array(504, "Kelvin")){
-		set_fail($astro->function_strings[1]);
+		$test->set_fail($astro->function_strings[1]);
 	} else {
-		set_pass($astro->function_strings[1]);
+		$test->set_pass($astro->function_strings[1]);
 	}
 	if ( $astro->function_list[$astro->function_strings[2]](234) !== array(((234 - 32) * 5/9) + 270, "Kelvin")){
-		set_fail($astro->function_strings[2]);
+		$test->set_fail($astro->function_strings[2]);
 	} else {
-		set_pass($astro->function_strings[2]);
+		$test->set_pass($astro->function_strings[2]);
 	}
 	if ( $astro->function_list[$astro->function_strings[3]](234) !== array(234 * 63239.726, "Astronomic Units")){
-		set_fail($astro->function_strings[3]);
+		$test->set_fail($astro->function_strings[3]);
 	} else {
-		set_pass($astro->function_strings[3]);
+		$test->set_pass($astro->function_strings[3]);
 	}
 	if ( $astro->function_list[$astro->function_strings[4]](234) !== array(234*0.000015812845, "Light Year")){
-		set_fail($astro->function_strings[4]);
+		$test->set_fail($astro->function_strings[4]);
 	} else {
-		set_pass($astro->function_strings[4]);
+		$test->set_pass($astro->function_strings[4]);
 	}
 	if ( $astro->function_list[$astro->function_strings[5]](234) !== array(234*0.30659485, "Parsecs")){
-		set_fail($astro->function_strings[5]);
+		$test->set_fail($astro->function_strings[5]);
 	} else {
-		set_pass($astro->function_strings[5]);
+		$test->set_pass($astro->function_strings[5]);
 	}
 	if ( $astro->function_list[$astro->function_strings[6]](234) !== array(234*3.2616334, "Light Years")){
-		set_fail($astro->function_strings[6]);
+		$test->set_fail($astro->function_strings[6]);
 	} else {
-		set_pass($astro->function_strings[6]);
+		$test->set_pass($astro->function_strings[6]);
 	}
 	if ( $astro->function_list[$astro->function_strings[7]](234) !== array(421.2, "Rankine")){
-		set_fail($astro->function_strings[7]);
+		$test->set_fail($astro->function_strings[7]);
 	} else {
-		set_pass($astro->function_strings[7]);
+		$test->set_pass($astro->function_strings[7]);
 	}
 	if ( $astro->function_list[$astro->function_strings[8]](234) !== array(234*0.55555556, "Celsius")){
-		set_fail($astro->function_strings[8]);
+		$test->set_fail($astro->function_strings[8]);
 	} else {
-		set_pass($astro->function_strings[8]);
+		$test->set_pass($astro->function_strings[8]);
 	}
 	if ( $astro->function_list[$astro->function_strings[9]](234) !== array(234*0.55555556, "Kelvin")){
-		set_fail($astro->function_strings[9]);
+		$test->set_fail($astro->function_strings[9]);
 	} else {
-		set_pass($astro->function_strings[9]);
+		$test->set_pass($astro->function_strings[9]);
 	}
 	if ( $astro->function_list[$astro->function_strings[10]](234) !== array(421.2, "Rankine")){
-		set_fail($astro->function_strings[10]);
+		$test->set_fail($astro->function_strings[10]);
 	} else {
-		set_pass($astro->function_strings[10]);
+		$test->set_pass($astro->function_strings[10]);
 	}
 	#}}}	
 }
