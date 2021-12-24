@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:44:45 PM PST
-# Last Update: 2021-12-17: 12:44
+# Last Update: 2021-12-23: 19:38
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,96 @@
 #
 #
 
+require_once("pass_fail.php");
+require_once("imports.inc.php");
+$test = new TestSuite();
+
+function Maritime_test(){
+	global $maritime;
+	global $test;
+	if ( $maritime->function_list[$maritime->function_strings[1]](234) !== array(234*6, "Feet")){
+		$test->set_fail($maritime->function_strings[1]);
+	} else {
+		$test->set_pass($maritime->function_strings[1]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[2]](234) !== array(234*101.26859, "Fathoms")){
+		$test->set_fail($maritime->function_strings[2]);
+	} else {
+		$test->set_pass($maritime->function_strings[2]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[3]](234) !== array(234*6076.1155, "Feet")){
+		$test->set_fail($maritime->function_strings[3]);
+	} else {
+		$test->set_pass($maritime->function_strings[3]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[4]](234) !== array(234*1.8288, "Meters")){
+		$test->set_fail($maritime->function_strings[4]);
+	} else {
+		$test->set_pass($maritime->function_strings[4]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[5]](234) !== array(234*10, "Cables")){
+		$test->set_fail($maritime->function_strings[5]);
+	} else {
+		$test->set_pass($maritime->function_strings[5]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[6]](234) !== array(234*1852, "Meters")){
+		$test->set_fail($maritime->function_strings[6]);
+	} else {
+		$test->set_pass($maritime->function_strings[6]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[7]](234) !== array(234*1.1507794, "Statute Miles")){
+		$test->set_fail($maritime->function_strings[7]);
+	} else {
+		$test->set_pass($maritime->function_strings[7]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[8]](234) !== array(234*1, "Nautical Miles/Hr")){
+		$test->set_fail($maritime->function_strings[8]);
+	} else {
+		$test->set_pass($maritime->function_strings[8]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[9]](234) !== array(234*0.54680665, "Fathoms")){
+		$test->set_fail($maritime->function_strings[9]);
+	} else {
+		$test->set_pass($maritime->function_strings[9]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[10]](234) !== array(234*1.852, "Kilometers")){
+		$test->set_fail($maritime->function_strings[10]);
+	} else {
+		$test->set_pass($maritime->function_strings[10]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[11]](234) !== array(234*0.5399568, "Nautical Miles")){
+		$test->set_fail($maritime->function_strings[11]);
+	} else {
+		$test->set_pass($maritime->function_strings[11]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[12]](234) !== array(234*0.86897624, "Nautical Miles")){
+		$test->set_fail($maritime->function_strings[12]);
+	} else {
+		$test->set_pass($maritime->function_strings[12]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[13]](234) !== array(234*1.852, "Kilometers/Hr")){
+		$test->set_fail($maritime->function_strings[13]);
+	} else {
+		$test->set_pass($maritime->function_strings[13]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[14]](234) !== array(234*0.5399568, "Knots")){
+		$test->set_fail($maritime->function_strings[14]);
+	} else {
+		$test->set_pass($maritime->function_strings[14]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[15]](234) !== array(234*1.1507794, "Miles/Hr")){
+		$test->set_fail($maritime->function_strings[15]);
+	} else {
+		$test->set_pass($maritime->function_strings[15]);
+	}
+	if ( $maritime->function_list[$maritime->function_strings[16]](234) !== array(234*0.86897624, "Knots")){
+		$test->set_fail($maritime->function_strings[16]);
+	} else {
+		$test->set_pass($maritime->function_strings[16]);
+	}
+}
+
+echo "Praparing Maritime...
+---------------------------------\n";
+sleep(1);
+$test->pass_fail($maritime, Maritime_test());

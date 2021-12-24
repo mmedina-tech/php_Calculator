@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:47:05 PM PDT
-# Last Update: 2021-11-20: 17:31
+# Last Update: 2021-12-23: 19:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -83,7 +83,7 @@ class Maritime_Measurements extends FormulaBase{
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 1;
-				return array($result, $this->pluralize($result, 'Nautical Mile per Hour'));
+				return array($result, $this->pluralize($result, 'Nautical Mile/Hr'));
 			},
 			$this->function_strings[9] => function($num){
 				$result = $num * 0.54680665;
@@ -103,7 +103,7 @@ class Maritime_Measurements extends FormulaBase{
 			},
 			$this->function_strings[13] => function($num){
 				$result = $num * 1.852;
-				return array($result, $this->pluralize($result, 'Kilometer per Hour'));
+				return array($result, $this->pluralize($result, 'Kilometer/Hr'));
 			},
 			$this->function_strings[14] => function($num){
 				$result = $num * 0.5399568;
@@ -111,7 +111,7 @@ class Maritime_Measurements extends FormulaBase{
 			},
 			$this->function_strings[15] => function($num){
 				$result = $num * 1.1507794;
-				return array($result, $this->pluralize($result, 'Mile per Hour'));
+				return array($result, $this->pluralize($result, 'Mile/Hr'));
 			},
 			$this->function_strings[16] => function($num){
 				$result = $num * 0.86897624;
