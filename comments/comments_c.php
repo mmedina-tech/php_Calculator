@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 07:52:44 AM PDT
-# Last Update: 2021-11-20: 17:26
+# Last Update: 2021-12-23: 20:37
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 $stmt = $db->prepare('INSERT INTO Comments (first_name,last_name,comment) VALUES (?,?,?)');
-$stmt->execute(array($_POST['fname'], $_POST['lname'], $_POST['comment']));
+$stmt->execute(array(htmlentities($_POST['fname']), htmlentities($_POST['lname']), htmlentities($_POST['comment'])));
 
 
 if ( $stmt ) {
