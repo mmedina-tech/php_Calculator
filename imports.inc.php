@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-17: 16:07
+# Last Update: 2021-12-23: 19:20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,6 +37,7 @@ require_once('modules/GED_Practice.php');
 require_once('modules/Imperial_to_Imperial.php');
 require_once('modules/Imperial_to_Metric.php');
 require_once('modules/Light.php');
+require_once('modules/Maritime_Measurements.php');
 
 $CALCPATH = basename($CALCPATH);
 
@@ -52,6 +53,7 @@ $ged = new GED_Practice();
 $imp = new Imperial_to_Imperial();
 $impm = new Imperial_to_Metric();
 $light = new Light();
+$maritime = new Maritime_Measurements();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -66,6 +68,7 @@ $cats = array(
 	'Imperial to Imperial' => $imp,
 	'Imperial to Metric' => $impm,
 	'Light' => $light,
+	'Maritime Measurements' => $maritime,
 
 );
 

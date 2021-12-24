@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2021-12-17: 15:08
+# Last Update: 2021-12-23: 19:35
 
 class FormulaBase{
 	function __construct($name=null){
@@ -49,8 +49,8 @@ class FormulaBase{
         "Pound/Foot" => "Pound/Feet",
         "Pound/Inch" => "Pound/Inches",
         "Horsepower" => "Horsepower",
-        "Foot/Pounds per Minute" => "Foot/Pounds per Minute",
-        "Foot/Pounds per Second" => "Foot/Pounds per Second",
+        "Foot/Pound per Minute" => "Foot/Pounds per Minute",
+        "Foot/Pound per Second" => "Foot/Pounds per Second",
         "Resistance" => "Resistance",
         "Kelvin" => "Kelvin",
         "Inductive Reactance" => "Inductive Reactance",
@@ -103,10 +103,10 @@ class FormulaBase{
         "Rectangle Area" => "Rectangle Area",
         "Parallelogram Area" => "Parallelogram Area",
         "Trapezoid Area" => "Trapezoid Area",
-        "Miles/Hr" => "Miles/Hr",
-        "Kilometers/Hr" => "Kilometers/Hr",
-        "Meters/Sec" => "Meters/Sec",
-        "Feet/Sec" => "Feet/Sec",
+        "Mile/Hr" => "Miles/Hr",
+        "Kilometer/Hr" => "Kilometers/Hr",
+        "Meter/Sec" => "Meters/Sec",
+        "Foot/Sec" => "Feet/Sec",
         "Yard<sup>2</sup>" => "Yards<sup>2</sup>",
         "Centiare" => "Centiares",
         "Hectare" => "Hectares",
@@ -132,6 +132,7 @@ class FormulaBase{
         "Pounds per Square Foot" => "Pounds per Square Foot",
         "Inductive Reactance Rating" => "Inductive Reactance Rating",
 		"Company Valuation" => "Company Valuation",
+		"Nautical Mile/Hr" => "Nautical Miles/Hr",
 		#}}}
 		);
 
