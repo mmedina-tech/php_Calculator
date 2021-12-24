@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 03:45:39 PM PST
-# Last Update: 2021-12-23: 09:36
+# Last Update: 2021-12-23: 19:03
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -89,4 +89,4 @@ function test_Astro(){
 
 echo "Preparing Astronomic Units...";
 sleep(1);
-pass_fail($astro, test_Astro());
+$test->pass_fail($astro, test_Astro());
