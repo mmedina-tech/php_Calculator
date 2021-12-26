@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:46:49 PM PST
-# Last Update: 2021-12-17: 12:46
+# Last Update: 2021-12-25: 16:22
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,30 @@
 #
 #
 
+require_once( 'pass_fail.php' );
+require_once( 'imports.inc.php' );
+
+$test = new TestSuite();
+
+function Phys_test($test, $class){
+	if ( $class->function_list[$class->function_strings[1]](234, 234, 234) !== array((((234*4.448)*cos(234)*(234*3.2808))*0.239)*pow(10, -3), "Calories")){
+		$test->set_fail($class->function_strings[1]);
+	} else {
+		$test->set_pass($class->function_strings[1]);
+	}
+	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*4.184, "Joules")){
+		$test->set_fail($class->function_strings[2]);
+	} else {
+		$test->set_pass($class->function_strings[2]);
+	}
+	if ( $class->function_list[$class->function_strings[3]](234) !== array(234*0.2390057, "Calories")){
+		$test->set_fail($class->function_strings[3]);
+	} else {
+		$test->set_pass($class->function_strings[3]);
+	}
+}
+
+echo "Preparing Physical Fitness Test
+-----------------------------------------\n";
+sleep(1);
+$test->pass_fail($phys, Phys_test($test, $phys));

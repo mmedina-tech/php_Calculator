@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:08 PM PDT
-# Last Update: 2021-11-22: 11:43
+# Last Update: 2021-12-25: 16:21
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ class Physical_Fitness extends FormulaBase{
 			$this->function_strings[1] => function($num, $num2, $num3){
 				$result = (($num * 4.448) * cos($num2) * ($num3 * 3.2808)) * 0.239;
 				$result = $result * pow(10, -3);
-				return array($result, $this->pluralize($result, 'Caloire'));
+				return array($result, $this->pluralize($result, 'Calorie'));
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 4.184;
@@ -71,12 +71,14 @@ class Physical_Fitness extends FormulaBase{
 			$this->function_strings[3] => array(
 				'number_input' => 'Joules (input): ',
 			),
+			/*
 			$this->function_strings[4] => array(
 				'number_input' => 'Newtons (input): ',
 			),
 			$this->function_strings[5] => array(
 				'number_input' => 'Pounds (input): ',
 			),
+			 */
 		);
         #}}}
 
