@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2021-12-23: 19:35
+# Last Update: 2021-12-25: 15:44
 
 class FormulaBase{
 	function __construct($name=null){
@@ -83,6 +83,7 @@ class FormulaBase{
         "Inch<sup>2</sup>" => "Inches<sup>2</sup>",
         "Meter<sup>2</sup>" => "Meters<sup>2</sup>",
 		"Millimeter<sup>2</sup>" => "Millimeters<sup>2</sup>",
+		"Foot<sup>3</sup>" => "Feet<sup>3</sup>",
 		"Meter<sup>3</sup>" => "Meters<sup>3</sup>",
 		"Inch<sup>3</sup>" => "Inches<sup>3</sup>",
 		"Centimeter<sup>3</sup>" => "Centimeters<sup>3</sup>",

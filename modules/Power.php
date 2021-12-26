@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:50:19 PM PDT
-# Last Update: 2021-11-23: 21:35
+# Last Update: 2021-12-25: 16:41
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -53,11 +53,11 @@ class Power extends FormulaBase{
 			},
 			$this->function_strings[2] => function($num){
 				$result = $num * 33000;
-				return array($result, $this->pluralize($result, 'Foot-Pounds per Minute'));
+				return array($result, $this->pluralize($result, 'Foot/Pound per Minute'));
 			},
 			$this->function_strings[3] => function($num){
 				$result = $num * 550;
-				return array($result, $this->pluralize($result, 'Foot-Pounds per Second'));
+				return array($result, $this->pluralize($result, 'Foot/Pound per Second'));
 			},
 			$this->function_strings[4] => function($num){
 				$result = $num * 745.69987;
@@ -73,7 +73,7 @@ class Power extends FormulaBase{
 			},
 			$this->function_strings[7] => function($num){
 				$result = $num * 44.253729;
-				return array($result, $this->pluralize($result, 'Foot-Pounds per Minute'));
+				return array($result, $this->pluralize($result, 'Foot/Pound per Minute'));
 			},
 			$this->function_strings[8] => function($num){
 				$result = $num * 0.0013410221;
@@ -85,7 +85,7 @@ class Power extends FormulaBase{
 			},
 			$this->function_strings[10] => function($num){
 				$result = $num * 0.73756215;
-				return array($result, $this->pluralize($result, 'Foot-Pounds per Second'));
+				return array($result, $this->pluralize($result, 'Foot/Pound per Second'));
 			},
 		);
         #}}}

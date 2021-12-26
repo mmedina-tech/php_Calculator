@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-23: 19:47
+# Last Update: 2021-12-25: 16:31
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -39,6 +39,12 @@ require_once('modules/Imperial_to_Metric.php');
 require_once('modules/Light.php');
 require_once('modules/Maritime_Measurements.php');
 require_once('modules/Mass.php');
+require_once( 'modules/Metric_to_Imperial.php' );
+require_once( 'modules/OhmsLaw.php' );
+require_once( 'modules/Physical_Fitness.php' );
+require_once( 'modules/PlaneAngle.php' );
+require_once( 'modules/Power.php' );
+
 
 $CALCPATH = basename($CALCPATH);
 
@@ -56,6 +62,11 @@ $impm = new Imperial_to_Metric();
 $light = new Light();
 $maritime = new Maritime_Measurements();
 $mass = new Mass();
+$mti = new Metric_to_Imperial();
+$ohms = new OhmsLaw();
+$phys = new Physical_Fitness();
+$plane = new PlaneAngle();
+$power = new Power();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -72,6 +83,11 @@ $cats = array(
 	'Light' => $light,
 	'Maritime Measurements' => $maritime,
 	'Mass' => $mass,
+	'Metric to Imperial' => $mti,
+	'Ohms Law' => $ohms,
+	'Physical Fitness' => $phys,
+	'Plane Angle' => $plane,
+	'Power' => $power,
 
 );
 
