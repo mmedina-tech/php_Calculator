@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:12:37 PM PDT
-# Last Update: 2021-11-20: 17:29
+# Last Update: 2021-12-25: 16:51
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,6 @@
 #
 #
 #
-#NOTE: Need to figure out a way to do the test modules for all the modules
 
 require_once("FormulaBase.php");
 class Acceleration extends FormulaBase{
