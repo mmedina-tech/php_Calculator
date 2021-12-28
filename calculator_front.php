@@ -4,7 +4,7 @@
     calculator_front.html
 
     Date: copyright 2019
-	Last Update: 2021-12-17: 17:06
+	Last Update: 2021-12-27: 23:57
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -40,13 +40,17 @@
     </head>
     <body>
         <div id="maindisplay">
+			<div class="Head-Column">
 				<h1 class='mainHeader'><img id='mainlogo' align='center' src='images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
-			<nav class="menuItem">
-				<a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-				<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-				<a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
-				<a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
-			</nav>
+			</div>
+			<div class='Head-Column'>
+				<nav class="menuItem">
+					<a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
+					<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
+					<a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
+					<a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
+				</nav>
+			</div>
         </div>
         <div>
             <h3 class='description'>This Calculator is not like any that you have seen before. This
