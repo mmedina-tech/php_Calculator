@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-27: 16:32
+# Last Update: 2021-12-27: 16:37
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,6 +45,7 @@ require_once( 'modules/Physical_Fitness.php' );
 require_once( 'modules/PlaneAngle.php' );
 require_once( 'modules/Power.php' );
 require_once( 'modules/Torque.php' );
+require_once( 'modules/Velocity.php' );
 
 
 $CALCPATH = basename($CALCPATH);
@@ -69,6 +70,7 @@ $phys = new Physical_Fitness();
 $plane = new PlaneAngle();
 $power = new Power();
 $tor = new Torque();
+$vel = new Velocity();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -91,6 +93,7 @@ $cats = array(
 	'Plane Angle' => $plane,
 	'Power' => $power,
 	'Torque' => $tor,
+	'Velocity' => $vel,
 
 );
 
