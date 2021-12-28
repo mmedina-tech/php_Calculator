@@ -1,8 +1,8 @@
 <?php
-# Last Update: 2021-12-25: 15:44
+# Last Update: 2021-12-27: 22:05
 
 class FormulaBase{
-	function __construct($name=null){
+	public function __construct($name=null){
 
 		if ( isset($name) )
 		{
@@ -11,8 +11,8 @@ class FormulaBase{
 			return null;
 		}
 
-		$this->function_list = array();
-		$this->error_msg = "Can not be a negative square root";
+		$function_list = array();
+		$error_msg = "Can not be a negative square root";
 	}
 	function get_formula($formulaName){
 		return $this->formula;
@@ -166,7 +166,7 @@ class FormulaBase{
 	function show_Formulas($fname){
 		$mystr = "";
 		foreach ( $this->formula_list[$fname] as $key=>$value ){
-			$mystr .= "Formula:<br> $value";
+			$mystr .= "$key $value";
 		}
 		return $mystr;
 	}

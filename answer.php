@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 04:13:06 PM PDT
-# Last Update: 2021-12-01: 10:50
+# Last Update: 2021-12-27: 21:54
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -94,9 +94,10 @@ try{
 	statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
 	print $outputfp;
 } catch (Exception $e){
+	$error = $e->getMessage();
 	$outputfp = str_replace("INPUT", $inputs, $outputfp);
 	$outputfp = str_replace("ANSWER", '', $outputfp);
-	$outputfp = str_replace("ERROR", "<h1 class='error'>$e</h1>", $outputfp);
+	$outputfp = str_replace("ERROR", "<h1 class='error'>{$error[1]}</h1>", $outputfp);
 	statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
 	print $outputfp;
 }

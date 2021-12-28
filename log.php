@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 03:55:19 PM PDT
-# Last Update: 2021-11-20: 17:24
+# Last Update: 2021-12-27: 21:32
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ function statlogger($cat, $forms, $formula_fields, $outscreen, $user){
 	}
 
 	$db->beginTransaction();
-	if ($db->exec("INSERT INTO Calculation_Log (log_id, local_time, server_time, ip_address, category, formula, inputs, answer) VALUES (NULL, '$time', NOW(), '$user', '$cat', '$forms', '$formula_fields', '$outscreen')")){
+	if ($db->exec("INSERT INTO Calculation_Log (log_id, local_time, server_time, ip_address, category, formula, inputs, answer) VALUES (NULL, \"$time\", NOW(), \"$user\", \"$cat\", \"$forms\", \"$formula_fields\", \"$outscreen\")")){
 		$db->commit();
 	} else {
 		print "Rolling Back";

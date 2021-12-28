@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-27: 16:37
+# Last Update: 2021-12-27: 21:30
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -46,6 +46,7 @@ require_once( 'modules/PlaneAngle.php' );
 require_once( 'modules/Power.php' );
 require_once( 'modules/Torque.php' );
 require_once( 'modules/Velocity.php' );
+require_once( 'modules/Resistive_Capacitive_Parallel.php' );
 
 
 $CALCPATH = basename($CALCPATH);
@@ -71,6 +72,7 @@ $plane = new PlaneAngle();
 $power = new Power();
 $tor = new Torque();
 $vel = new Velocity();
+$rcp = new Resistive_Capacitive_Parallel();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -94,6 +96,7 @@ $cats = array(
 	'Power' => $power,
 	'Torque' => $tor,
 	'Velocity' => $vel,
+	'Resistive Capacitance Parallel' => $rcp,
 
 );
 
@@ -139,9 +142,9 @@ function formSelect($sele, $myAttrs=array(), $selected=null){
 
 	foreach ( $sele as $key => $val){
 		if ( $key == $selected ) {
-			$select .= "\t<option value='$key' selected>$key</option>\n";
+			$select .= "\t<option value=\"$key\" selected>$key</option>\n";
 		} else {
-			$select .= "\t<option value='$key'>$key</option>\n";
+			$select .= "\t<option value=\"$key\">$key</option>\n";
 		}
 	}
 	$select .= "</select>\n";
