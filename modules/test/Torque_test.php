@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:52:13 PM PST
-# Last Update: 2021-12-17: 12:52
+# Last Update: 2021-12-27: 16:35
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,3 +25,45 @@
 #
 #
 
+require_once( 'pass_fail.php' );
+require_once( 'imports.inc.php' );
+
+$test = new Testsuite();
+
+function Torque_test($test, $class){
+	if ( $class->function_list[$class->function_strings[1]](234) !== array(234*0.089595863, "Ounce/Inches")){
+		$test->set_fail($class->function_strings[1]);
+	} else {
+		$test->set_pass($class->function_strings[1]);
+	}
+	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*0.068521766, "Pound/Feet")){
+		$test->set_fail($class->function_strings[2]);
+	} else {
+		$test->set_pass($class->function_strings[2]);
+	}
+	if ( $class->function_list[$class->function_strings[3]](234) !== array(234*0.0057101472, "Pound/Inches")){
+		$test->set_fail($class->function_strings[3]);
+	} else {
+		$test->set_pass($class->function_strings[3]);
+	}
+	if ( $class->function_list[$class->function_strings[4]](234) !== array(234*11.16123, "Gram/Centimeters")){
+		$test->set_fail($class->function_strings[4]);
+	} else {
+		$test->set_pass($class->function_strings[4]);
+	}
+	if ( $class->function_list[$class->function_strings[5]](234) !== array(234*14.593903, "Newton/Meters")){
+		$test->set_fail($class->function_strings[5]);
+	} else {
+		$test->set_pass($class->function_strings[5]);
+	}
+	if ( $class->function_list[$class->function_strings[6]](234) !== array(234*175.12684, "Newton/Meters")){
+		$test->set_fail($class->function_strings[6]);
+	} else {
+		$test->set_pass($class->function_strings[6]);
+	}
+}
+
+echo "Preparing Torque Test
+-------------------------------\n";
+sleep(1);
+$test->pass_fail($tor, Torque_test($test, $tor));

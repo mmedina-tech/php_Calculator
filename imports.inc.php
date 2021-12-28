@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-25: 16:31
+# Last Update: 2021-12-27: 16:32
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@ require_once( 'modules/OhmsLaw.php' );
 require_once( 'modules/Physical_Fitness.php' );
 require_once( 'modules/PlaneAngle.php' );
 require_once( 'modules/Power.php' );
+require_once( 'modules/Torque.php' );
 
 
 $CALCPATH = basename($CALCPATH);
@@ -67,6 +68,7 @@ $ohms = new OhmsLaw();
 $phys = new Physical_Fitness();
 $plane = new PlaneAngle();
 $power = new Power();
+$tor = new Torque();
 
 $cats = array(
 	'Acceleration' => $accel,
@@ -88,6 +90,7 @@ $cats = array(
 	'Physical Fitness' => $phys,
 	'Plane Angle' => $plane,
 	'Power' => $power,
+	'Torque' => $tor,
 
 );
 
