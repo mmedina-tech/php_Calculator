@@ -62,7 +62,8 @@ img{
 #tabitem:hover{
 	background-image: linear-gradient(to top left, #053C4A, #9F9F9F);
 }
-@media screen and (max-width: 1024px){
+
+@media screen and (max-width: 1080px){
 	.Head-Column{
 		width: 50%;
 	}
