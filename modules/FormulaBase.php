@@ -1,43 +1,43 @@
 <?php
-# Last Update: 2021-12-27: 22:05
+# Last Update: 2022-01-11: 11:13
 
 class FormulaBase{
-	public function __construct($name=null){
+    public function __construct($name=null){
 
-		if ( isset($name) )
-		{
-			$this->menuname = $name;
-		} else {
-			return null;
-		}
+        if ( isset($name) )
+        {
+            $this->menuname = $name;
+        } else {
+            return null;
+        }
 
-		$function_list = array();
-		$error_msg = "Can not be a negative square root";
-	}
-	function get_formula($formulaName){
-		return $this->formula;
-	}
-	function get_menu_name(){
-		return $this->menuname;
-	}
-	function get_category_name(){
-		return $this->categoryname;
-	}
-	function prompt($args){
-		$argList = array();
-		echo "\nRunning... ".$args[0]."\n";
-		foreach (array_slice($args, 1) as $arg){
-			$userStr = readline("\t".$arg.": ");
-			$argList[] = $userStr;
-		}
-		return $argList;
-	}
+        $function_list = array();
+        $error_msg = "Can not be a negative square root";
+    }
+    function get_formula($formulaName){
+        return $this->formula;
+    }
+    function get_menu_name(){
+        return $this->menuname;
+    }
+    function get_category_name(){
+        return $this->categoryname;
+    }
+    function prompt($args){
+        $argList = array();
+        echo "\nRunning... ".$args[0]."\n";
+        foreach (array_slice($args, 1) as $arg){
+            $userStr = readline("\t".$arg.": ");
+            $argList[] = $userStr;
+        }
+        return $argList;
+    }
 
-	function pluralize ($a, $b) {
-		$oddplur = array(
-		#{{{
-		"Kilometer/Liter" => "Kilometers/Liter",
-		"Mile/Gallon" => "Miles/Gallon",
+    function pluralize ($a, $b) {
+        $oddplur = array(
+        #{{{
+        "Kilometer/Liter" => "Kilometers/Liter",
+        "Mile/Gallon" => "Miles/Gallon",
         "Celsius" => "Celsius",
         "Fahrenheit" => "Fahrenheit",
         "Rankine" => "Rankine",
@@ -82,15 +82,15 @@ class FormulaBase{
         "Kilometer<sup>2</sup>" => "Kilometers<sup>2</sup>",
         "Inch<sup>2</sup>" => "Inches<sup>2</sup>",
         "Meter<sup>2</sup>" => "Meters<sup>2</sup>",
-		"Millimeter<sup>2</sup>" => "Millimeters<sup>2</sup>",
-		"Foot<sup>3</sup>" => "Feet<sup>3</sup>",
-		"Meter<sup>3</sup>" => "Meters<sup>3</sup>",
-		"Inch<sup>3</sup>" => "Inches<sup>3</sup>",
-		"Centimeter<sup>3</sup>" => "Centimeters<sup>3</sup>",
-		"Kilometer<sup>3</sup>" => "Kilometers<sup>3</sup>",
-		"Mile<sup>3</sup>" => "Miles<sup>3</sup>",
-		"Millimeter<sup>3</sup>" => "Millimeters<sup>3</sup>",
-		"Yard<sup>3</sup>" => "Yards<sup>3</sup>",
+        "Millimeter<sup>2</sup>" => "Millimeters<sup>2</sup>",
+        "Foot<sup>3</sup>" => "Feet<sup>3</sup>",
+        "Meter<sup>3</sup>" => "Meters<sup>3</sup>",
+        "Inch<sup>3</sup>" => "Inches<sup>3</sup>",
+        "Centimeter<sup>3</sup>" => "Centimeters<sup>3</sup>",
+        "Kilometer<sup>3</sup>" => "Kilometers<sup>3</sup>",
+        "Mile<sup>3</sup>" => "Miles<sup>3</sup>",
+        "Millimeter<sup>3</sup>" => "Millimeters<sup>3</sup>",
+        "Yard<sup>3</sup>" => "Yards<sup>3</sup>",
         "Centimeter<sup>2</sup>" => "Centimeters<sup>2</sup>",
         "Lumens/Meter<sup>2</sup>" => "Lumens/Meter<sup>2</sup>",
         "Lumens/Meter Squared" => "Lumens/Meter Squared",
@@ -112,9 +112,9 @@ class FormulaBase{
         "Centiare" => "Centiares",
         "Hectare" => "Hectares",
         "Link<sup>2</sup>" => "Links<sup>2</sup>",
-		"Link<sup>3</sup>" => "Links<sup>3</sup>",
-		"Pole<sup>3</sup>" => "Poles<sup>3</sup>",
-		"Chain<sup>3</sup>" => "Chains<sup>3</sup>",
+        "Link<sup>3</sup>" => "Links<sup>3</sup>",
+        "Pole<sup>3</sup>" => "Poles<sup>3</sup>",
+        "Chain<sup>3</sup>" => "Chains<sup>3</sup>",
         "Pole<sup>2</sup>" =>  "Poles<sup>2</sup>",
         "Chain<sup>2</sup>" => "Chains<sup>2</sup>",
         "Mile<sup>2</sup>" => "Miles<sup>2</sup>",
@@ -132,44 +132,44 @@ class FormulaBase{
         "Pyramid Volume" => "Pyramid Volume",
         "Pounds per Square Foot" => "Pounds per Square Foot",
         "Inductive Reactance Rating" => "Inductive Reactance Rating",
-		"Company Valuation" => "Company Valuation",
-		"Nautical Mile/Hr" => "Nautical Miles/Hr",
-		#}}}
-		);
+        "Company Valuation" => "Company Valuation",
+        "Nautical Mile/Hr" => "Nautical Miles/Hr",
+        #}}}
+        );
 
-		if ( $a > 1 ) {
-			if ( array_key_exists($b, $oddplur) ) {
-				return $oddplur[$b];
-			} else if ( $b === "" ) {
-				return $b;
-			} else {
-				return $b."s";
-			}
-		} else {
-		 return $b;
-		}
-	}
-	function prec ($result, $precise=1){
-		$result = round($result, $precise);
-		return $result;
-	}
-	function money($result){
-		return money_format("$%i", $result);
-	}
-	function for_loop($fname){
-		$mystr = "";
-		foreach ($this->functionInputs[$fname] as $key=>$value){
-			$mystr .= "<p class='titles'>$value</p><br>&nbsp<input type='text' name='$key' required autofocus><br>\n";
-		}
-		return $mystr;
-	}
-	function show_Formulas($fname){
-		$mystr = "";
-		foreach ( $this->formula_list[$fname] as $key=>$value ){
-			$mystr .= "$key $value";
-		}
-		return $mystr;
-	}
+        if ( $a > 1 ) {
+            if ( array_key_exists($b, $oddplur) ) {
+                return $oddplur[$b];
+            } else if ( $b === "" ) {
+                return $b;
+            } else {
+                return $b."s";
+            }
+        } else {
+         return $b;
+        }
+    }
+    function prec ($result, $precise=1){
+        $result = round($result, $precise);
+        return $result;
+    }
+    function money($result){
+        return money_format("$%i", $result);
+    }
+    function for_loop($fname){
+        $mystr = "";
+        foreach ($this->functionInputs[$fname] as $key=>$value){
+            $mystr .= "<p class='titles'>$value</p><br>&nbsp<input type='text' name='$key' required autofocus><br>\n";
+        }
+        return $mystr;
+    }
+    function show_Formulas($fname){
+        $mystr = "";
+        foreach ( $this->formula_list[$fname] as $key=>$value ){
+            $mystr .= "$key $value";
+        }
+        return $mystr;
+    }
 }
 
 ?>

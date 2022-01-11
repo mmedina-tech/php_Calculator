@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:55:01 PM PDT
-# Last Update: 2021-11-20: 17:33
+# Last Update: 2022-01-11: 11:42
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,21 +30,21 @@ require_once ("FormulaBase.php");
 class Resistive_Inductive_Series extends FormulaBase{
     function __construct(){
 
-		#{{{ Function Titles
-		$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        $this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		$this->function_list = array();
+        $this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		$this->functionInputs = array();
+        $this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		$this->formula_list = array();
+        $this->formula_list = array();
         #}}}
 
-	}
+    }
 }

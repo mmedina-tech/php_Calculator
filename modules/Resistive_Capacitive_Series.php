@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-01-03: 16:20
+# Last Update: 2022-01-11: 11:52
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -92,16 +92,16 @@ class Resistive_Capacitive_Series extends FormulaBase{
 		#}}}
 	
         #{{{ Function List
-		$this->function_list = array();
+        $this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		$this->functionInputs = array();
+        $this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		$this->formula_list = array();
+        $this->formula_list = array();
         #}}}
 
-	}
+    }
 }

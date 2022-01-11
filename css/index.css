@@ -4,7 +4,7 @@
 
  Author: Marcus Medina
  Date: Mon 22 Nov 2021 08:45:36 PM PST
- Last Update: 2021-11-22: 20:46
+ Last Update: 2022-01-11: 11:10
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -24,24 +24,24 @@
 */
 
 #links{
-	background-color: lightblue;
-	border: 1px solid black;
-	border-radius: 5px;
-	min-width: 20px;
-	font-size: 24px;
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 20px;
+    font-size: 24px;
 }
 a{
-	color: black;
-	font-size: 48px;
+    color: black;
+    font-size: 48px;
 }
 #mainBody{
-	font-size: 14px;
-	font-weight: bold;
-	background-color: lightblue;
-	width: 75%;
-	padding: 20px;
-	margin: auto;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: lightblue;
+    width: 75%;
+    padding: 20px;
+    margin: auto;
 }
 body{
-	background-image: url('/php_Calculator/images/yellow_ruler_2.jpg');
+    background-image: url('/php_Calculator/images/yellow_ruler_2.jpg');
 }

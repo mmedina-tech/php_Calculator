@@ -3,9 +3,9 @@ body{
     background-image: url('../images/physics_stairs.jpg');
 }
 #mainHeader{
-	color: white;
-	text-align: center;
-	font-family: courier;
+    color: white;
+    text-align: center;
+    font-family: courier;
     margin: auto;
     border-style: outset;
     border-color: red;
@@ -16,18 +16,18 @@ body{
 
 }
 #mainLink:hover{
-	color: white;
-	text-align: center;
-	font-family: courier;
+    color: white;
+    text-align: center;
+    font-family: courier;
     margin: auto;
     background-color: #758ea3;
     text-shadow: 4px 4px 8px black;
     padding: 15px;
 }
 #mainLink:visited{
-	color: white;
-	text-align: center;
-	font-family: courier;
+    color: white;
+    text-align: center;
+    font-family: courier;
     margin: auto;
     background-color: #758ea3;
     text-shadow: 4px 4px 8px black;
@@ -39,8 +39,8 @@ body{
     height: 74%;
     right: 55%;
     left: 0.5%;
-	color: white;
-	font-family: courier;
+    color: white;
+    font-family: courier;
     margin: auto;
     border-style: outset;
     border-color: red;
@@ -55,8 +55,8 @@ body{
     height: 74%;
     left: 49%;
     right: 0.5%;
-	color: white;
-	font-family: courier;
+    color: white;
+    font-family: courier;
     margin: auto;
     border-style: outset;
     border-color: red;
@@ -68,9 +68,9 @@ body{
     line-height: 150%;
 }
 #mainlogo{
-	width: 10%;
-	height: 10%;
-	text-align: center;
+    width: 10%;
+    height: 10%;
+    text-align: center;
 }
 
 p{
@@ -155,14 +155,14 @@ li{
         height: 10%;
         text-align: center;
     }
-	#tablogo{
-		width: 10%;
-		height: 10%;
-		text-align: center;
-	}
-	.description{
-		font-size: 20%;
-	}
+    #tablogo{
+        width: 10%;
+        height: 10%;
+        text-align: center;
+    }
+    .description{
+        font-size: 20%;
+    }
 }
 @media only screen and (max-width: 500px){
     #mainHeader{
@@ -216,12 +216,12 @@ li{
         background: rgb(68, 82, 95, 0.95);
         line-height: 150%;
     }
-	#tablogo{
-		width: 10%;
-		height: 10%;
-		text-align: center;
-	}
-	h3.description{
-		font-size: 20%;
-	}
+    #tablogo{
+        width: 10%;
+        height: 10%;
+        text-align: center;
+    }
+    h3.description{
+        font-size: 20%;
+    }
 }

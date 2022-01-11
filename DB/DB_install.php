@@ -149,7 +149,7 @@ function pdo_conn(){
 	$page = str_replace("{TABLE1}", $table2, $page);
 	$page = str_replace("{TABLE2}", $table3, $page);
 	$page = str_replace("<div hidden>", "<div>", $page);
-	$page = str_replace("{START}", "<br><br><button id='tabitem'><a href='/php_Calculator/calculator_front.html'>Start Calculator</a></button>", $page);
+	$page = str_replace("{START}", "<br><br><button id='tabitem'><a href='/php_Calculator/calculator_front.php'>Start Calculator</a></button>", $page);
 	return $page;
 }
 
