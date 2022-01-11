@@ -1,122 +1,122 @@
 body {
-	font-family: Arial, sans-serif;
-	text-align: center;
-	background-image: url('../images/physics_stairs.jpg');
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('../images/physics_stairs.jpg');
 }
 h2 {
-	color: white;
-	font-family: courier;
-	font-size: 30px;
-	font-weight: bold;
-	border-radius: 5px;
-	min-width: 150px;
-	max-width: 400px;
-	margin: auto;
-	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
+    color: white;
+    font-family: courier;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    min-width: 150px;
+    max-width: 400px;
+    margin: auto;
+    background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
 }
 .description {
-	background-color: black;
-	color: white;
-	font-size: 20px;
-	font-family: courier;
-	padding: 5px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: courier;
+    padding: 5px;
 }
 h5 {
-	background-color: black;
-	margin: auto;
-	width: 120px;
-	color: white;
+    background-color: black;
+    margin: auto;
+    width: 120px;
+    color: white;
 }
 .titles{
-	color: white;
-	font-weight: bold;
-	margin: auto;
-	width: 20%;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    width: 20%;
 }
 .header_titles {
-	color: white;
-	background-color: black;
-	border-radius: 5px;
-	border: 1px solid black;
-	font-weight: bold;
-	margin: auto;
-	width: 60%;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-weight: bold;
+    margin: auto;
+    width: 60%;
 }
 
 input {
-	margin-bottom: 20px;
-	font-weight: bold;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 select.selcat {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 select.selForm {
-	margin-bottom: 20px;
-	max-width: 300px;
+    margin-bottom: 20px;
+    max-width: 300px;
 }
 .ansdiv {
-	min-height: 20px;
-	padding-top: 45px;
+    min-height: 20px;
+    padding-top: 45px;
     padding-bottom: 25px;
-	min-width: 200px;
-	width: 250px;
-	border: 1px solid black;
-	border-radius: 7px;
-	margin: auto;
-	background-color: #c0f1ff;
+    min-width: 200px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 7px;
+    margin: auto;
+    background-color: #c0f1ff;
 }
 .income{
-	color: green;
-	font-weight: bold;
+    color: green;
+    font-weight: bold;
 }
 .expenses{
-	color: red;
-	font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 .error{
-	min-width: 200px;
-	width: 250px;
-	border: 1px solid black;
-	border-radius: 7px;
-	margin: auto;
-	background-color: #ec4040;
+    min-width: 200px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 7px;
+    margin: auto;
+    background-color: #ec4040;
 }
 
 form{
-	text-align: center;
+    text-align: center;
 }
 footer{
-	text-align: center;
+    text-align: center;
 }
 .inputs{
-	overflow: auto;
-	height: 200px;
+    overflow: auto;
+    height: 200px;
 }
 .column{
-	float: left;
-	width: 33.33%;
+    float: left;
+    width: 33.33%;
 }
 @media screen and (max-width: 960px) and (min-width: 620px){
-	.column{
-		width: 100%;
-		margin: auto;
-	}
-	.titles{
-		font-size: 25px;
-	}
-	h2{
-		font-size: 20px;
-	}
+    .column{
+        width: 100%;
+        margin: auto;
+    }
+    .titles{
+        font-size: 25px;
+    }
+    h2{
+        font-size: 20px;
+    }
 }
 @media screen and (max-width: 620px) and (min-width: 320px){
-	.column{
-		width: 100%;
-		float: center;
-	}
-	.titles{
-		font-size: 18px;
-	}
-	h2{
-		font-size: 20px;
-	}
+    .column{
+        width: 100%;
+        float: center;
+    }
+    .titles{
+        font-size: 18px;
+    }
+    h2{
+        font-size: 20px;
+    }
 }

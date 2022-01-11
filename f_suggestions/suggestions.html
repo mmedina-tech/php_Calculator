@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <!--
 
-	suggestions.html
+    suggestions.html
 
-	Date: copyright 2020
-	Last Update: 2021-12-28: 00:00
+    Date: copyright 2020
+    Last Update: 2022-01-11: 11:12
 
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foudantion; either version 2 of the License, or
-	(at your option) any later version.
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foudantion; either version 2 of the License, or
+    (at your option) any later version.
 
-	This Program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
-	GNU General Public License for more details.
+    This Program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 
-	You should have recieved a copy of the GNU Genreal Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-	MA 02110-1301, USA.
+    You should have recieved a copy of the GNU Genreal Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA 02110-1301, USA.
 
 -->
 <html>
-	<head>
-		<meta lang='en-US'>
-		<meta charset='UTF-8'>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-		<title>Suggest a Formula</title>
+    <head>
+        <meta lang='en-US'>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Suggest a Formula</title>
 
-		<link rel='stylesheet' href='/php_Calculator/css/calculator.css' type='text/css'>
+        <link rel='stylesheet' href='/php_Calculator/css/calculator.css' type='text/css'>
         <link rel="stylesheet" href="/php_Calculator/css/suggestions.css" type="text/css" media="" title="" charset="" />
-		<link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
-	</head>
-	<body>
+        <link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
+    </head>
+    <body>
         <div id='maindisplay'>
-			<div class='Head-Column'>
-				<h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
-			</div>
-			<div class='Head-Column'>
-				<div class='menuItem'>
-					<a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-					<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-					<a id='tabitem' href='/php_Calculator/calculator_front.php'>Back to Calculator</a>
-					<a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave Comment</a>
-				</div>
-			</div>
+            <div class='Head-Column'>
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+            </div>
+            <div class='Head-Column'>
+                <div class='menuItem'>
+                    <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
+                    <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
+                    <a id='tabitem' href='/php_Calculator/calculator_front.php'>Back to Calculator</a>
+                    <a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave Comment</a>
+                </div>
+            </div>
         </div>
-		<h2 class='disclaimer'>--Disclaimer--</h2>
-		<h2 class='description'>Here is where you are able to suggest any formula that we 
-			might not have and that will show up in future releases.<br>
-		Please use your real name so that I can feature you in the special thanks section.</h2>
-		<form id='userform' action='/php_Calculator/f_suggestions/suggestion_c.php' method='post'>
+        <h2 class='disclaimer'>--Disclaimer--</h2>
+        <h2 class='description'>Here is where you are able to suggest any formula that we 
+            might not have and that will show up in future releases.<br>
+        Please use your real name so that I can feature you in the special thanks section.</h2>
+        <form id='userform' action='/php_Calculator/f_suggestions/suggestion_c.php' method='post'>
             <div class='column'>
-				<div class='user'>
-					<p class='titles'>First Name:</p>
-					<input type='text' id='fname' name='fname' autofocus required>
-					<p class='titles'>Last Name:</p>
-					<input type='text' id='lname' name='lname' required>
-					<p class='titles'>Formula Category:</p>
-					<input type='text' id='formCat' name='formCat' required>
-					<p class='titles'>Formula Name:</p>
-					<input type='text' id='formName' name='formName' required>
-					<p class='titles'>Formula:</p>
-					<input type='text' id='formula' name='formula' required>
-				</div>
-				
+                <div class='user'>
+                    <p class='titles'>First Name:</p>
+                    <input type='text' id='fname' name='fname' autofocus required>
+                    <p class='titles'>Last Name:</p>
+                    <input type='text' id='lname' name='lname' required>
+                    <p class='titles'>Formula Category:</p>
+                    <input type='text' id='formCat' name='formCat' required>
+                    <p class='titles'>Formula Name:</p>
+                    <input type='text' id='formName' name='formName' required>
+                    <p class='titles'>Formula:</p>
+                    <input type='text' id='formula' name='formula' required>
+                </div>
+                
             </div>
             <div class='column'>
-				<p class='titles'>Description:</p>
-				<textarea type=text id='description' name='description' rows='10' cols='50' maxlength='500' placeholder="Description Here..." required></textarea>
-				<br>
-				{INSERT}
-			</div>
+                <p class='titles'>Description:</p>
+                <textarea type=text id='description' name='description' rows='10' cols='50' maxlength='500' placeholder="Description Here..." required></textarea>
+                <br>
+                {INSERT}
+            </div>
             <div class='column'>
-				<div class='reference'>
-					<p class='titles'>Book Title:</p>
-					<input type='text' id='bookt' name='bookt'>
-					<p class='titles'>Book Author:</p>
-					<input type='text' id='booka' name='booka'>
-					<p class='titles'>Book Publisher:</p>
-					<input type='text' id='bookp' name='bookp'>
-					<p class='titles'>Page Number:</p>
-					<input type='text' id='pgnumber' name='pgnumber'>
-				</div>
-				<br>
-				<input type='submit' value='Add'><br><br>
-			</div>
-		</form>
-	</body>
+                <div class='reference'>
+                    <p class='titles'>Book Title:</p>
+                    <input type='text' id='bookt' name='bookt'>
+                    <p class='titles'>Book Author:</p>
+                    <input type='text' id='booka' name='booka'>
+                    <p class='titles'>Book Publisher:</p>
+                    <input type='text' id='bookp' name='bookp'>
+                    <p class='titles'>Page Number:</p>
+                    <input type='text' id='pgnumber' name='pgnumber'>
+                </div>
+                <br>
+                <input type='submit' value='Add'><br><br>
+            </div>
+        </form>
+    </body>
 </html>
 

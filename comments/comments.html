@@ -2,59 +2,59 @@
 <!-- SYNOPSIS: Comments page for The Massive Calculator -->
 <!--
 
-	comments.html
+    comments.html
 
-	Date: copyright 2019
-	Last Update: 2021-12-27: 23:59
+    Date: copyright 2019
+    Last Update: 2022-01-11: 11:09
 
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foudantion; either version 2 of the License, or
-	(at your option) any later version.
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foudantion; either version 2 of the License, or
+    (at your option) any later version.
 
-	This Program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
-	GNU General Public License for more details.
+    This Program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 
-	You should have recieved a copy of the GNU Genreal Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-	MA 02110-1301, USA.
+    You should have recieved a copy of the GNU Genreal Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA 02110-1301, USA.
 
 -->
 <html>
-	<head>
-		<meta lang='en-US'>
-		<meta charset='UTF-8'>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-		<title>Leave a Comment!</title>
+    <head>
+        <meta lang='en-US'>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Leave a Comment!</title>
         <link rel="stylesheet" type="text/css" href="/php_Calculator/css/calculator.css" />
-		<link rel='stylesheet' type='text/css' href='/php_Calculator/css/comments.css'>
-		<link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
-		<!--
-		<link rel="stylesheet" type="text/css" href="/php_Calculator/css/DataGridView.css" />
-		-->
-	</head>
-	<body>
-		<div id='maindisplay'>
-			<div class='Head-Column'>
-				<h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
-			</div>
-			<div class='Head-Column'>
-				<div class='menuItem'>
-					<a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-					<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-					<a id='tabitem' href='/php_Calculator/calculator_front.php'>Back to Calculator</a>
-					<a id='tabitem' href='/php_Calculator/f_suggestions/suggestion_r.php'>Suggest a Formula</a>
-				</div>
-			</div>
-		</div>   
-		<h2 class='disclaimer'>--Disclaimer--</h2>
-		<h3 class='description'>All comments are subject to monitoring and may be deleted by staff.
-			Please limit comments to being constructive and applicable to the
-			product. Thank You.</h3>
-		<form id='userform' action='/php_Calculator/comments/comments_c.php' method='post'>
+        <link rel='stylesheet' type='text/css' href='/php_Calculator/css/comments.css'>
+        <link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
+        <!--
+        <link rel="stylesheet" type="text/css" href="/php_Calculator/css/DataGridView.css" />
+        -->
+    </head>
+    <body>
+        <div id='maindisplay'>
+            <div class='Head-Column'>
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+            </div>
+            <div class='Head-Column'>
+                <div class='menuItem'>
+                    <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
+                    <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
+                    <a id='tabitem' href='/php_Calculator/calculator_front.php'>Back to Calculator</a>
+                    <a id='tabitem' href='/php_Calculator/f_suggestions/suggestion_r.php'>Suggest a Formula</a>
+                </div>
+            </div>
+        </div>   
+        <h2 class='disclaimer'>--Disclaimer--</h2>
+        <h3 class='description'>All comments are subject to monitoring and may be deleted by staff.
+            Please limit comments to being constructive and applicable to the
+            product. Thank You.</h3>
+        <form id='userform' action='/php_Calculator/comments/comments_c.php' method='post'>
             <div class="column">
                 <p class='titles'>First Name:</p>
                 <input type='text' id='fname' name='fname' required>
@@ -64,12 +64,12 @@
             <div class='column'>
                 <p class='titles'>Comment: </p>
                 <textarea class='comments' id='comment' name='comment' placeholder='Comment Here...' maxlength='500' required></textarea>
-				{INSERT}
+                {INSERT}
             </div>
             <div class='column'>
                 <input type='submit' value='Submit'><br>
             </div>
-		</form>
-	</body>
+        </form>
+    </body>
 </html>
 

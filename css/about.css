@@ -4,7 +4,7 @@
 
  Author: Marcus Medina
  Date: Fri 04 Sep 2020 01:33:56 PM PDT
- Last Update: 
+ Last Update: 2022-01-11: 11:10
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -24,41 +24,41 @@
 */
 
 article{
-	background-color: black;
-	color: white;
-	margin: auto;
-	max-width: 75%;
+    background-color: black;
+    color: white;
+    margin: auto;
+    max-width: 75%;
 }
 .history-header, .future-header{
-	color: white;
-	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
-	border-radius: 5px;
-	margin: auto;
+    color: white;
+    background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
+    border-radius: 5px;
+    margin: auto;
 }
 .acknowledge{
-	background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
-	color: white;
-	margin: auto;
-	max-width: 25%;
+    background-image: linear-gradient(to bottom right, #053C4A, #9F9F9F);
+    color: white;
+    margin: auto;
+    max-width: 25%;
 }
 .thanks{
-	max-width: 25%;
-	margin: auto;
-	color: white;
+    max-width: 25%;
+    margin: auto;
+    color: white;
 }
 @media screen and (max-width: 960px) and (min-width: 620px){
-	footer{
-		font-size: 16px;
-	}
-	.thanks, .acknowledge, .history, .future{
-		max-width: 50%;
-	}
+    footer{
+        font-size: 16px;
+    }
+    .thanks, .acknowledge, .history, .future{
+        max-width: 50%;
+    }
 }
 @media screen and (max-width: 620px) and (min-width: 320px){
-	footer{
-		font-size: 14px;
-	}
-	.thanks, .acknowledge, .history, .future{
-		max-width: 100%;
-	}
+    footer{
+        font-size: 14px;
+    }
+    .thanks, .acknowledge, .history, .future{
+        max-width: 100%;
+    }
 }
