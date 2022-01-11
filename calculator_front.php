@@ -4,7 +4,7 @@
     calculator_front.html
 
     Date: copyright 2019
-	Last Update: 2021-12-27: 23:57
+    Last Update: 2022-01-11: 11:07
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,25 +32,25 @@
         <meta name='description' content='A Massive Calculator that centralizes all mathematical formulas'>
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
         <title>The Massive Calculator!</title>
-		<link rel="icon" href="/php_Calculator/images/massive.png" type="image/x-icon">
-		<link ref="shortcut icon" href="/php_Calculator/images/massive.png" type='image/x-icon'>
+        <link rel="icon" href="/php_Calculator/images/massive.png" type="image/x-icon">
+        <link ref="shortcut icon" href="/php_Calculator/images/massive.png" type='image/x-icon'>
         <link rel="stylesheet" type="text/css" href="/php_Calculator/css/calculator.css">
         <link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
-		<script src="/php_Calculator/js/calculator.js"></script>
+        <script src="/php_Calculator/js/calculator.js"></script>
     </head>
     <body>
         <div id="maindisplay">
-			<div class="Head-Column">
-				<h1 class='mainHeader'><img id='mainlogo' align='center' src='images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
-			</div>
-			<div class='Head-Column'>
-				<nav class="menuItem">
-					<a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-					<a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-					<a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
-					<a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
-				</nav>
-			</div>
+            <div class="Head-Column">
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+            </div>
+            <div class='Head-Column'>
+                <nav class="menuItem">
+                    <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
+                    <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
+                    <a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
+                    <a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
+                </nav>
+            </div>
         </div>
         <div>
             <h3 class='description'>This Calculator is not like any that you have seen before. This
@@ -85,11 +85,11 @@
                     <option value='Resistive Capacitance Parallel'>Resistive Capacitance Parallel</option>
                     <option value='Resistive Inductance Parallel'>Resistive Inductance Parallel</option>
                     <option value='Resistive Inductance Series'>Resistive Inductance Series</option>
-					<option value="Resistive Inductive Capacitive Series">Resistive Inductive Capacitive Series</option>
+                    <option value="Resistive Inductive Capacitive Series">Resistive Inductive Capacitive Series</option>
                     <option value='Torque'>Torque</option>
                     <option value='Velocity'>Velocity</option>
                 </select>
-				<input type="submit" name="" value="submit" />
+                <input type="submit" name="" value="submit" />
             </form>
         </div><!-- End Main -->
     </body>
