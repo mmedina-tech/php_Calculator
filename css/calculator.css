@@ -29,13 +29,16 @@ h5 {
 }
 .titles{
     color: white;
+    background-color: slategrey;
     font-weight: bold;
     margin: auto;
     width: 20%;
+    border-radius: 5px;
 }
 .header_titles {
     color: white;
     background-color: black;
+    padding-top: 5px;
     border-radius: 5px;
     border: 1px solid black;
     font-weight: bold;

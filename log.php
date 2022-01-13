@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 03:55:19 PM PDT
-# Last Update: 2021-12-27: 21:32
+# Last Update: 2022-01-13: 15:26
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,8 +29,14 @@
 require_once("DB/DB_conn.php");
 
 function logme($msg){
-	$fp = file_get_contents("./Logs/Calculator.log");
-	$fp = file_put_contents("./Logs/Calculator.log", $msg."\n");
+	if ( file_exists("./Logs") ) {
+		$fp = file_get_contents("./Logs/Calculator.log");
+		$fp = file_put_contents("./Logs/Calculator.log", $msg."\n");
+	}else{
+		mkdir("./Logs");
+		$fp = file_get_contents("./Logs/Calculator.log");
+		$fp = file_put_contents("./Logs/Calculator.log", $msg."\n");
+	}
 }
 
 function statlogger($cat, $forms, $formula_fields, $outscreen, $user){
