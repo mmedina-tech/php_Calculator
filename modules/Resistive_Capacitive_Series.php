@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-01-18: 09:03
+# Last Update: 2022-01-18: 09:09
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -96,7 +96,227 @@ class Resistive_Capacitive_Series extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array();
+        $this->functionInputs = array(
+            $this->function_strings[1] => array(
+                'number_input' => "Capacitor VAR's (input): ",
+                'number_input2' => 'Capacitor Amps (input): ',
+            ),
+            $this->function_strings[2] => array(
+                'number_input' => 'Capacitor Volts (input): ',
+                'number_input2' => 'Capacitor Amps (input): ',
+            ),
+            $this->function_strings[3] => array(
+                'number_input' => 'Capacitor Volts (input): ',
+                'number_input2' => "Capacitor VAR's (input): ",
+            ),
+            $this->function_strings[4] => array(
+                'number_input' => 'Frequency (input): ',
+                'number_input2' => 'Capacitor Rating (input): ',
+            ), 
+            $this->function_strings[5] => array(
+                'number_input' => 'Impedance (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[6] => array(
+                'number_input' => "Capacitor VAR's (input): ",
+                'number_input2' => 'Capacitor Volts (input): ',
+            ),
+            $this->function_strings[7] => array(
+                'number_input' => "Capacitor VAR's (input): ",
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[8] => array(
+                'number_input' => 'Capacitor Volts (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[9] => array(
+                'number_input' => 'Frequency (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[10] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => 'Watts (input): ',
+            ),
+            $this->function_strings[11] => array(
+                'number_input' => 'Capacitor Amps (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[12] => array(
+                'number_input' => 'Capacitor Volts (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[13] => array(
+                'number_input' => 'Capacitor Volts (input): ',
+                'number_input2' => 'Capacitor Amps (input): ',
+            ),
+            $this->function_strings[14] => array(
+                'number_input' => 'Capacitor Amps (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[15] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Resistor Volts (input): ',
+            ),
+            $this->function_strings[16] => array(
+                'number_input' => "Capacitor VAR's (input): ",
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[17] => array(
+                'number_input' => "Capacitor VAR's (input): ",
+                'number_input2' => 'Capacitor Amps (input): ',
+            ),
+            $this->function_strings[18] => array(
+                'number_input' => 'Resistance (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[19] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Total Amps (input): ',
+            ),
+            $this->function_strings[20] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => 'Total Amps (input): ',
+            ),
+            $this->function_strings[21] => array(
+                'number_input' => 'Resistance (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[22] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Volt Amps (input): ',
+            ),
+            $this->function_strings[23] => array(
+                'number_input' => 'Resistance (input): ',
+                'number_input2' => 'Impedance (input): ',
+            ),
+            $this->function_strings[24] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Volt Amps (input): ',
+            ),
+            $this->function_strings[25] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Total Volts (input): ',
+            ),
+            $this->function_strings[26] => array(
+                'number_input' => 'Theta Angle (input): ',
+            ),
+            $this->function_strings[27] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Resistor Amps (input): ',
+            ),
+            $this->function_strings[28] => array(
+                'number_input' => 'Impedance (input): ',
+                'number_input2' => 'Capacitive Reactance (input): ',
+            ),
+            $this->function_strings[29] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Watts (input): ',
+            ),
+            $this->function_strings[30] => array(
+                'number_input' => 'Impedance (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[31] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Resistor Amps (input): ',
+            ),
+            $this->function_strings[32] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[33] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Resistor Volts (input): ',
+            ),
+            $this->function_strings[34] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[35] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Capacitor Volts (input): ',
+            ),
+            $this->function_strings[36] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[37] => array(
+                'number_input' => 'Resistor Amps (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[38] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[39] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Resistor Amps (input): ',
+            ),
+            $this->function_strings[40] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Impedance (input): ',
+            ),
+            $this->function_strings[41] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => 'Total Volts (input): ',
+            ),
+            $this->function_strings[42] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Capacitor Volts (input): ',
+            ),
+            $this->function_strings[43] => array(
+                'number_input' => 'Total Amps (input): ',
+                'number_input2' => 'Impedance (input): ',
+            ),
+            $this->function_strings[44] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => 'Total Amps (input): ',
+            ),
+            $this->function_strings[45] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[46] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Total Amps (input): ',
+            ),
+            $this->function_strings[47] => array(
+                'number_input' => 'Total Amps (input): ',
+                'number_input2' => 'Impedance (input): ',
+            ),
+            $this->function_strings[48] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Impedance (input): ',
+            ),
+            $this->function_strings[49] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => "Capacitor VAR's (input): ",
+            ),
+            $this->function_strings[50] => array(
+                'number_input' => 'Watts (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[51] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Resistor Amps (input): ',
+            ),
+            $this->function_strings[52] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => "Capacitor VAR's (input): ",
+            ),
+            $this->function_strings[53] => array(
+                'number_input' => 'Resistor Volts (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[54] => array(
+                'number_input' => 'Resistor Amps (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[55] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+        );
         #}}}
 
         #{{{ Formula List
