@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-01-18: 15:01
+# Last Update: 2022-01-18: 15:40
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -92,7 +92,36 @@ class Resistive_Capacitive_Series extends FormulaBase{
         #}}}
     
         #{{{ Function List
-        $this->function_list = array();
+        $this->function_list = array(
+            $this->function_strings[1] => function($num, $num2){
+                $result = $num / pow($num2, 2);
+                return array($result, $this->pluralize($result, 'Capacitive Reactance'));
+            },
+            $this->function_strings[2] => function($num, $num2){
+                $result = $num / $num2;
+                return array($result, $this->pluralize($result, 'Capacitive Reactance'));
+            },
+            $this->function_strings[3] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($result, $this->pluralize($result, 'Capacitive Reactance'));
+            },
+            $this->function_strings[4] => function($num, $num2){
+                $result = 1 / (2 * PI * $num * $num2);
+                return array($result, $this->pluralize($result, 'Capacitive Reactance'));
+            },
+            $this->function_strings[5] => function($num, $num2){
+                if ( $num <= $num2 ){
+                    return array($this->error_msg, '');
+                }
+                $result = sqrt(pow($num, 2) - pow($num2, 2));
+                return array($result, $this->pluralize($result, 'Capacitive Reactance'));
+            },
+            $this->function_strings[6] => function($num, $num2){
+                $result = $num / $num2;
+                return array($result, $this->pluralize($result, 'Capacitor Amp'));
+            },
+
+        );
         #}}}
 
         #{{{ Inputs
