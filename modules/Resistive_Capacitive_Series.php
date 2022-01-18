@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-01-18: 09:09
+# Last Update: 2022-01-18: 15:01
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -320,7 +320,173 @@ class Resistive_Capacitive_Series extends FormulaBase{
         #}}}
 
         #{{{ Formula List
-        $this->formula_list = array();
+        $this->formula_list = array(
+            $this->function_strings[1] => array(
+                'Formula:<br>' => 'VARS<sub>C</sub> / I<sub>C</sub><sup>2</sup>'
+            ),
+            $this->function_strings[2] => array(
+                'Formula:<br>' => 'E<sub>C</sub> / I<sub>C</sub>'
+            ),
+            $this->function_strings[3] => array(
+                'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> / VARS<sub>C</sub>'
+            ),
+            $this->function_strings[4] => array(
+                'Formula:<br>' => '1 / (2 * PI * F * C)'
+            ),
+            $this->function_strings[5] => array(
+                'Formula:<br>' => 'sqrt(Z<sup>2</sup> - R<sup>2</sup>)'
+            ),
+            $this->function_strings[6] => array(
+                'Formula:<br>' => 'VARS<sub>C</sub> / E<sub>C</sub>'
+            ),
+            $this->function_strings[7] => array(
+                'Formula:<br>' => 'sqrt(VARS<sub>C</sub> / X<sub>C</sub>)'
+            ),
+            $this->function_strings[8] => array(
+                'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> * X<sub>C</sub>'
+            ),
+            $this->function_strings[9] => array(
+                'Formula:<br>' => '1 / (2 * PI * F * X<sub>C</sub>'
+            ),
+            $this->function_strings[10] => array(
+                'Formula:<br>' => 'sqrt(VA<sup>2</sup> - P<sup>2</sup>)'
+            ),
+            $this->function_strings[11] => array(
+                'Formula:<br>' => 'I<sub>C</sub><sup>2</sup> * X<sub>C</sub>'
+            ),
+            $this->function_strings[12] => array(
+                'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> / X<sub>C</sub>'
+            ),
+            $this->function_strings[13] => array(
+                'Formula:<br>' => 'E<sub>C</sub> * I<sub>C</sub>'
+            ),
+            $this->function_strings[14] => array(
+                'Formula:<br>' => 'I<sub>C</sub> * X<sub>C</sub>'
+            ),
+            $this->function_strings[15] => array(
+                'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> - E<sub>R</sub><sup>2</sup>'
+            ),
+            $this->function_strings[16] => array(
+                'Formula:<br>' => 'sqrt(VARS<sub>C</sub> * X<sub>C</sub>'
+            ),
+            $this->function_strings[17] => array(
+                'Formula:<br>' => 'VARS<sub>C</sub> / I<sub>C</sub>'
+            ),
+            $this->function_strings[18] => array(
+                'Formula:<br>' => 'sqrt(Z<sup>2</sup> + X<sub>C</sub><sup>2</sup>'
+            ),
+            $this->function_strings[19] => array(
+                'Formula:<br>' => 'E<sub>T</sub> / I<sub>T</sub>'
+            ),
+            $this->function_strings[20] => array(
+                'Formula:<br>' => 'VA / I<sub>T</sub><sup>2</sup>'
+            ),
+            $this->function_strings[21] => array(
+                'Formula:<br>' => 'R / PF'
+            ),
+            $this->function_strings[22] => array(
+                'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> / VA'
+            ),
+            $this->function_strings[23] => array(
+                'Formula:<br>' => 'R / Z'
+            ),
+            $this->function_strings[24] => array(
+                'Formula:<br>' => 'P / VA'
+            ),
+            $this->function_strings[25] => array(
+                'Formula:<br>' => 'E<sub>R</sub> / E<sub>T</sub>'
+            ),
+            $this->function_strings[26] => array(
+                'Formula:<br>' => 'CoSine(Theta Angle)'
+            ),
+            $this->function_strings[27] => array(
+                'Formula:<br>' => 'P / I<sub>R</sub><sup>2</sup>'
+            ),
+            $this->function_strings[28] => array(
+                'Formula:<br>' => 'sqrt(Z<sup>2</sup> - X<sub>C</sub><sup>2</sup>'
+            ),
+            $this->function_strings[29] => array(
+                'Formula:<br>' => 'E<sub>R</sub><sup>2</sup> / P'
+            ),
+            $this->function_strings[30] => array(
+                'Formula:<br>' => 'Z * PF'
+            ),
+            $this->function_strings[31] => array(
+                'Formula:<br>' => 'E<sub>R</sub> / I<sub>R</sub>'
+            ),
+            $this->function_strings[32] => array(
+                'Formula:<br>' => 'E<sub>R</sub> / R'
+            ),
+            $this->function_strings[33] => array(
+                'Formula:<br>' => 'P / E<sub>R</sub>'
+            ),
+            $this->function_strings[34] => array(
+                'Formula:<br>' => 'sqrt(P / R)'
+            ),
+            $this->function_strings[35] => array(
+                'Formula:<br>' => 'E<sub>T</sub> * E<sub>C</sub>'
+            ),
+            $this->function_strings[36] => array(
+                'Formula:<br>' => 'sqrt(E<sub>T</sub> * PF)'
+            ),
+            $this->function_strings[37] => array(
+                'Formula:<br>' => 'I<sub>R</sub> / R'
+            ),
+            $this->function_strings[38] => array(
+                'Formula:<br>' => 'sqrt(P<sup>2</sup> - R<sup>2</sup>)'
+            ),
+            $this->function_strings[39] => array(
+                'Formula:<br>' => 'P * I<sub>R</sub>'
+            ),
+            $this->function_strings[40] => array(
+                'Formula:<br>' => 'E<sub>T</sub> / Z'
+            ),
+            $this->function_strings[41] => array(
+                'Formula:<br>' => 'VA / E<sub>T</sub>'
+            ),
+            $this->function_strings[42] => array(
+                'Formula:<br>' => 'sqrt(E<sub>R</sub><sup>2</sup> + E<sub>C</sub><sup>2</sup>'
+            ),
+            $this->function_strings[43] => array(
+                'Formula:<br>' => 'I<sub>T</sub> * Z'
+            ),
+            $this->function_strings[44] => array(
+                'Formula:<br>' => 'VA / I<sub>T</sub>'
+            ),
+            $this->function_strings[45] => array(
+                'Formula:<br>' => 'E<sub>R</sub> / PF'
+            ),
+            $this->function_strings[46] => array(
+                'Formula:<br>' => 'E<sub>T</sub> * I<sub>T</sub>'
+            ),
+            $this->function_strings[47] => array(
+                'Formula:<br>' => 'I<sub>T</sub><sup>2</sup> * Z'
+            ),
+            $this->function_strings[48] => array(
+                'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> / Z'
+            ),
+            $this->function_strings[49] => array(
+                'Formula:<br>' => 'sqrt(P<sup>2</sup> + VARS<sub>C</sub><sup>2</sup>)'
+            ),
+            $this->function_strings[50] => array(
+                'Formula:<br>' => 'P / PF'
+            ),
+            $this->function_strings[51] => array(
+                'Formula:<br>' => 'E<sub>R</sub> * I<sub>R</sub>'
+            ),
+            $this->function_strings[52] => array(
+                'Formula:<br>' => 'sqrt(VA<sup>2</sup> - VARS<sub>C</sub><sup>2</sup>)'
+            ),
+            $this->function_strings[53] => array(
+                'Formula:<br>' => 'E<sub>R</sub><sup>2</sup> / R'
+            ),
+            $this->function_strings[54] => array(
+                'Formula:<br>' => 'I<sub>R</sub><sup>2</sup> * R'
+            ),
+            $this->function_strings[55] => array(
+                'Formula:<br>' => 'VA * PF'
+            ),
+        );
         #}}}
 
     }
