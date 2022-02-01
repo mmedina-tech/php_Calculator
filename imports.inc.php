@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2021-12-27: 21:30
+# Last Update: 2022-01-31: 21:59
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -49,6 +49,9 @@ require_once( 'modules/Velocity.php' );
 require_once( 'modules/Resistive_Capacitive_Parallel.php' );
 
 
+$outputfp = file_get_contents("calculator_template.html");
+$license = file_get_contents("license.html");
+$header = file_get_contents("header.html");
 $CALCPATH = basename($CALCPATH);
 
 $accel = new Acceleration();

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 07:52:44 AM PDT
-# Last Update: 2021-12-23: 20:37
+# Last Update: 2022-01-31: 21:42
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 
 require( '../DB/DB_conn.php' );
 
-$page = file_get_contents('comments.html');
+$page = file_get_contents('comments.php');
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

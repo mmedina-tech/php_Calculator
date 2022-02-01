@@ -1,29 +1,10 @@
-<!--SYNOPSIS: The home page for the Massive Calculator-->
-<!--
+<!DOCTYPE HTML>
+<?php
 
-    calculator_front.html
+$license = file_get_contents("license.html");
+echo $license;
 
-    Date: copyright 2019
-    Last Update: 2022-01-13: 17:00
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foudantion; either version 2 of the License, or
-    (at your option) any later version.
-
-    This Program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU General Public License for more details.
-
-    You should have recieved a copy of the GNU Genreal Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-    MA 02110-1301, USA.
-
--->
-
-<!DOCTYPE html>
+?>
 <html>
     <head>
         <meta lang='en-US'>
@@ -39,21 +20,12 @@
         <script src="/php_Calculator/js/calculator.js"></script>
     </head>
     <body>
-        <div id="maindisplay">
-            <div class="Head-Column">
-                <h1 class='mainHeader'><img id='mainlogo' align='center' src='images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
-            </div>
-            <div class='Head-Column'>
-                <h1 class="mainHeader2">
-                    <nav class="menuItem">
-                        <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-                        <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-                        <a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
-                        <a id='tabitem' href='/php_Calculator/f_suggestions/suggestions.html'>Suggest a Formula</a>
-                    </nav>
-                </h1>
-            </div>
-        </div>
+<?php
+
+$header = file_get_contents("header.html");
+echo $header;
+
+?>
         <div>
             <h3 class='description'>This Calculator is not like any that you have seen before. This
                 calculator centralizes all the mathematical formulas into one
@@ -70,7 +42,6 @@
                     <option value='Budgeting'>Budgeting</option>
                     <option value='Culinary'>Culinary</option>
                     <option value='Energy or Work'>Energy or Work</option>
-                    <option value='Federal Taxation' hidden>Federal Taxation</option>
                     <option value='Fuel Economy'>Fuel Economy</option>
                     <option value='GED Practice'>GED Practice</option>
                     <option value='Imperial to Imperial'>Imperial to Imperial</option>

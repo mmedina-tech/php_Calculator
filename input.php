@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 03:53:48 PM PDT
-# Last Update: 2021-11-20: 17:24
+# Last Update: 2022-01-31: 21:37
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,13 +38,14 @@ $show_formulas = $active_cats->show_Formulas($forms);
 
 $action = "./answer.php";
 
-$outputfp = file_get_contents("./calculator_template.html");
 $outputfp = str_replace("CALCPATH", "/php_Calculator", $outputfp);
 $outputfp = str_replace("TITLE", $forms, $outputfp);
 $outputfp = str_replace("CATEGORY", $category, $outputfp);
 $outputfp = str_replace("ACTION", $action, $outputfp);
 $outputfp = str_replace("FORMULA", $show_formulas, $outputfp);
 $outputfp = str_replace("FORM_SELECT", $formula, $outputfp);
+$outputfp = str_replace("LICENSE", $license, $outputfp);
+$outputfp = str_replace("HEADER", $header, $outputfp);
 try{
 	$outputfp = str_replace("INPUT", $inputs, $outputfp);
 	$outputfp = str_replace("ANSWER", '', $outputfp);

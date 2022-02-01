@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 09:21:57 AM PDT
-# Last Update: 2021-11-20: 17:28
+# Last Update: 2022-01-31: 21:56
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,8 @@
 
 require( '../DB/DB_conn.php' );
 
+$header = file_get_contents('../header.html');
 $page = file_get_contents('suggestions.html');
 $page = str_replace('{INSERT}', '', $page);
+$page = str_replace('HEADER', $header, $page);
 print $page;

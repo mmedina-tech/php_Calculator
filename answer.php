@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 04:13:06 PM PDT
-# Last Update: 2021-12-27: 21:54
+# Last Update: 2022-01-31: 21:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,6 @@
 require_once("imports.inc.php");
 require_once("log.php");
 
-$outputfp = file_get_contents("calculator_template.html");
 $cat = $_POST['category'];
 $forms = $_POST['Formula'];
 $active_cats = $cats[$cat];
@@ -45,6 +44,8 @@ $outputfp = str_replace("TITLE", $forms, $outputfp);
 $outputfp = str_replace("ACTION", $action, $outputfp);
 $outputfp = str_replace("FORMULA", $show_formula, $outputfp);
 $outputfp = str_replace("FORM_SELECT", $formula, $outputfp);
+$outputfp = str_replace("LICENSE", $license, $outputfp);
+$outputfp = str_replace("HEADER", $header, $outputfp);
 try{
 	if ( count($cats[$cat]->functionInputs[$forms]) === 2 ) {
 		$formula_fields = "$number, $number2";
