@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:02 PM PST
-# Last Update: 2021-12-17: 12:49
+# Last Update: 2022-02-08: 08:13
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,4 +24,17 @@
 #
 #
 #
+require_once( 'pass_fail.php' );
+require_once( 'imports.inc.php' );
 
+$test = new TestSuite();
+
+function Resist_Cap_Ser_test($test, $class){
+    if ( $class->function_list[$class->function_strings[1]](234, 234) !== array(sqrt(234**2 + 234**2), "Total Amps")){
+        $test->set_fail($class->function_strings[1]);
+        $fail++;
+    } else {
+        $test->set_pass($class->function_strings[1]);
+        $pass++;
+    }
+}

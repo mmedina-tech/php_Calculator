@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:35:28 PM PST
-# Last Update: 2021-12-23: 09:19
+# Last Update: 2022-02-08: 09:22
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,36 +28,34 @@
 require_once("pass_fail.php");
 require_once("imports.inc.php");
 
-function test_Acceleration(){
+$test = new TestSuite();;
+
+function test_Acceleration($test, $class){
 	#{{{
-	global $test;
-	global $accel;
-	echo "\nAccleration
-----------------------------\n";
-	if ( $accel->function_list[$accel->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
-		$test->set_fail($accel->function_strings[1]);
+	if ( $class->function_list[$class->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
+		$test->set_fail($class->function_strings[1]);
 	} else {
-		$test->set_pass($accel->function_strings[1]);	
+		$test->set_pass($class->function_strings[1]);	
 	}
-	if ( $accel->function_list[$accel->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
-		$test->set_fail($accel->function_strings[2]);
+	if ( $class->function_list[$class->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
+		$test->set_fail($class->function_strings[2]);
 	} else {
-		$test->set_pass($accel->function_strings[2]);	
+		$test->set_pass($class->function_strings[2]);	
 	}
-	if ( $accel->function_list[$accel->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
-		$test->set_fail($accel->function_strings[3]);
+	if ( $class->function_list[$class->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
+		$test->set_fail($class->function_strings[3]);
 	} else {
-		$test->set_pass($accel->function_strings[3]);	
+		$test->set_pass($class->function_strings[3]);	
 	}
-	if ( $accel->function_list[$accel->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
-		$test->set_fail($accel->function_strings[4]);
+	if ( $class->function_list[$class->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
+		$test->set_fail($class->function_strings[4]);
 	} else {
-		$test->set_pass($accel->function_strings[4]);	
+		$test->set_pass($class->function_strings[4]);	
 	}
 	#}}}
 }
 
-echo "Preparing Acceleration...";
+echo "Preparing Acceleration
+---------------------------------\n";
 sleep(1);
-$test = new TestSuite();
-$test->pass_fail($accel, test_Acceleration());
+$test->pass_fail($accel, test_Acceleration($test, $accel));

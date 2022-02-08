@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:41:16 PM PST
-# Last Update: 2021-12-23: 19:07
+# Last Update: 2022-02-08: 09:39
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,23 +29,21 @@ require_once("pass_fail.php");
 require_once("imports.inc.php");
 $test = new TestSuite();
 
-function test_Fuel(){
-	global $fuel;
-	global $test;
+function test_Fuel($test, $class){
 	echo "\nFuel Economy
 -------------------------------\n";
-	if ( $fuel->function_list[$fuel->function_strings[1]](234) !== array(234*0.42514371, "Kilometers/Liter")){
-		$test->set_fail($fuel->function_strings[1]);
+	if ( $class->function_list[$class->function_strings[1]](234) !== array(234*0.42514371, "Kilometers/Liter")){
+		$test->set_fail($class->function_strings[1]);
 	} else {
-		$test->set_pass($fuel->function_strings[1]);
+		$test->set_pass($class->function_strings[1]);
 	}
-	if ( $fuel->function_list[$fuel->function_strings[2]](234) !== array(234*2.3521458, "Miles/Gallon")){
-		$test->set_fail($fuel->function_strings[2]);
+	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*2.3521458, "Miles/Gallon")){
+		$test->set_fail($class->function_strings[2]);
 	} else {
-		$test->set_pass($fuel->function_strings[2]);
+		$test->set_pass($class->function_strings[2]);
 	}
 }
 
 echo "Preparing Fuel Economy...";
 sleep(1);
-$test->pass_fail($fuel, test_Fuel());
+$test->pass_fail($fuel, test_Fuel($test, $fuel));

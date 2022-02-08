@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-01-31: 21:59
+# Last Update: 2022-02-08: 08:44
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@ require_once( 'modules/OhmsLaw.php' );
 require_once( 'modules/Physical_Fitness.php' );
 require_once( 'modules/PlaneAngle.php' );
 require_once( 'modules/Power.php' );
+require_once( 'modules/Pressure.php' );
 require_once( 'modules/Torque.php' );
 require_once( 'modules/Velocity.php' );
 require_once( 'modules/Resistive_Capacitive_Parallel.php' );
@@ -73,33 +74,34 @@ $ohms = new OhmsLaw();
 $phys = new Physical_Fitness();
 $plane = new PlaneAngle();
 $power = new Power();
+$press = new Pressure();
 $tor = new Torque();
 $vel = new Velocity();
 $rcp = new Resistive_Capacitive_Parallel();
 
 $cats = array(
-	'Acceleration' => $accel,
-	"Accounting" => $account,
-	'Area' => $area,
-	'Astronomic Units' => $astro,
-	'Budgeting' => $budget,
-	'Culinary' => $cook,
-	'Energy or Work' => $energy,
-	'Fuel Economy' => $fuel,
-	'GED Practice' => $ged,
-	'Imperial to Imperial' => $imp,
-	'Imperial to Metric' => $impm,
-	'Light' => $light,
-	'Maritime Measurements' => $maritime,
-	'Mass' => $mass,
-	'Metric to Imperial' => $mti,
-	'Ohms Law' => $ohms,
-	'Physical Fitness' => $phys,
-	'Plane Angle' => $plane,
-	'Power' => $power,
-	'Torque' => $tor,
-	'Velocity' => $vel,
-	'Resistive Capacitance Parallel' => $rcp,
+    'Acceleration' => $accel,
+    "Accounting" => $account,
+    'Area' => $area,
+    'Astronomic Units' => $astro,
+    'Budgeting' => $budget,
+    'Culinary' => $cook,
+    'Energy or Work' => $energy,
+    'Fuel Economy' => $fuel,
+    'GED Practice' => $ged,
+    'Imperial to Imperial' => $imp,
+    'Imperial to Metric' => $impm,
+    'Light' => $light,
+    'Maritime Measurements' => $maritime,
+    'Mass' => $mass,
+    'Metric to Imperial' => $mti,
+    'Ohms Law' => $ohms,
+    'Physical Fitness' => $phys,
+    'Plane Angle' => $plane,
+    'Power' => $power,
+    'Torque' => $tor,
+    'Velocity' => $vel,
+    'Resistive Capacitance Parallel' => $rcp,
 
 );
 
@@ -119,58 +121,58 @@ $number13 = $_POST['number_input13'] ?? null;
 $number14 = $_POST['number_input14'] ?? null;
 
 $attribs = array(
-	'id' => 'Formula',
-	'name' => 'Formula',
-	'class' => 'selForm'
+    'id' => 'Formula',
+    'name' => 'Formula',
+    'class' => 'selForm'
 );
 
 $attrib = array(
-	'id' => 'category',
-	'name' => 'category',
-	'class' => 'selCat'
+    'id' => 'category',
+    'name' => 'category',
+    'class' => 'selCat'
 );
 
 
 function formSelect($sele, $myAttrs=array(), $selected=null){
-	$attrString = "";
-	ksort($sele);
+    $attrString = "";
+    ksort($sele);
 
-	foreach($myAttrs as $key=>$value){
-		$idStr = " $key='$value'";
-		$attrString .= $idStr;
-	}
+    foreach($myAttrs as $key=>$value){
+        $idStr = " $key='$value'";
+        $attrString .= $idStr;
+    }
 
-	$select = "<select onchange='redire(category, Formula)'$attrString>\n";
-	$select .= "<option value=''>-- Select Formula --</option>";
+    $select = "<select onchange='redire(category, Formula)'$attrString>\n";
+    $select .= "<option value=''>-- Select Formula --</option>";
 
-	foreach ( $sele as $key => $val){
-		if ( $key == $selected ) {
-			$select .= "\t<option value=\"$key\" selected>$key</option>\n";
-		} else {
-			$select .= "\t<option value=\"$key\">$key</option>\n";
-		}
-	}
-	$select .= "</select>\n";
-	return $select;
+    foreach ( $sele as $key => $val){
+        if ( $key == $selected ) {
+            $select .= "\t<option value=\"$key\" selected>$key</option>\n";
+        } else {
+            $select .= "\t<option value=\"$key\">$key</option>\n";
+        }
+    }
+    $select .= "</select>\n";
+    return $select;
 }
 
 function cateSelect($sel, $myAttrs=array(), $selected=null){
-	$attrString = "";
-	ksort($sel);
-	foreach($myAttrs as $key=>$value){
-		$idStr = " $key='$value'";
-		$attrString .= $idStr;
-	}
+    $attrString = "";
+    ksort($sel);
+    foreach($myAttrs as $key=>$value){
+        $idStr = " $key='$value'";
+        $attrString .= $idStr;
+    }
 
-	$select = "<select onchange='redir(this)'$attrString>\n";
+    $select = "<select onchange='redir(this)'$attrString>\n";
 
-	foreach ( $sel as $key=>$value ){
-		if ( $key == $selected ) {
-			$select .= "\t<option value='$key' selected>$key</option>\n";
-		} else {
-			$select .= "\t<option value='$key'>$key</option>\n";
-		}
-	}
-	$select .= "</select>\n";
-	return $select;
+    foreach ( $sel as $key=>$value ){
+        if ( $key == $selected ) {
+            $select .= "\t<option value='$key' selected>$key</option>\n";
+        } else {
+            $select .= "\t<option value='$key'>$key</option>\n";
+        }
+    }
+    $select .= "</select>\n";
+    return $select;
 }
