@@ -5,7 +5,7 @@
     index.php
 
     Date: copyright 2020
-    Last Update: 2022-01-11: 11:08
+    Last Update: 2022-02-14: 07:16
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,6 +32,13 @@
         <link rel='icon' href="/php_Calculator/images/massive.png" type='image/x-icon'>
         <link rel="stylesheet" href="/php_Calculator/css/index.css" type="text/css" media="" title="" charset="" />
         <title>Instructions</title>
+<?php
+if ( ! file_exists("Logs/Calculator.log") ){
+    echo "<script>
+window.location('admin/');
+</script>";
+}
+?>
     </head>
     <body>
         <div id='links'>
@@ -60,11 +67,11 @@
                 </p>
 
                 <p>
-                <ol>
-                    <li>Select a Category
-                    <li>Select a Formula
-                    <li>Fill out all input fields with your numbers and repeat.
-                </ol>
+                    <ol>
+                        <li>Select a Category</li>
+                        <li>Select a Formula</li>
+                        <li>Fill out all input fields with your numbers and repeat.</li>
+                    </ol>
                 </p>
 
                 <p>
@@ -84,9 +91,7 @@
                 <hr>
             </section>
             <section>
-                <p>
-                Suggesting a Formula
-                </p>
+                <p> Suggesting a Formula </p>
                 <p>
                 You will have to give your name just like for the comments, but you will also have to give the name of the category, name of the formula, and the formula itself. If you are getting a formula from a book please be sure to fill out the book section of the form. That way we can minimize any risk of copyright infringement and plagerism.
                 </p>
