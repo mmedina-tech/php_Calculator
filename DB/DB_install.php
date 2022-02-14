@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Thu 09 Sep 2021 08:11:27 PM PDT
-# Last Update: 2021-11-22: 20:43
+# Last Update: 2022-02-14: 07:25
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -149,7 +149,7 @@ function pdo_conn(){
 	$page = str_replace("{TABLE1}", $table2, $page);
 	$page = str_replace("{TABLE2}", $table3, $page);
 	$page = str_replace("<div hidden>", "<div>", $page);
-	$page = str_replace("{START}", "<br><br><button id='tabitem'><a href='/php_Calculator/calculator_front.php'>Start Calculator</a></button>", $page);
+	$page = str_replace("{START}", "<br><br><button id='tabitem'><a href='{$CALCPATH}/calculator_front.php'>Start Calculator</a></button>", $page);
 	return $page;
 }
 
