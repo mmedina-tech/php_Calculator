@@ -5,7 +5,7 @@
     index.php
 
     Date: copyright 2020
-    Last Update: 2022-02-14: 07:16
+    Last Update: 2022-02-14: 07:37
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -57,15 +57,12 @@ window.location('admin/');
                 There are a few things that you need to know before we get started. First, this is not a calculator that teaches.
                 Second, the results are only as accurate as the numbers that are given.
                 </p>
-
                 <p>
                 Now that we have all that out of the way let's get started.
                 </p>
-
                 <p>
                 Here are the steps to using the calculator.
                 </p>
-
                 <p>
                     <ol>
                         <li>Select a Category</li>
@@ -73,9 +70,8 @@ window.location('admin/');
                         <li>Fill out all input fields with your numbers and repeat.</li>
                     </ol>
                 </p>
-
                 <p>
-                When you click on the drop list for the category you will see an extensive list of categories. 
+                When you click on the drop list for the category you will see an extensive list of categories.
                 After you select a category a second drop list will appear, this is the list of Formulas for the category that you have selected.
                 When you select a formula there will be the corresponding inputs that appear for you to fill out.
                 If you have any comments or suggestions there are links for doing just that.
