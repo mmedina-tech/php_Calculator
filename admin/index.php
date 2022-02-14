@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 10 Sep 2021 09:00:45 PM PDT
-# Last Update: 2022-02-14: 06:54
+# Last Update: 2022-02-14: 09:53
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,6 +38,11 @@
 		<link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
 	</head>
 	<body>
+        <div id="maindisplay">
+            <div class="Head-Column">
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+            </div>
+        </div>
 		<div>
 			<br>
 			<form action="/php_Calculator/DB/DB_install.php" method="post">
