@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2021-11-20: 17:34
+# Last update: 2022-02-15: 08:39
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,14 +34,14 @@ function pmessage() {
     for phrase in "$@"
     do
         echo 
-        echo "	$phrase"
+        echo "    $phrase"
     done
 }
 
 function all(){
-	echo "Enter Description: "
-	read -r myDescription
-	cat <<EOF > $outfile
+    echo "Enter Description: "
+    read -r myDescription
+    cat <<EOF > $outfile
 <?php
 # SYNOPSIS: $myDescription
 # 
@@ -74,29 +74,29 @@ require_once ("FormulaBase.php");
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        \$this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		\$this->function_list = array();
+        \$this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		\$this->functionInputs = array();
+        \$this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		\$this->formula_list = array();
+        \$this->formula_list = array();
         #}}}
 
-	}
+    }
 }
 EOF
 }
 
 function license(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 # This program is free software; you can redistribute it and/or modify
@@ -122,29 +122,29 @@ require_once ("FormulaBase.php");
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
 
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        \$this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		\$this->function_list = array();
+        \$this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		\$this->functionInputs = array();
+        \$this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		\$this->formula_list = array();
+        \$this->formula_list = array();
         #}}}
 
-	}
+    }
 }
 EOF
 }
 
 function author(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 # Author: $user
@@ -156,31 +156,31 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-		
+        
 
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        \$this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		\$this->function_list = array();
+        \$this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		\$this->functionInputs = array();
+        \$this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		\$this->formula_list = array();
+        \$this->formula_list = array();
         #}}}
 
-	}
+    }
 }
 EOF
 }
 
 function default(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 
@@ -188,31 +188,31 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-		
+        
 
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        \$this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		\$this->function_list = array();
+        \$this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		\$this->functionInputs = array();
+        \$this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		\$this->formula_list = array();
+        \$this->formula_list = array();
         #}}}
 
-	}
+    }
 }
 EOF
 }
 
 function program(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 # $outfile
@@ -222,33 +222,33 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-		
+        
 
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        \$this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		\$this->function_list = array();
+        \$this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		\$this->functionInputs = array();
+        \$this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		\$this->formula_list = array();
+        \$this->formula_list = array();
         #}}}
 
-	}
+    }
 }
 EOF
 }
 
 function syn(){
-	echo "Enter Description: "
-	read -r myDescription
-	cat <<EOF > $outfile
+    echo "Enter Description: "
+    read -r myDescription
+    cat <<EOF > $outfile
 <?php
 # SYNOPSIS: $myDescription
 #
@@ -259,32 +259,32 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-		
+        
 
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
+        #{{{ Function Titles
+        \$this->function_strings = array();
+        #}}}
+    
         #{{{ Function List
-		\$this->function_list = array();
+        \$this->function_list = array();
         #}}}
 
         #{{{ Inputs
-		\$this->functionInputs = array();
+        \$this->functionInputs = array();
         #}}}
 
         #{{{ Formula List
-		\$this->formula_list = array();
+        \$this->formula_list = array();
         #}}}
 
-	}
+    }
 }
 EOF
 }
 
 
 function help(){
-	printf "Usage: %s: 
+    printf "Usage: %s: 
             -t <filename>   sets filename to create
             [-a] run all documentation features
             [-A] Create Author Block 
@@ -292,12 +292,12 @@ function help(){
             [-e] Edit in Your set Editor after create
             [-d] Create standalone bash shebang line
             [-p] Add filename to documentation block
-            [-s] Synopsis Line with program name	
+            [-s] Synopsis Line with program name    
 
             All Options have the shebang line"
-	echo
-	echo "Syntax Format: mkpy -t <filename> -[flags]"
-	exit
+    echo
+    echo "Syntax Format: mkpy -t <filename> -[flags]"
+    exit
 }
 
 #______________________________________________________________________________________________
@@ -305,38 +305,38 @@ function help(){
 
 while getopts "ahAledpt:u:" opt $OPTIONS;
 do
-	case $opt in
-		t) outfile="${OPTARG%%.php}.php"
-			;;
+    case $opt in
+        t) outfile="${OPTARG%%.php}.php"
+            ;;
 
-		a) doall=1
-			;;
+        a) doall=1
+            ;;
 
-		l) dolicense=1
-			;;
+        l) dolicense=1
+            ;;
 
-		A) doauthor=1
-			;;
-			
-		h) help
-			;;
+        A) doauthor=1
+            ;;
+            
+        h) help
+            ;;
 
-		e) doeditor=1
+        e) doeditor=1
             ;;
 
         d) dodefault=1
             ;;
 
-		p) doprogram=1
-			;;
+        p) doprogram=1
+            ;;
 
         u) user=$OPTARG
             ;;
 
-		*) echo "Invalid argument exiting..."
-			exit
-			;;
-	esac
+        *) echo "Invalid argument exiting..."
+            exit
+            ;;
+    esac
 done
 
 if [[ -z $user ]]; then
