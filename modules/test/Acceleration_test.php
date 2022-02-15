@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:35:28 PM PST
-# Last Update: 2022-02-15: 07:45
+# Last Update: 2022-02-15: 09:24
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,40 +33,40 @@ $test = new TestSuite();;
 function test_Acceleration($test, $class){
     $pass = 0;
     $fail = 0;
-	#{{{
-	if ( $class->function_list[$class->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
-		$test->set_fail($class->function_strings[1]);
+    #{{{
+    if ( $class->function_list[$class->function_strings[1]](234) !== array(7.13232, "Meters/Sec<sup>2</sup>")){
+        $test->set_fail($class->function_strings[1]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[1]);	
+    } else {
+        $test->set_pass($class->function_strings[1]);    
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
-		$test->set_fail($class->function_strings[2]);
+    }
+    if ( $class->function_list[$class->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
+        $test->set_fail($class->function_strings[2]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[2]);	
+    } else {
+        $test->set_pass($class->function_strings[2]);    
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
-		$test->set_fail($class->function_strings[3]);
+    }
+    if ( $class->function_list[$class->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
+        $test->set_fail($class->function_strings[3]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[3]);	
+    } else {
+        $test->set_pass($class->function_strings[3]);    
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
-		$test->set_fail($class->function_strings[4]);
+    }
+    if ( $class->function_list[$class->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
+        $test->set_fail($class->function_strings[4]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[4]);	
+    } else {
+        $test->set_pass($class->function_strings[4]);    
         $pass++;
-	}
+    }
 
-	echo "\nTested: ".count($class->function_list);
-	echo "\nPassed: ".$pass;
-	echo "\nFailed: ".$fail;
-	#}}}
+    echo "\nTested: ".count($class->function_list);
+    echo "\nPassed: ".$pass;
+    echo "\nFailed: ".$fail;
+    #}}}
 }
 
 echo "Preparing Acceleration

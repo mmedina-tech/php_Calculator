@@ -1,3 +1,12 @@
-		Testing Created Modules
+        Testing Created Modules
 ----------------------------------------------
+
+
+go into the modules/test/.
+
+run this command: ../utils/mkcalc_test.sh -t test_<module name> -a
+
+There are other flags other than -a. but you have to use -t otherwise the file name doesnt get set.
+
+There is already a starter test case for you. follow that format for all tests moving forward.
 

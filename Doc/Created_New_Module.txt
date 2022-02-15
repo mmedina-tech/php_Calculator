@@ -1,3 +1,75 @@
-		Create A New Calculator Module
+        Create A New Calculator Module
 --------------------------------------------------
 
+
+To create a new module for the Massive Calculator there are a few things that you need to do.
+
+First, clone the project to your local workstation.
+
+Now that we have a local repo of the project we can begin the work.
+
+go into the modules directory in the php_Calculator and we are going to create a new module.
+
+please run from modules this command: utils/mkcalc_mod.sh -t <mod_name> -a
+
+This will create a new module for you. lets break down the flags.
+
+-t <mod_name>: this is where you set the module name
+-a: this is saying that you want all the options, shebang line, synopsis line, license block, 
+author block, and open the module for editing after the file is created. dont worry the file will be 
+opened using the editor that you have specified in your .bashrc file.
+
+everything is already layed out for you to go straight into adding the new info.
+
+___________________________________________________________________________________________________________
+
+All modules are structured as follows:
+
+includes: FormulaBase.php
+
+Construtor function:
+    Function Titles section:
+        This is where all your string names for your formula titles go.
+        This makes it easy to call the functions throughout the class and any other location looking for
+        the formula string name.
+    
+    Function List:
+        This is where all the formulas are defined. Everything is in an Associated Array.
+        The Items are constructed as such:
+            $this->function_string[#] => function(PARAMS){
+                $result = <calculation formula>
+                return array(<number to be formated>, $this->pluralize($result, <unit name>))
+            },
+
+        This can go on for as long as you have formulas that belong in the module.
+        *Note: all parameters for a function need to be set to NULL. Otherwise you will have your error log fill super quick.
+
+    Inputs:
+        This is where you create the input field title. Again another nested Associated Array.
+        $this->function_string[#] => array(
+            "number_input" => "<title string>: ",
+        ),
+
+        If you have multiple inputs, follow the example but increment number_input, number_input2, etc.
+
+        Super easy.
+
+    Formula List:
+        Here is where you are going to show the user how to use the formula long hand.
+        Another Nested Associated Array.
+        $this->function_strings[#] => array(
+            '' => "<long hand formula>",
+        ),
+
+        Again Super Easy.
+
+___________________________________________________________________________________________________________________________
+
+Now we have to go to the calculator_front.php file in the base of php_Calculator and add that new module as an option.
+We also have to go to the imports.inc.php file and do some stuff.
+
+require_once("modules/<mod name>.php");
+
+$<short var name> = new <mod class>();
+
+Now add to the cats array.
