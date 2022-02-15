@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:02 PM PST
-# Last Update: 2022-02-08: 08:13
+# Last Update: 2022-02-15: 12:25
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,11 +30,29 @@ require_once( 'imports.inc.php' );
 $test = new TestSuite();
 
 function Resist_Cap_Ser_test($test, $class){
-    if ( $class->function_list[$class->function_strings[1]](234, 234) !== array(sqrt(234**2 + 234**2), "Total Amps")){
+    $fail = 0;
+    $pass = 0;
+    if ( $class->function_list[$class->function_strings[1]](234, 234) !== array(234/pow(234,2), "Capacitive Reactance")){
         $test->set_fail($class->function_strings[1]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[1]);
         $pass++;
     }
+    if ( $class->function_list[$class->function_strings[2]](234, 234) !== array(234/234, "Capacitive Reactance")){
+        $test->set_fail($class->function_strings[2]);
+        $fail++;
+    } else {
+        $test->set_pass($class->function_strings[2]);
+        $pass++;
+    }
+
+    echo "\nTested: ".count($class->function_list);
+    echo "\nPassed: ".$pass;
+    echo "\nFailed: ".$fail;
 }
+
+echo "Preparing Resistive Capacitive Series Test
+---------------------------------------------------------\n";
+sleep(1);
+$test->pass_fail($rcs, Resist_Cap_Ser_test($test, $rcs));

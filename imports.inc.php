@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-02-08: 08:44
+# Last Update: 2022-02-15: 14:11
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -48,6 +48,8 @@ require_once( 'modules/Pressure.php' );
 require_once( 'modules/Torque.php' );
 require_once( 'modules/Velocity.php' );
 require_once( 'modules/Resistive_Capacitive_Parallel.php' );
+require_once( 'modules/Resistive_Capacitive_Series.php' );
+
 
 
 $outputfp = file_get_contents("calculator_template.html");
@@ -78,6 +80,7 @@ $press = new Pressure();
 $tor = new Torque();
 $vel = new Velocity();
 $rcp = new Resistive_Capacitive_Parallel();
+$rcs = new Resistive_Capacitive_Series();
 
 $cats = array(
     'Acceleration' => $accel,
