@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-02-16: 08:29
+# Last Update: 2022-02-16: 13:30
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ require_once ("FormulaBase.php");
 
 class Resistive_Capacitive_Series extends FormulaBase{
     function __construct(){
-        $this->error_msg = "Can not be a negative square root";
+        #$this->error_msg = "Can not be a negative square root";
 
         #{{{ Function Titles
         $this->function_strings = array(
@@ -106,7 +106,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 return array($result, $this->pluralize($result, 'Capacitive Reactance'));
             },
             $this->function_strings[4] => function($num, $num2){
-                $result = 1 / (2 * PI * $num * $num2);
+                $result = 1 / (2 * $this->PI * $num * $num2);
                 return array($result, $this->pluralize($result, 'Capacitive Reactance'));
             },
             $this->function_strings[5] => function($num, $num2){
@@ -129,7 +129,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 return array($result, $this->pluralize($result, 'Capacitor Amp'));
             },
             $this->function_strings[9] => function($num, $num2){
-                $result = 1 / (2*PI*$num*$num2);
+                $result = 1 / (2*$this->PI*$num*$num2);
                 return array($result, $this->pluralize($result, 'Capacitor Rating'));
             },
             $this->function_strings[10] => function($num, $num2){
@@ -147,7 +147,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 $result = pow($num, 2) / $num2;
                 return array($result, $this->pluralize($result, 'Capacitor VAR'));
             },
-            $this->function_strings[13] => function($num){
+            $this->function_strings[13] => function($num,$num2){
                 $result = $num * $num2;
                 return array($result, $this->pluralize($result, 'Capacitor VAR'));
             },
@@ -237,7 +237,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 $result = sqrt( $num / $num2);
                 return array($result, $this->pluralize($result, 'Resistor Amp'));
             },
-            $this->function_strings[34] => function($num){
+            $this->function_strings[34] => function($num, $num2){
                 if ( $num <= $num2 ){
                     return array($this->error_msg, '');
                 }
