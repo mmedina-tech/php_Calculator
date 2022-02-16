@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-02-15: 14:11
+# Last Update: 2022-02-16: 13:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -49,8 +49,7 @@ require_once( 'modules/Torque.php' );
 require_once( 'modules/Velocity.php' );
 require_once( 'modules/Resistive_Capacitive_Parallel.php' );
 require_once( 'modules/Resistive_Capacitive_Series.php' );
-
-
+require_once( 'modules/Resistive_Inductive_Parallel.php' );
 
 $outputfp = file_get_contents("calculator_template.html");
 $license = file_get_contents("license.html");
@@ -81,6 +80,7 @@ $tor = new Torque();
 $vel = new Velocity();
 $rcp = new Resistive_Capacitive_Parallel();
 $rcs = new Resistive_Capacitive_Series();
+$rip = new Resistive_Inductive_Parallel();
 
 $cats = array(
     'Acceleration' => $accel,
@@ -105,6 +105,7 @@ $cats = array(
     'Torque' => $tor,
     'Velocity' => $vel,
     'Resistive Capacitance Parallel' => $rcp,
+    'Resistive Inductive Parallel' => $rip,
 
 );
 
