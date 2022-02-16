@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:52:13 PM PST
-# Last Update: 2021-12-27: 16:35
+# Last Update: 2022-02-16: 07:15
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,36 +31,54 @@ require_once( 'imports.inc.php' );
 $test = new Testsuite();
 
 function Torque_test($test, $class){
+    $pass = 0;
+    $fail = 0;
+
 	if ( $class->function_list[$class->function_strings[1]](234) !== array(234*0.089595863, "Ounce/Inches")){
 		$test->set_fail($class->function_strings[1]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[1]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*0.068521766, "Pound/Feet")){
 		$test->set_fail($class->function_strings[2]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[2]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[3]](234) !== array(234*0.0057101472, "Pound/Inches")){
 		$test->set_fail($class->function_strings[3]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[3]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[4]](234) !== array(234*11.16123, "Gram/Centimeters")){
 		$test->set_fail($class->function_strings[4]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[4]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[5]](234) !== array(234*14.593903, "Newton/Meters")){
 		$test->set_fail($class->function_strings[5]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[5]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[6]](234) !== array(234*175.12684, "Newton/Meters")){
 		$test->set_fail($class->function_strings[6]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[6]);
+        $pass++;
 	}
+    echo "\nTested: ".count($class->function_list);
+    echo "\nPassed: ".$pass;
+    echo "\nFailed: ".$fail;
 }
 
 echo "Preparing Torque Test

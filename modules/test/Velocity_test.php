@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:52:30 PM PST
-# Last Update: 2021-12-27: 16:41
+# Last Update: 2022-02-16: 07:16
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -32,46 +32,67 @@ $test = new TestSuite();
 
 
 function Velocity_test($test, $class){
+    $pass = 0;
+    $fail = 0;
 	if ( $class->function_list[$class->function_strings[1]](234) !== array(234*1.609344, "Kilometers/Hr")){
 		$test->set_fail($class->function_strings[1]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[1]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*0.62137119, "Miles/Hr")){
 		$test->set_fail($class->function_strings[2]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[2]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[3]](234) !== array(234*0.3048, "Meters/Sec")){
 		$test->set_fail($class->function_strings[3]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[3]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[4]](234) !== array(234*3.2808399, "Feet/Sec")){
 		$test->set_fail($class->function_strings[4]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[4]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[5]](234) !== array(234*1000, "Meters/Sec")){
 		$test->set_fail($class->function_strings[5]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[5]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[6]](234) !== array(234*0.001, "Kilometer/Sec")){
 		$test->set_fail($class->function_strings[6]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[6]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[7]](234) !== array(234*0.44704, "Meters/Sec")){
 		$test->set_fail($class->function_strings[7]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[7]);
+        $pass++;
 	}
 	if ( $class->function_list[$class->function_strings[8]](234) !== array(234*2.2369363, "Miles/Hr")){
 		$test->set_fail($class->function_strings[8]);
+        $fail++;
 	} else {
 		$test->set_pass($class->function_strings[8]);
+        $pass++;
 	}
+    echo "\nTested: ".count($class->function_list);
+    echo "\nPassed: ".$pass;
+    echo "\nFailed: ".$fail;
 }
 
 echo "Preparing Velocity Test
