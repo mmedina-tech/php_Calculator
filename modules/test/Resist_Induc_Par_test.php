@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:52 PM PST
-# Last Update: 2022-02-17: 10:57
+# Last Update: 2022-02-17: 12:50
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -75,11 +75,17 @@ function Resist_Induct_Par_test($test, $class){
         $test->set_pass($class->function_strings[6]);
         $pass++;
     }
+    if ( $class->function_list[$class->function_strings[7]](234,234) !== array(1/(1/pow(234,2) - (1/pow(234,2))), "Inductive Reactance")){
+        $test->set_fail($class->function_strings[7]);
+        $fail++;
+    } else {
+        $test->set_pass($class->function_strings[7]);
+        $pass++;
+    }
     echo "\nTested: ".count($class->function_list);
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;
 }
-
 
 
 echo "Preparing Resistive Inductive Parallel Test
