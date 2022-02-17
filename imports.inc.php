@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-02-17: 08:57
+# Last Update: 2022-02-17: 10:47
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -105,6 +105,7 @@ $cats = array(
     'Torque' => $tor,
     'Velocity' => $vel,
     'Resistive Capacitance Parallel' => $rcp,
+    'Resistive Capacitance Series' => $rcs,
     'Resistive Inductive Parallel' => $rip,
 
 );
