@@ -25,7 +25,7 @@ ________________________________________________________________________________
 
 All modules are structured as follows:
 
-includes: FormulaBase.php
+Requires Once: FormulaBase.php
 
 Construtor function:
     Function Titles section:
@@ -72,4 +72,5 @@ require_once("modules/<mod name>.php");
 
 $<short var name> = new <mod class>();
 
-Now add to the cats array.
+Now add to the cats array:
+"<Long Mod Name>" => <short mod name>

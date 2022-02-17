@@ -33,35 +33,10 @@ echo $header;
                 You dont have to do any arithmetic yourself. It does it all for you.</h3>
             <form name='category' action='/php_Calculator/form_select.php' method='post'>
                 <p class='titles'>Select Category:</p>
-                <select onchange="redir(this)" name='category'>
-                    <option value=''>-- Select Category --</option>
-                    <option value='Acceleration'>Acceleration</option>
-                    <option value='Accounting'>Accounting</option>
-                    <option value='Area'>Area</option>
-                    <option value='Astronomic Units'>Astronomic Units</option>
-                    <option value='Budgeting'>Budgeting</option>
-                    <option value='Culinary'>Culinary</option>
-                    <option value='Energy or Work'>Energy or Work</option>
-                    <option value='Fuel Economy'>Fuel Economy</option>
-                    <option value='GED Practice'>GED Practice</option>
-                    <option value='Imperial to Imperial'>Imperial to Imperial</option>
-                    <option value='Imperial to Metric'>Imperial to Metric</option>
-                    <option value='Light'>Light</option>
-                    <option value='Maritime Measurements'>Maritime Measurements</option>
-                    <option value='Mass'>Mass</option>
-                    <option value='Metric to Imperial'>Metric to Imperial</option>
-                    <option value='Ohms Law'>Ohms Law</option>
-                    <option value='Plane Angle'>Plane Angle</option>
-                    <option value='Physical Fitness'>Physical Fitness</option>
-                    <option value='Power'>Power</option>
-                    <option value='Resistive Capacitance Series'>Resistive Capacitance Series</option>
-                    <option value='Resistive Capacitance Parallel'>Resistive Capacitance Parallel</option>
-                    <option value='Resistive Inductance Parallel'>Resistive Inductance Parallel</option>
-                    <option value='Resistive Inductance Series'>Resistive Inductance Series</option>
-                    <option value="Resistive Inductive Capacitive Series">Resistive Inductive Capacitive Series</option>
-                    <option value='Torque'>Torque</option>
-                    <option value='Velocity'>Velocity</option>
-                </select>
+<?php
+require_once( 'imports.inc.php' );
+echo cateSelect($cats, $attrib);
+?>
                 <input type="submit" name="" value="submit" />
             </form>
         </div><!-- End Main -->

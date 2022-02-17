@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:42 PM PDT
-# Last Update: 2022-02-16: 14:13
+# Last Update: 2022-02-17: 09:16
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -94,15 +94,656 @@ class Resistive_Inductive_Parallel extends FormulaBase{
         #}}}
     
         #{{{ Function List
-        $this->function_list = array();
+        $this->function_list = array(
+            $this->function_strings[1] => function($num, $num2){
+                $result = 1 / (( 1 / pow($num, 2)) + ( 1 / pow($num2, 2)));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+            },
+            $this->function_strings[2] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+            },
+            $this->function_strings[3] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+            },
+            $this->function_strings[4] => function($num, $num2){
+                $result = $num / pow($num2,2);
+                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+            },
+            $this->function_strings[5] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+            },
+            $this->function_strings[6] => function($num, $num2){
+                $result = 2 * $this->PI * $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
+            },
+            $this->function_strings[7] => function($num, $num2){
+                $result = 1 / (( 1 / pow($num, 2)) - (1 / pow($num2, 2)));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
+            },
+            $this->function_strings[8] => function($num, $num2){
+                $result = $num / pow($num2, 2);
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
+            },
+            $this->function_strings[9] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
+            },
+            $this->function_strings[10] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
+            },
+            $this->function_strings[11] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Amp'));
+            },
+            $this->function_strings[12] => function($num, $num2){
+                $result = sqrt( $num / $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Amp'));
+            },
+            $this->function_strings[13] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Amp'));
+            },
+            $this->function_strings[14] => function($num, $num2){
+                if ( $num <= $num2 ){
+                    return array($this->error_msg, '');
+                }
+                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Amp'));
+            },
+            $this->function_strings[15] => function($num, $num2){
+                $result = $num / (2 * $this->PI * $num2);
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Rating'));
+            },
+            $this->function_strings[16] => function($num, $num2){
+                $result = pow($num, 2) * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
+            },
+            $this->function_strings[17] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
+            },
+            $this->function_strings[18] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
+            },
+            $this->function_strings[19] => function($num, $num2){
+                if ( $num <= $num2 ){
+                    return array($this->error_msg, '');
+                }
+                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
+            },
+            $this->function_strings[20] => function($num, $num2){
+                $result = sqrt( $num * $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Volt'));
+            },
+            $this->function_strings[21] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Volt'));
+            },
+            $this->function_strings[22] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Volt'));
+            },
+            $this->function_strings[23] => function($num){
+                $result = cos( $num );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+            },
+            $this->function_strings[24] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+            },
+            $this->function_strings[25] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+            },
+            $this->function_strings[26] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+            },
+            $this->function_strings[27] => function($num, $num2){
+                $result = 1 / sqrt((1 / pow($num, 2)) - (1 / pow($num2, 2)));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+            },
+            $this->function_strings[28] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+            },
+            $this->function_strings[29] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+            },
+            $this->function_strings[30] => function($num, $num2){
+                $result = $num / pow($num2, 2);
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+            },
+            $this->function_strings[31] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
+            },
+            $this->function_strings[32] => function($num, $num2){
+                if ( $num <= $num2 ){
+                    return array($this->error_msg, '');
+                }
+                $result = sqrt(pow($num, 2) - pow($num2, 2));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
+            },
+            $this->function_strings[33] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
+            },
+            $this->function_strings[34] => function($num, $num2){
+                $result = sqrt( $num / $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
+            },
+            $this->function_strings[35] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
+            },
+            $this->function_strings[36] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[37] => function($num, $num2){
+                $result = sqrt ( $num * $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[38] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[39] => function($num, $num2){
+                $result = sqrt( pow($num, 2) + pow($num2, 2) );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[40] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[41] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[42] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[43] => function($num, $num2){
+                $result = sqrt( $num / $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[44] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[45] => function($num, $num2){
+                $result = sqrt( $num * $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[46] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[47] => function($num, $num2){
+                $result = pow($num, 2) * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[48] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[49] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[50] => function($num, $num2){
+                $result = sqrt( pow($num, 2) + pow($num2, 2));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[51] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[52] => function($num, $num2){
+                $result = pow($num, 2) * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[53] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[54] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[55] => function($num, $num2){
+                if ( $num <= $num2 ){
+                    return array($this->error_msg, '');
+                }
+                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[56] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[57] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+            },
+        );
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array();
+        $this->functionInputs = array(
+            $this->function_strings[1] => array(
+                'number_input' => 'Resistance (input): ',
+                'number_input2' => 'Inductive Reactance (input): ',
+            ),
+            $this->function_strings[2] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Total Amps (input): ',
+            ),
+            $this->function_strings[3] => array(
+                'number_input' => 'Total Volts (input): ',
+                'number_input2' => 'Volt Amps (input): ',
+            ),
+            $this->function_strings[4] => array(
+                'number_input' => 'Volt Amps (input): ',
+                'number_input2' => 'Total Amps (input): ',
+            ),
+            $this->function_strings[5] => array(
+                'number_input' => 'Resistance (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[6] => array(
+                'number_input' => 'Frequency (input): ',
+                'number_input2' => 'Power Factor (input): ',
+            ),
+            $this->function_strings[7] => array(
+                'number_input' => 'Impedance (input): ',
+                'number_input2' => 'Resistance (input): ',
+            ),
+            $this->function_strings[8] => array(
+                'number_input' => "Inductor VAR's (input): ",
+                'number_input2' => 'Inductor Amps (input): ',
+            ),
+            $this->function_strings[9] => array(
+                'number_input' => 'Inductor Volts (input): ',
+                'number_input2' => 'Inductor Amps (input): ',
+            ),
+            $this->function_strings[10] => array(
+                'number_input' => "Inductor Volts (input): ",
+                'number_input2' => "Inductor VAR's (input): ",
+            ),
+            $this->function_strings[11] => array(
+                'number_input' => "Inductor VAR's (input): ",
+                'number_input2' => "Inductor Volts (input): ",
+            ),
+            $this->function_strings[12] => array(
+                'number_input' => "Inductor VAR's (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[13] => array(
+                'number_input' => "Inductor Volts (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[14] => array(
+                'number_input' => "Total Amps (input): ",
+                'number_input2' => "Resistor Amps (input): ",
+            ),
+            $this->function_strings[15] => array(
+                'number_input' => "Inductive Reactance (input): ",
+                'number_input2' => "Frequency (input): ",
+            ),
+            $this->function_strings[16] => array(
+                'number_input' => "Inductor Amps (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[17] => array(
+                'number_input' => "Inductor Volts (input): ",
+                'number_input2' => "Inductor Amps (input): ",
+            ),
+            $this->function_strings[18] => array(
+                'number_input' => "Inductor Volts (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[19] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Watts (input): ",
+            ),
+            $this->function_strings[20] => array(
+                'number_input' => "Inductor VAR's (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[21] => array(
+                'number_input' => "Inductor Amps (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[22] => array(
+                'number_input' => "Inductor VAR's (input): ",
+                'number_input2' => "Inductor Amps (input): ",
+            ),
+            $this->function_strings[23] => array(
+                'number_input' => 'Theta Angle (input): ',
+            ),
+            $this->function_strings[24] => array(
+                'number_input' => "Impedance (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[25] => array(
+                'number_input' => "Resistor Amps (input): ",
+                'number_input2' => "Total Amps (input): ",
+            ),
+            $this->function_strings[26] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Volt Amps (input): ",
+            ),
+            $this->function_strings[27] => array(
+                'number_input' => "Impedance (input): ",
+                'number_input2' => "Inductive Reactance (input): ",
+            ),
+            $this->function_strings[28] => array(
+                'number_input' => "Impedance (input): ",
+                'number_input2' => "Power Factor (input): ",
+            ),
+            $this->function_strings[29] => array(
+                'number_input' => "Resistor Volts (input): ",
+                'number_input2' => "Resistor Amps (input): ",
+            ),
+            $this->function_strings[30] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Resistor Amps (input): ",
+            ),
+            $this->function_strings[31] => array(
+                'number_input' => "Resistor Volts (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[32] => array(
+                'number_input' => "Total Amps (input): ",
+                'number_input2' => "Inductor Amps (input): ",
+            ),
+            $this->function_strings[33] => array(
+                'number_input' => "Total Amps (input): ",
+                'number_input2' => "Power Factor (input): ",
+            ),
+            $this->function_strings[34] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[35] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Resistor Volts (input): ",
+            ),
+            $this->function_strings[36] => array(
+                'number_input' => "Resistor Amps (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[37] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[38] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Resistor Amps (input): ",
+            ),
+            $this->function_strings[39] => array(
+                'number_input' => "Resistor Amps (input): ",
+                'number_input2' => "Inductor Amps (input): ",
+            ),
+            $this->function_strings[40] => array(
+                'number_input' => "Resistor Amps (input): ",
+                'number_input2' => "Power Factor (input): ",
+            ),
+            $this->function_strings[41] => array(
+                'number_input' => "Total Volts (input): ",
+                'number_input2' => "Impedance (input): ",
+            ),
+            $this->function_strings[42] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Total Volts (input): ",
+            ),
+            $this->function_strings[43] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Impedance (input): ",
+            ),
+            $this->function_strings[44] => array(
+                'number_input' => "Total Amps (input): ",
+                'number_input2' => "Impedance (input): ",
+            ),
+            $this->function_strings[45] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Impedance (input): ",
+            ),
+            $this->function_strings[46] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Total Amps (input): ",
+            ),
+            $this->function_strings[47] => array(
+                'number_input' => "Total Amps (input): ",
+                'number_input2' => "Impedance (input): ",
+            ),
+            $this->function_strings[48] => array(
+                'number_input' => "Total Volts (input): ",
+                'number_input2' => "Impedance (input): ",
+            ),
+            $this->function_strings[49] => array(
+                'number_input' => "Total Volts (input): ",
+                'number_input2' => "Total Amps (input): ",
+            ),
+            $this->function_strings[50] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Inductor VAR's (input): ",
+            ),
+            $this->function_strings[51] => array(
+                'number_input' => "Watts (input): ",
+                'number_input2' => "Power Factor (input): ",
+            ),
+            $this->function_strings[52] => array(
+                'number_input' => "Resistor Amps (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[53] => array(
+                'number_input' => "Resistor Volts (input): ",
+                'number_input2' => "Resistance (input): ",
+            ),
+            $this->function_strings[54] => array(
+                'number_input' => "Resistor Volts (input): ",
+                'number_input2' => "Resistor Amps (input): ",
+            ),
+            $this->function_strings[55] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Inductor VAR's (input): ",
+            ),
+            $this->function_strings[56] => array(
+                'number_input' => "Volt Amps (input): ",
+                'number_input2' => "Power Factor (input): ",
+            ),
+            $this->function_strings[57] => array(
+                'number_input' => "Resistor Volts (input): ",
+                'number_input2' => "Watts (input): ",
+            ),
+        );
         #}}}
 
         #{{{ Formula List
-        $this->formula_list = array();
+        $this->formula_list = array(
+            $this->function_strings[1] => array(
+                'Formula:<br>' => '1 / ((1 / R<sup>2</sup>) + (1 / X<sub>L</sub><sup>2</sup>))'
+            ),
+            $this->function_strings[2] => array(
+                'Formula:<br>' => 'E<sub>T</sub> / I<sub>T</sub>'
+            ),
+            $this->function_strings[3] => array(
+                'Formula:<br>' => 'E<sub>T</sub> / VA'
+            ),
+            $this->function_strings[4] => array(
+                'Formula:<br>' => 'VA / I<sub>T</sub>'
+            ),
+            $this->function_strings[5] => array(
+                'Formula:<br>' => 'R * PF'
+            ),
+            $this->function_strings[6] => array(
+                'Formula:<br>' => '1 / 2 * PI * F * L'
+            ),
+            $this->function_strings[7] => array(
+                'Formula:<br>' => '1 / (1 / Z<sup>2</sup> - R<sup>2</sup>)'
+            ),
+            $this->function_strings[8] => array(
+                'Formula:<br>' => 'VARS<sub>L</sub> / I<sub>L</sub><sup>2</sup>'
+            ),
+            $this->function_strings[9] => array(
+                'Formula:<br>' => 'E<sub>L</sub> / I<sub>L</sub>'
+            ),
+            $this->function_strings[10] => array(
+                'Formula:<br>' => 'E<sub>L</sub><sup>2</sup> / VARS<sub>L</sub>'
+            ),
+            $this->function_strings[11] => array(
+                'Formula:<br>' => 'VARS<sub>L</sub> / E<sub>L</sub>'
+            ),
+            $this->function_strings[12] => array(
+                'Formula:<br>' => 'sqrt( VARs<sub>I</sub> / X<sub>L</sub> )'
+            ),
+            $this->function_strings[13] => array(
+                'Formula:<br>' => 'E<sub>L</sub> / X<sub>L</sub>'
+            ),
+            $this->function_strings[14] => array(
+                'Formula:<br>' => 'sqrt( I<sub>T</sub><sup>2</sup> - I<sub>R</sub><sup>2</sup> )'
+            ),
+            $this->function_strings[15] => array(
+                'Formula:<br>' => 'X<sub>L</sub> / ( 2 * PI * F )'
+            ),
+            $this->function_strings[16] => array(
+                'Formula:<br>' => 'I<sub>L</sub><sup>2</sup> * X<sub>L</sub>'
+            ),
+            $this->function_strings[17] => array(
+                'Formula:<br>' => 'E<sub>L</sub> * I<sub>L</sub>'
+            ),
+            $this->function_strings[18] => array(
+                'Formula:<br>' => 'E<sub>L</sub><sup>2</sup> / X<sub>L</sub>'
+            ),
+            $this->function_strings[19] => array(
+                'Formula:<br>' => 'sqrt( VA<sup>2</sup> - P<sup>2</sup> )'
+            ),
+            $this->function_strings[20] => array(
+                'Formula:<br>' => 'VARS<sub>I</sub> * X<sub>L</sub>'
+            ),
+            $this->function_strings[21] => array(
+                'Formula:<br>' => 'sqrt( I<sub>L</sub> * X<sub>L</sub> )'
+            ),
+            $this->function_strings[22] => array(
+                'Formula:<br>' => 'VARS<sub>L</sub> / I<sub>L</sub>'
+            ),
+            $this->function_strings[23] => array(
+                'Formula:<br>' => 'CoSine(Theta Angle)'
+            ),
+            $this->function_strings[24] => array(
+                'Formula:<br>' => 'Z / R'
+            ),
+            $this->function_strings[25] => array(
+                'Formula:<br>' => 'I<sub>R</sub> / I<sub>T</sub>'
+            ),
+            $this->function_strings[26] => array(
+                'Formula:<br>' => 'P / VA'
+            ),
+            $this->function_strings[27] => array(
+                'Formula:<br>' => '1 / sqrt( Z<sup>2</sup> - X<sub>L</sub><sup>2</sup> )'
+            ),
+            $this->function_strings[28] => array(
+                'Formula:<br>' => 'Z / PF'
+            ),
+            $this->function_strings[29] => array(
+                'Formula:<br>' => 'E<sub>R</sub> / I<sub>R</sub>'
+            ),
+            $this->function_strings[30] => array(
+                'Formula:<br>' => 'P / I<sub>R</sub><sup>2</sup>'
+            ),
+            $this->function_strings[31] => array(
+                'Formula:<br>' => 'E<sub>R</sub> / R'
+            ),
+            $this->function_strings[32] => array(
+                'Formula:<br>' => 'sqrt( I<sub>T</sub><sup>2</sup> - I<sub>L</sub><sup>2</sup>'
+            ),
+            $this->function_strings[33] => array(
+                'Formula:<br>' => 'I<sub>T</sub> * PF'
+            ),
+            $this->function_strings[34] => array(
+                'Formula:<br>' => 'sqrt( P / R )'
+            ),
+            $this->function_strings[35] => array(
+                'Formula:<br>' => 'P / E<sub>R</sub>'
+            ),
+            $this->function_strings[36] => array(
+                'Formula:<br>' => 'I<sub>R</sub> * R'
+            ),
+            $this->function_strings[37] => array(
+                'Formula:<br>' => 'sqrt( P * R )'
+            ),
+            $this->function_strings[38] => array(
+                'Formula:<br>' => 'P / I<sub>R</sub><sup>2</sup>'
+            ),
+            $this->function_strings[39] => array(
+                'Formula:<br>' => 'sqrt( I<sub>R</sub><sup>2</sup> + I<sub>L</sub><sup>2</sup> )'
+            ),
+            $this->function_strings[40] => array(
+                'Formula:<br>' => 'I<sub>R</sub> / PF'
+            ),
+            $this->function_strings[41] => array(
+                'Formula:<br>' => 'E<sub>T</sub> / PF'
+            ),
+            $this->function_strings[42] => array(
+                'Formula:<br>' => 'VA / E<sub>T</sub>'
+            ),
+            $this->function_strings[43] => array(
+                'Formula:<br>' => 'sqrt( VA / Z )'
+            ),
+            $this->function_strings[44] => array(
+                'Formula:<br>' => 'I<sub>T</sub> * Z'
+            ),
+            $this->function_strings[45] => array(
+                'Formula:<br>' => 'sqrt( VA * Z )'
+            ),
+            $this->function_strings[46] => array(
+                'Formula:<br>' => 'VA / I<sub>T</sub>'
+            ),
+            $this->function_strings[47] => array(
+                'Formula:<br>' => 'I<sub>T</sub><sup>2</sup> * Z'
+            ),
+            $this->function_strings[48] => array(
+                'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> / Z'
+            ),
+            $this->function_strings[49] => array(
+                'Formula:<br>' => 'E<sub>T</sub> * I<sub>T</sub>'
+            ),
+            $this->function_strings[50] => array(
+                'Formula:<br>' => 'sqrt( P<sup>2</sup> + VARS<sub>L</sub><sup>2</sup> )'
+            ),
+            $this->function_strings[51] => array(
+                'Formula:<br>' => 'P / PF'
+            ),
+            $this->function_strings[52] => array(
+                'Formula:<br>' => 'I<sub>R</sub><sup>2</sup> * R'
+            ),
+            $this->function_strings[53] => array(
+                'Formula:<br>' => 'sqrt( E<sub>R</sub><sup>2</sup> / R<sup>2</sup> )'
+            ),
+            $this->function_strings[54] => array(
+                'Formula:<br>' => 'E<sub>R</sub> * I<sub>R</sub>'
+            ),
+            $this->function_strings[55] => array(
+                'Formula:<br>' => 'VA * VARS<sub>L</sub>'
+            ),
+            $this->function_strings[56] => array(
+                'Formula:<br>' => 'VA<sup>2</sup> / PF'
+            ),
+            $this->function_strings[57] => array(
+                'Formula:<br>' => 'E<sub>R</sub><sup>2</sup> / P'
+            ),
+        );
         #}}}
 
     }

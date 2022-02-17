@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:52 PM PST
-# Last Update: 2022-02-16: 13:48
+# Last Update: 2022-02-17: 07:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,6 +44,8 @@ function Resist_Induct_Par_test($test, $class){
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;
 }
+
+
 
 echo "Preparing Resistive Inductive Parallel Test
 ---------------------------------------------------------\n";

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-02-16: 13:48
+# Last Update: 2022-02-17: 08:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -169,6 +169,7 @@ function cateSelect($sel, $myAttrs=array(), $selected=null){
     }
 
     $select = "<select onchange='redir(this)'$attrString>\n";
+    $select .= "<option value=''>--Select Category--</option>";
 
     foreach ( $sel as $key=>$value ){
         if ( $key == $selected ) {
