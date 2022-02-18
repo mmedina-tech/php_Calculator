@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-02-15: 09:24
+# Last update: 2022-02-18: 10:53
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -74,11 +74,11 @@ require_once("imports.inc.php");
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed 's/.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
-    if ( \$class->function_list[\$class->function_strings[1](<{param}>) !== array(<{formulas}>, "<{unit string}>"){
+    if ( \$class->function_list[\$class->function_strings[1](<{}>)] !== array(<{}>, "<{}>")){
         \$test->set_fail(\$class->funciton_strings[1]);
         \$fail++;
     } else {
@@ -87,17 +87,14 @@ function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
     }
 
 
-
-
-
     echo "\nTested: ".count(\$class->function_list);
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{module name}>
+echo "<{}>
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.php//')(\$test, \$<{mod name}>));
+\$test->pass_fail(\$<{}>, $(echo $outfile | sed 's/.php//')(\$test, \$<{}>));
 
 EOF
 }
@@ -289,11 +286,11 @@ require_once("imports.inc.php");
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed 's/.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
-    if ( \$class->function_list[\$class->function_strings[1](<{param}>) !== array(<{formulas}>, "<{unit string}>"){
+    if ( \$class->function_list[\$class->function_strings[1](<{}>)] !== array(<{}>, "<{}>")){
         \$test->set_fail(\$class->funciton_strings[1]);
         \$fail++;
     } else {
@@ -312,7 +309,7 @@ function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
 echo "<{module name}>
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.php//')(\$test, \$<{mod name}>));
+\$test->pass_fail(\$<{}>, $(echo $outfile | sed 's/.php//')(\$test, \$<{}>));
 EOF
 }
 
