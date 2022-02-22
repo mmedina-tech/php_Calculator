@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:55:01 PM PDT
-# Last Update: 2022-02-18: 15:45
+# Last Update: 2022-02-22: 09:40
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -250,6 +250,85 @@ class Resistive_Inductive_Series extends FormulaBase{
                 }
                 $result = sqrt(pow($num, 2) - pow($num2, 2));
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[37] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[38] => function($num, $num2){
+                $result = sqrt( $num * $num2 );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[39] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
+            },
+            $this->function_strings[40] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[41] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Amp'));
+            },
+            $this->function_strings[42] => function($num, $num2){
+                $result = sqrt( pow($num, 2) + pow($num2, 2) );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[43] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[44] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[45] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
+            },
+            $this->function_strings[46] => function($num, $num2){
+                $result = pow($num, 2) * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[47] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[48] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[49] => function($num, $num2){
+                $result = sqrt( pow($num, 2) + pow($num2, 2) );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[50] => function($num, $num2){
+                $result = $num / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Volt Amp'));
+            },
+            $this->function_strings[51] => function($num, $num2){
+                $result = pow($num, 2) * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[52] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[53] => function($num, $num2){
+                $result = pow($num, 2) / $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[54] => function($num, $num2){
+                if ( $num <= $num2 ){
+                    return array($this->error_msg, '');
+                }
+                $result = sqrt( pow($num, 2) - pow($num2, 2) );
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
+            },
+            $this->function_strings[55] => function($num, $num2){
+                $result = $num * $num2;
+                return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
         );
         #}}}

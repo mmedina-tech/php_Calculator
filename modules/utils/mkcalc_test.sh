@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-02-18: 10:53
+# Last update: 2022-02-22: 07:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -78,11 +78,11 @@ function $(echo $outfile | sed 's/.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
-    if ( \$class->function_list[\$class->function_strings[1](<{}>)] !== array(<{}>, "<{}>")){
+    if ( \$class->function_list[\$class->function_strings[1]](<{}>) !== array(<{}>, "<{}>")){
         \$test->set_fail(\$class->funciton_strings[1]);
         \$fail++;
     } else {
-        \$test->set_fail(\$class->function_strings[1]);
+        \$test->set_pass(\$class->function_strings[1]);
         \$pass++;
     }
 
