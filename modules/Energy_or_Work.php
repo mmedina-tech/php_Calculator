@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Energy or Work conversions
-# 
+#
 # Energy_or_Work.php
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:48 PM PDT
-# Last Update: 2022-01-11: 11:13
+# Last Update: 2022-02-23: 15:22
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -46,7 +46,7 @@ class Energy_or_Work extends FormulaBase{
             12 => 'KiloWatt Hours to Mega Joules',
         );
         #}}}
-    
+
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num){

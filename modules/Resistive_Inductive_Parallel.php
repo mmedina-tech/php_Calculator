@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Resistive Inductive in Parallel Formulas
-# 
+#
 # Resistive_Inductive_Parallel.php
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:42 PM PDT
-# Last Update: 2022-02-23: 14:24
+# Last Update: 2022-02-23: 15:24
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -92,7 +92,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
             57 => "Resistance using Resistor Volts and Watts",
         );
         #}}}
-    
+
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num, $num2){

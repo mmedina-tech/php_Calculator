@@ -1,20 +1,20 @@
 #!/bin/bash
 # SYNOPSIS: this is a shell script for making Massive Calculator Modules Tests with flags
-# 
+#
 # mkcalc_test
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-02-22: 07:48
+# Last update: 2022-02-23: 15:21
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -33,7 +33,7 @@ in_outfile=$( echo $outfile | sed -e 's/.php//')
 function pmessage() {
     for phrase in "$@"
     do
-        echo 
+        echo
         echo "    $phrase"
     done
 }
@@ -44,7 +44,7 @@ function all(){
     cat <<EOF > $outfile
 <?php
 # SYNOPSIS: $myDescription
-# 
+#
 # $outfile
 #
 # Author: $user
@@ -53,12 +53,12 @@ function all(){
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -105,12 +105,12 @@ function license(){
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -315,15 +315,15 @@ EOF
 
 
 function help(){
-    printf "Usage: %s: 
+    printf "Usage: %s:
             -t <filename>   sets filename to create
             [-a] run all documentation features
-            [-A] Create Author Block 
-            [-l] Create License Block 
+            [-A] Create Author Block
+            [-l] Create License Block
             [-e] Edit in Your set Editor after create
             [-d] Create standalone bash shebang line
             [-p] Add filename to documentation block
-            [-s] Synopsis Line with program name    
+            [-s] Synopsis Line with program name
 
             All Options have the shebang line"
     echo
@@ -348,7 +348,7 @@ do
 
         A) doauthor=1
             ;;
-            
+
         h) help
             ;;
 

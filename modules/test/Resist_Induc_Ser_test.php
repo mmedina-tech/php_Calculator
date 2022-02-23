@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Resistive Inductive Series Test
-# 
+#
 # Resist_Induct_Ser_test.php
 #
 # Author: Marcus Medina,,,
 # Date: Fri 18 Feb 2022 10:51:31 AM PST
-# Last update: 2022-02-22: 13:13
+# Last update: 2022-02-23: 15:28
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -467,7 +467,7 @@ function Resist_Induc_Ser_test($test, $class){
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;
 }
-echo "Preparing Resistive Inductive Series 
+echo "Preparing Resistive Inductive Series
 ---------------------------------------------------\n";
 sleep(1);
 $test->pass_fail($ris, Resist_Induc_Ser_test($test, $ris));

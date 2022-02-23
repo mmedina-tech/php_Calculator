@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2022-02-16: 10:56
+# Last Update: 2022-02-23: 15:22
 
 class FormulaBase{
     public $PI = M_PI;
@@ -51,7 +51,7 @@ class FormulaBase{
             "Trend Percentage" => "Trend Percentage",
             "Current Ratio" => "Current Ratio",
             "Gross Margin Percentage" => "Gross Margin Percentage",
-            "Gross Margin" => "Gross Margin", 
+            "Gross Margin" => "Gross Margin",
             "Turn-Over Ratio" => "Turn-Over Ratio",
             "Quick Ratio" => "Quick Ratio",
             "Accounts Receivable Turn-Over" => "Accounts Receivable Turn-Over",
@@ -130,7 +130,7 @@ class FormulaBase{
             "Mile/Gallon" => "Miles/Gallon",
 
             #Pressure
-            "Inches of Mercury" => "Inches of Mercury", 
+            "Inches of Mercury" => "Inches of Mercury",
             "PSI" => "PSI",
             "Pounds per Foot<sup>2</sup>" => "Pounds per Feet<sup>2</sup>",
             "Pounds per Square Foot" => "Pounds per Square Foot",

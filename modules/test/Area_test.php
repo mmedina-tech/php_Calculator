@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Test for Area Module
-# 
+#
 # Area_test.php
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 04:24:28 PM PST
-# Last Update: 2022-02-23: 15:10
+# Last Update: 2022-02-23: 15:26
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have received a copy of the GNU General Public License
@@ -452,7 +452,7 @@ function test_Area($test, $class){
         $test->set_pass($class->function_strings[60]);
         $pass++;
     }
-    
+
     echo "\nTested: ".count($class->function_list);
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;

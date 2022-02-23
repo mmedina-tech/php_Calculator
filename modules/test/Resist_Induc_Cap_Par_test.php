@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Resistive Inductive Capacitive Parallel Test
-# 
+#
 # Resist_Induc_Cap_Par_test.php
 #
 # Author: Marcus Medina,,,
 # Date: Wed 23 Feb 2022 03:08:08 PM PST
-# Last update: 2022-02-23: 15:09
+# Last update: 2022-02-23: 15:28
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License

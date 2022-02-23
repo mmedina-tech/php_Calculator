@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Test for Resistive_Capacitive_Parallel Module
-# 
+#
 # Resistive_Cap_Par_test.php
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:48:30 PM PST
-# Last Update: 2022-02-23: 14:21
+# Last Update: 2022-02-23: 15:28
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -336,7 +336,7 @@ function RCP_test($test, $class){
     if ( $class->function_list[$class->function_strings[44]](234, 234) !== array($class->error_msg, "") && $class->function_list[$class->function_strings[44]](234, 23) !== array($class->prec(sqrt(pow(234, 2)-pow(23, 2)), 4), "Capacitor Amps")){
         $test->set_fail($class->function_strings[44]);
         $fail++;
-        
+
     } else {
         $test->set_pass($class->function_strings[44]);
         $pass++;

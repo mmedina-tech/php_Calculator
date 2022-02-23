@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Test for PlaneAngle Module
-# 
+#
 # PlaneAngle_test.php
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:47:16 PM PST
-# Last Update: 2022-02-23: 15:12
+# Last Update: 2022-02-23: 15:27
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -117,7 +117,7 @@ function Plane_test($test, $class){
         $test->set_pass($class->function_strings[12]);
         $pass++;
     }
-    
+
     echo "\nTested: ".count($class->function_list);
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;

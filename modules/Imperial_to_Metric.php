@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Imperial to Metric Conversions
-# 
+#
 # Imperial_to_Metric.php
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:46:12 PM PDT
-# Last Update: 2022-01-11: 11:13
+# Last Update: 2022-02-23: 15:22
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -97,7 +97,7 @@ class Imperial_to_Metric extends FormulaBase{
             63 => 'Teaspoons to Milliliters',
             64 => 'Teaspoons to Centiliters',
             65 => 'Teaspoons to Deciliters',
-            66 => 'Teaspoons to Liters',    
+            66 => 'Teaspoons to Liters',
             67 => 'Cubic Inches to Cubic Millimeters',
             68 => 'Cubic Inches to Cubic Centimeters',
             69 => 'Cubic Inches to Cubic Meters',
@@ -112,7 +112,7 @@ class Imperial_to_Metric extends FormulaBase{
             78 => 'Cubic Miles to Cubic Kilometers',
         );
         #}}}
-    
+
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num){

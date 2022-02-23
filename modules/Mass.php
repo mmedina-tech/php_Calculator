@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Calculate Different Kinds of Mass
-# 
+#
 # Mass.php
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:47:30 PM PDT
-# Last Update: 2022-01-11: 11:14
+# Last Update: 2022-02-23: 15:23
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -41,7 +41,7 @@ class Mass extends FormulaBase{
             7 => 'Grains to Grams',
         );
         #}}}
-    
+
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num){

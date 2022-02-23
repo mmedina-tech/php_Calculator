@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Test for Acceleration Module
-# 
+#
 # Acceleration_test.php
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:35:28 PM PST
-# Last Update: 2022-02-15: 09:24
+# Last Update: 2022-02-23: 15:25
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -38,28 +38,28 @@ function test_Acceleration($test, $class){
         $test->set_fail($class->function_strings[1]);
         $fail++;
     } else {
-        $test->set_pass($class->function_strings[1]);    
+        $test->set_pass($class->function_strings[1]);
         $pass++;
     }
     if ( $class->function_list[$class->function_strings[2]](234) !== array(5.9436, "Meters/Sec<sup>2</sup>")){
         $test->set_fail($class->function_strings[2]);
         $fail++;
     } else {
-        $test->set_pass($class->function_strings[2]);    
+        $test->set_pass($class->function_strings[2]);
         $pass++;
     }
     if ( $class->function_list[$class->function_strings[3]](234) !== array(767.754, "Feet/Sec<sup>2</sup>") ) {
         $test->set_fail($class->function_strings[3]);
         $fail++;
     } else {
-        $test->set_pass($class->function_strings[3]);    
+        $test->set_pass($class->function_strings[3]);
         $pass++;
     }
     if ( $class->function_list[$class->function_strings[4]](234) !== array(9212.58, "Inches/Sec<sup>2</sup>") ) {
         $test->set_fail($class->function_strings[4]);
         $fail++;
     } else {
-        $test->set_pass($class->function_strings[4]);    
+        $test->set_pass($class->function_strings[4]);
         $pass++;
     }
 

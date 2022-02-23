@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Calculate Budgets
-# 
+#
 # Budget.php
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:42:54 PM PDT
-# Last Update: 2022-01-11: 11:12
+# Last Update: 2022-02-23: 15:22
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -35,7 +35,7 @@ class Budget extends FormulaBase{
             1 => 'Monthly Income',
         );
         #}}}
-    
+
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num, $num2, $num3, $num4, $num5, $num6, $num7, $num8, $num9, $num10, $num11, $num12, $num13, $num14){
@@ -51,7 +51,7 @@ class Budget extends FormulaBase{
                     return array($pos_result, "");
                 } else {
                     return array($neg_result, "");
-                    
+
                 }
             },
         );
