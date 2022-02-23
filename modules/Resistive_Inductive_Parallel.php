@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:42 PM PDT
-# Last Update: 2022-02-17: 09:16
+# Last Update: 2022-02-23: 14:24
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -148,10 +148,11 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Amp'));
             },
             $this->function_strings[14] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Amp'));
             },
             $this->function_strings[15] => function($num, $num2){
@@ -171,10 +172,11 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
             },
             $this->function_strings[19] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
             },
             $this->function_strings[20] => function($num, $num2){
@@ -226,10 +228,11 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
             },
             $this->function_strings[32] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt(pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
             },
             $this->function_strings[33] => function($num, $num2){
@@ -321,10 +324,11 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[55] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[56] => function($num, $num2){

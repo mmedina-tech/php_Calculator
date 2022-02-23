@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:53:31 PM PDT
-# Last Update: 2022-01-11: 11:42
+# Last Update: 2022-02-23: 10:13
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +31,8 @@ class Resistive_Inductive_Capacitive_Parallel extends FormulaBase{
     function __construct(){
 
         #{{{ Function Titles
-        $this->function_strings = array();
+        $this->function_strings = array(
+        );
         #}}}
     
         #{{{ Function List

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:55:01 PM PDT
-# Last Update: 2022-02-22: 09:40
+# Last Update: 2022-02-23: 14:29
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -137,10 +137,11 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance Rating'));
             },
             $this->function_strings[12] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2) );
+                $result = sqrt( $result );
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance Rating'));
             },
             $this->function_strings[13] => function($num, $num2){
@@ -164,10 +165,11 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
             },
             $this->function_strings[18] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                $result = sqrt( $result );
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor VAR'));
             },
             $this->function_strings[19] => function($num, $num2){
@@ -183,10 +185,11 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Volt'));
             },
             $this->function_strings[22] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                $result = sqrt( $result );
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductor Volt'));
             },
             $this->function_strings[23] => function($num){
@@ -206,10 +209,11 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
             },
             $this->function_strings[27] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2));
+                $result = sqrt( $result );
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
             },
             $this->function_strings[28] => function($num, $num2){
@@ -245,10 +249,11 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
             },
             $this->function_strings[36] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt(pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Volt'));
             },
             $this->function_strings[37] => function($num, $num2){
@@ -320,10 +325,11 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[54] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt( pow($num, 2) - pow($num2, 2) );
+                $result = sqrt( $result );
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[55] => function($num, $num2){
