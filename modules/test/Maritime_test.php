@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:44:45 PM PST
-# Last Update: 2022-02-15: 12:53
+# Last Update: 2022-02-23: 15:12
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -32,118 +32,118 @@ $test = new TestSuite();
 function Maritime_test($test, $class){
     $pass = 0;
     $fail = 0;
-	if ( $class->function_list[$class->function_strings[1]](234) !== array(234*6, "Feet")){
-		$test->set_fail($class->function_strings[1]);
+    if ( $class->function_list[$class->function_strings[1]](234) !== array(234*6, "Feet")){
+        $test->set_fail($class->function_strings[1]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[1]);
+    } else {
+        $test->set_pass($class->function_strings[1]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*101.26859, "Fathoms")){
-		$test->set_fail($class->function_strings[2]);
+    }
+    if ( $class->function_list[$class->function_strings[2]](234) !== array(234*101.26859, "Fathoms")){
+        $test->set_fail($class->function_strings[2]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[2]);
+    } else {
+        $test->set_pass($class->function_strings[2]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[3]](234) !== array(234*6076.1155, "Feet")){
-		$test->set_fail($class->function_strings[3]);
+    }
+    if ( $class->function_list[$class->function_strings[3]](234) !== array(234*6076.1155, "Feet")){
+        $test->set_fail($class->function_strings[3]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[3]);
+    } else {
+        $test->set_pass($class->function_strings[3]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[4]](234) !== array(234*1.8288, "Meters")){
-		$test->set_fail($class->function_strings[4]);
+    }
+    if ( $class->function_list[$class->function_strings[4]](234) !== array(234*1.8288, "Meters")){
+        $test->set_fail($class->function_strings[4]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[4]);
+    } else {
+        $test->set_pass($class->function_strings[4]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[5]](234) !== array(234*10, "Cables")){
-		$test->set_fail($class->function_strings[5]);
+    }
+    if ( $class->function_list[$class->function_strings[5]](234) !== array(234*10, "Cables")){
+        $test->set_fail($class->function_strings[5]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[5]);
+    } else {
+        $test->set_pass($class->function_strings[5]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[6]](234) !== array(234*1852, "Meters")){
-		$test->set_fail($class->function_strings[6]);
+    }
+    if ( $class->function_list[$class->function_strings[6]](234) !== array(234*1852, "Meters")){
+        $test->set_fail($class->function_strings[6]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[6]);
+    } else {
+        $test->set_pass($class->function_strings[6]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[7]](234) !== array(234*1.1507794, "Statute Miles")){
-		$test->set_fail($class->function_strings[7]);
+    }
+    if ( $class->function_list[$class->function_strings[7]](234) !== array(234*1.1507794, "Statute Miles")){
+        $test->set_fail($class->function_strings[7]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[7]);
+    } else {
+        $test->set_pass($class->function_strings[7]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[8]](234) !== array(234*1, "Nautical Miles/Hr")){
-		$test->set_fail($class->function_strings[8]);
+    }
+    if ( $class->function_list[$class->function_strings[8]](234) !== array(234*1, "Nautical Miles/Hr")){
+        $test->set_fail($class->function_strings[8]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[8]);
+    } else {
+        $test->set_pass($class->function_strings[8]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[9]](234) !== array(234*0.54680665, "Fathoms")){
-		$test->set_fail($class->function_strings[9]);
+    }
+    if ( $class->function_list[$class->function_strings[9]](234) !== array(234*0.54680665, "Fathoms")){
+        $test->set_fail($class->function_strings[9]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[9]);
+    } else {
+        $test->set_pass($class->function_strings[9]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[10]](234) !== array(234*1.852, "Kilometers")){
-		$test->set_fail($class->function_strings[10]);
+    }
+    if ( $class->function_list[$class->function_strings[10]](234) !== array(234*1.852, "Kilometers")){
+        $test->set_fail($class->function_strings[10]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[10]);
+    } else {
+        $test->set_pass($class->function_strings[10]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[11]](234) !== array(234*0.5399568, "Nautical Miles")){
-		$test->set_fail($class->function_strings[11]);
+    }
+    if ( $class->function_list[$class->function_strings[11]](234) !== array(234*0.5399568, "Nautical Miles")){
+        $test->set_fail($class->function_strings[11]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[11]);
+    } else {
+        $test->set_pass($class->function_strings[11]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[12]](234) !== array(234*0.86897624, "Nautical Miles")){
-		$test->set_fail($class->function_strings[12]);
+    }
+    if ( $class->function_list[$class->function_strings[12]](234) !== array(234*0.86897624, "Nautical Miles")){
+        $test->set_fail($class->function_strings[12]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[12]);
+    } else {
+        $test->set_pass($class->function_strings[12]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[13]](234) !== array(234*1.852, "Kilometers/Hr")){
-		$test->set_fail($class->function_strings[13]);
+    }
+    if ( $class->function_list[$class->function_strings[13]](234) !== array(234*1.852, "Kilometers/Hr")){
+        $test->set_fail($class->function_strings[13]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[13]);
+    } else {
+        $test->set_pass($class->function_strings[13]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[14]](234) !== array(234*0.5399568, "Knots")){
-		$test->set_fail($class->function_strings[14]);
+    }
+    if ( $class->function_list[$class->function_strings[14]](234) !== array(234*0.5399568, "Knots")){
+        $test->set_fail($class->function_strings[14]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[14]);
+    } else {
+        $test->set_pass($class->function_strings[14]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[15]](234) !== array(234*1.1507794, "Miles/Hr")){
-		$test->set_fail($class->function_strings[15]);
+    }
+    if ( $class->function_list[$class->function_strings[15]](234) !== array(234*1.1507794, "Miles/Hr")){
+        $test->set_fail($class->function_strings[15]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[15]);
+    } else {
+        $test->set_pass($class->function_strings[15]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[16]](234) !== array(234*0.86897624, "Knots")){
-		$test->set_fail($class->function_strings[16]);
+    }
+    if ( $class->function_list[$class->function_strings[16]](234) !== array(234*0.86897624, "Knots")){
+        $test->set_fail($class->function_strings[16]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[16]);
+    } else {
+        $test->set_pass($class->function_strings[16]);
         $pass++;
-	}
+    }
     echo "\nTested: ".count($class->function_list);
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;

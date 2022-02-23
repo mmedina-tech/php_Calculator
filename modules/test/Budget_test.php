@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:39:04 PM PST
-# Last Update: 2022-02-15: 08:28
+# Last Update: 2022-02-23: 15:10
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -32,20 +32,20 @@ $test = new TestSuite();
 function test_Budget($test, $class){
     $pass = 0;
     $fail = 0;
-	#{{{
-	echo "\nBudgeting
+    #{{{
+    echo "\nBudgeting
 ---------------------------\n";
-	if ( $class->function_list[$class->function_strings[1]](234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234) !== array("<span class='income'>Income $54756.00</span><br><br><span class='expenses'>Expenses $2808.00</span><br><br><span class='income'>$51948.00 after Expenses Paid</span>", "")){
-		$test->set_fail($class->function_strings[1]);
+    if ( $class->function_list[$class->function_strings[1]](234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234, 234) !== array("<span class='income'>Income $54756.00</span><br><br><span class='expenses'>Expenses $2808.00</span><br><br><span class='income'>$51948.00 after Expenses Paid</span>", "")){
+        $test->set_fail($class->function_strings[1]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[1]);
+    } else {
+        $test->set_pass($class->function_strings[1]);
         $pass++;
-	}
-	echo "\nTested: ".count($class->function_list);
-	echo "\nPassed: ".$pass;
-	echo "\nFailed: ".$fail;
-	#}}}
+    }
+    echo "\nTested: ".count($class->function_list);
+    echo "\nPassed: ".$pass;
+    echo "\nFailed: ".$fail;
+    #}}}
 }
 
 $test->pass_fail($budget, test_Budget($test, $budget));

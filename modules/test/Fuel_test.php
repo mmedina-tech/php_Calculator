@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:41:16 PM PST
-# Last Update: 2022-02-15: 12:32
+# Last Update: 2022-02-23: 15:11
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -32,20 +32,20 @@ $test = new TestSuite();
 function test_Fuel($test, $class){
     $pass = 0;
     $fail = 0;
-	if ( $class->function_list[$class->function_strings[1]](234) !== array(234*0.42514371, "Kilometers/Liter")){
-		$test->set_fail($class->function_strings[1]);
+    if ( $class->function_list[$class->function_strings[1]](234) !== array(234*0.42514371, "Kilometers/Liter")){
+        $test->set_fail($class->function_strings[1]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[1]);
+    } else {
+        $test->set_pass($class->function_strings[1]);
         $pass++;
-	}
-	if ( $class->function_list[$class->function_strings[2]](234) !== array(234*2.3521458, "Miles/Gallon")){
-		$test->set_fail($class->function_strings[2]);
+    }
+    if ( $class->function_list[$class->function_strings[2]](234) !== array(234*2.3521458, "Miles/Gallon")){
+        $test->set_fail($class->function_strings[2]);
         $fail++;
-	} else {
-		$test->set_pass($class->function_strings[2]);
+    } else {
+        $test->set_pass($class->function_strings[2]);
         $pass++;
-	}
+    }
     echo "\nTested: ".count($class->function_list);
     echo "\nPassed: ".$pass;
     echo "\nFailed: ".$fail;
