@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:51:48 PM PDT
-# Last Update: 2022-01-18: 15:11
+# Last Update: 2022-02-23: 14:21
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -139,10 +139,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[12] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt(pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[13] => function($num, $num2){
@@ -174,10 +175,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
             },
             $this->function_strings[20] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt(pow($num, 2) - pow($num2, 2)) ;
+                $result = sqrt($result) ;
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistor Amp'));
             },
             $this->function_strings[21] => function($num, $num2){
@@ -261,10 +263,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
             },
             $this->function_strings[41] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow(1/$num, 2) - pow(1/$num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = 1 / sqrt(pow(1/$num, 2) - pow(1/$num2, 2));
+                $result = 1 / sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
             },
             $this->function_strings[42] => function($num, $num2){
@@ -276,10 +279,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
             },
             $this->function_strings[44] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num,2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result =  sqrt(pow($num, 2) - pow($num2, 2));
+                $result =  sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Amp'));
             },
             $this->function_strings[45] => function($num, $num2){
@@ -295,10 +299,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Amp'));
             },
             $this->function_strings[48] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow(1/$num, 2) - pow(1/$num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = 1 / sqrt(pow(1/$num, 2) - pow(1/$num2, 2));
+                $result = 1 / sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
             },
             $this->function_strings[49] => function($num, $num2){
@@ -314,11 +319,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
             },
             $this->function_strings[52] => function($num, $num2){
-                $result = 1 / (2 * M_PI * $num * $num2);
+                $result = 1 / (2 * $this->PI * $num * $num2);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
             },
             $this->function_strings[53] => function($num, $num2){
-                $result = 1 / (2 * M_PI * $num * $num2);
+                $result = 1 / (2 * $this->PI * $num * $num2);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Rating'));
             },
             $this->function_strings[54] => function($num, $num2){
@@ -334,10 +339,11 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
             },
             $this->function_strings[57] => function($num, $num2){
-                if ( $num <= $num2 ){
+                $result = pow($num, 2) - pow($num2, 2);
+                if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
-                $result = sqrt(pow($num, 2) - pow($num2, 2));
+                $result = sqrt($result);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
             },
         );
