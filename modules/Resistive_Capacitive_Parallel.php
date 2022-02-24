@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:51:48 PM PDT
-# Last Update: 2022-02-23: 15:23
+# Last Update: 2022-02-24: 12:42
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -155,7 +155,7 @@ class Resistive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
             $this->function_strings[15] => function($num, $num2){
-                $result = 1 / sqrt((pow(1/$num, 2)) + (pow(1/$num2, 2)));
+                $result = 1 / (sqrt((pow(1/$num, 2)) + (pow(1/$num2, 2))));
                 return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
             },
             $this->function_strings[16] => function($num, $num2){

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:55:01 PM PDT
-# Last Update: 2022-02-23: 15:25
+# Last Update: 2022-02-24: 12:51
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -201,7 +201,7 @@ class Resistive_Inductive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
             },
             $this->function_strings[25] => function($num, $num2){
-                $result = $num / $num;
+                $result = $num / $num2;
                 return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
             },
             $this->function_strings[26] => function($num, $num2){

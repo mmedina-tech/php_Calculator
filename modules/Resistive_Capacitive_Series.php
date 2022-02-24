@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-02-23: 15:23
+# Last Update: 2022-02-24: 12:46
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -130,7 +130,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
             },
             $this->function_strings[9] => function($num, $num2){
-                $result = 1 / (2*$this->PI*$num*$num2);
+                $result = 1 / (2 * $this->PI * $num * $num2);
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Rating'));
             },
             $this->function_strings[10] => function($num, $num2){

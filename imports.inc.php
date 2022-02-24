@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-02-22: 07:40
+# Last Update: 2022-02-24: 12:38
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -51,6 +51,8 @@ require_once( 'modules/Resistive_Capacitive_Parallel.php' );
 require_once( 'modules/Resistive_Capacitive_Series.php' );
 require_once( 'modules/Resistive_Inductive_Parallel.php' );
 require_once( 'modules/Resistive_Inductive_Series.php' );
+require_once( 'modules/Resistive_Inductive_Capacitive_Series.php' );
+
 
 
 $outputfp = file_get_contents("calculator_template.html");
@@ -84,6 +86,7 @@ $rcp = new Resistive_Capacitive_Parallel();
 $rcs = new Resistive_Capacitive_Series();
 $rip = new Resistive_Inductive_Parallel();
 $ris = new Resistive_Inductive_Series();
+$rics = new Resistive_Inductive_Capacitive_Series();
 
 $cats = array(
     'Acceleration' => $accel,
@@ -111,6 +114,7 @@ $cats = array(
     'Resistive Capacitance Series' => $rcs,
     'Resistive Inductive Parallel' => $rip,
     'Resistive Inductive Series' => $ris,
+    'Resistive Inductive Capacitive Series' => $rics,
 
 );
 

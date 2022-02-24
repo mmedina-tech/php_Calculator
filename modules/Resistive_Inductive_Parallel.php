@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:42 PM PDT
-# Last Update: 2022-02-23: 15:24
+# Last Update: 2022-02-24: 12:50
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -96,7 +96,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num, $num2){
-                $result = 1 / (( 1 / pow($num, 2)) + ( 1 / pow($num2, 2)));
+                $result = 1 / sqrt(pow(1/$num, 2) + pow(1/$num2, 2));
                 return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
             },
             $this->function_strings[2] => function($num, $num2){
@@ -120,7 +120,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
             },
             $this->function_strings[7] => function($num, $num2){
-                $result = 1 / (( 1 / pow($num, 2)) - (1 / pow($num2, 2)));
+                $result = 1 / sqrt(pow(1/$num, 2) - pow(1/$num2, 2));
                 return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
             },
             $this->function_strings[8] => function($num, $num2){
@@ -208,7 +208,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
             },
             $this->function_strings[27] => function($num, $num2){
-                $result = 1 / sqrt((1 / pow($num, 2)) - (1 / pow($num2, 2)));
+                $result = 1 / sqrt(pow(1/$num, 2) - pow(1/$num2, 2));
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
             },
             $this->function_strings[28] => function($num, $num2){

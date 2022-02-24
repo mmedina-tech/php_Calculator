@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:00 PM PDT
-# Last Update: 2022-02-23: 21:11
+# Last Update: 2022-02-24: 13:07
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -104,7 +104,7 @@ class Resistive_Inductive_Capacitive_Series extends FormulaBase{
         #{{{ Function List
         $this->function_list = array(
             $this->function_strings[1] => function($num, $num2, $num3){
-                $result = sqrt( pow($num, 2) + ($num2 - pow($num3, 2)));
+                $result = sqrt( pow($num, 2) + (pow($num2 - $num3, 2)));
                 return array($this->prec($result, 4), $this->pluralize($result, 'Total Volt'));
             },
             $this->function_strings[2] => function($num, $num2){
@@ -181,7 +181,7 @@ class Resistive_Inductive_Capacitive_Series extends FormulaBase{
             },
             $this->function_strings[18] => function($num, $num2){
                 $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Inpedance'));
+                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
             },
             $this->function_strings[19] => function($num, $num2){
                 $result = $num / $num2;
