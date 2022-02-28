@@ -1,20 +1,20 @@
 <?php
 # SYNOPSIS: Import all modules
-# 
+#
 # imports.php
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-02-24: 12:38
+# Last Update: 2022-02-28: 07:46
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -52,7 +52,7 @@ require_once( 'modules/Resistive_Capacitive_Series.php' );
 require_once( 'modules/Resistive_Inductive_Parallel.php' );
 require_once( 'modules/Resistive_Inductive_Series.php' );
 require_once( 'modules/Resistive_Inductive_Capacitive_Series.php' );
-
+require_once( 'modules/Resistive_Inductive_Capacitive_Parallel.php' );
 
 
 $outputfp = file_get_contents("calculator_template.html");
@@ -87,6 +87,7 @@ $rcs = new Resistive_Capacitive_Series();
 $rip = new Resistive_Inductive_Parallel();
 $ris = new Resistive_Inductive_Series();
 $rics = new Resistive_Inductive_Capacitive_Series();
+$ricp = new Resistive_Inductive_Capacitive_Parallel();
 
 $cats = array(
     'Acceleration' => $accel,
@@ -115,6 +116,7 @@ $cats = array(
     'Resistive Inductive Parallel' => $rip,
     'Resistive Inductive Series' => $ris,
     'Resistive Inductive Capacitive Series' => $rics,
+    'Resistive Inductive Capacitive Parallel' => $ricp,
 
 );
 
