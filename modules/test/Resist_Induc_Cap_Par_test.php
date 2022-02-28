@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina,,,
 # Date: Wed 23 Feb 2022 03:08:08 PM PST
-# Last update: 2022-02-23: 15:28
+# Last update: 2022-02-28: 13:09
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ function Resist_Induc_Cap_Par_test($test, $class){
 
     $pass = 0;
     $fail = 0;
-    if ( $class->function_list[$class->function_strings[1]](234,234) !== array(<{}>, "<{}>")){
+    if ( $class->function_list[$class->function_strings[1]](234,234,234) !== array($class->prec(1/(sqrt(pow(1/234,2) + (pow((1/234) - (1/234),2)))),4), "Impedance")){
         $test->set_fail($class->funciton_strings[1]);
         $fail++;
     } else {
