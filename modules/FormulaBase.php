@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2022-02-23: 15:22
+# Last Update: 2022-03-01: 08:56
 
 class FormulaBase{
     public $PI = M_PI;
@@ -199,6 +199,10 @@ class FormulaBase{
             $mystr .= "$key $value";
         }
         return $mystr;
+    }
+    function mult($num, $num2, $prec=NULL, $type){
+        $result = $num * $num2;
+        return array($this->prec($result, $prec), $this->pluralize($result, $type));
     }
 }
 
