@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:42:14 PM PDT
-# Last Update: 2022-02-23: 15:22
+# Last Update: 2022-03-01: 13:47
 #
 #{{{ Legal Section
 # This program is free software; you can redistribute it and/or modify
@@ -91,7 +91,7 @@ class Astronomic_Units extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array(
+        $this->functions_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Celsius (input): ',
             ),

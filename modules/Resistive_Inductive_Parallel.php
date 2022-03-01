@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:42 PM PDT
-# Last Update: 2022-02-24: 12:50
+# Last Update: 2022-03-01: 13:49
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -343,7 +343,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array(
+        $this->functions_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Resistance (input): ',
                 'number_input2' => 'Inductive Reactance (input): ',

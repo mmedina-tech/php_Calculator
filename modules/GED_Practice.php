@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:45:16 PM PDT
-# Last Update: 2022-02-23: 15:22
+# Last Update: 2022-03-01: 13:47
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -116,7 +116,7 @@ class GED_Practice extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array(
+        $this->functions_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Base (input): ',
                 'number_input2' => 'Height (input): ',

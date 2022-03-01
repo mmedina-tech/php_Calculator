@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:12:37 PM PDT
-# Last Update: 2022-03-01: 10:51
+# Last Update: 2022-03-01: 14:49
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,56 +26,46 @@
 #
 
 require_once("FormulaBase.php");
+
 class Acceleration extends FormulaBase{
     function __construct(){
-        $this->function_strings = array(
-            1 => "Feet/Sec Squared to Meters/Sec Squared",
-            2 => "Inches/Sec Squared to Meters/Sec Squared",
-            3 => "Meters/Sec Squared to Feet/Sec Squared",
-            4 => "Meters/Sec Squared to Inches/Sec Squared",
-        );
-
-        $this->function_list = array(
-            $this->function_strings[1] => function($num=NULL){
-                return $this->mult($num, 0.03048, NULL, "Meter/Sec<sup>2</sup>");
-            },
-            /*
-            $this->function_strings[1] => $this->mult($num=NULL, 0.03048, NULL, "Meter/Sec<sup>2</sup>"),
-             */
-            $this->function_strings[2] => function($num=NULL){
-                $result = $num * 0.0254;
-                return array($result, $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
-            },
-            $this->function_strings[3] => function ($num=NULL){
-                $result = $num * 3.281;
-                return array($result, $this->pluralize($result, 'Foot/Sec<sup>2</sup>'));
-            },
-            $this->function_strings[4] => function($num=NULL){
-                $result = $num * 39.37;
-                return array($result, $this->pluralize($result, 'Inch/Sec<sup>2</sup>'));
-            }
-        );
-
-        $this->functionInputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Feet/Sec<sup>2</sup> (input): '),
-            $this->function_strings[3] => array(
-                'number_input' => 'Meters/Sec<sup>2</sup> (input): '),
-            $this->function_strings[2] => array(
-                'number_input' => 'Inches/Sec<sup>2</sup> (input): '),
-            $this->function_strings[4] => array(
-                'number_input' => 'Meters/Sec<sup>2</sup> (input): ')
-        );
-
-        $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br> ' => 'Feet/Sec<sup>2</sup> * 0.0348'),
-            $this->function_strings[2] => array(
-                'Formula:<br> ' => 'Inches/Sec<sup>2</sup> * 0.0254'),
-            $this->function_strings[3] => array(
-                'Formula:<br> ' => 'Meters/Sec<sup>2</sup> * 3.281'),
-            $this->function_strings[4] => array(
-                'Formula:<br> ' => 'Meters/Sec<sup>2</sup> * 39.37')
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "Feet/Sec Squared to Meters/Sec Squared",
+                function($num=NULL){
+                    $result = $num * 0.03048;
+                    return array($result, $this->pluralize($result, "Meter/Sec<sup>2</sup>"));
+                },
+                array("number_input" => "Feet/Sec<sup>2</sup> (input): "),
+                array( 'Formula: ' => 'Feet/Sec<sup>2</sup> * 0.0348'),
+            ),
+            FormulaBase::create_func_entry(
+                "Inches/Sec Squared to Meters/Sec Squared",
+                function($num=NULL){
+                    $result = $num * 0.0254;
+                    return array($result, $this->pluralize($result, 'Meter/Sec<sup>2</sup>'));
+                },
+                array( 'number_input' => 'Inches/Sec<sup>2</sup> (input): '),
+                array( 'Formula: ' => 'Inches/Sec<sup>2</sup> * 0.0254'),
+            ),
+            FormulaBase::create_func_entry(
+                 "Meters/Sec Squared to Feet/Sec Squared",
+                 function ($num=NULL){
+                     $result = $num * 3.281;
+                     return array($result, $this->pluralize($result, 'Foot/Sec<sup>2</sup>'));
+                },
+                array( 'number_input' => 'Meters/Sec<sup>2</sup> (input): '),
+                array( 'Formula: ' => 'Meters/Sec<sup>2</sup> * 3.281'),
+            ),
+            FormulaBase::create_func_entry(
+                "Meters/Sec Squared to Inches/Sec Squared",
+                function($num=NULL){
+                    $result = $num * 39.37;
+                    return array($result, $this->pluralize($result, 'Inch/Sec<sup>2</sup>'));
+                },
+                array( 'number_input' => 'Meters/Sec<sup>2</sup> (input): '),
+                array( 'Formula: ' => 'Meters/Sec<sup>2</sup> * 39.37'),
+            ),
         );
     }
 }

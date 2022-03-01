@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:08 PM PDT
-# Last Update: 2022-02-23: 15:23
+# Last Update: 2022-03-01: 13:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -59,7 +59,7 @@ class Physical_Fitness extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array(
+        $this->functions_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Enter Weight (input): ',
                 'number_input2' => 'Enter Angle (input): ',

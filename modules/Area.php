@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 05 Nov 2021 08:08:27 AM PDT
-# Last Update: 2022-02-23: 15:21
+# Last Update: 2022-03-01: 13:47
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -341,7 +341,7 @@ class Area extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array(
+        $this->functions_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Acres (input): '
                 ),

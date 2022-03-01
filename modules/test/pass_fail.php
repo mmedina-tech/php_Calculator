@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 08:53:57 PM PDT
-# Last Update: 2022-02-23: 15:27
+# Last Update: 2022-03-01: 14:40
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,17 +50,17 @@ class TestSuite{
 		}
 
 		foreach( $main->function_list as $key => $value ) {
-			if ( count($main->functionInputs[$key]) === 1 and $main->formula_list[$key] ) {
+			if ( count($main->function_inputs[$key]) === 1 and $main->formula_list[$key] ) {
 				$single_input[] = $key;
-			} elseif ( count($main->functionInputs[$key]) === 2 and $main->formula_list[$key] ) {
+			} elseif ( count($main->function_inputs[$key]) === 2 and $main->formula_list[$key] ) {
 				$two_input[] = $key;
-			} elseif ( count($main->functionInputs[$key]) === 3 and $main->formula_list[$key] ) {
+			} elseif ( count($main->function_inputs[$key]) === 3 and $main->formula_list[$key] ) {
 				$three_input[] = $key;
-			} elseif ( count($main->functionInputs[$key]) === 4 and $main->formula_list[$key] ) {
+			} elseif ( count($main->function_inputs[$key]) === 4 and $main->formula_list[$key] ) {
 				$four_input[] = $key;
-			} elseif ( count($main->functionInputs[$key]) === 5 and $main->formula_list[$key] ) {
+			} elseif ( count($main->function_inputs[$key]) === 5 and $main->formula_list[$key] ) {
 				$five_input[] = $key;
-			} elseif ( count($main->functionInputs[$key]) === 14 and $main->formula_list[$key] ) {
+			} elseif ( count($main->function_inputs[$key]) === 14 and $main->formula_list[$key] ) {
 				$fourteen_input[] = $key;
 			} else {
 				$fail_list[] = $key;
@@ -68,7 +68,7 @@ class TestSuite{
 			if (count($fail_list) !== 0){
 				echo "\nFail (".strval(count($fail_list))."): \n";
 				echo $key."
-			Inputs: ".strval(count($main->functionInputs[$key]))."
+			Inputs: ".strval(count($main->function_inputs[$key]))."
 			Show Formula: ".strval($main->formula_list[$key])."\n";
 			}
 		}

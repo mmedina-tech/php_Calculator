@@ -1,9 +1,10 @@
 <?php
-# Last Update: 2022-03-01: 08:56
+# Last Update: 2022-03-01: 14:49
 
 class FormulaBase{
     public $PI = M_PI;
     public $error_msg = "Can not be a negative square root";
+    public $entries = NULL;
     public function __construct($name=null){
 
         /*
@@ -16,6 +17,30 @@ class FormulaBase{
          */
 
         $this->function_list = array();
+    }
+    function __get($name){
+        switch($name){
+            case "function_strings":
+                $string = array_column($this->entries, "string");
+                array_unshift($string, NULL);
+                unset($string[0]);
+                return $string;
+            case "function_list":
+                $function_list = array_combine(array_column($this->entries, "string"),
+                    array_column($this->entries, 'function'));
+                return $function_list;
+            case "function_inputs":
+                $function_inputs = array_combine(array_column($this->entries, "string"),
+                    array_column($this->entries, 'inputs'));
+                return $function_inputs;
+            case "formula_list":
+                $formula_list = array_combine(array_column($this->entries, "string"),
+                    array_column($this->entries, 'formula'));
+                return $formula_list;
+            default:
+                throw new Exception($name." not defined");
+                break;
+        }
     }
     function get_formula($formulaName){
         return $this->formula;
@@ -188,7 +213,7 @@ class FormulaBase{
     }
     function for_loop($fname){
         $mystr = "";
-        foreach ($this->functionInputs[$fname] as $key=>$value){
+        foreach ($this->function_inputs[$fname] as $key=>$value){
             $mystr .= "<p class='titles'>$value</p><br>&nbsp<input type='text' name='$key' required autofocus><br>\n";
         }
         return $mystr;
@@ -196,13 +221,17 @@ class FormulaBase{
     function show_Formulas($fname){
         $mystr = "";
         foreach ( $this->formula_list[$fname] as $key=>$value ){
-            $mystr .= "$key $value";
+            $mystr .= "$key<br> $value";
         }
         return $mystr;
     }
-    function mult($num, $num2, $prec=NULL, $type){
-        $result = $num * $num2;
-        return array($this->prec($result, $prec), $this->pluralize($result, $type));
+    static function create_func_entry(string $string, callable $callable, array $input_array, array $formula_array){
+        return array(
+            'string' => $string,
+            'function' => $callable,
+            'inputs' => $input_array,
+            'formula' => $formula_array
+        );
     }
 }
 

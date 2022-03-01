@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:35:28 PM PST
-# Last Update: 2022-03-01: 09:09
+# Last Update: 2022-03-01: 14:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ function test_Acceleration($test, $class){
     $pass = 0;
     $fail = 0;
     #{{{
-    if ( $class->function_list[$class->function_strings[1]](234) !== $class->mult(234, 0.03048, NULL, "Meter/Sec<sup>2</sup>")){
+    if ( $class->function_list[$class->function_strings[1]](234) !== array(234*0.03048, "Meters/Sec<sup>2</sup>")){
         $test->set_fail($class->function_strings[1]);
         $fail++;
     } else {

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 03:53:48 PM PDT
-# Last Update: 2022-03-01: 09:14
+# Last Update: 2022-03-01: 12:26
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,13 +47,13 @@ $outputfp = str_replace("FORM_SELECT", $formula, $outputfp);
 $outputfp = str_replace("LICENSE", $license, $outputfp);
 $outputfp = str_replace("HEADER", $header, $outputfp);
 try{
-	$outputfp = str_replace("INPUT", $inputs, $outputfp);
-	$outputfp = str_replace("ANSWER", '', $outputfp);
-	$outputfp = str_replace("ERROR", '', $outputfp);
-	print $outputfp;
+    $outputfp = str_replace("INPUT", $inputs, $outputfp);
+    $outputfp = str_replace("ANSWER", '', $outputfp);
+    $outputfp = str_replace("ERROR", '', $outputfp);
+    print $outputfp;
 } catch (Exception $e){
-	$outputfp = str_replace("INPUT", $inputs, $outputfp);
-	$outputfp = str_replace("ANSWER", '', $outputfp);
-	$outputfp = str_replace("ERROR", "<h1 class='error'>Invalid Input</h1>", $outputfp);
-	print $outputfp;
+    $outputfp = str_replace("INPUT", $inputs, $outputfp);
+    $outputfp = str_replace("ANSWER", '', $outputfp);
+    $outputfp = str_replace("ERROR", "<h1 class='error'>{$e->getMessage()}</h1>", $outputfp);
+    print $outputfp;
 }

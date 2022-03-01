@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 04:13:06 PM PDT
-# Last Update: 2022-03-01: 09:19
+# Last Update: 2022-03-01: 14:20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,39 +47,38 @@ $outputfp = str_replace("FORM_SELECT", $formula, $outputfp);
 $outputfp = str_replace("LICENSE", $license, $outputfp);
 $outputfp = str_replace("HEADER", $header, $outputfp);
 try{
-    if ( count($cats[$cat]->functionInputs[$forms]) === 2 ) {
-        if ( is_float($num) && is_float($num2) ){
-            $formula_fields = "$number, $number2";
+    if ( !is_numeric($_POST['number_input'])){
+        throw new Exception("not a float");
+    }
+    if ( count($cats[$cat]->function_inputs[$forms]) === 2 ) {
+        $formula_fields = "$number, $number2";
 
-            $iterator = new ArrayObject($active_cats->function_list);
-            $answer = $iterator->offsetGet($forms);
-            $answer = $answer($number, $number2);
-        } else {
-            throw Exception;
-        }
+        $iterator = new ArrayObject($active_cats->function_list);
+        $answer = $iterator->offsetGet($forms);
+        $answer = $answer($number, $number2);
 
-    } elseif ( count($cats[$cat]->functionInputs[$forms]) === 3 ) {
+    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 3 ) {
         $formula_fields = "$number, $number2, $number3";
 
         $iterator = new ArrayObject($active_cats->function_list);
         $answer = $iterator->offsetGet($forms);
         $answer = $answer($number, $number2, $number3);
 
-    } elseif ( count($cats[$cat]->functionInputs[$forms]) === 4 ) {
+    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 4 ) {
         $formula_fields = "$number, $number2, $number3, $number4";
 
         $iterator = new ArrayObject($active_cats->function_list);
         $answer = $iterator->offsetGet($forms);
         $answer = $answer($number, $number2, $number3, $number4);
 
-    } elseif ( count($cats[$cat]->functionInputs[$forms]) === 5 ) {
+    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 5 ) {
         $formula_fields = "$number, $number2, $number3, $number4, $number5";
 
         $iterator = new ArrayObject($active_cats->function_list);
         $answer = $iterator->offsetGet($forms);
         $answer = $answer($number, $number2, $number3, $number4, $number5);
 
-    } elseif ( count($cats[$cat]->functionInputs[$forms]) === 14 ) {
+    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 14 ) {
         $formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
 
         $iterator = new ArrayObject($active_cats->function_list);
@@ -87,14 +86,10 @@ try{
         $answer = $answer($number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14);
 
     } else {
-        if ( is_float($num) ){
-            $formula_fields = "$number";
-            $iterator = new ArrayObject($active_cats->function_list);
-            $answer = $iterator->offsetGet($forms);
-            $answer = $answer($number);
-        } else {
-            throw Exception;
-        }
+        $formula_fields = "$number";
+        $iterator = new ArrayObject($active_cats->function_list);
+        $answer = $iterator->offsetGet($forms);
+        $answer = $answer($number);
     }
     $outscreen = "{$answer[0]} {$answer[1]}";
     $outputfp = str_replace("INPUT", $inputs, $outputfp);
@@ -106,7 +101,7 @@ try{
     $error = $e->getMessage();
     $outputfp = str_replace("INPUT", $inputs, $outputfp);
     $outputfp = str_replace("ANSWER", '', $outputfp);
-    $outputfp = str_replace("ERROR", "<h1 class='error'>{$error[1]}</h1>", $outputfp);
+    $outputfp = str_replace("ERROR", "<h1 class='error'>{$error}</h1>", $outputfp);
     statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
     print $outputfp;
 }

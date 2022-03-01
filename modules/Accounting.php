@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Mon 11 Oct 2021 08:15:45 PM PDT
-# Last Update: 2022-02-23: 15:21
+# Last Update: 2022-03-01: 13:47
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -133,7 +133,7 @@ class Accounting extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functionInputs = array(
+        $this->functions_inputs = array(
             $this->function_strings[1] => array(
                 "number_input" => "Stockholders Equity (input): ",
                 "number_input2" => "Total Equity (input): "
