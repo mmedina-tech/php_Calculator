@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:53:31 PM PDT
-# Last Update: 2022-02-28: 10:36
+# Last Update: 2022-03-01: 08:09
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -353,7 +353,7 @@ class Resistive_Inductive_Capacitive_Parallel extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
             },
             $this->function_strings[58] => function($num, $num2, $num3){
-                $result = (pow((1/$num),2)) - (pow((1/$num2) - (1/$num3),2));
+                $result = pow((1/$num),2) - pow((1/$num2) - (1/$num3),2);
                 if ( $result <= 0 ){
                     return array($this->error_msg, '');
                 }
