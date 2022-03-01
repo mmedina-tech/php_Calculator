@@ -15,8 +15,8 @@ please run from modules this command: utils/mkcalc_mod.sh -t <mod_name> -a
 This will create a new module for you. lets break down the flags.
 
 -t <mod_name>: this is where you set the module name
--a: this is saying that you want all the options, shebang line, synopsis line, license block, 
-author block, and open the module for editing after the file is created. dont worry the file will be 
+-a: this is saying that you want all the options, shebang line, synopsis line, license block,
+author block, and open the module for editing after the file is created. dont worry the file will be
 opened using the editor that you have specified in your .bashrc file.
 
 everything is already layed out for you to go straight into adding the new info.
@@ -32,7 +32,7 @@ Construtor function:
         This is where all your string names for your formula titles go.
         This makes it easy to call the functions throughout the class and any other location looking for
         the formula string name.
-    
+
     Function List:
         This is where all the formulas are defined. Everything is in an Associated Array.
         The Items are constructed as such:
