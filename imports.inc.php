@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-03-01: 13:02
+# Last Update: 2022-03-01: 15:09
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +25,11 @@
 #
 #
 include_once("DB/calculator.config.php");
-require_once("modules/Acceleration.php");
+
+$cats = array();
+foreach(glob("modules/*.Module.php") as $module){
+    require_once($module);
+}
 require_once("modules/Accounting.php");
 require_once('modules/Area.php');
 require_once('modules/Astronomic_Units.php');
@@ -60,6 +64,7 @@ $license = file_get_contents("license.html");
 $header = file_get_contents("header.html");
 $CALCPATH = basename($CALCPATH);
 
+/*
 $accel = new Acceleration();
 $account = new Accounting();
 $area = new Area();
@@ -119,6 +124,7 @@ $cats = array(
     'Resistive Inductive Capacitive Parallel' => $ricp,
 
 );
+ */
 
 $number = $_POST['number_input'] ?? null;
 $number2 = $_POST['number_input2'] ?? null;

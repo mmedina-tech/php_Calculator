@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:12:37 PM PDT
-# Last Update: 2022-03-01: 14:49
+# Last Update: 2022-03-01: 15:05
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -69,3 +69,5 @@ class Acceleration extends FormulaBase{
         );
     }
 }
+
+$cats["Acceleration"] = new Acceleration();
