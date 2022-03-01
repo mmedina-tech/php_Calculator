@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-03-01: 15:09
+# Last Update: 2022-03-01: 15:30
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 include_once("DB/calculator.config.php");
 
 $cats = array();
-foreach(glob("modules/*.Module.php") as $module){
+foreach(glob(__DIR__."/modules/*.Module.php") as $module){
     require_once($module);
 }
 require_once("modules/Accounting.php");

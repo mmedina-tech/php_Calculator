@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-02-23: 15:20
+# Last update: 2022-03-01: 15:38
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -71,7 +71,7 @@ function all(){
 
 require_once ("FormulaBase.php");
 
-class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
 
         #{{{ Function Titles
