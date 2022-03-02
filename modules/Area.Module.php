@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 05 Nov 2021 08:08:27 AM PDT
-# Last Update: 2022-03-02: 09:41
+# Last Update: 2022-03-02: 15:07
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -277,12 +277,24 @@ class Area extends FormulaBase{
                     '' => 'Square Chain * 0.002066116'
                 ),
             ),
+            FormulaBase::create_func_entry(
+                'Square Chain to Square Meter',
+                function($num){
+                    $result = $num * 0.002471052;
+                    return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
+                },
+                array(
+                    'number_input' => 'Square Chain (input): '
+                ),
+                array(        #schain3
+                    '' => 'Square Chain * 0.002471052'
+                ),
+            ),
         );
 
 
         #{{{ Function Titles
         $this->function_strings = array(
-            20 => 'Square Chain to Square Meter',
             21 => 'Acre to Square Chain',
             22 => 'Acre to Square Yard',
             23 => 'Acre to Square Meter',
@@ -328,10 +340,6 @@ class Area extends FormulaBase{
 
         #{{{ Function List
         $this->function_list = array(
-            $this->function_strings[20] => function($num){
-                $result = $num * 0.002471052;
-                return array($result, $this->pluralize($result, 'Meter<sup>2</sup>'));
-            },
             $this->function_strings[21] => function($num){
                 $result = $num * 0.01;
                 return array($result, $this->pluralize($result, 'Chain<sup>2</sup>'));
@@ -497,9 +505,6 @@ class Area extends FormulaBase{
 
         #{{{ Inputs
         $this->functions_inputs = array(
-            $this->function_strings[20] => array(
-                    'number_input' => 'Square Chain (input): '
-                ),
             $this->function_strings[21] => array(
                     'number_input' => 'Acre (input): '
                 ),
@@ -625,9 +630,6 @@ class Area extends FormulaBase{
 
         #{{{ Formula List
         $this->formula_list = array(
-            $this->function_strings[20] => array(        #schain3
-                '' => 'Square Chain * 0.002471052'
-            ),
             $this->function_strings[21] => array(                #acre3
                 '' => 'Acre * 0.01'
             ),
