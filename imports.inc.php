@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-03-01: 15:30
+# Last Update: 2022-03-02: 08:08
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ $cats = array();
 foreach(glob(__DIR__."/modules/*.Module.php") as $module){
     require_once($module);
 }
-require_once("modules/Accounting.php");
+/*
 require_once('modules/Area.php');
 require_once('modules/Astronomic_Units.php');
 require_once('modules/Budget.php');
@@ -57,6 +57,7 @@ require_once( 'modules/Resistive_Inductive_Parallel.php' );
 require_once( 'modules/Resistive_Inductive_Series.php' );
 require_once( 'modules/Resistive_Inductive_Capacitive_Series.php' );
 require_once( 'modules/Resistive_Inductive_Capacitive_Parallel.php' );
+ */
 
 
 $outputfp = file_get_contents("calculator_template.html");
