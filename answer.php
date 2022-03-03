@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 04:13:06 PM PDT
-# Last Update: 2022-03-01: 14:20
+# Last Update: 2022-03-02: 18:41
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,46 +50,34 @@ try{
     if ( !is_numeric($_POST['number_input'])){
         throw new Exception("not a float");
     }
-    if ( count($cats[$cat]->function_inputs[$forms]) === 2 ) {
-        $formula_fields = "$number, $number2";
+    $iterator = new ArrayObject($active_cats->function_list);
+    $answer = $iterator->offsetGet($forms);
+    switch ( count($cats[$cat]->function_inputs[$forms]) ){
+        case 2:
+            $formula_fields = "$number, $number2";
+            $answer = $answer($number, $number2);
+            break;
+        case 3:
+            $formula_fields = "$number, $number2, $number3";
+            $answer = $answer($number, $number2, $number3);
+            break;
+        case 4:
+            $formula_fields = "$number, $number2, $number3, $number4";
+            $answer = $answer($number, $number2, $number3, $number4);
+            break;
+        case 5:
+            $formula_fields = "$number, $number2, $number3, $number4, $number5";
+            $answer = $answer($number, $number2, $number3, $number4, $number5);
+            break;
+        case 14:
+            $formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
 
-        $iterator = new ArrayObject($active_cats->function_list);
-        $answer = $iterator->offsetGet($forms);
-        $answer = $answer($number, $number2);
-
-    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 3 ) {
-        $formula_fields = "$number, $number2, $number3";
-
-        $iterator = new ArrayObject($active_cats->function_list);
-        $answer = $iterator->offsetGet($forms);
-        $answer = $answer($number, $number2, $number3);
-
-    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 4 ) {
-        $formula_fields = "$number, $number2, $number3, $number4";
-
-        $iterator = new ArrayObject($active_cats->function_list);
-        $answer = $iterator->offsetGet($forms);
-        $answer = $answer($number, $number2, $number3, $number4);
-
-    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 5 ) {
-        $formula_fields = "$number, $number2, $number3, $number4, $number5";
-
-        $iterator = new ArrayObject($active_cats->function_list);
-        $answer = $iterator->offsetGet($forms);
-        $answer = $answer($number, $number2, $number3, $number4, $number5);
-
-    } elseif ( count($cats[$cat]->function_inputs[$forms]) === 14 ) {
-        $formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
-
-        $iterator = new ArrayObject($active_cats->function_list);
-        $answer = $iterator->offsetGet($forms);
-        $answer = $answer($number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14);
-
-    } else {
-        $formula_fields = "$number";
-        $iterator = new ArrayObject($active_cats->function_list);
-        $answer = $iterator->offsetGet($forms);
-        $answer = $answer($number);
+            $answer = $answer($number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14);
+            break;
+        default:
+            $formula_fields = "$number";
+            $answer = $answer($number);
+            break;
     }
     $outscreen = "{$answer[0]} {$answer[1]}";
     $outputfp = str_replace("INPUT", $inputs, $outputfp);
