@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:20 PM PDT
-# Last Update: 2022-03-01: 13:47
+# Last Update: 2022-03-02: 20:21
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -184,7 +184,7 @@ class Culinary extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functions_inputs = array(
+        $this->function_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Cups (input): ',
             ),
@@ -369,3 +369,5 @@ class Culinary extends FormulaBase{
         #}}}
     }
 }
+
+$cats["Culinary"] = new Culinary();

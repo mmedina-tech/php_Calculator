@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:39 PM PDT
-# Last Update: 2022-03-01: 13:48
+# Last Update: 2022-03-02: 20:31
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -101,7 +101,7 @@ class PlaneAngle extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functions_inputs = array(
+        $this->function_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Degrees (input): ',
             ),
@@ -183,4 +183,4 @@ class PlaneAngle extends FormulaBase{
         #}}}
     }
 }
-
+$cats["Plane Angle"] = new PlaneAngle();

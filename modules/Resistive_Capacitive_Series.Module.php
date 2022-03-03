@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-03-01: 13:48
+# Last Update: 2022-03-02: 20:33
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -337,7 +337,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functions_inputs = array(
+        $this->function_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => "Capacitor VAR's (input): ",
                 'number_input2' => 'Capacitor Amps (input): ',
@@ -732,3 +732,4 @@ class Resistive_Capacitive_Series extends FormulaBase{
 
     }
 }
+$cats["Resistive Capacitive Series"] = new Resistive_Capacitive_Series();

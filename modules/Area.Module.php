@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 05 Nov 2021 08:08:27 AM PDT
-# Last Update: 2022-03-02: 19:41
+# Last Update: 2022-03-02: 19:46
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ include_once("FormulaBase.php");
 class Area extends FormulaBase{
     function __construct(){
         $this->entries = array(
-            FormulaBase::create_func_entry(
+            1 => FormulaBase::create_func_entry(
                 'Acres to Hectares',
                 function($num){
                     $result = $num * 0.4047;
@@ -814,4 +814,4 @@ class Area extends FormulaBase{
     }
 }
 
-
+$cats["Area"] = new Area();

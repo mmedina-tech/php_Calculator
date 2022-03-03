@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:47:05 PM PDT
-# Last Update: 2022-03-01: 13:48
+# Last Update: 2022-03-02: 20:29
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -121,7 +121,7 @@ class Maritime_Measurements extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functions_inputs = array(
+        $this->function_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Fathoms (input): ',
             ),
@@ -228,3 +228,4 @@ class Maritime_Measurements extends FormulaBase{
 
     }
 }
+$cats["Maritime Measurements"] = new Maritime_Measurements();

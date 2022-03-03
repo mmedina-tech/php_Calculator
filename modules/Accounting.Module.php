@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Mon 11 Oct 2021 08:15:45 PM PDT
-# Last Update: 2022-03-02: 08:09
+# Last Update: 2022-03-02: 20:22
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,10 +38,10 @@ class Accounting extends FormulaBase{
                     return array($this->prec($result, 2)."%", $this->pluralize($result, "Equity"));
                 },
                 array(
-                    "number_input" => "Stockholders Equity (input): ", 
+                    "number_input" => "Stockholders Equity (input): ",
                     "number_input2" => "Total Equity (input): "
                 ),
-                array( 
+                array(
                     '' => "Stockholders Equity / Total Equity",
                 ),
             ),

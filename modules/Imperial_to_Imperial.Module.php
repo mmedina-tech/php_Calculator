@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:45:49 PM PDT
-# Last Update: 2022-03-01: 13:47
+# Last Update: 2022-03-02: 20:28
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -116,7 +116,7 @@ class Imperial_to_Imperial extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functions_inputs = array(
+        $this->function_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'Feet (input): ',
             ),
@@ -217,3 +217,5 @@ class Imperial_to_Imperial extends FormulaBase{
 
     }
 }
+
+$cats["Imperial to Imperial"] = new Imperial_to_Imperial();

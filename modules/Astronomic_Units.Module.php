@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:42:14 PM PDT
-# Last Update: 2022-03-01: 13:47
+# Last Update: 2022-03-02: 20:10
 #
 #{{{ Legal Section
 # This program is free software; you can redistribute it and/or modify
@@ -29,135 +29,138 @@ require_once ("FormulaBase.php");
 
 class Astronomic_Units extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            1 => "Celsius to Kelvin",
-            2 => 'Fahrenheit to Kelvin',
-            3 => 'Light Years to Astronomic Units',
-            4 => 'Astronomic Units to Light Years',
-            5 => 'Light Years to Parsecs',
-            6 => 'Parsecs to Light Years',
-            7 => 'Celsius to Rankine',
-            8 => 'Rankine to Celsius',
-            9 => 'Rankine to Kelvin',
-            10 => 'Kelvin to Rankine',
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+               "Celsius to Kelvin",
+                function($num){
+                    $result = $num * 274.15;
+                    return array($result, $this->pluralize($result, 'Kelvin'));
+                },
+                array(
+                    'number_input' => 'Celsius (input): ',
+                ),
+                array(
+                    '' => 'Celsius * 274.15'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Fahrenheit to Kelvin',
+                function($num){
+                    $result = $num * 255.92778;
+                    return array($result, $this->pluralize($result, "Kelvin"));
+                },
+                array(
+                    'number_input' => 'Fahrenheit (input): ',
+                ),
+                array(
+                    '' => 'Fahrenheit * 255.92778'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Light Years to Astronomic Units',
+                function($num){
+                    $result = $num * 63241.077;
+                    return array($result, $this->pluralize($result, 'Astronomic Unit'));
+                },
+                array(
+                    'number_input' => 'Light Years (input): ',
+                ),
+                array(
+                    '' => 'Light Years * 63241.077'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Astronomic Units to Light Years',
+                function($num){
+                    $result = $num * 1.5812597e-05;
+                    return array($result, $this->pluralize($result, 'Light Year'));
+                },
+                array(
+                    'number_input' => 'Astronomic Units (input): ',
+                ),
+                array(
+                    '' => 'Astronomic Units * 1.5812597e-05'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Light Years to Parsecs',
+                function($num){
+                    $result = $num * 0.30660139;
+                    return array($result, $this->pluralize($result, 'Parsec'));
+                },
+                array(
+                    'number_input' => 'Light Years (input): ',
+                ),
+                array(
+                    '' => 'Light Years * 0.30659485'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Parsecs to Light Years',
+                function($num){
+                    $result = $num * 3.2615638;
+                    return array($result, $this->pluralize($result, 'Light Year'));
+                },
+                array(
+                    'number_input' => 'Parsecs (input): ',
+                ),
+                array(
+                    '' => 'Parsecs * 3.2615638'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Celsius to Rankine',
+                function($num){
+                    $result = $num * 493.47;
+                    return array($result, $this->pluralize($result, 'Rankine'));
+                },
+                array(
+                    'number_input' => 'Celsius (input): ',
+                ),
+                array(
+                    '' => 'Celsius * 493.47'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Rankine to Celsius',
+                function($num){
+                    $result = $num * 0.0020264656;
+                    return array($result, $this->pluralize($result, 'Celsius'));
+                },
+                array(
+                    'number_input' => 'Rankine (input): ',
+                ),
+                array(
+                    '' => 'Rankine * 0.0020264656'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Rankine to Kelvin',
+                function($num){
+                    $result = $num * 0.55555556;
+                    return array($result, $this->pluralize($result, 'Kelvin'));
+                },
+                array(
+                    'number_input' => 'Rankine (input): ',
+                ),
+                array(
+                    '' => 'Rankine * 0.55555556'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Kelvin to Rankine',
+                function($num){
+                    $result = $num * 1.8;
+                    return array($result, $this->pluralize($result, 'Rankine'));
+                },
+                array(
+                    'number_input' => 'Kelvin (input): ',
+                ),
+                array(
+                    '' => 'Kelvin * 1.8'
+                ),
+            ),
         );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[1] => function($num){
-                $result = $num + 270;
-                return array($result, $this->pluralize($result, 'Kelvin'));
-            },
-            $this->function_strings[2] => function($num){
-                $result = (($num - 32) * 5/9) + 270;
-                return array($result, $this->pluralize($result, "Kelvin"));
-            },
-            $this->function_strings[3] => function($num){
-                $result = $num * 63239.726;
-                return array($result, $this->pluralize($result, 'Astronomic Unit'));
-            },
-            $this->function_strings[4] => function($num){
-                $result = $num * 0.000015812845;
-                return array($result, $this->pluralize($result, 'Light Year'));
-            },
-            $this->function_strings[5] => function($num){
-                $result = $num * 0.30659485;
-                return array($result, $this->pluralize($result, 'Parsec'));
-            },
-            $this->function_strings[6] => function($num){
-                $result = $num * 3.2616334;
-                return array($result, $this->pluralize($result, 'Light Year'));
-            },
-            $this->function_strings[7] => function($num){
-                $result = $num * 1.8;
-                return array($result, $this->pluralize($result, 'Rankine'));
-            },
-            $this->function_strings[8] => function($num){
-                $result = $num * 0.55555556;
-                return array($result, $this->pluralize($result, 'Celsius'));
-            },
-            $this->function_strings[9] => function($num){
-                $result = $num * 0.55555556;
-                return array($result, $this->pluralize($result, 'Kelvin'));
-            },
-            $this->function_strings[10] => function($num){
-                $result = $num * 1.8;
-                return array($result, $this->pluralize($result, 'Rankine'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->functions_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Celsius (input): ',
-            ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Fahrenheit (input): ',
-            ),
-            $this->function_strings[3] => array(
-                'number_input' => 'Light Years (input): ',
-            ),
-            $this->function_strings[4] => array(
-                'number_input' => 'Astronomic Units (input): ',
-            ),
-            $this->function_strings[5] => array(
-                'number_input' => 'Light Years (input): ',
-            ),
-            $this->function_strings[6] => array(
-                'number_input' => 'Parsecs (input): ',
-            ),
-            $this->function_strings[7] => array(
-                'number_input' => 'Celsius (input): ',
-            ),
-            $this->function_strings[8] => array(
-                'number_input' => 'Rankine (input): ',
-            ),
-            $this->function_strings[9] => array(
-                'number_input' => 'Rankine (input): ',
-            ),
-            $this->function_strings[10] => array(
-                'number_input' => 'Kelvin (input): ',
-            ),
-        );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => 'Celsius + 270'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => '((Fahrenheit - 32) * 5/9) + 270'
-            ),
-            $this->function_strings[3] => array(
-                'Formula:<br>' => 'Light Years * 63239.726'
-            ),
-            $this->function_strings[4] => array(
-                'Formula:<br>' => 'Astronomic Units * 0.000015812845'
-            ),
-            $this->function_strings[5] => array(
-                'Formula:<br>' => 'Light Years * 0.30659485'
-            ),
-            $this->function_strings[6] => array(
-                'Formula:<br>' => 'Parsecs * 3.2616334'
-            ),
-            $this->function_strings[7] => array(
-                'Formula:<br>' => 'Celsius * 1.8'
-            ),
-            $this->function_strings[8] => array(
-                'Formula:<br>' => 'Rankine * 0.55555556'
-            ),
-            $this->function_strings[9] => array(
-                'Formula:<br>' => 'Rankine * 0.55555556'
-            ),
-            $this->function_strings[10] => array(
-                'Formula:<br>' => 'Kelvin * 1.8'
-            ),
-        );
-        #}}}
     }
 }
+$cats["Astronomic Units"] = new Astronomic_Units();

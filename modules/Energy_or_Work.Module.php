@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:48 PM PDT
-# Last Update: 2022-03-01: 13:47
+# Last Update: 2022-03-02: 20:27
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -101,7 +101,7 @@ class Energy_or_Work extends FormulaBase{
         #}}}
 
         #{{{ Inputs
-        $this->functions_inputs = array(
+        $this->function_inputs = array(
             $this->function_strings[1] => array(
                 'number_input' => 'BTU (input): ',
             ),
@@ -183,3 +183,4 @@ class Energy_or_Work extends FormulaBase{
         #}}}
     }
 }
+$cats["Energy or Work"] = new Energy_or_Work();
