@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:20 PM PDT
-# Last Update: 2022-03-04: 08:54
+# Last Update: 2022-03-04: 09:13
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Cups (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Cups * 0.23659924'
+                    '' => 'Cups * 0.23659924'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -53,7 +53,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Cups (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Cups * 0.5'
+                    '' => 'Cups * 0.5'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -66,7 +66,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Dashes (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Dashes * 0.125'
+                    '' => 'Dashes * 0.125'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -79,7 +79,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Fluuid Ounces (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Fluid Ounces * 29.57353'
+                    '' => 'Fluid Ounces * 29.57353'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -92,7 +92,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Gallons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Gallons * 3.7854118'
+                    '' => 'Gallons * 3.7854118'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -105,7 +105,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Gallons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Gallons * 0.4296835'
+                    '' => 'Gallons * 0.4296835'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -118,7 +118,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Grams (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Grams * 0.035273962'
+                    '' => 'Grams * 0.035273962'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -131,7 +131,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Grams (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Grams * 0.0022046226'
+                    '' => 'Grams * 0.0022046226'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -144,7 +144,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Kilograms (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Kilograms * 2.2046226'
+                    '' => 'Kilograms * 2.2046226'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -157,7 +157,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Liters (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Liters * 0.26417205'
+                    '' => 'Liters * 0.26417205'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -170,7 +170,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Liters (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Liters * 2.1133764'
+                    '' => 'Liters * 2.1133764'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -183,7 +183,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Liters (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Liters * 1.0567'
+                    '' => 'Liters * 1.0567'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -196,7 +196,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Pecks (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Pecks * 0.25'
+                    '' => 'Pecks * 0.25'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -209,7 +209,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Pints (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Pints * 0.47317647'
+                    '' => 'Pints * 0.47317647'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -222,7 +222,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Pints (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Pints * 0.5'
+                    '' => 'Pints * 0.5'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -235,7 +235,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Pounds (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Pounds * 0.45359237'
+                    '' => 'Pounds * 0.45359237'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -255,7 +255,7 @@ class Culinary extends FormulaBase{
                     'number_input5' => 'Old Ingrediant Quantity (input): '
                 ),
                 array(
-                    'Formula:<br>' => '((Original Yield * Original Serving Size) / (Desired Portions * Desired Portion Size)) * Old Ingrediant Quantity'
+                    '' => '((Original Yield * Original Serving Size) / (Desired Portions * Desired Portion Size)) * Old Ingrediant Quantity'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -268,7 +268,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Quarts (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Quarts * 0.25'
+                    '' => 'Quarts * 0.25'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -281,7 +281,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Quarts (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Quarts * 0.94635295'
+                    '' => 'Quarts * 0.94635295'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -294,7 +294,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Tablespoons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Tablespoons * 0.0625'
+                    '' => 'Tablespoons * 0.0625'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -307,7 +307,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Tablespoons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Tablespoons * 0.5'
+                    '' => 'Tablespoons * 0.5'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -320,7 +320,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Tablespoons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Tablespoons * 14.786765'
+                    '' => 'Tablespoons * 14.786765'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -333,7 +333,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Teaspoons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Teaspoons * 0.33333333'
+                    '' => 'Teaspoons * 0.33333333'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -346,7 +346,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Teaspoons (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Teaspoons * 4.9289216'
+                    '' => 'Teaspoons * 4.9289216'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -360,7 +360,7 @@ class Culinary extends FormulaBase{
                     'number_input2' => 'Number of Units (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'As Purchased Cost / Number Of Units'
+                    '' => 'As Purchased Cost / Number Of Units'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -374,7 +374,7 @@ class Culinary extends FormulaBase{
                     'number_input2' => 'Number of Portions (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Total Recipe Cost / Number of Portions'
+                    '' => 'Total Recipe Cost / Number of Portions'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -388,7 +388,7 @@ class Culinary extends FormulaBase{
                     'number_input2' => 'Food Cost Percentage (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Plate Cost / (Food Cost Percentage / 100)'
+                    '' => 'Plate Cost / (Food Cost Percentage / 100)'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -401,7 +401,7 @@ class Culinary extends FormulaBase{
                     'number_input' => 'Ounce (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Ounce * 28.349523'
+                    '' => 'Ounce * 28.349523'
                 ),
             ),
         );
