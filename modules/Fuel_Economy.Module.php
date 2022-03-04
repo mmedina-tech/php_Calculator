@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:44:27 PM PDT
-# Last Update: 2022-03-02: 20:27
+# Last Update: 2022-03-04: 09:16
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,49 +29,34 @@ require_once ("FormulaBase.php");
 
 class Fuel_Economy extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            1 => 'Miles/Gal to Kilometers/Liter',
-            2 => 'Kilometers/Liter to Miles/Gal',
-        );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[1] => function($num){
-                $result = $num * 0.42514371;
-                return array($result, $this->pluralize($result, 'Kilometer/Liter'));
-            },
-            $this->function_strings[2] => function($num){
-                $result = $num * 2.3521458;
-                return array($result, $this->pluralize($result, 'Mile/Gallon'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->function_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Mile/Gallon (input): ',
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                'Miles/Gal to Kilometers/Liter',
+                function($num){
+                    $result = $num * 0.42514371;
+                    return array($result, $this->pluralize($result, 'Kilometer/Liter'));
+                },
+                array(
+                    'number_input' => 'Mile/Gallon (input): ',
+                ),
+                array(
+                    '' => 'Mile/Gallon * 0.42514371'
+                ),
             ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Kilometer/Liter (input): ',
+            FormulaBase::create_func_entry(
+                'Kilometers/Liter to Miles/Gal',
+                function($num){
+                    $result = $num * 2.3521458;
+                    return array($result, $this->pluralize($result, 'Mile/Gallon'));
+                },
+                array(
+                    'number_input' => 'Kilometer/Liter (input): ',
+                ),
+                array(
+                    '' => 'Kilometer/Liter * 2.3521458'
+                ),
             ),
         );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => 'Mile/Gallon * 0.42514371'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => 'Kilometer/Liter * 2.3521458'
-            ),
-        );
-        #}}}
-
     }
 }
 $cats["Fuel Economy"] = new Fuel_Economy();
