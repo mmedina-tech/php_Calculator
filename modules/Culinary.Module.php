@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:43:20 PM PDT
-# Last Update: 2022-03-02: 20:21
+# Last Update: 2022-03-04: 08:54
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,344 +29,382 @@ require_once ("FormulaBase.php");
 
 class Culinary extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            1 => 'Cups to Liters',
-            2 => 'Cups to Pints',
-            3 => 'Dashes to Teaspoons',
-            4 => 'Fluid Ounces to Milliliters',
-            5 => 'Gallons to Liters',
-            6 => 'Gallons to Pecks',
-            7 => 'Grams to Ounces',
-            8 => 'Grams to Pounds',
-            9 => 'Kilograms to Pounds',
-            10 => 'Liters to Gallons',
-            11 => 'Liters to Pints',
-            12 => 'Liters to Quarts',
-            13 => 'Pecks to Bushels',
-            14 => 'Pints to Liters',
-            15 => 'Pints to Quarts',
-            16 => 'Pounds to Kilograms',
-            17 => 'Portion Size',
-            18 => 'Quarts to Gallons',
-            19 => 'Quarts to Liters',
-            20 => 'Tablespoons to Cups',
-            21 => 'Tablespoons to Fluid Ounces',
-            22 => 'Tablespoons to Milliliters',
-            23 => 'Teaspoons to Tablespoons',
-            24 => 'Teaspoons to Milliliters',
-            25 => 'Unit Cost',
-            26 => 'Recipe Cost',
-            27 => 'Selling Price',
-            28 => 'Ounces to Grams',
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                'Cups to Liters',
+                function($num){
+                    $result = $num * 0.23658824;
+                    return array($result, $this->pluralize($result, 'Liter'));
+                },
+                array(
+                    'number_input' => 'Cups (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Cups * 0.23659924'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Cups to Pints',
+                function($num){
+                    $result = $num * 0.5;
+                    return array($result, $this->pluralize($result, 'Pint'));
+                },
+                array(
+                    'number_input' => 'Cups (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Cups * 0.5'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Dashes to Teaspoons',
+                function($num){
+                    $result = $num * 0.125;
+                    return array($result, $this->pluralize($result, 'Teaspoon'));
+                },
+                array(
+                    'number_input' => 'Dashes (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Dashes * 0.125'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Fluid Ounces to Milliliters',
+                function($num){
+                    $result = $num * 29.57353 ;
+                    return array($result, $this->pluralize($result, 'Milliliter'));
+                },
+                array(
+                    'number_input' => 'Fluuid Ounces (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Fluid Ounces * 29.57353'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Gallons to Liters',
+                function($num){
+                    $result = $num * 3.7854118;
+                    return array($result, $this->pluralize($result, 'Liter'));
+                },
+                array(
+                    'number_input' => 'Gallons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Gallons * 3.7854118'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Gallons to Pecks',
+                function($num){
+                    $result = $num * 0.4296835;
+                    return array($result, $this->pluralize($result, 'Peck'));
+                },
+                array(
+                    'number_input' => 'Gallons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Gallons * 0.4296835'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Grams to Ounces',
+                function($num){
+                    $result = $num * 0.035273962;
+                    return array($result, $this->pluralize($result, 'Ounce'));
+                },
+                array(
+                    'number_input' => 'Grams (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Grams * 0.035273962'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Grams to Pounds',
+                function($num){
+                    $result = $num * 0.0022046226;
+                    return array($result, $this->pluralize($result, 'Pound'));
+                },
+                array(
+                    'number_input' => 'Grams (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Grams * 0.0022046226'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Kilograms to Pounds',
+                function($num){
+                    $result = $num * 2.2046226;
+                    return array($result, $this->pluralize($result, 'Pound'));
+                },
+                array(
+                    'number_input' => 'Kilograms (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Kilograms * 2.2046226'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Liters to Gallons',
+                function($num){
+                    $result = $num * 0.26417205;
+                    return array($result, $this->pluralize($result, 'Gallon'));
+                },
+                array(
+                    'number_input' => 'Liters (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Liters * 0.26417205'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Liters to Pints',
+                function($num){
+                    $result = $num * 2.1133764;
+                    return array($result, $this->pluralize($result, 'Pint'));
+                },
+                array(
+                    'number_input' => 'Liters (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Liters * 2.1133764'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Liters to Quarts',
+                function($num){
+                    $result = $num * 1.0566882;
+                    return array($result, $this->pluralize($result, 'Quart'));
+                },
+                array(
+                    'number_input' => 'Liters (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Liters * 1.0567'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Pecks to Bushels',
+                function($num){
+                    $result = $num * 0.25;
+                    return array($result, $this->pluralize($result, 'Bushel'));
+                },
+                array(
+                    'number_input' => 'Pecks (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Pecks * 0.25'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Pints to Liters',
+                function($num){
+                    $result = $num * 0.47317647;
+                    return array($result, $this->pluralize($result, 'Liter'));
+                },
+                array(
+                    'number_input' => 'Pints (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Pints * 0.47317647'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Pints to Quarts',
+                function($num){
+                    $result = $num * 0.5;
+                    return array($result, $this->pluralize($result, 'Quart'));
+                },
+                array(
+                    'number_input' => 'Pints (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Pints * 0.5'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Pounds to Kilograms',
+                function($num){
+                    $result = $num * 0.45359237;
+                    return array($result, $this->pluralize($result, 'Kilogram'));
+                },
+                array(
+                    'number_input' => 'Pounds (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Pounds * 0.45359237'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Portion Size',
+                function($num, $num2, $num3, $num4, $num5){
+                    $old_yield = $num * $num2;
+                    $new_yield = $num3 * $num4;
+                    $conversion_factor = $new_yield / $old_yield;
+                    $result = $num5 * $conversion_factor;
+                    return array($this->prec($result, 2), $this->pluralize($result, 'New Quantity'));
+                },
+                array(
+                    'number_input' => 'Original Yields (input): ',
+                    'number_input2' => 'Original Serving Size (input): ',
+                    'number_input3' => 'Desired Portions (input): ',
+                    'number_input4' => 'Desired Portion Size (input): ',
+                    'number_input5' => 'Old Ingrediant Quantity (input): '
+                ),
+                array(
+                    'Formula:<br>' => '((Original Yield * Original Serving Size) / (Desired Portions * Desired Portion Size)) * Old Ingrediant Quantity'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Quarts to Gallons',
+                function($num){
+                    $result = $num * 0.25;
+                    return array($result, $this->pluralize($result, 'Gallon'));
+                },
+                array(
+                    'number_input' => 'Quarts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Quarts * 0.25'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Quarts to Liters',
+                function($num){
+                    $result = $num * 0.94635295;
+                    return array($result, $this->pluralize($result, 'Liter'));
+                },
+                array(
+                    'number_input' => 'Quarts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Quarts * 0.94635295'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Tablespoons to Cups',
+                function($num){
+                    $result = $num * 0.0625;
+                    return array($result, $this->pluralize($result, 'Cup'));
+                },
+                array(
+                    'number_input' => 'Tablespoons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Tablespoons * 0.0625'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Tablespoons to Fluid Ounces',
+                function($num){
+                    $result = $num * 0.5;
+                    return array($result, $this->pluralize($result, 'Fluid Ounce'));
+                },
+                array(
+                    'number_input' => 'Tablespoons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Tablespoons * 0.5'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Tablespoons to Milliliters',
+                function($num){
+                    $result = $num * 14.786765;
+                    return array($result, $this->pluralize($result, 'Milliliter'));
+                },
+                array(
+                    'number_input' => 'Tablespoons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Tablespoons * 14.786765'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Teaspoons to Tablespoons',
+                function($num){
+                    $result = $num * 0.33333333;
+                    return array($result, $this->pluralize($result, 'Tablespoon'));
+                },
+                array(
+                    'number_input' => 'Teaspoons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Teaspoons * 0.33333333'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Teaspoons to Milliliters',
+                function($num){
+                    $result = $num * 4.9289216;
+                    return array($result, $this->pluralize($result, 'Milliliter'));
+                },
+                array(
+                    'number_input' => 'Teaspoons (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Teaspoons * 4.9289216'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Unit Cost',
+                function($num, $num2){
+                    $result = $num / $num;
+                    return array($this->money($result), $this->pluralize($result, 'Cost per Unit'));
+                },
+                array(
+                    'number_input' => 'As Purchased Cost (input): ',
+                    'number_input2' => 'Number of Units (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'As Purchased Cost / Number Of Units'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Recipe Cost',
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->money($result), $this->pluralize($result, 'Cost Per Portion'));
+                },
+                array(
+                    'number_input' => 'Total Recipe Cost (input): ',
+                    'number_input2' => 'Number of Portions (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Total Recipe Cost / Number of Portions'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Selling Price',
+                function($num, $num2){
+                    $result = $num / ($num2 / 100);
+                    return array($this->money($result), $this->pluralize($result, 'Selling Price'));
+                },
+                array(
+                    'number_input' => 'Plate Cost (input): ',
+                    'number_input2' => 'Food Cost Percentage (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Plate Cost / (Food Cost Percentage / 100)'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Ounces to Grams',
+                function($num){
+                    $result = $num * 28.349523;
+                    return array($result, $this->pluralize($result, 'Gram'));
+                },
+                array(
+                    'number_input' => 'Ounce (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Ounce * 28.349523'
+                ),
+            ),
         );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[1] => function($num){
-                $result = $num * 0.23658824;
-                return array($result, $this->pluralize($result, 'Liter'));
-            },
-            $this->function_strings[2] => function($num){
-                $result = $num * 0.5;
-                return array($result, $this->pluralize($result, 'Pint'));
-            },
-            $this->function_strings[3] => function($num){
-                $result = $num * 0.125;
-                return array($result, $this->pluralize($result, 'Teaspoon'));
-            },
-            $this->function_strings[4] => function($num){
-                $result = $num * 29.57353 ;
-                return array($result, $this->pluralize($result, 'Milliliter'));
-            },
-            $this->function_strings[5] => function($num){
-                $result = $num * 3.7854118;
-                return array($result, $this->pluralize($result, 'Liter'));
-            },
-            $this->function_strings[6] => function($num){
-                $result = $num * 0.4296835;
-                return array($result, $this->pluralize($result, 'Peck'));
-            },
-            $this->function_strings[7] => function($num){
-                $result = $num * 0.035273962;
-                return array($result, $this->pluralize($result, 'Ounce'));
-            },
-            $this->function_strings[8] => function($num){
-                $result = $num * 0.0022046226;
-                return array($result, $this->pluralize($result, 'Pound'));
-            },
-            $this->function_strings[9] => function($num){
-                $result = $num * 2.2046226;
-                return array($result, $this->pluralize($result, 'Pound'));
-            },
-            $this->function_strings[10] => function($num){
-                $result = $num * 0.26417205;
-                return array($result, $this->pluralize($result, 'Gallon'));
-            },
-            $this->function_strings[11] => function($num){
-                $result = $num * 2.1133764;
-                return array($result, $this->pluralize($result, 'Pint'));
-            },
-            $this->function_strings[12] => function($num){
-                $result = $num * 1.0566882;
-                return array($result, $this->pluralize($result, 'Quart'));
-            },
-            $this->function_strings[13] => function($num){
-                $result = $num * 0.25;
-                return array($result, $this->pluralize($result, 'Bushel'));
-            },
-            $this->function_strings[14] => function($num){
-                $result = $num * 0.47317647;
-                return array($result, $this->pluralize($result, 'Liter'));
-            },
-            $this->function_strings[15] => function($num){
-                $result = $num * 0.5;
-                return array($result, $this->pluralize($result, 'Quart'));
-            },
-            $this->function_strings[16] => function($num){
-                $result = $num * 0.45359237;
-                return array($result, $this->pluralize($result, 'Kilogram'));
-            },
-            $this->function_strings[17] => function($num, $num2, $num3, $num4, $num5){
-                $old_yield = $num * $num2;
-                $new_yield = $num3 * $num4;
-                $conversion_factor = $new_yield / $old_yield;
-                $result = $num5 * $conversion_factor;
-                return array($this->prec($result, 2), $this->pluralize($result, 'New Quantity'));
-            },
-            $this->function_strings[18] => function($num){
-                $result = $num * 0.25;
-                return array($result, $this->pluralize($result, 'Gallon'));
-            },
-            $this->function_strings[19] => function($num){
-                $result = $num * 0.94635295;
-                return array($result, $this->pluralize($result, 'Liter'));
-            },
-            $this->function_strings[20] => function($num){
-                $result = $num * 0.0625;
-                return array($result, $this->pluralize($result, 'Cup'));
-            },
-            $this->function_strings[21] => function($num){
-                $result = $num * 0.5;
-                return array($result, $this->pluralize($result, 'Fluid Ounce'));
-            },
-            $this->function_strings[22] => function($num){
-                $result = $num * 14.786765;
-                return array($result, $this->pluralize($result, 'Milliliter'));
-            },
-            $this->function_strings[23] => function($num){
-                $result = $num * 0.33333333;
-                return array($result, $this->pluralize($result, 'Tablespoon'));
-            },
-            $this->function_strings[24] => function($num){
-                $result = $num * 4.9289216;
-                return array($result, $this->pluralize($result, 'Milliliter'));
-            },
-            $this->function_strings[25] => function($num, $num2){
-                $result = $num / $num;
-                return array($this->money($result), $this->pluralize($result, 'Cost per Unit'));
-            },
-            $this->function_strings[26] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->money($result), $this->pluralize($result, 'Cost Per Portion'));
-            },
-            $this->function_strings[27] => function($num, $num2){
-                $result = $num / ($num2 / 100);
-                return array($this->money($result), $this->pluralize($result, 'Selling Price'));
-            },
-            $this->function_strings[28] => function($num){
-                $result = $num * 28.349523;
-                return array($result, $this->pluralize($result, 'Gram'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->function_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Cups (input): ',
-            ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Cups (input): ',
-            ),
-            $this->function_strings[3] => array(
-                'number_input' => 'Dashes (input): ',
-            ),
-            $this->function_strings[4] => array(
-                'number_input' => 'Fluuid Ounces (input): ',
-            ),
-            $this->function_strings[5] => array(
-                'number_input' => 'Gallons (input): ',
-            ),
-            $this->function_strings[6] => array(
-                'number_input' => 'Gallons (input): ',
-            ),
-            $this->function_strings[7] => array(
-                'number_input' => 'Grams (input): ',
-            ),
-            $this->function_strings[8] => array(
-                'number_input' => 'Grams (input): ',
-            ),
-            $this->function_strings[9] => array(
-                'number_input' => 'Kilograms (input): ',
-            ),
-            $this->function_strings[10] => array(
-                'number_input' => 'Liters (input): ',
-            ),
-            $this->function_strings[11] => array(
-                'number_input' => 'Liters (input): ',
-            ),
-            $this->function_strings[12] => array(
-                'number_input' => 'Liters (input): ',
-            ),
-            $this->function_strings[13] => array(
-                'number_input' => 'Pecks (input): ',
-            ),
-            $this->function_strings[14] => array(
-                'number_input' => 'Pints (input): ',
-            ),
-            $this->function_strings[15] => array(
-                'number_input' => 'Pints (input): ',
-            ),
-            $this->function_strings[16] => array(
-                'number_input' => 'Pounds (input): ',
-            ),
-            $this->function_strings[17] => array(
-                'number_input' => 'Original Yields (input): ',
-                'number_input2' => 'Original Serving Size (input): ',
-                'number_input3' => 'Desired Portions (input): ',
-                'number_input4' => 'Desired Portion Size (input): ',
-                'number_input5' => 'Old Ingrediant Quantity (input): '
-            ),
-            $this->function_strings[18] => array(
-                'number_input' => 'Quarts (input): ',
-            ),
-            $this->function_strings[19] => array(
-                'number_input' => 'Quarts (input): ',
-            ),
-            $this->function_strings[20] => array(
-                'number_input' => 'Tablespoons (input): ',
-            ),
-            $this->function_strings[21] => array(
-                'number_input' => 'Tablespoons (input): ',
-            ),
-            $this->function_strings[22] => array(
-                'number_input' => 'Tablespoons (input): ',
-            ),
-            $this->function_strings[23] => array(
-                'number_input' => 'Teaspoons (input): ',
-            ),
-            $this->function_strings[24] => array(
-                'number_input' => 'Teaspoons (input): ',
-            ),
-            $this->function_strings[25] => array(
-                'number_input' => 'As Purchased Cost (input): ',
-                'number_input2' => 'Number of Units (input): ',
-            ),
-            $this->function_strings[26] => array(
-                'number_input' => 'Total Recipe Cost (input): ',
-                'number_input2' => 'Number of Portions (input): ',
-            ),
-            $this->function_strings[27] => array(
-                'number_input' => 'Plate Cost (input): ',
-                'number_input2' => 'Food Cost Percentage (input): ',
-            ),
-            $this->function_strings[28] => array(
-                'number_input' => 'Ounce (input): ',
-            ),
-        );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => 'Cups * 0.23659924'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => 'Cups * 0.5'
-            ),
-            $this->function_strings[3] => array(
-                'Formula:<br>' => 'Dashes * 0.125'
-            ),
-            $this->function_strings[4] => array(
-                'Formula:<br>' => 'Fluid Ounces * 29.57353'
-            ),
-            $this->function_strings[5] => array(
-                'Formula:<br>' => 'Gallons * 3.7854118'
-            ),
-            $this->function_strings[6] => array(
-                'Formula:<br>' => 'Gallons * 0.4296835'
-            ),
-            $this->function_strings[7] => array(
-                'Formula:<br>' => 'Grams * 0.035273962'
-            ),
-            $this->function_strings[8] => array(
-                'Formula:<br>' => 'Grams * 0.0022046226'
-            ),
-            $this->function_strings[9] => array(
-                'Formula:<br>' => 'Kilograms * 2.2046226'
-            ),
-            $this->function_strings[10] => array(
-                'Formula:<br>' => 'Liters * 0.26417205'
-            ),
-            $this->function_strings[11] => array(
-                'Formula:<br>' => 'Liters * 2.1133764'
-            ),
-            $this->function_strings[12] => array(
-                'Formula:<br>' => 'Liters * 1.0567'
-            ),
-            $this->function_strings[13] => array(
-                'Formula:<br>' => 'Pecks * 0.25'
-            ),
-            $this->function_strings[14] => array(
-                'Formula:<br>' => 'Pints * 0.47317647'
-            ),
-            $this->function_strings[15] => array(
-                'Formula:<br>' => 'Pints * 0.5'
-            ),
-            $this->function_strings[16] => array(
-                'Formula:<br>' => 'Pounds * 0.45359237'
-            ),
-            $this->function_strings[17] => array(
-                'Formula:<br>' => '((Original Yield * Original Serving Size) / (Desired Portions * Desired Portion Size)) * Old Ingrediant Quantity'
-            ),
-            $this->function_strings[18] => array(
-                'Formula:<br>' => 'Quarts * 0.25'
-            ),
-            $this->function_strings[19] => array(
-                'Formula:<br>' => 'Quarts * 0.94635295'
-            ),
-            $this->function_strings[20] => array(
-                'Formula:<br>' => 'Tablespoons * 0.0625'
-            ),
-            $this->function_strings[21] => array(
-                'Formula:<br>' => 'Tablespoons * 0.5'
-            ),
-            $this->function_strings[22] => array(
-                'Formula:<br>' => 'Tablespoons * 14.786765'
-            ),
-            $this->function_strings[23] => array(
-                'Formula:<br>' => 'Teaspoons * 0.33333333'
-            ),
-            $this->function_strings[24] => array(
-                'Formula:<br>' => 'Teaspoons * 4.9289216'
-            ),
-            $this->function_strings[25] => array(
-                'Formula:<br>' => 'As Purchased Cost / Number Of Units'
-            ),
-            $this->function_strings[26] => array(
-                'Formula:<br>' => 'Total Recipe Cost / Number of Portions'
-            ),
-            $this->function_strings[27] => array(
-                'Formula:<br>' => 'Plate Cost / (Food Cost Percentage / 100)'
-            ),
-            $this->function_strings[28] => array(
-                'Formula:<br>' => 'Ounce * 28.349523'
-            ),
-        );
-        #}}}
     }
 }
 
