@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:45:16 PM PDT
-# Last Update: 2022-03-04: 13:43
+# Last Update: 2022-03-05: 19:09
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ require_once ("FormulaBase.php");
 
 class GED_Practice extends FormulaBase{
     function __construct(){
-        $this->entrires = array(
+        $this->entries = array(
             1 => FormulaBase::create_func_entry(
                 'Triangle',
                 function($num, $num2){

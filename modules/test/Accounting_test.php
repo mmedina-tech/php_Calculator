@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 03 Dec 2021 10:57:14 PM PST
-# Last Update: 2022-02-23: 15:26
+# Last Update: 2022-03-05: 19:01
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,8 +26,8 @@
 #
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-require_once("FormulaBase.php");
 
+$account = $cats["Accounting"];
 $test = new TestSuite();
 
 function test_Accounting($test, $class){

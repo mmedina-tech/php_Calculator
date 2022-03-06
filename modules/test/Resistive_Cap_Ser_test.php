@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:02 PM PST
-# Last Update: 2022-02-23: 15:28
+# Last Update: 2022-03-05: 19:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 #
 require_once( 'pass_fail.php' );
 require_once( 'imports.inc.php' );
+$rcs = $cats["Resistive Capacitive Series"];
 
 $test = new TestSuite();
 

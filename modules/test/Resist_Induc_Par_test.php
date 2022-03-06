@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:52 PM PST
-# Last Update: 2022-02-23: 15:28
+# Last Update: 2022-03-05: 19:35
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,13 +27,14 @@
 
 require_once( 'imports.inc.php' );
 require_once( 'pass_fail.php' );
+$rip = $cats["Resistive Inductive Parallel"];
 $test = new TestSuite();
 
 
 function Resist_Induct_Par_test($test, $class){
     $fail = 0;
     $pass = 0;
-    if ( $class->function_list[$class->function_strings[1]](234,234) !== array($class->prec(1/((1/pow(234,2))+(1/pow(234,2))), 4), "Impedance")){
+    if ( $class->function_list[$class->function_strings[1]](234,234) !== array($class->prec(1/sqrt((pow(1/234,2))+(pow(1/234,2))), 4), "Impedance")){
         $test->set_fail($class->function_strings[1]);
         $fail++;
     } else {
@@ -75,7 +76,7 @@ function Resist_Induct_Par_test($test, $class){
         $test->set_pass($class->function_strings[6]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[7]](23,234) !== array($class->prec(1/(1/pow(23,2) - (1/pow(234,2))), 4), "Inductive Reactance")){
+    if ( $class->function_list[$class->function_strings[7]](23,234) !== array($class->prec(1/sqrt(pow(1/23,2) - (pow(1/234,2))), 4), "Inductive Reactance")){
         $test->set_fail($class->function_strings[7]);
         $fail++;
     } else {

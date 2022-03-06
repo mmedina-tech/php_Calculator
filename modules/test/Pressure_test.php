@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:47:50 PM PST
-# Last Update: 2022-02-23: 15:28
+# Last Update: 2022-03-05: 19:30
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 require_once( 'pass_fail.php' );
 require_once( 'imports.inc.php' );
+$press = $cats["Pressure"];
 
 $test = new TestSuite();
 
@@ -89,14 +90,14 @@ function Pressure_test($test, $class){
         $test->set_pass($class->function_strings[8]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[9]](234) !== array(234*47.88, "Pascal")){
+    if ( $class->function_list[$class->function_strings[9]](234) !== array(234*47.880259, "Pascals")){
         $test->set_fail($class->function_strings[9]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[9]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[10]](234) !== array(234*47.88, "Pascals")){
+    if ( $class->function_list[$class->function_strings[10]](234) !== array(234*6.8947573, "KiloPascals")){
         $test->set_fail($class->function_strings[10]);
         $fail++;
     } else {

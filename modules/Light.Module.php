@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:46:34 PM PDT
-# Last Update: 2022-03-05: 18:14
+# Last Update: 2022-03-05: 18:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ class Light extends FormulaBase{
                 ),
             ),
             FormulaBase::create_func_entry(
-                'Lumens/Meter Squared to Foot Candles'
+                'Lumens/Meter Squared to Foot Candles',
                 function($num){
                     $result = $num * 0.0929;
                     return array($result, $this->pluralize($result, 'Foot Candle'));

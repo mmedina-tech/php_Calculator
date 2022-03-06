@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:46:12 PM PDT
-# Last Update: 2022-03-05: 18:08
+# Last Update: 2022-03-05: 19:17
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -704,19 +704,6 @@ class Imperial_to_Metric extends FormulaBase{
                 ),
                 array(
                     '' => 'Yards * 0.0009144'
-                ),
-            ),
-            FormulaBase::create_func_entry(
-                'Cubic Yards to Cubic Meters',
-                function($num){
-                    $result = $num * 0.76455486;
-                    return array($result, $this->pluralize($result, 'Meter<sup>3</sup>'));
-                },
-                array(
-                    'number_input' => 'Cubic Yards (input): ',
-                ),
-                array(
-                    '' => 'Cubic Yards * 0.76455486'
                 ),
             ),
             FormulaBase::create_func_entry(

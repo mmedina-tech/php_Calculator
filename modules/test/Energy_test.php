@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:40:36 PM PST
-# Last Update: 2022-02-23: 15:26
+# Last Update: 2022-03-05: 19:07
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+$energy = $cats["Energy or Work"];
 $test = new TestSuite();
 
 function test_Energy($test, $class){

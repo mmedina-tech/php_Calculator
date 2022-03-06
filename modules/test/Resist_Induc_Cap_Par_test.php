@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina,,,
 # Date: Wed 23 Feb 2022 03:08:08 PM PST
-# Last update: 2022-03-01: 08:17
+# Last update: 2022-03-05: 19:31
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+$ricp = $cats["Resistive Inductive Capacitive Parallel"];
 
 $test = new TestSuite();
 

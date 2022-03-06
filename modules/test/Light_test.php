@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:44:11 PM PST
-# Last Update: 2022-02-23: 15:27
+# Last Update: 2022-03-05: 19:19
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+$light = $cats["Light"];
 $test = new TestSuite();
 
 function test_Light($test, $class){

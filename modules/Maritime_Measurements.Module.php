@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:47:05 PM PDT
-# Last Update: 2022-03-05: 18:29
+# Last Update: 2022-03-05: 18:57
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -226,7 +226,7 @@ class Maritime_Measurements extends FormulaBase{
                 ),
             ),
             FormulaBase::create_func_entry(
-                'Miles per Hour to Knots'
+                'Miles per Hour to Knots',
                 function($num){
                     $result = $num * 0.86897624;
                     return array($result, $this->pluralize($result, 'Knot'));

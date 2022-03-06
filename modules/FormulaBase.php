@@ -1,5 +1,5 @@
 <?php
-# Last Update: 2022-03-01: 14:49
+# Last Update: 2022-03-05: 19:30
 
 class FormulaBase{
     public $PI = M_PI;
@@ -155,10 +155,11 @@ class FormulaBase{
             "Mile/Gallon" => "Miles/Gallon",
 
             #Pressure
-            "Inches of Mercury" => "Inches of Mercury",
+            "Inch of Mercury" => "Inches of Mercury",
             "PSI" => "PSI",
             "Pounds per Foot<sup>2</sup>" => "Pounds per Feet<sup>2</sup>",
             "Pounds per Square Foot" => "Pounds per Square Foot",
+            "Pound/Foot<sup>2</sup>" => "Pound/Foot<sup>2</sup>",
 
             #Torque
             "Ounce/Inch" => "Ounce/Inches",

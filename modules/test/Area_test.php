@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sun 05 Dec 2021 04:24:28 PM PST
-# Last Update: 2022-02-23: 15:26
+# Last Update: 2022-03-05: 19:01
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 #
 require_once("imports.inc.php");
 require_once("pass_fail.php");
+$area = $cats["Area"];
 $test = new TestSuite();
 
 function test_Area($test, $class){

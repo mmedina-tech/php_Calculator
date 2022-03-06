@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:43:44 PM PST
-# Last Update: 2022-02-23: 15:27
+# Last Update: 2022-03-05: 19:19
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+$impm = $cats["Imperial to Metric"];
 $test = new TestSuite();
 
 function test_Imp_to_Met($test, $class){
@@ -397,186 +398,179 @@ function test_Imp_to_Met($test, $class){
         $test->set_pass($class->function_strings[52]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[53]](234) !== array(234*0.76455486, "Meters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[53]](234) !== array(234*7.6455486e-10, "Kilometer<sup>3</sup>")){
         $test->set_fail($class->function_strings[53]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[53]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[54]](234) !== array(234*7.6455486e-10, "Kilometer<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[54]](234) !== array(234*236.58824, "Milliliters")){
         $test->set_fail($class->function_strings[54]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[54]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[55]](234) !== array(234*236.58824, "Milliliters")){
+    if ( $class->function_list[$class->function_strings[55]](234) !== array(234*23.658824, "Centiliters")){
         $test->set_fail($class->function_strings[55]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[55]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[56]](234) !== array(234*23.658824, "Centiliters")){
+    if ( $class->function_list[$class->function_strings[56]](234) !== array(234*2.3658824, "Deciliters")){
         $test->set_fail($class->function_strings[56]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[56]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[57]](234) !== array(234*2.3658824, "Deciliters")){
+    if ( $class->function_list[$class->function_strings[57]](234) !== array(234*0.23658824, "Liters")){
         $test->set_fail($class->function_strings[57]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[57]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[58]](234) !== array(234*0.23658824, "Liters")){
+    if ( $class->function_list[$class->function_strings[58]](234) !== array(234*14.786765, "Milliliters")){
         $test->set_fail($class->function_strings[58]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[58]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[59]](234) !== array(234*14.786765, "Milliliters")){
+    if ( $class->function_list[$class->function_strings[59]](234) !== array(234*1.4786765, "Centiliters")){
         $test->set_fail($class->function_strings[59]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[59]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[60]](234) !== array(234*1.4786765, "Centiliters")){
+    if ( $class->function_list[$class->function_strings[60]](234) !== array(234*0.14786765, "Deciliters")){
         $test->set_fail($class->function_strings[60]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[60]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[61]](234) !== array(234*0.14786765, "Deciliters")){
+    if ( $class->function_list[$class->function_strings[61]](234) !== array(234*0.014786765, "Liters")){
         $test->set_fail($class->function_strings[61]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[61]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[62]](234) !== array(234*0.014786765, "Liters")){
+    if ( $class->function_list[$class->function_strings[62]](234) !== array(234*4.9289216, "Milliliters")){
         $test->set_fail($class->function_strings[62]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[62]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[63]](234) !== array(234*4.9289216, "Milliliters")){
+    if ( $class->function_list[$class->function_strings[63]](234) !== array(234*0.49289216, "Centiliters")){
         $test->set_fail($class->function_strings[63]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[63]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[64]](234) !== array(234*0.49289216, "Centiliters")){
+    if ( $class->function_list[$class->function_strings[64]](234) !== array(234*0.049289216, "Deciliters")){
         $test->set_fail($class->function_strings[64]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[64]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[65]](234) !== array(234*0.049289216, "Deciliters")){
+    if ( $class->function_list[$class->function_strings[65]](234) !== array(234*0.0049289216, "Liters")){
         $test->set_fail($class->function_strings[65]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[65]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[66]](234) !== array(234*0.0049289216, "Liters")){
+    if ( $class->function_list[$class->function_strings[66]](234) !== array(234*16387.064, "Millimeters<sup>3</sup>")){
         $test->set_fail($class->function_strings[66]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[66]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[67]](234) !== array(234*16387.064, "Millimeters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[67]](234) !== array(234*16.387064, "Centimeters<sup>3</sup>")){
         $test->set_fail($class->function_strings[67]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[67]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[68]](234) !== array(234*16.387064, "Centimeters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[68]](234) !== array(234*1.6387064e-5, "Meter<sup>3</sup>")){
         $test->set_fail($class->function_strings[68]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[68]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[69]](234) !== array(234*1.6387064e-5, "Meter<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[69]](234) !== array(234*1.6387064e-14, "Kilometer<sup>3</sup>")){
         $test->set_fail($class->function_strings[69]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[69]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[70]](234) !== array(234*1.6387064e-14, "Kilometer<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[70]](234) !== array(234*28316847, "Millimeters<sup>3</sup>")){
         $test->set_fail($class->function_strings[70]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[70]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[71]](234) !== array(234*28316847, "Millimeters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[71]](234) !== array(234*28316.847, "Centimeters<sup>3</sup>")){
         $test->set_fail($class->function_strings[71]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[71]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[72]](234) !== array(234*28316.847, "Centimeters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[72]](234) !== array(234*0.028316847, "Meters<sup>3</sup>")){
         $test->set_fail($class->function_strings[72]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[72]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[73]](234) !== array(234*0.028316847, "Meters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[73]](234) !== array(234*2.8316847e-11, "Kilometer<sup>3</sup>")){
         $test->set_fail($class->function_strings[73]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[73]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[74]](234) !== array(234*2.8316847e-11, "Kilometer<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[74]](234) !== array(234*4.1681818e18, "Millimeters<sup>3</sup>")){
         $test->set_fail($class->function_strings[74]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[74]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[75]](234) !== array(234*4.1681818e18, "Millimeters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[75]](234) !== array(234*4.1681818e15, "Centimeters<sup>3</sup>")){
         $test->set_fail($class->function_strings[75]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[75]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[76]](234) !== array(234*4.1681818e15, "Centimeters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[76]](234) !== array(234*4.1681818e9, "Meters<sup>3</sup>")){
         $test->set_fail($class->function_strings[76]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[76]);
         $pass++;
     }
-    if ( $class->function_list[$class->function_strings[77]](234) !== array(234*4.1681818e9, "Meters<sup>3</sup>")){
+    if ( $class->function_list[$class->function_strings[77]](234) !== array(234*4.1681818, "Kilometers<sup>3</sup>")){
         $test->set_fail($class->function_strings[77]);
         $fail++;
     } else {
         $test->set_pass($class->function_strings[77]);
-        $pass++;
-    }
-    if ( $class->function_list[$class->function_strings[78]](234) !== array(234*4.1681818, "Kilometers<sup>3</sup>")){
-        $test->set_fail($class->function_strings[78]);
-        $fail++;
-    } else {
-        $test->set_pass($class->function_strings[78]);
         $pass++;
     }
     #}}}
