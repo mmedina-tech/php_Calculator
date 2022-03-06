@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:47:05 PM PDT
-# Last Update: 2022-03-02: 20:29
+# Last Update: 2022-03-05: 18:29
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,203 +29,216 @@ require_once ("FormulaBase.php");
 
 class Maritime_Measurements extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            1 => 'Fathoms to Feet',
-            2 => 'Cable to Fathom',
-            3 => 'Nautical Mile to Feet',
-            4 => 'Fathoms to Meters',
-            5 => 'Nautical Miles to Cables',
-            6 => 'Nautical Miles to Meters',
-            7 => 'Nautical Miles to Statute Miles',
-            8 => 'Knots to Nautical Miles per Hour',
-            9 => 'Meters to Fathoms',
-            10 => 'Nautical Miles to Kilometers',
-            11 => 'Kilometers to Nautical Miles',
-            12 => 'Miles to Nautical Miles',
-            13 => 'Knots to Kilometer per Hour',
-            14 => 'Kilometers per Hour to Knots',
-            15 => 'Knots to Miles per Hour',
-            16 => 'Miles per Hour to Knots'
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                'Fathoms to Feet',
+                function($num){
+                    $result = $num * 6;
+                    return array($result, $this->pluralize($result, 'Foot'));
+                },
+                array(
+                    'number_input' => 'Fathoms (input): ',
+                ),
+                array(
+                    '' => 'Fathom * 6'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Cable to Fathom',
+                function($num){
+                    $result = $num * 101.26859;
+                    return array($result, $this->pluralize($result, 'Fathom'));
+                },
+                array(
+                    'number_input' => 'Cable (input): ',
+                ),
+                array(
+                    '' => 'Cable * 101.26859'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Nautical Mile to Feet',
+                function($num){
+                    $result = $num * 6076.1155;
+                    return array($result, $this->pluralize($result, 'Foot'));
+                },
+                array(
+                    'number_input' => 'Nautical Mile (input): ',
+                ),
+                array(
+                    '' => 'Nautical Mile * 6076.1155'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Fathoms to Meters',
+                function($num){
+                    $result = $num * 1.8288;
+                    return array($result, $this->pluralize($result, 'Meter'));
+                },
+                array(
+                    'number_input' => 'Fathom (input): ',
+                ),
+                array(
+                    '' => 'Fathoms * 1.8288'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Nautical Miles to Cables',
+                function($num){
+                    $result = $num * 10;
+                    return array($result, $this->pluralize($result, 'Cable'));
+                },
+                array(
+                    'number_input' => 'Nautical Mile (input): ',
+                ),
+                array(
+                    '' => 'Nautical Mile * 10'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Nautical Miles to Meters',
+                function($num){
+                    $result = $num * 1852;
+                    return array($result, $this->pluralize($result, 'Meter'));
+                },
+                array(
+                    'number_input' => 'Nautical Mile (input): ',
+                ),
+                array(
+                    '' => 'Nautical Mile * 1852'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Nautical Miles to Statute Miles',
+                function($num){
+                    $result = $num * 1.1507794;
+                    return array($result, $this->pluralize($result, 'Statute Mile'));
+                },
+                array(
+                    'number_input' => 'Nautical Mile (input): ',
+                ),
+                array(
+                    '' => 'Nautical Mile * 1.1507794'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Knots to Nautical Miles per Hour',
+                function($num){
+                    $result = $num * 1;
+                    return array($result, $this->pluralize($result, 'Nautical Mile/Hr'));
+                },
+                array(
+                    'number_input' => 'Knot (input): ',
+                ),
+                array(
+                    '' => 'Knots * 1'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Meters to Fathoms',
+                function($num){
+                    $result = $num * 0.54680665;
+                    return array($result, $this->pluralize($result, 'Fathom'));
+                },
+                array(
+                    'number_input' => 'Meter (input): ',
+                ),
+                array(
+                    '' => 'Meter * 0.54680665'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Nautical Miles to Kilometers',
+                function($num){
+                    $result = $num * 1.852;
+                    return array($result, $this->pluralize($result, 'Kilometer'));
+                },
+                array(
+                    'number_input' => 'Nautical Mile (input): ',
+                ),
+                array(
+                    '' => 'Nautical Mile * 1.852'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Kilometers to Nautical Miles',
+                function($num){
+                    $result = $num * 0.5399568;
+                    return array($result, $this->pluralize($result, 'Nautical Mile'));
+                },
+                array(
+                    'number_input' => 'Kilometers (input): ',
+                ),
+                array(
+                    '' => 'Kilometer * 0.5399568'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Miles to Nautical Miles',
+                function($num){
+                    $result = $num * 0.86897624;
+                    return array($result, $this->pluralize($result, 'Nautical Mile'));
+                },
+                array(
+                    'number_input' => 'Miles (input): ',
+                ),
+                array(
+                    '' => 'Mile * 0.86897624'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Knots to Kilometer per Hour',
+                function($num){
+                    $result = $num * 1.852;
+                    return array($result, $this->pluralize($result, 'Kilometer/Hr'));
+                },
+                array(
+                    'number_input' => 'Knots (input): ',
+                ),
+                array(
+                    '' => 'Knot * 1.852'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Kilometers per Hour to Knots',
+                function($num){
+                    $result = $num * 0.5399568;
+                    return array($result, $this->pluralize($result, 'Knot'));
+                },
+                array(
+                    'number_input' => 'Kilometers per Hour (input): ',
+                ),
+                array(
+                    '' => 'Kilometer per Hour * 0.5399568'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Knots to Miles per Hour',
+                function($num){
+                    $result = $num * 1.1507794;
+                    return array($result, $this->pluralize($result, 'Mile/Hr'));
+                },
+                array(
+                    'number_input' => 'Knots (input): ',
+                ),
+                array(
+                    '' => 'Knot * 1.1507794'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Miles per Hour to Knots'
+                function($num){
+                    $result = $num * 0.86897624;
+                    return array($result, $this->pluralize($result, 'Knot'));
+                },
+                array(
+                    'number_input' => 'Miles per Hour (input): ',
+                ),
+                array(
+                    '' => 'Mile per Hour * 0.86897624'
+                ),
+            ),
         );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[1] => function($num){
-                $result = $num * 6;
-                return array($result, $this->pluralize($result, 'Foot'));
-            },
-            $this->function_strings[2] => function($num){
-                $result = $num * 101.26859;
-                return array($result, $this->pluralize($result, 'Fathom'));
-            },
-            $this->function_strings[3] => function($num){
-                $result = $num * 6076.1155;
-                return array($result, $this->pluralize($result, 'Foot'));
-            },
-            $this->function_strings[4] => function($num){
-                $result = $num * 1.8288;
-                return array($result, $this->pluralize($result, 'Meter'));
-            },
-            $this->function_strings[5] => function($num){
-                $result = $num * 10;
-                return array($result, $this->pluralize($result, 'Cable'));
-            },
-            $this->function_strings[6] => function($num){
-                $result = $num * 1852;
-                return array($result, $this->pluralize($result, 'Meter'));
-            },
-            $this->function_strings[7] => function($num){
-                $result = $num * 1.1507794;
-                return array($result, $this->pluralize($result, 'Statute Mile'));
-            },
-            $this->function_strings[8] => function($num){
-                $result = $num * 1;
-                return array($result, $this->pluralize($result, 'Nautical Mile/Hr'));
-            },
-            $this->function_strings[9] => function($num){
-                $result = $num * 0.54680665;
-                return array($result, $this->pluralize($result, 'Fathom'));
-            },
-            $this->function_strings[10] => function($num){
-                $result = $num * 1.852;
-                return array($result, $this->pluralize($result, 'Kilometer'));
-            },
-            $this->function_strings[11] => function($num){
-                $result = $num * 0.5399568;
-                return array($result, $this->pluralize($result, 'Nautical Mile'));
-            },
-            $this->function_strings[12] => function($num){
-                $result = $num * 0.86897624;
-                return array($result, $this->pluralize($result, 'Nautical Mile'));
-            },
-            $this->function_strings[13] => function($num){
-                $result = $num * 1.852;
-                return array($result, $this->pluralize($result, 'Kilometer/Hr'));
-            },
-            $this->function_strings[14] => function($num){
-                $result = $num * 0.5399568;
-                return array($result, $this->pluralize($result, 'Knot'));
-            },
-            $this->function_strings[15] => function($num){
-                $result = $num * 1.1507794;
-                return array($result, $this->pluralize($result, 'Mile/Hr'));
-            },
-            $this->function_strings[16] => function($num){
-                $result = $num * 0.86897624;
-                return array($result, $this->pluralize($result, 'Knot'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->function_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Fathoms (input): ',
-            ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Cable (input): ',
-            ),
-            $this->function_strings[3] => array(
-                'number_input' => 'Nautical Mile (input): ',
-            ),
-            $this->function_strings[4] => array(
-                'number_input' => 'Fathom (input): ',
-            ),
-            $this->function_strings[5] => array(
-                'number_input' => 'Nautical Mile (input): ',
-            ),
-            $this->function_strings[6] => array(
-                'number_input' => 'Nautical Mile (input): ',
-            ),
-            $this->function_strings[7] => array(
-                'number_input' => 'Nautical Mile (input): ',
-            ),
-            $this->function_strings[8] => array(
-                'number_input' => 'Knot (input): ',
-            ),
-            $this->function_strings[9] => array(
-                'number_input' => 'Meter (input): ',
-            ),
-            $this->function_strings[10] => array(
-                'number_input' => 'Nautical Mile (input): ',
-            ),
-            $this->function_strings[11] => array(
-                'number_input' => 'Kilometers (input): ',
-            ),
-            $this->function_strings[12] => array(
-                'number_input' => 'Miles (input): ',
-            ),
-            $this->function_strings[13] => array(
-                'number_input' => 'Knots (input): ',
-            ),
-            $this->function_strings[14] => array(
-                'number_input' => 'Kilometers per Hour (input): ',
-            ),
-            $this->function_strings[15] => array(
-                'number_input' => 'Knots (input): ',
-            ),
-            $this->function_strings[16] => array(
-                'number_input' => 'Miles per Hour (input): ',
-            ),
-        );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => 'Fathom * 6'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => 'Cable * 101.26859'
-            ),
-            $this->function_strings[3] => array(
-                'Formula:<br>' => 'Nautical Mile * 6076.1155'
-            ),
-            $this->function_strings[4] => array(
-                'Formula:<br>' => 'Fathoms * 1.8288'
-            ),
-            $this->function_strings[5] => array(
-                'Formula:<br>' => 'Nautical Mile * 10'
-            ),
-            $this->function_strings[6] => array(
-                'Formula:<br>' => 'Nautical Mile * 1852'
-            ),
-            $this->function_strings[7] => array(
-                'Formula:<br>' => 'Nautical Mile * 1.1507794'
-            ),
-            $this->function_strings[8] => array(
-                'Formula:<br>' => 'Knots * 1'
-            ),
-            $this->function_strings[9] => array(
-                'Formula:<br>' => 'Meter * 0.54680665'
-            ),
-            $this->function_strings[10] => array(
-                'Formula:<br>' => 'Nautical Mile * 1.852'
-            ),
-            $this->function_strings[11] => array(
-                'Formula:<br>' => 'Kilometer * 0.5399568'
-            ),
-            $this->function_strings[12] => array(
-                'Formula:<br>' => 'Mile * 0.86897624'
-            ),
-            $this->function_strings[13] => array(
-                'Formula:<br>' => 'Knot * 1.852'
-            ),
-            $this->function_strings[14] => array(
-                'Formula:<br>' => 'Kilometer per Hour * 0.5399568'
-            ),
-            $this->function_strings[15] => array(
-                'Formula:<br>' => 'Knot * 1.1507794'
-            ),
-            $this->function_strings[16] => array(
-                'Formula:<br>' => 'Mile per Hour * 0.86897624'
-            ),
-        );
-        #}}}
-
     }
 }
 $cats["Maritime Measurements"] = new Maritime_Measurements();
