@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:39 PM PDT
-# Last Update: 2022-03-07: 14:48
+# Last Update: 2022-03-07: 15:03
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -108,93 +108,85 @@ class PlaneAngle extends FormulaBase{
                     'Formula:<br>' => 'Minute * 0.00029088821'
                 ),
             ),
-        );
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            7 => 'Degree to Minute',
-            8 => 'Minute to Quadrant',
-            9 => 'Quadrant to Minute',
-            10 => 'Radian to Minute',
-            11 => 'Radian to Quadrant',
-            12 => 'Degree to Quadrant',
-        );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[7] => function($num){
-                $result = $num * 60;
-                return array($result, $this->pluralize($result, 'Minute'));
-            },
-            $this->function_strings[8] => function($num){
-                $result = $num * 0.00018518519;
-                return array($result, $this->pluralize($result, 'Quadrant'));
-            },
-            $this->function_strings[9] => function($num){
-                $result = $num * 5400;
-                return array($result, $this->pluralize($result, 'Minute'));
-            },
-            $this->function_strings[10] => function($num){
-                $result = $num * 3437.7468;
-                return array($result, $this->pluralize($result, 'Minute'));
-            },
-            $this->function_strings[11] => function($num){
-                $result = $num * 0.63661977;
-                return array($result, $this->pluralize($result, 'Quadrant'));
-            },
-            $this->function_strings[12] => function($num){
-                $result = $num * 0.011111111;
-                return array($result, $this->pluralize($result, 'Quadrant'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->function_inputs = array(
-            $this->function_strings[7] => array(
-                'number_input' => 'Degree (input): ',
+            FormulaBase::create_func_entry(
+                'Degree to Minute',
+                function($num){
+                    $result = $num * 60;
+                    return array($result, $this->pluralize($result, 'Minute'));
+                },
+                array(
+                    'number_input' => 'Degree (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Degree * 60'
+                ),
             ),
-            $this->function_strings[8] => array(
-                'number_input' => 'Minute (input): ',
+            FormulaBase::create_func_entry(
+                'Minute to Quadrant',
+                function($num){
+                    $result = $num * 0.00018518519;
+                    return array($result, $this->pluralize($result, 'Quadrant'));
+                },
+                array(
+                    'number_input' => 'Minute (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Minute * 0.00018518519'
+                ),
             ),
-            $this->function_strings[9] => array(
-                'number_input' => 'Quadrant (input): ',
+            FormulaBase::create_func_entry(
+                'Quadrant to Minute',
+                function($num){
+                    $result = $num * 5400;
+                    return array($result, $this->pluralize($result, 'Minute'));
+                },
+                array(
+                    'number_input' => 'Quadrant (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Quadrant * 5400'
+                ),
             ),
-            $this->function_strings[10] => array(
-                'number_input' => 'Radian (input): ',
+            FormulaBase::create_func_entry(
+                'Radian to Minute',
+                function($num){
+                    $result = $num * 3437.7468;
+                    return array($result, $this->pluralize($result, 'Minute'));
+                },
+                array(
+                    'number_input' => 'Radian (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Radian * 3437.7468'
+                ),
             ),
-            $this->function_strings[11] => array(
-                'number_input' => 'Radian (input): ',
+            FormulaBase::create_func_entry(
+                'Radian to Quadrant',
+                function($num){
+                    $result = $num * 0.63661977;
+                    return array($result, $this->pluralize($result, 'Quadrant'));
+                },
+                array(
+                    'number_input' => 'Radian (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Radian * 0.63661977'
+                ),
             ),
-            $this->function_strings[12] => array(
-                'number_input' => 'Degree (input): ',
-            ),
-        );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[7] => array(
-                'Formula:<br>' => 'Degree * 60'
-            ),
-            $this->function_strings[8] => array(
-                'Formula:<br>' => 'Minute * 0.00018518519'
-            ),
-            $this->function_strings[9] => array(
-                'Formula:<br>' => 'Quadrant * 5400'
-            ),
-            $this->function_strings[10] => array(
-                'Formula:<br>' => 'Radian * 3437.7468'
-            ),
-            $this->function_strings[11] => array(
-                'Formula:<br>' => 'Radian * 0.63661977'
-            ),
-            $this->function_strings[12] => array(
-                'Formula:<br>' => 'Degree * 0.011111111'
+            FormulaBase::create_func_entry(
+                'Degree to Quadrant',
+                function($num){
+                    $result = $num * 0.011111111;
+                    return array($result, $this->pluralize($result, 'Quadrant'));
+                },
+                array(
+                    'number_input' => 'Degree (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Degree * 0.011111111'
+                ),
             ),
         );
-        #}}}
     }
 }
 $cats["Plane Angle"] = new PlaneAngle();
