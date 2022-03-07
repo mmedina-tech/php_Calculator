@@ -28,49 +28,23 @@ All modules are structured as follows:
 Requires Once: FormulaBase.php
 
 Construtor function:
-    Function Titles section:
-        This is where all your string names for your formula titles go.
-        This makes it easy to call the functions throughout the class and any other location looking for
-        the formula string name.
-
-    Function List:
-        This is where all the formulas are defined. Everything is in an Associated Array.
-        The Items are constructed as such:
-            $this->function_string[#] => function(PARAMS){
-                $result = <calculation formula>
-                return array(<number to be formated>, $this->pluralize($result, <unit name>))
-            },
-
-        This can go on for as long as you have formulas that belong in the module.
-        *Note: all parameters for a function need to be set to NULL. Otherwise you will have your error log fill super quick.
-
-    Inputs:
-        This is where you create the input field title. Again another nested Associated Array.
-        $this->function_string[#] => array(
-            "number_input" => "<title string>: ",
+    We need to call the entries array from the FormulaBase class
+    $this->entries = array(
+        (For the first of every new module you need to initialize new netry)
+        1 => FormulaBase::create_func_entry(
+            (first parameter is the name of the formula),
+            (second parameter is the annonymous function that has the calculation of the formula),
+            (third parameter is the input array for the formula),
+            (fourth parameter is the array for showing how the formula is constructed so that people can do the formula long hand if they wish)
         ),
-
-        If you have multiple inputs, follow the example but increment number_input, number_input2, etc.
-
-        Super easy.
-
-    Formula List:
-        Here is where you are going to show the user how to use the formula long hand.
-        Another Nested Associated Array.
-        $this->function_strings[#] => array(
-            '' => "<long hand formula>",
+        (Each formula set after this first one is formated like this.)
+        FormulaBase::create_func_entry(
+            (and follow the parameters from above)
         ),
+    );
 
         Again Super Easy.
+At the end of the file, outside of the Class we need to initialize a new instance of the class.
 
-___________________________________________________________________________________________________________________________
+$cats["<module_name>"] = new <Class_name>();
 
-Now we have to go to the calculator_front.php file in the base of php_Calculator and add that new module as an option.
-We also have to go to the imports.inc.php file and do some stuff.
-
-require_once("modules/<mod name>.php");
-
-$<short var name> = new <mod class>();
-
-Now add to the cats array:
-"<Long Mod Name>" => <short mod name>

@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-03-01: 15:38
+# Last update: 2022-03-07: 09:46
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -73,25 +73,20 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        \$this->function_strings = array();
-        #}}}
-
-        #{{{ Function List
-        \$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-        \$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-        \$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
     }
 }
+\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -121,25 +116,20 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        \$this->function_strings = array();
-        #}}}
-
-        #{{{ Function List
-        \$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-        \$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-        \$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
     }
 }
+\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -156,26 +146,20 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-
-
-        #{{{ Function Titles
-        \$this->function_strings = array();
-        #}}}
-
-        #{{{ Function List
-        \$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-        \$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-        \$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
     }
 }
+\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -188,26 +172,20 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-
-
-        #{{{ Function Titles
-        \$this->function_strings = array();
-        #}}}
-
-        #{{{ Function List
-        \$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-        \$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-        \$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
     }
 }
+\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -222,26 +200,20 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-
-
-        #{{{ Function Titles
-        \$this->function_strings = array();
-        #}}}
-
-        #{{{ Function List
-        \$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-        \$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-        \$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
     }
 }
+\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -259,26 +231,20 @@ require_once ("FormulaBase.php");
 
 class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
     function __construct(){
-
-
-        #{{{ Function Titles
-        \$this->function_strings = array();
-        #}}}
-
-        #{{{ Function List
-        \$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-        \$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-        \$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
     }
 }
+\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 

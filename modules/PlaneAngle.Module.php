@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:39 PM PDT
-# Last Update: 2022-03-02: 20:31
+# Last Update: 2022-03-07: 14:48
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,15 +29,89 @@ require_once ("FormulaBase.php");
 
 class PlaneAngle extends FormulaBase{
     function __construct(){
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                'Degrees to Radians',
+                function($num){
+                    $result = $num * 0.017453293;
+                    return array($result, $this->pluralize($result, 'Radian'));
+                },
+                array(
+                    'number_input' => 'Degrees (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Degree * 0.017453293'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Minutes to Degrees',
+                function($num){
+                    $result = $num * 0.16666667;
+                    return array($result, $this->pluralize($result, 'Degree'));
+                },
+                array(
+                    'number_input' => 'Minutes (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Minute * 0.16666667'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Quadrants to Degrees',
+                function($num){
+                    $result = $num * 90;
+                    return array($result, $this->pluralize($result, 'Degree'));
+                },
+                array(
+                    'number_input' => 'Quadrants (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Quadrant * 90'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Quadrants to Radians',
+                function($num){
+                    $result = $num * 1.5707963;
+                    return array($result, $this->pluralize($result, 'Radian'));
+                },
+                array(
+                    'number_input' => 'Quadrants (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Quadrant * 1.5707963'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Radians to Degrees',
+                function($num){
+                    $result = $num * 57.29578;
+                    return array($result, $this->pluralize($result, 'Degree'));
+                },
+                array(
+                    'number_input' => 'Radians (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Radian * 57.29578'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Minutes to Radians',
+                function($num){
+                    $result = $num * 0.00029088821;
+                    return array($result, $this->pluralize($result, 'Radian'));
+                },
+                array(
+                    'number_input' => 'Minutes (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Minute * 0.00029088821'
+                ),
+            ),
+        );
 
         #{{{ Function Titles
         $this->function_strings = array(
-            1 => 'Degrees to Radians',
-            2 => 'Minutes to Degrees',
-            3 => 'Quadrants to Degrees',
-            4 => 'Quadrants to Radians',
-            5 => 'Radians to Degrees',
-            6 => 'Minutes to Radians',
             7 => 'Degree to Minute',
             8 => 'Minute to Quadrant',
             9 => 'Quadrant to Minute',
@@ -49,30 +123,6 @@ class PlaneAngle extends FormulaBase{
 
         #{{{ Function List
         $this->function_list = array(
-            $this->function_strings[1] => function($num){
-                $result = $num * 0.017453293;
-                return array($result, $this->pluralize($result, 'Radian'));
-            },
-            $this->function_strings[2] => function($num){
-                $result = $num * 0.16666667;
-                return array($result, $this->pluralize($result, 'Degree'));
-            },
-            $this->function_strings[3] => function($num){
-                $result = $num * 90;
-                return array($result, $this->pluralize($result, 'Degree'));
-            },
-            $this->function_strings[4] => function($num){
-                $result = $num * 1.5707963;
-                return array($result, $this->pluralize($result, 'Radian'));
-            },
-            $this->function_strings[5] => function($num){
-                $result = $num * 57.29578;
-                return array($result, $this->pluralize($result, 'Degree'));
-            },
-            $this->function_strings[6] => function($num){
-                $result = $num * 0.00029088821;
-                return array($result, $this->pluralize($result, 'Radian'));
-            },
             $this->function_strings[7] => function($num){
                 $result = $num * 60;
                 return array($result, $this->pluralize($result, 'Minute'));
@@ -102,24 +152,6 @@ class PlaneAngle extends FormulaBase{
 
         #{{{ Inputs
         $this->function_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Degrees (input): ',
-            ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Minutes (input): ',
-            ),
-            $this->function_strings[3] => array(
-                'number_input' => 'Quadrants (input): ',
-            ),
-            $this->function_strings[4] => array(
-                'number_input' => 'Quadrants (input): ',
-            ),
-            $this->function_strings[5] => array(
-                'number_input' => 'Radians (input): ',
-            ),
-            $this->function_strings[6] => array(
-                'number_input' => 'Minutes (input): ',
-            ),
             $this->function_strings[7] => array(
                 'number_input' => 'Degree (input): ',
             ),
@@ -143,24 +175,6 @@ class PlaneAngle extends FormulaBase{
 
         #{{{ Formula List
         $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => 'Degree * 0.017453293'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => 'Minute * 0.16666667'
-            ),
-            $this->function_strings[3] => array(
-                'Formula:<br>' => 'Quadrant * 90'
-            ),
-            $this->function_strings[4] => array(
-                'Formula:<br>' => 'Quadrant * 1.5707963'
-            ),
-            $this->function_strings[5] => array(
-                'Formula:<br>' => 'Radian * 57.29578'
-            ),
-            $this->function_strings[6] => array(
-                'Formula:<br>' => 'Minute * 0.00029088821'
-            ),
             $this->function_strings[7] => array(
                 'Formula:<br>' => 'Degree * 60'
             ),

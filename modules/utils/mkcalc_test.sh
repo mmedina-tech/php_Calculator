@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-02-23: 15:21
+# Last update: 2022-03-07: 10:24
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -71,6 +71,7 @@ function all(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+\${} = \$cats["{}"];
 
 \$test = new TestSuite();
 
@@ -123,6 +124,7 @@ function license(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+\${} = \$cats["{}"];
 
 \$test = new TestSuite();
 
@@ -165,6 +167,7 @@ function author(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+\${} = \$cats["{}"];
 
 \$test = new TestSuite();
 
@@ -202,6 +205,7 @@ function default(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+\${} = \$cats["{}"];
 
 \$test = new TestSuite();
 
@@ -241,6 +245,7 @@ function program(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+\${} = \$cats["{}"];
 
 \$test = new TestSuite();
 
@@ -283,6 +288,7 @@ function syn(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
+\${} = \$cats["{}"];
 
 \$test = new TestSuite();
 

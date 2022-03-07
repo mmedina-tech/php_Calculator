@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:49:08 PM PDT
-# Last Update: 2022-03-02: 20:31
+# Last Update: 2022-03-07: 14:42
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,73 +29,50 @@ require_once ("FormulaBase.php");
 
 class Physical_Fitness extends FormulaBase{
     function __construct(){
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            1 => 'Calories burned in Work-Out',
-            2 => 'Calories to Joules',
-            3 => 'Joules to Calories',
-        #    4 => 'Newtons to Pounds',
-        #    5 => 'Pounds to Newtons',
-        );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[1] => function($num, $num2, $num3){
-                $result = (($num * 4.448) * cos($num2) * ($num3 * 3.2808)) * 0.239;
-                $result = $result * pow(10, -3);
-                return array($result, $this->pluralize($result, 'Calorie'));
-            },
-            $this->function_strings[2] => function($num){
-                $result = $num * 4.184;
-                return array($result, $this->pluralize($result, 'Joule'));
-            },
-            $this->function_strings[3] => function($num){
-                $result = $num * 0.2390057;
-                return array($result, $this->pluralize($result, 'Calorie'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->function_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => 'Enter Weight (input): ',
-                'number_input2' => 'Enter Angle (input): ',
-                'number_input3' => 'Enter Distance of Lift (input): ',
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                'Calories burned in Work-Out',
+                function($num, $num2, $num3){
+                    $result = (($num * 4.448) * cos($num2) * ($num3 * 3.2808)) * 0.239;
+                    $result = $result * pow(10, -3);
+                    return array($result, $this->pluralize($result, 'Calorie'));
+                },
+                array(
+                    'number_input' => 'Enter Weight (input): ',
+                    'number_input2' => 'Enter Angle (input): ',
+                    'number_input3' => 'Enter Distance of Lift (input): ',
+                ),
+                array(
+                    'Formula:<br>' => '((Weight * 4.448) * cos(Angle) * (Distance of Lift * 3.2808)) * 0.239'
+                ),
             ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Calories (input): ',
+            FormulaBase::create_func_entry(
+                'Calories to Joules',
+                function($num){
+                    $result = $num * 4.184;
+                    return array($result, $this->pluralize($result, 'Joule'));
+                },
+                array(
+                    'number_input' => 'Calories (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Calories * 4.184'
+                ),
             ),
-            $this->function_strings[3] => array(
-                'number_input' => 'Joules (input): ',
-            ),
-            /*
-            $this->function_strings[4] => array(
-                'number_input' => 'Newtons (input): ',
-            ),
-            $this->function_strings[5] => array(
-                'number_input' => 'Pounds (input): ',
-            ),
-             */
-        );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => '((Weight * 4.448) * cos(Angle) * (Distance of Lift * 3.2808)) * 0.239'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => 'Calories * 4.184'
-            ),
-            $this->function_strings[3] => array(
-                'Formula:<br>' => 'Joules * 0.2390057'
+            FormulaBase::create_func_entry(
+                'Joules to Calories',
+                function($num){
+                    $result = $num * 0.2390057;
+                    return array($result, $this->pluralize($result, 'Calorie'));
+                },
+                array(
+                    'number_input' => 'Joules (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'Joules * 0.2390057'
+                ),
             ),
         );
-        #}}}
-
     }
 }
 $cats["Physical Fitness"] = new Physical_Fitness();
