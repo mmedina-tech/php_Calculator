@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:50:19 PM PDT
-# Last Update: 2022-03-07: 15:55
+# Last Update: 2022-03-08: 06:47
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ class Power extends FormulaBase{
                     'number_input' => 'BTU per Hour (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'BTU per Hour * 0.29307107'
+                    '' => 'BTU per Hour * 0.29307107'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -53,7 +53,7 @@ class Power extends FormulaBase{
                     'number_input' => 'Horsepower (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Horsepower * 33000'
+                    '' => 'Horsepower * 33000'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -66,7 +66,7 @@ class Power extends FormulaBase{
                     'number_input' => 'Horsepower (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Horsepower * 550'
+                    '' => 'Horsepower * 550'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -79,7 +79,7 @@ class Power extends FormulaBase{
                     'number_input' => 'Horsepower (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Horsepower * 745.69987'
+                    '' => 'Horsepower * 745.69987'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -92,7 +92,7 @@ class Power extends FormulaBase{
                     'number_input' => 'KiloWatt (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'KiloWatt * 1.3410221'
+                    '' => 'KiloWatt * 1.3410221'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -105,7 +105,7 @@ class Power extends FormulaBase{
                     'number_input' => 'Foot-Pounds per Sec (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Foot-Pounds per Minute * 0.022596966'
+                    '' => 'Foot-Pounds per Minute * 0.022596966'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -118,7 +118,7 @@ class Power extends FormulaBase{
                     'number_input' => 'Watt (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Watt * 44.253729'
+                    '' => 'Watt * 44.253729'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -131,7 +131,7 @@ class Power extends FormulaBase{
                     'number_input' => 'Watt (input): ',
                 ),
                 array(
-                    'Formula:<br>' => 'Watt * 0.0013410221'
+                    '' => 'Watt * 0.0013410221'
                 ),
             ),
             FormulaBase::create_func_entry(
@@ -140,46 +140,27 @@ class Power extends FormulaBase{
                     $result = $num * 0.022596966;
                     return array($result, $this->pluralize($result, 'Watt'));
                 },
+                array(
+                    'number_input' => 'Foot-Pounds per Minute (input): ',
+                ),
+                array(
+                    '' => 'Foot-Pounds per Minute * 0.022596966'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                'Watt to Foot-Pounds per Second',
+                function($num){
+                    $result = $num * 0.73756215;
+                    return array($result, $this->pluralize($result, 'Foot/Pound per Second'));
+                },
+                array(
+                    'number_input' => 'Watt (input): ',
+                ),
+                array(
+                    '' => 'Watt * 0.73756215'
+                ),
             ),
         );
-
-        #{{{ Function Titles
-        $this->function_strings = array(
-            10 => 'Watt to Foot-Pounds per Second',
-        );
-        #}}}
-
-        #{{{ Function List
-        $this->function_list = array(
-            $this->function_strings[10] => function($num){
-                $result = $num * 0.73756215;
-                return array($result, $this->pluralize($result, 'Foot/Pound per Second'));
-            },
-        );
-        #}}}
-
-        #{{{ Inputs
-        $this->function_inputs = array(
-            $this->function_strings[9] => array(
-                'number_input' => 'Foot-Pounds per Minute (input): ',
-            ),
-            $this->function_strings[10] => array(
-                'number_input' => 'Watt (input): ',
-            ),
-        );
-        #}}}
-
-        #{{{ Formula List
-        $this->formula_list = array(
-            $this->function_strings[9] => array(
-                'Formula:<br>' => 'Foot-Pounds per Minute * 0.022596966'
-            ),
-            $this->function_strings[10] => array(
-                'Formula:<br>' => 'Watt * 0.73756215'
-            ),
-        );
-        #}}}
-
     }
 }
 $cats["Power"] = new Power();
