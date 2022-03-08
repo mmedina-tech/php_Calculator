@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 01:33:05 PM PDT
-# Last Update: 2022-03-02: 08:08
+# Last Update: 2022-03-08: 07:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,34 +30,6 @@ $cats = array();
 foreach(glob(__DIR__."/modules/*.Module.php") as $module){
     require_once($module);
 }
-/*
-require_once('modules/Area.php');
-require_once('modules/Astronomic_Units.php');
-require_once('modules/Budget.php');
-require_once('modules/Culinary.php');
-require_once('modules/Energy_or_Work.php');
-require_once('modules/Fuel_Economy.php');
-require_once('modules/GED_Practice.php');
-require_once('modules/Imperial_to_Imperial.php');
-require_once('modules/Imperial_to_Metric.php');
-require_once('modules/Light.php');
-require_once('modules/Maritime_Measurements.php');
-require_once('modules/Mass.php');
-require_once( 'modules/Metric_to_Imperial.php' );
-require_once( 'modules/OhmsLaw.php' );
-require_once( 'modules/Physical_Fitness.php' );
-require_once( 'modules/PlaneAngle.php' );
-require_once( 'modules/Power.php' );
-require_once( 'modules/Pressure.php' );
-require_once( 'modules/Torque.php' );
-require_once( 'modules/Velocity.php' );
-require_once( 'modules/Resistive_Capacitive_Parallel.php' );
-require_once( 'modules/Resistive_Capacitive_Series.php' );
-require_once( 'modules/Resistive_Inductive_Parallel.php' );
-require_once( 'modules/Resistive_Inductive_Series.php' );
-require_once( 'modules/Resistive_Inductive_Capacitive_Series.php' );
-require_once( 'modules/Resistive_Inductive_Capacitive_Parallel.php' );
- */
 
 
 $outputfp = file_get_contents("calculator_template.html");
@@ -65,67 +37,6 @@ $license = file_get_contents("license.html");
 $header = file_get_contents("header.html");
 $CALCPATH = basename($CALCPATH);
 
-/*
-$accel = new Acceleration();
-$account = new Accounting();
-$area = new Area();
-$astro = new Astronomic_Units();
-$budget = new Budget();
-$cook = new Culinary();
-$energy = new Energy_or_Work();
-$fuel = new Fuel_Economy();
-$ged = new GED_Practice();
-$imp = new Imperial_to_Imperial();
-$impm = new Imperial_to_Metric();
-$light = new Light();
-$maritime = new Maritime_Measurements();
-$mass = new Mass();
-$mti = new Metric_to_Imperial();
-$ohms = new OhmsLaw();
-$phys = new Physical_Fitness();
-$plane = new PlaneAngle();
-$power = new Power();
-$press = new Pressure();
-$tor = new Torque();
-$vel = new Velocity();
-$rcp = new Resistive_Capacitive_Parallel();
-$rcs = new Resistive_Capacitive_Series();
-$rip = new Resistive_Inductive_Parallel();
-$ris = new Resistive_Inductive_Series();
-$rics = new Resistive_Inductive_Capacitive_Series();
-$ricp = new Resistive_Inductive_Capacitive_Parallel();
-
-$cats = array(
-    'Acceleration' => $accel,
-    "Accounting" => $account,
-    'Area' => $area,
-    'Astronomic Units' => $astro,
-    'Budgeting' => $budget,
-    'Culinary' => $cook,
-    'Energy or Work' => $energy,
-    'Fuel Economy' => $fuel,
-    'GED Practice' => $ged,
-    'Imperial to Imperial' => $imp,
-    'Imperial to Metric' => $impm,
-    'Light' => $light,
-    'Maritime Measurements' => $maritime,
-    'Mass' => $mass,
-    'Metric to Imperial' => $mti,
-    'Ohms Law' => $ohms,
-    'Physical Fitness' => $phys,
-    'Plane Angle' => $plane,
-    'Power' => $power,
-    'Torque' => $tor,
-    'Velocity' => $vel,
-    'Resistive Capacitance Parallel' => $rcp,
-    'Resistive Capacitance Series' => $rcs,
-    'Resistive Inductive Parallel' => $rip,
-    'Resistive Inductive Series' => $ris,
-    'Resistive Inductive Capacitive Series' => $rics,
-    'Resistive Inductive Capacitive Parallel' => $ricp,
-
-);
- */
 
 $number = $_POST['number_input'] ?? null;
 $number2 = $_POST['number_input2'] ?? null;
