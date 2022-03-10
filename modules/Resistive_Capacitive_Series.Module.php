@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-03-02: 20:33
+# Last Update: 2022-03-10: 13:26
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,38 +30,432 @@ require_once ("FormulaBase.php");
 class Resistive_Capacitive_Series extends FormulaBase{
     function __construct(){
         #$this->error_msg = "Can not be a negative square root";
+        $this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "Capacitive Reactance using Capacitor VAR's and Capacitor Amps",
+                function($num, $num2){
+                    $result = $num / pow($num2, 2);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
+                },
+                array(
+                    'number_input' => "Capacitor VAR's (input): ",
+                    'number_input2' => 'Capacitor Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'VARS<sub>C</sub> / I<sub>C</sub><sup>2</sup>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitive Reactance using Capacitor Volts and Capacitor Amps",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result,4), $this->pluralize($result, 'Capacitive Reactance'));
+                },
+                array(
+                    'number_input' => 'Capacitor Volts (input): ',
+                    'number_input2' => 'Capacitor Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>C</sub> / I<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitive Reactance using Capacitor Volts and Capacitor VAR's",
+                function($num, $num2){
+                    $result = pow($num, 2) / $num2;
+                    return array($this->prec($result,4), $this->pluralize($result, 'Capacitive Reactance'));
+                },
+                array(
+                    'number_input' => 'Capacitor Volts (input): ',
+                    'number_input2' => "Capacitor VAR's (input): ",
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> / VARS<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitive Reactance using Frequency and Capacitor Rating",
+                function($num, $num2){
+                    $result = 1 / (2 * $this->PI * $num * $num2);
+                    return array($this->prec($result,4), $this->pluralize($result, 'Capacitive Reactance'));
+                },
+                array(
+                    'number_input' => 'Frequency (input): ',
+                    'number_input2' => 'Capacitor Rating (input): ',
+                ),
+                array(
+                    'Formula:<br>' => '1 / (2 * PI * F * C)'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitive Reactance using Impedance and Resistance",
+                function($num, $num2){
+                    $result = pow($num, 2) - pow($num2, 2);
+                    if ( $result <= 0 ){
+                        return array($this->error_msg, '');
+                    }
+                    $result = sqrt($result);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
+                },
+                array(
+                    'number_input' => 'Impedance (input): ',
+                    'number_input2' => 'Resistance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'sqrt(Z<sup>2</sup> - R<sup>2</sup>)'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Amps using Capacitor VAR's and Capacitor Volts",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
+                },
+                array(
+                    'number_input' => "Capacitor VAR's (input): ",
+                    'number_input2' => 'Capacitor Volts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'VARS<sub>C</sub> / E<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Amps using Capacitor VAR's and Capacitive Reactance",
+                function($num, $num2){
+                    $result = sqrt( $num / $num2);
+                    return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
+                },
+                array(
+                    'number_input' => "Capacitor VAR's (input): ",
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'sqrt(VARS<sub>C</sub> / X<sub>C</sub>)'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Amps using Capacitor Volts and Capacitive Reactance",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
+                },
+                array(
+                    'number_input' => 'Capacitor Volts (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> * X<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Rating using Frequency and Capacitive Reactance",
+                function($num, $num2){
+                    $result = 1 / (2 * $this->PI * $num * $num2);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Rating'));
+                },
+                array(
+                    'number_input' => 'Frequency (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => '1 / (2 * PI * F * X<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor VAR's using Volt Amps and Watts",
+                function($num, $num2){
+                    $result = pow($num, 2) - pow($num2, 2);
+                    if ( $result <= 0 ){
+                        return array($this->error_msg, '');
+                    }
+                    $result = sqrt($result);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
+                },
+                array(
+                    'number_input' => 'Volt Amps (input): ',
+                    'number_input2' => 'Watts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'sqrt(VA<sup>2</sup> - P<sup>2</sup>)'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor VAR's using Capacitor Amps and Capacitive Reactance",
+                function($num, $num2){
+                    $result = pow($num, 2) * $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
+                },
+                array(
+                    'number_input' => 'Capacitor Amps (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'I<sub>C</sub><sup>2</sup> * X<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor VAR's using Capacitor Volts and Capacitive Reactance",
+                function($num, $num2){
+                    $result = pow($num, 2) / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
+                },
+                array(
+                    'number_input' => 'Capacitor Volts (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> / X<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor VAR's using Capacitor Volts and Capacitor Amps",
+                function($num,$num2){
+                    $result = $num * $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
+                },
+                array(
+                    'number_input' => 'Capacitor Volts (input): ',
+                    'number_input2' => 'Capacitor Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>C</sub> * I<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Volts using Capacitor Amps and Capacitive Reactance",
+                function($num, $num2){
+                    $result = $num * $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
+                },
+                array(
+                    'number_input' => 'Capacitor Amps (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'I<sub>C</sub> * X<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Volts using Total Volts and Resistor Volts",
+                function($num, $num2){
+                    $result = pow($num, 2) - pow($num2, 2);
+                    if ( $result <= 0 ){
+                        return array($this->error_msg, '');
+                    }
+                    $result = sqrt($result);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
+                },
+                array(
+                    'number_input' => 'Total Volts (input): ',
+                    'number_input2' => 'Resistor Volts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> - E<sub>R</sub><sup>2</sup>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Volts using Capacitor VAR's and Capacitive Reactance",
+                function($num, $num2){
+                    $result = sqrt($num * $num2);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
+                },
+                array(
+                    'number_input' => "Capacitor VAR's (input): ",
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'sqrt(VARS<sub>C</sub> * X<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Capacitor Volts using Capacitor VAR's and Capacitor Amps",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
+                },
+                array(
+                    'number_input' => "Capacitor VAR's (input): ",
+                    'number_input2' => 'Capacitor Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'VARS<sub>C</sub> / I<sub>C</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Impedance using Resistance Capacitive Reactance",
+                function($num, $num2){
+                    $result = sqrt(pow($num, 2) + pow($num2, 2));
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+                },
+                array(
+                    'number_input' => 'Resistance (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'sqrt(Z<sup>2</sup> + X<sub>C</sub><sup>2</sup>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Impedance using Total Volts and Total Amps",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+                },
+                array(
+                    'number_input' => 'Total Volts (input): ',
+                    'number_input2' => 'Total Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>T</sub> / I<sub>T</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Impedance using Volt Amps and Total Amps",
+                function($num, $num2){
+                    $result = $num / pow($num2, 2);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+                },
+                array(
+                    'number_input' => 'Volt Amps (input): ',
+                    'number_input2' => 'Total Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'VA / I<sub>T</sub><sup>2</sup>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Impedance using Resistance and Power Factor",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+                },
+                array(
+                    'number_input' => 'Resistance (input): ',
+                    'number_input2' => 'Power Factor (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'R / PF'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Impedance using Total Volts and Volt Amps",
+                function($num, $num2){
+                    $result = pow($num, 2) / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
+                },
+                array(
+                    'number_input' => 'Total Volts (input): ',
+                    'number_input2' => 'Volt Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> / VA'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Power Factor using Resistance and Impedance",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+                },
+                array(
+                    'number_input' => 'Resistance (input): ',
+                    'number_input2' => 'Impedance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'R / Z'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Power Factor using Watts and Volt Amps",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+                },
+                array(
+                    'number_input' => 'Watts (input): ',
+                    'number_input2' => 'Volt Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'P / VA'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Power Factor using Resistor Volts and Total Volts",
+                function($num, $num2){
+                    $result = $num / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+                },
+                array(
+                    'number_input' => 'Resistor Volts (input): ',
+                    'number_input2' => 'Total Volts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>R</sub> / E<sub>T</sub>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Power Factor using CoSine and Theta Angle",
+                function($num){
+                    $result = cos( $num );
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
+                },
+                array(
+                    'number_input' => 'Theta Angle (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'CoSine(Theta Angle)'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Resistance using Watts and Resistor Amps",
+                function($num, $num2){
+                    $result = $num / pow($num2, 2);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+                },
+                array(
+                    'number_input' => 'Watts (input): ',
+                    'number_input2' => 'Resistor Amps (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'P / I<sub>R</sub><sup>2</sup>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Resistance using Impedance and Capacitive Reactance",
+                function($num, $num2){
+                    $result = pow($num, 2) - pow($num2, 2);
+                    if ( $result <= 0){
+                        return array($this->error_msg, '');
+                    }
+                    $result = sqrt($result);
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+                },
+                array(
+                    'number_input' => 'Impedance (input): ',
+                    'number_input2' => 'Capacitive Reactance (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'sqrt(Z<sup>2</sup> - X<sub>C</sub><sup>2</sup>'
+                ),
+            ),
+            FormulaBase::create_func_entry(
+                "Resistance using Resistor Volts and Watts",
+                function($num, $num2){
+                    $result = pow($num, 2) / $num2;
+                    return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
+                },
+                array(
+                    'number_input' => 'Resistor Volts (input): ',
+                    'number_input2' => 'Watts (input): ',
+                ),
+                array(
+                    'Formula:<br>' => 'E<sub>R</sub><sup>2</sup> / P'
+                ),
+            ),
+        );
 
-        #{{{ Function Titles
+        # Function Titles
         $this->function_strings = array(
-            1 => "Capacitive Reactance using Capacitor VAR's and Capacitor Amps",
-            2 => "Capacitive Reactance using Capacitor Volts and Capacitor Amps",
-            3 => "Capacitive Reactance using Capacitor Volts and Capacitor VAR's",
-            4 => "Capacitive Reactance using Frequency and Capacitor Rating",
-            5 => "Capacitive Reactance using Impedance and Resistance",
-            6 => "Capacitor Amps using Capacitor VAR's and Capacitor Volts",
-            7 => "Capacitor Amps using Capacitor VAR's and Capacitive Reactance",
-            8 => "Capacitor Amps using Capacitor Volts and Capacitive Reactance",
-            9 => "Capacitor Rating using Frequency and Capacitive Reactance",
-            10 => "Capacitor VAR's using Volt Amps and Watts",
-            11 => "Capacitor VAR's using Capacitor Amps and Capacitive Reactance",
-            12 => "Capacitor VAR's using Capacitor Volts and Capacitive Reactance",
-            13 => "Capacitor VAR's using Capacitor Volts and Capacitor Amps",
-            14 => "Capacitor Volts using Capacitor Amps and Capacitive Reactance",
-            15 => "Capacitor Volts using Total Volts and Resistor Volts",
-            16 => "Capacitor Volts using Capacitor VAR's and Capacitive Reactance",
-            17 => "Capacitor Volts using Capacitor VAR's and Capacitor Amps",
-            18 => "Impedance using Resistance Capacitive Reactance",
-            19 => "Impedance using Total Volts and Total Amps",
-            20 => "Impedance using Volt Amps and Total Amps",
-            21 => "Impedance using Resistance and Power Factor",
-            22 => "Impedance using Total Volts and Volt Amps",
-            23 => "Power Factor using Resistance and Impedance",
-            24 => "Power Factor using Watts and Volt Amps",
-            25 => "Power Factor using Resistor Volts and Total Volts",
-            26 => "Power Factor using CoSine and Theta Angle",
-            27 => "Resistance using Watts and Resistor Amps",
-            28 => "Resistance using Impedance and Capacitive Reactance",
-            29 => "Resistance using Resistor Volts and Watts",
             30 => "Resistance using Impedance and Power Factor",
             31 => "Resistance using Resistor Volts and Resistor Amps",
             32 => "Resistor Amps using Resistor Volts and Resistance",
@@ -89,142 +483,10 @@ class Resistive_Capacitive_Series extends FormulaBase{
             54 => "Watts using Resistor Amps and Resistance",
             55 => "Watts using Volt Amps and Power Factor",
         );
-        #}}}
+        #
 
-        #{{{ Function List
+        # Function List
         $this->function_list = array(
-            $this->function_strings[1] => function($num, $num2){
-                $result = $num / pow($num2, 2);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
-            },
-            $this->function_strings[2] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result,4), $this->pluralize($result, 'Capacitive Reactance'));
-            },
-            $this->function_strings[3] => function($num, $num2){
-                $result = pow($num, 2) / $num2;
-                return array($this->prec($result,4), $this->pluralize($result, 'Capacitive Reactance'));
-            },
-            $this->function_strings[4] => function($num, $num2){
-                $result = 1 / (2 * $this->PI * $num * $num2);
-                return array($this->prec($result,4), $this->pluralize($result, 'Capacitive Reactance'));
-            },
-            $this->function_strings[5] => function($num, $num2){
-                $result = pow($num, 2) - pow($num2, 2);
-                if ( $result <= 0 ){
-                    return array($this->error_msg, '');
-                }
-                $result = sqrt($result);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitive Reactance'));
-            },
-            $this->function_strings[6] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
-            },
-            $this->function_strings[7] => function($num, $num2){
-                $result = sqrt( $num / $num2);
-                return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
-            },
-            $this->function_strings[8] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result,4), $this->pluralize($result, 'Capacitor Amp'));
-            },
-            $this->function_strings[9] => function($num, $num2){
-                $result = 1 / (2 * $this->PI * $num * $num2);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Rating'));
-            },
-            $this->function_strings[10] => function($num, $num2){
-                $result = pow($num, 2) - pow($num2, 2);
-                if ( $result <= 0 ){
-                    return array($this->error_msg, '');
-                }
-                $result = sqrt($result);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
-            },
-            $this->function_strings[11] => function($num, $num2){
-                $result = pow($num, 2) * $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
-            },
-            $this->function_strings[12] => function($num, $num2){
-                $result = pow($num, 2) / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
-            },
-            $this->function_strings[13] => function($num,$num2){
-                $result = $num * $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor VAR'));
-            },
-            $this->function_strings[14] => function($num, $num2){
-                $result = $num * $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
-            },
-            $this->function_strings[15] => function($num, $num2){
-                $result = pow($num, 2) - pow($num2, 2);
-                if ( $result <= 0 ){
-                    return array($this->error_msg, '');
-                }
-                $result = sqrt($result);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
-            },
-            $this->function_strings[16] => function($num, $num2){
-                $result = sqrt($num * $num2);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
-            },
-            $this->function_strings[17] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Capacitor Volt'));
-            },
-            $this->function_strings[18] => function($num, $num2){
-                $result = sqrt(pow($num, 2) + pow($num2, 2));
-                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
-            },
-            $this->function_strings[19] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
-            },
-            $this->function_strings[20] => function($num, $num2){
-                $result = $num / pow($num2, 2);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
-            },
-            $this->function_strings[21] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
-            },
-            $this->function_strings[22] => function($num, $num2){
-                $result = pow($num, 2) / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Impedance'));
-            },
-            $this->function_strings[23] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
-            },
-            $this->function_strings[24] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
-            },
-            $this->function_strings[25] => function($num, $num2){
-                $result = $num / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
-            },
-            $this->function_strings[26] => function($num){
-                $result = cos( $num );
-                return array($this->prec($result, 4), $this->pluralize($result, 'Power Factor'));
-            },
-            $this->function_strings[27] => function($num, $num2){
-                $result = $num / pow($num2, 2);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
-            },
-            $this->function_strings[28] => function($num, $num2){
-                $result = pow($num, 2) - pow($num2, 2);
-                if ( $result <= 0){
-                    return array($this->error_msg, '');
-                }
-                $result = sqrt($result);
-                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
-            },
-            $this->function_strings[29] => function($num, $num2){
-                $result = pow($num, 2) / $num2;
-                return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
-            },
             $this->function_strings[30] => function($num, $num2){
                 $result = $num * $num2;
                 return array($this->prec($result, 4), $this->pluralize($result, 'Resistance'));
@@ -334,125 +596,10 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 return array($this->prec($result, 4), $this->pluralize($result, 'Watt'));
             },
         );
-        #}}}
+        #
 
-        #{{{ Inputs
+        # Inputs
         $this->function_inputs = array(
-            $this->function_strings[1] => array(
-                'number_input' => "Capacitor VAR's (input): ",
-                'number_input2' => 'Capacitor Amps (input): ',
-            ),
-            $this->function_strings[2] => array(
-                'number_input' => 'Capacitor Volts (input): ',
-                'number_input2' => 'Capacitor Amps (input): ',
-            ),
-            $this->function_strings[3] => array(
-                'number_input' => 'Capacitor Volts (input): ',
-                'number_input2' => "Capacitor VAR's (input): ",
-            ),
-            $this->function_strings[4] => array(
-                'number_input' => 'Frequency (input): ',
-                'number_input2' => 'Capacitor Rating (input): ',
-            ),
-            $this->function_strings[5] => array(
-                'number_input' => 'Impedance (input): ',
-                'number_input2' => 'Resistance (input): ',
-            ),
-            $this->function_strings[6] => array(
-                'number_input' => "Capacitor VAR's (input): ",
-                'number_input2' => 'Capacitor Volts (input): ',
-            ),
-            $this->function_strings[7] => array(
-                'number_input' => "Capacitor VAR's (input): ",
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[8] => array(
-                'number_input' => 'Capacitor Volts (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[9] => array(
-                'number_input' => 'Frequency (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[10] => array(
-                'number_input' => 'Volt Amps (input): ',
-                'number_input2' => 'Watts (input): ',
-            ),
-            $this->function_strings[11] => array(
-                'number_input' => 'Capacitor Amps (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[12] => array(
-                'number_input' => 'Capacitor Volts (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[13] => array(
-                'number_input' => 'Capacitor Volts (input): ',
-                'number_input2' => 'Capacitor Amps (input): ',
-            ),
-            $this->function_strings[14] => array(
-                'number_input' => 'Capacitor Amps (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[15] => array(
-                'number_input' => 'Total Volts (input): ',
-                'number_input2' => 'Resistor Volts (input): ',
-            ),
-            $this->function_strings[16] => array(
-                'number_input' => "Capacitor VAR's (input): ",
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[17] => array(
-                'number_input' => "Capacitor VAR's (input): ",
-                'number_input2' => 'Capacitor Amps (input): ',
-            ),
-            $this->function_strings[18] => array(
-                'number_input' => 'Resistance (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[19] => array(
-                'number_input' => 'Total Volts (input): ',
-                'number_input2' => 'Total Amps (input): ',
-            ),
-            $this->function_strings[20] => array(
-                'number_input' => 'Volt Amps (input): ',
-                'number_input2' => 'Total Amps (input): ',
-            ),
-            $this->function_strings[21] => array(
-                'number_input' => 'Resistance (input): ',
-                'number_input2' => 'Power Factor (input): ',
-            ),
-            $this->function_strings[22] => array(
-                'number_input' => 'Total Volts (input): ',
-                'number_input2' => 'Volt Amps (input): ',
-            ),
-            $this->function_strings[23] => array(
-                'number_input' => 'Resistance (input): ',
-                'number_input2' => 'Impedance (input): ',
-            ),
-            $this->function_strings[24] => array(
-                'number_input' => 'Watts (input): ',
-                'number_input2' => 'Volt Amps (input): ',
-            ),
-            $this->function_strings[25] => array(
-                'number_input' => 'Resistor Volts (input): ',
-                'number_input2' => 'Total Volts (input): ',
-            ),
-            $this->function_strings[26] => array(
-                'number_input' => 'Theta Angle (input): ',
-            ),
-            $this->function_strings[27] => array(
-                'number_input' => 'Watts (input): ',
-                'number_input2' => 'Resistor Amps (input): ',
-            ),
-            $this->function_strings[28] => array(
-                'number_input' => 'Impedance (input): ',
-                'number_input2' => 'Capacitive Reactance (input): ',
-            ),
-            $this->function_strings[29] => array(
-                'number_input' => 'Resistor Volts (input): ',
-                'number_input2' => 'Watts (input): ',
-            ),
             $this->function_strings[30] => array(
                 'number_input' => 'Impedance (input): ',
                 'number_input2' => 'Power Factor (input): ',
@@ -558,97 +705,10 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 'number_input2' => 'Power Factor (input): ',
             ),
         );
-        #}}}
+        #
 
-        #{{{ Formula List
+        # Formula List
         $this->formula_list = array(
-            $this->function_strings[1] => array(
-                'Formula:<br>' => 'VARS<sub>C</sub> / I<sub>C</sub><sup>2</sup>'
-            ),
-            $this->function_strings[2] => array(
-                'Formula:<br>' => 'E<sub>C</sub> / I<sub>C</sub>'
-            ),
-            $this->function_strings[3] => array(
-                'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> / VARS<sub>C</sub>'
-            ),
-            $this->function_strings[4] => array(
-                'Formula:<br>' => '1 / (2 * PI * F * C)'
-            ),
-            $this->function_strings[5] => array(
-                'Formula:<br>' => 'sqrt(Z<sup>2</sup> - R<sup>2</sup>)'
-            ),
-            $this->function_strings[6] => array(
-                'Formula:<br>' => 'VARS<sub>C</sub> / E<sub>C</sub>'
-            ),
-            $this->function_strings[7] => array(
-                'Formula:<br>' => 'sqrt(VARS<sub>C</sub> / X<sub>C</sub>)'
-            ),
-            $this->function_strings[8] => array(
-                'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> * X<sub>C</sub>'
-            ),
-            $this->function_strings[9] => array(
-                'Formula:<br>' => '1 / (2 * PI * F * X<sub>C</sub>'
-            ),
-            $this->function_strings[10] => array(
-                'Formula:<br>' => 'sqrt(VA<sup>2</sup> - P<sup>2</sup>)'
-            ),
-            $this->function_strings[11] => array(
-                'Formula:<br>' => 'I<sub>C</sub><sup>2</sup> * X<sub>C</sub>'
-            ),
-            $this->function_strings[12] => array(
-                'Formula:<br>' => 'E<sub>C</sub><sup>2</sup> / X<sub>C</sub>'
-            ),
-            $this->function_strings[13] => array(
-                'Formula:<br>' => 'E<sub>C</sub> * I<sub>C</sub>'
-            ),
-            $this->function_strings[14] => array(
-                'Formula:<br>' => 'I<sub>C</sub> * X<sub>C</sub>'
-            ),
-            $this->function_strings[15] => array(
-                'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> - E<sub>R</sub><sup>2</sup>'
-            ),
-            $this->function_strings[16] => array(
-                'Formula:<br>' => 'sqrt(VARS<sub>C</sub> * X<sub>C</sub>'
-            ),
-            $this->function_strings[17] => array(
-                'Formula:<br>' => 'VARS<sub>C</sub> / I<sub>C</sub>'
-            ),
-            $this->function_strings[18] => array(
-                'Formula:<br>' => 'sqrt(Z<sup>2</sup> + X<sub>C</sub><sup>2</sup>'
-            ),
-            $this->function_strings[19] => array(
-                'Formula:<br>' => 'E<sub>T</sub> / I<sub>T</sub>'
-            ),
-            $this->function_strings[20] => array(
-                'Formula:<br>' => 'VA / I<sub>T</sub><sup>2</sup>'
-            ),
-            $this->function_strings[21] => array(
-                'Formula:<br>' => 'R / PF'
-            ),
-            $this->function_strings[22] => array(
-                'Formula:<br>' => 'E<sub>T</sub><sup>2</sup> / VA'
-            ),
-            $this->function_strings[23] => array(
-                'Formula:<br>' => 'R / Z'
-            ),
-            $this->function_strings[24] => array(
-                'Formula:<br>' => 'P / VA'
-            ),
-            $this->function_strings[25] => array(
-                'Formula:<br>' => 'E<sub>R</sub> / E<sub>T</sub>'
-            ),
-            $this->function_strings[26] => array(
-                'Formula:<br>' => 'CoSine(Theta Angle)'
-            ),
-            $this->function_strings[27] => array(
-                'Formula:<br>' => 'P / I<sub>R</sub><sup>2</sup>'
-            ),
-            $this->function_strings[28] => array(
-                'Formula:<br>' => 'sqrt(Z<sup>2</sup> - X<sub>C</sub><sup>2</sup>'
-            ),
-            $this->function_strings[29] => array(
-                'Formula:<br>' => 'E<sub>R</sub><sup>2</sup> / P'
-            ),
             $this->function_strings[30] => array(
                 'Formula:<br>' => 'Z * PF'
             ),
@@ -728,7 +788,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                 'Formula:<br>' => 'VA * PF'
             ),
         );
-        #}}}
+        #
 
     }
 }
