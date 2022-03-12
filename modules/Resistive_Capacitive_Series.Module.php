@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:52:22 PM PDT
-# Last Update: 2022-03-11: 20:39
+# Last Update: 2022-03-12: 11:42
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -480,7 +480,7 @@ class Resistive_Capacitive_Series extends FormulaBase{
                     'Formula:<br>' => 'E<sub>R</sub> / I<sub>R</sub>'
                 ),
             ),
-            FormuulaBase::create_func_entry(
+            FormulaBase::create_func_entry(
                 "Resistor Amps using Resistor Volts and Resistance",
                 function($num, $num2){
                     $result = $num / $num2;
