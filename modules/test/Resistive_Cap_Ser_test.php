@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Fri 17 Dec 2021 12:49:02 PM PST
-# Last Update: 2022-03-05: 19:36
+# Last Update: 2022-03-12: 11:46
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -451,6 +451,13 @@ function Resist_Cap_Ser_test($test, $class){
         $fail++;
     } else {
         $test->set_pass($class->function_strings[54]);
+        $pass++;
+    }
+    if ( $class->function_list[$class->function_strings[55]](234,234) !== array($class->prec(234*234,4), "Watts")){
+        $test->set_fail($class->function_strings[55]);
+        $fail++;
+    } else {
+        $test->set_pass($class->function_strings[55]);
         $pass++;
     }
 
