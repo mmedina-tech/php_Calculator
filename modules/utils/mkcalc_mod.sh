@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-03-07: 09:46
+# Last update: 2022-03-11: 21:20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,8 +28,7 @@
 #______________________________________________________________________________________________
 # Functions
 
-outfile=${outfile:-made.php}
-in_outfile=$( echo $outfile | sed -e 's/.php//')
+outfile=${outfile:-made.Module.php}
 function pmessage() {
     for phrase in "$@"
     do
@@ -81,12 +80,12 @@ class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
                     return array({}, \$this->pluralize({}, "{}");
                 },
                 array({}, {}),
-                array({}, {})
+                array({}, {}),
             ),
         );
     }
 }
-\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -114,7 +113,7 @@ function license(){
 
 require_once ("FormulaBase.php");
 
-class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
         \$this->entries = array(
             1 => FormulaBase::create_func_entry(
@@ -129,7 +128,7 @@ class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
         );
     }
 }
-\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -144,7 +143,7 @@ function author(){
 
 require_once ("FormulaBase.php");
 
-class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
         \$this->entries = array(
             1 => FormulaBase::create_func_entry(
@@ -159,7 +158,7 @@ class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
         );
     }
 }
-\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -170,7 +169,7 @@ function default(){
 
 require_once ("FormulaBase.php");
 
-class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
         \$this->entries = array(
             1 => FormulaBase::create_func_entry(
@@ -185,7 +184,7 @@ class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
         );
     }
 }
-\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -198,7 +197,7 @@ function program(){
 
 require_once ("FormulaBase.php");
 
-class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
         \$this->entries = array(
             1 => FormulaBase::create_func_entry(
@@ -213,7 +212,7 @@ class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
         );
     }
 }
-\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -229,7 +228,7 @@ function syn(){
 
 require_once ("FormulaBase.php");
 
-class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
         \$this->entries = array(
             1 => FormulaBase::create_func_entry(
@@ -244,7 +243,7 @@ class $(echo $outfile | sed -e 's/.php//') extends FormulaBase{
         );
     }
 }
-\$cats["$(echo $outfile | sed -e 's/.Module.php//')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
@@ -272,7 +271,7 @@ function help(){
 while getopts "ahAledpt:u:" opt $OPTIONS;
 do
     case $opt in
-        t) outfile="${OPTARG%%.php}.php"
+        t) outfile="${OPTARG%%.Module.php}.Module.php"
             ;;
 
         a) doall=1

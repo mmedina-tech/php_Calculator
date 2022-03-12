@@ -5,7 +5,7 @@
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
-# Last update: 2022-03-07: 10:24
+# Last update: 2022-03-11: 21:29
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,8 +28,7 @@
 #______________________________________________________________________________________________
 # Functions
 
-outfile=${outfile:-made.php}
-in_outfile=$( echo $outfile | sed -e 's/.php//')
+outfile=${outfile:-made.Module.php}
 function pmessage() {
     for phrase in "$@"
     do
@@ -71,11 +70,11 @@ function all(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-\${} = \$cats["{}"];
+\${} = \$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"];
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed 's/.Module.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
@@ -92,10 +91,10 @@ function $(echo $outfile | sed 's/.php//')(\$test, \$class){
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{}>
+echo "$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{}>, $(echo $outfile | sed 's/.php//')(\$test, \$<{}>));
+\$test->pass_fail(\$<{}>, $(echo $outfile | sed 's/.Module.php//')(\$test, \$<{}>));
 
 EOF
 }
@@ -124,11 +123,11 @@ function license(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-\${} = \$cats["{}"];
+\${} = \$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"];
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
@@ -148,10 +147,10 @@ function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{module name}>
+echo "$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.php//')(\$test, \$<{mod name}>));
+\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$<{mod name}>));
 
 EOF
 }
@@ -167,11 +166,11 @@ function author(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-\${} = \$cats["{}"];
+\${} = \$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"];
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
@@ -191,10 +190,10 @@ function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{module name}>
+echo "$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.php//')(\$test, \$<{mod name}>));
+\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$<{mod name}>));
 EOF
 }
 
@@ -205,11 +204,11 @@ function default(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-\${} = \$cats["{}"];
+\${} = \$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"];
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
@@ -229,10 +228,10 @@ function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{module name}>
+echo "$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.php//')(\$test, \$<{mod name}>));
+\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$<{mod name}>));
 EOF
 }
 
@@ -245,11 +244,11 @@ function program(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-\${} = \$cats["{}"];
+\${} = \$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"];
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
@@ -269,10 +268,10 @@ function $(echo $outfile | sed -e 's/.php//')(\$test, \$class){
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{module name}>
+echo "$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.php//')(\$test, \$<{mod name}>));
+\$test->pass_fail(\$<{mod name}>, $(echo $outfile | sed -e 's/.Module.php//')(\$test, \$<{mod name}>));
 EOF
 }
 
@@ -288,11 +287,11 @@ function syn(){
 
 require_once("pass_fail.php");
 require_once("imports.inc.php");
-\${} = \$cats["{}"];
+\${} = \$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"];
 
 \$test = new TestSuite();
 
-function $(echo $outfile | sed 's/.php//')(\$test, \$class){
+function $(echo $outfile | sed 's/.Module.php//')(\$test, \$class){
 
     \$pass = 0;
     \$fail = 0;
@@ -312,10 +311,10 @@ function $(echo $outfile | sed 's/.php//')(\$test, \$class){
     echo "\nPassed: ".\$pass;
     echo "\nFailed: ".\$fail;
 }
-echo "<{module name}>
+echo "$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')
 ------------------------------------------\n";
 sleep(1);
-\$test->pass_fail(\$<{}>, $(echo $outfile | sed 's/.php//')(\$test, \$<{}>));
+\$test->pass_fail(\$<{}>, $(echo $outfile | sed 's/.Module.php//')(\$test, \$<{}>));
 EOF
 }
 
@@ -343,7 +342,7 @@ function help(){
 while getopts "ahAledpt:u:" opt $OPTIONS;
 do
     case $opt in
-        t) outfile="${OPTARG%%.php}.php"
+        t) outfile="${OPTARG%%.Module.php}.Module.php"
             ;;
 
         a) doall=1
