@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina,,,
 # Date: Fri 11 Mar 2022 09:29:36 PM PST
-# Last update: Fri 11 Mar 2022 09:29:36 PM PST
+# Last update: 2022-03-12: 11:41
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 require_once ("FormulaBase.php");
 
+/*
 class Computer_Conversion extends FormulaBase{
     function __construct(){
         $this->entries = array(
@@ -43,3 +44,4 @@ class Computer_Conversion extends FormulaBase{
     }
 }
 $cats["Computer Conversion"] = new Computer_Conversion();
+ */
