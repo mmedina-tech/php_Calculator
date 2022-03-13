@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Sat 06 Nov 2021 08:54:42 PM PDT
-# Last Update: 2022-03-13: 13:21
+# Last Update: 2022-03-13: 13:49
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -103,7 +103,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
             FormulaBase::create_func_entry(
                 "Inductive Reactance using Frequency and Inductor Rating",
                 function($num, $num2){
-                    $result = 1 / (2 * $this->PI * $num * $num2);
+                    $result = 2 * $this->PI * $num * $num2;
                     return array($this->prec($result, 4), $this->pluralize($result, 'Inductive Reactance'));
                 },
                 array(
@@ -111,7 +111,7 @@ class Resistive_Inductive_Parallel extends FormulaBase{
                     'number_input2' => 'Power Factor (input): ',
                 ),
                 array(
-                    'Formula:<br>' => '1 / (2 * PI * F * L)'
+                    'Formula:<br>' => '2 * PI * F * L'
                 ),
             ),
             FormulaBase::create_func_entry(
