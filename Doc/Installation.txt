@@ -7,6 +7,8 @@ Edit php.ini to include:
 /php_Calculator/Log
 /php_Calculator/DB
 /php_Calculator/modules/test
+/php_Calculator/comments
+/php_Calculator/f_suggestions
 
 Copy php_Calculator to your web root.
 Change permissions so that the www-data user has write permissions to DB and Log Directory.
