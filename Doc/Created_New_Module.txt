@@ -1,22 +1,50 @@
-Create A New Calculator Module
+        Create A New Calculator Module
 --------------------------------------------------
 
-1) go to the Massive_Calculator.cgi/modules directory
 
-2) use the mkcalc_mod.sh file in the utils directory.
-	you will need to call it like this $> ./utils/mkcalc_mod.sh -t <module_name> -[flag]
-	it is recommended that you use the -a flag for creating the module.
-	-a allows you to have a shebang line, synopsis line, author block, copyright block, and the structure for 
-	the module that yo need to follow.
+To create a new module for the Massive Calculator there are a few things that you need to do.
 
-3) fill out the module.
+First, clone the project to your local workstation.
 
-4) add the module title to the imports file. 
-	from modules.<module_name> import <module_name>
+Now that we have a local repo of the project we can begin the work.
 
-5) initialize the module with an easy to use name for the dictionary call.
+go into the modules directory in the php_Calculator and we are going to create a new module.
 
-6) add easy module name to the category dictionary. does not need to be alphabetical. will be alphabetized automatically.
+please run from modules this command: utils/mkcalc_mod.sh -t <mod_name> -a
 
-7) go to the calculator_front.html file in the Massive_Calculator.web directory. this is so that your new module gets
-seen by the program from the gate.
+This will create a new module for you. lets break down the flags.
+
+-t <mod_name>: this is where you set the module name
+-a: this is saying that you want all the options, shebang line, synopsis line, license block,
+author block, and open the module for editing after the file is created. dont worry the file will be
+opened using the editor that you have specified in your .bashrc file.
+
+everything is already layed out for you to go straight into adding the new info.
+
+___________________________________________________________________________________________________________
+
+All modules are structured as follows:
+
+Requires Once: FormulaBase.php
+
+Construtor function:
+    We need to call the entries array from the FormulaBase class
+    $this->entries = array(
+        (For the first of every new module you need to initialize new netry)
+        1 => FormulaBase::create_func_entry(
+            (first parameter is the name of the formula),
+            (second parameter is the annonymous function that has the calculation of the formula),
+            (third parameter is the input array for the formula),
+            (fourth parameter is the array for showing how the formula is constructed so that people can do the formula long hand if they wish)
+        ),
+        (Each formula set after this first one is formated like this.)
+        FormulaBase::create_func_entry(
+            (and follow the parameters from above)
+        ),
+    );
+
+        Again Super Easy.
+At the end of the file, outside of the Class we need to initialize a new instance of the class.
+
+$cats["<module_name>"] = new <Class_name>();
+

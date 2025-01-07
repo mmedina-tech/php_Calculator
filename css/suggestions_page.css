@@ -2,38 +2,38 @@ input[type='text']:focus, input[type='number']:focus {
     border: 3px solid darkslateblue;
 }
 input[type='text'], input[type='number'] {
-	height: 25px;
+    height: 25px;
     width: 180px;
-	border-radius: 4px;
-	font-size: 12px;
-	padding-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 10px;
     float: right;
 }
 textarea{
     float: right;
 }
 input[type='submit'] {
-	height: 25px;
+    height: 25px;
     width: 180px;
-	border-radius: 4px;
-	font-size: 12px;
-	padding-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 10px;
 }
 .drow:hover {
     /*border: 1px solid gold;*/
     background-color: green;
-	color: gold;
-	font-weight: bold;
-	cursor: pointer;
+    color: gold;
+    font-weight: bold;
+    cursor: pointer;
 }
 .drow{
     /*border: 1px solid gold;*/
-	background-color: Blue;
-	color: white;
-	font-weight: bold;
+    background-color: Blue;
+    color: white;
+    font-weight: bold;
 }
 fieldset {
-	border-radius: 4px;
+    border-radius: 4px;
 }
 .input { 
 }
@@ -42,76 +42,76 @@ fieldset {
 }
 
 .label {
-	padding: 4px;
-	background-color: red;
-	color: white;
-	text-align: center;
-	border-radius: 4px;
+    padding: 4px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
     float: left;
 }
 
 .optional_label {
-	padding: 4px;
-	background-color: green;
-	color: white;
-	text-align: center;
-	border-radius: 4px;
+    padding: 4px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
     float: left;
 }
 .formrow {
-	vertical-align: right;
-	height: 37px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: right;
+    height: 37px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .formrow_textarea {
-	vertical-align: middle;
-	height: 100px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: middle;
+    height: 100px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .optional_formrow {
-	vertical-align: middle;
-	height: 37px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: middle;
+    height: 37px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .optional_formrow_textarea {
-	vertical-align: middle;
-	min-height: 100px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: middle;
+    min-height: 100px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .optional_formrow_textarea:hover {
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 
 .formrow:hover {
-	/*FIXME:: MOVE COLOR DEFS TO THEMES */
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    /*FIXME:: MOVE COLOR DEFS TO THEMES */
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 .optional_formrow:hover {
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 .formrow_textarea:hover {
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 
 .buttonspan {
-	cursor: pointer;
-	background-color: blue;
-	color: black;
-	font-weight: bold;
+    cursor: pointer;
+    background-color: blue;
+    color: black;
+    font-weight: bold;
 }

@@ -5,6 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 09:25:53 AM PDT
+# Last Update: 2021-12-23: 20:39
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,9 +35,9 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $db->prepare('INSERT INTO Formulas (user_fname, user_lname, form_cat, 
 	form_name, Formula, description, Book_Title, 
 Book_Author, Book_Publisher, Page_Number) VALUES (?,?,?,?,?,?,?,?,?,?)');
-$stmt->execute(array($_POST['fname'], $_POST['lname'], $_POST['formCat'], 
-	$_POST['formName'], $_POST['formula'], $_POST['description'], 
-	$_POST['bookt'], $_POST['booka'], $_POST['pookp'], $_POST['pgnumber']));
+$stmt->execute(array(htmlentities($_POST['fname']), htmlentities($_POST['lname']), htmlentities($_POST['formCat']), 
+	htmlentities($_POST['formName']), htmlentities($_POST['formula']), htmlentities($_POST['description']), 
+	htmlentities($_POST['bookt']), htmlentities($_POST['booka']), htmlentities($_POST['pookp']), htmlentities($_POST['pgnumber'])));
 
 if ( $stmt ) {
 	$page = str_replace('{INSERT}', "<h2 class='successful'>Insert Complete</h2>", $page);
