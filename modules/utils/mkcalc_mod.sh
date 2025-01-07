@@ -1,26 +1,26 @@
 #!/bin/bash
 # SYNOPSIS: this is a shell script for making Massive Calculator Modules with flags
-# 
+#
 # mkcalc_mod
 #
 # Author: mmedina
 # Date: Fri 21 Aug 2020 03:09:38 AM PDT
+# Last update: 2022-03-11: 21:20
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
-#
 #
 #
 #ARGS::  -t test -a
@@ -28,36 +28,36 @@
 #______________________________________________________________________________________________
 # Functions
 
-outfile=${outfile:-made.php}
-in_outfile=$( echo "$outfile" | sed -e 's/.php//')
+outfile=${outfile:-made.Module.php}
 function pmessage() {
     for phrase in "$@"
     do
-        echo 
-        echo "	$phrase"
+        echo
+        echo "    $phrase"
     done
 }
 
 function all(){
-	echo "Enter Description: "
-	read -r myDescription
-	cat <<EOF > $outfile
+    echo "Enter Description: "
+    read -r myDescription
+    cat <<EOF > $outfile
 <?php
 # SYNOPSIS: $myDescription
-# 
+#
 # $outfile
 #
 # Author: $user
 # Date: $(date)
+# Last update: $(date)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -70,41 +70,37 @@ function all(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
-        #{{{ Function List
-		\$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-		\$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-		\$this->formula_list = array();
-        #}}}
-
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {}),
+            ),
+        );
+    }
+}
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
 function license(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -117,95 +113,83 @@ function license(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
-        #{{{ Function List
-		\$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-		\$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-		\$this->formula_list = array();
-        #}}}
-
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
+    }
+}
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
 function author(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 # Author: $user
 # Date: $(date)
+# Last update: $(date)
 #
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-		
-
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
-        #{{{ Function List
-		\$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-		\$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-		\$this->formula_list = array();
-        #}}}
-
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
+    }
+}
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
 function default(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-		
-
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
-        #{{{ Function List
-		\$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-		\$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-		\$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
+    }
+}
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
 function program(){
-	cat <<EOF > $outfile
+    cat <<EOF > $outfile
 <?php
 #
 # $outfile
@@ -213,33 +197,29 @@ function program(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-		
-
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
-        #{{{ Function List
-		\$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-		\$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-		\$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
+    }
+}
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
 function syn(){
-	echo "Enter Description: "
-	read -r myDescription
-	cat <<EOF > $outfile
+    echo "Enter Description: "
+    read -r myDescription
+    cat <<EOF > $outfile
 <?php
 # SYNOPSIS: $myDescription
 #
@@ -248,45 +228,41 @@ function syn(){
 
 require_once ("FormulaBase.php");
 
-class $in_outfile extends FormulaBase{
+class $(echo $outfile | sed -e 's/.Module.php//') extends FormulaBase{
     function __construct(){
-		
-
-		#{{{ Function Titles
-		\$this->function_strings = array();
-		#}}}
-	
-        #{{{ Function List
-		\$this->function_list = array();
-        #}}}
-
-        #{{{ Inputs
-		\$this->functionInputs = array();
-        #}}}
-
-        #{{{ Formula List
-		\$this->formula_list = array();
-        #}}}
-
+        \$this->entries = array(
+            1 => FormulaBase::create_func_entry(
+                "{}",
+                function({}){
+                    {}
+                    return array({}, \$this->pluralize({}, "{}");
+                },
+                array({}, {}),
+                array({}, {})
+            ),
+        );
+    }
+}
+\$cats["$((echo $outfile | sed -e 's/.Module.php//') | sed -e 's/_/\ /')"] = new $(echo $outfile | sed -e 's/.Module.php//')();
 EOF
 }
 
 
 function help(){
-	printf "Usage: %s: 
+    printf "Usage: %s:
             -t <filename>   sets filename to create
             [-a] run all documentation features
-            [-A] Create Author Block 
-            [-l] Create License Block 
+            [-A] Create Author Block
+            [-l] Create License Block
             [-e] Edit in Your set Editor after create
             [-d] Create standalone bash shebang line
             [-p] Add filename to documentation block
-            [-s] Synopsis Line with program name	
+            [-s] Synopsis Line with program name
 
             All Options have the shebang line"
-	echo
-	echo "Syntax Format: mkpy -t <filename> -[flags]"
-	exit
+    echo
+    echo "Syntax Format: mkpy -t <filename> -[flags]"
+    exit
 }
 
 #______________________________________________________________________________________________
@@ -294,38 +270,38 @@ function help(){
 
 while getopts "ahAledpt:u:" opt $OPTIONS;
 do
-	case $opt in
-		t) outfile="${OPTARG%%.php}.php"
-			;;
+    case $opt in
+        t) outfile="${OPTARG%%.Module.php}.Module.php"
+            ;;
 
-		a) doall=1
-			;;
+        a) doall=1
+            ;;
 
-		l) dolicense=1
-			;;
+        l) dolicense=1
+            ;;
 
-		A) doauthor=1
-			;;
-			
-		h) help
-			;;
+        A) doauthor=1
+            ;;
 
-		e) doeditor=1
+        h) help
+            ;;
+
+        e) doeditor=1
             ;;
 
         d) dodefault=1
             ;;
 
-		p) doprogram=1
-			;;
+        p) doprogram=1
+            ;;
 
         u) user=$OPTARG
             ;;
 
-		*) echo "Invalid argument exiting..."
-			exit
-			;;
-	esac
+        *) echo "Invalid argument exiting..."
+            exit
+            ;;
+    esac
 done
 
 if [[ -z $user ]]; then

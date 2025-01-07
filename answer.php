@@ -1,19 +1,20 @@
 <?php
 # SYNOPSIS: send input values and return answer
-# 
+#
 # answer.php
 #
 # Author: Marcus Medina
 # Date: Fri 08 Oct 2021 04:13:06 PM PDT
+# Last Update: 2022-03-02: 18:41
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -27,7 +28,6 @@
 require_once("imports.inc.php");
 require_once("log.php");
 
-$outputfp = file_get_contents("calculator_template.html");
 $cat = $_POST['category'];
 $forms = $_POST['Formula'];
 $active_cats = $cats[$cat];
@@ -44,89 +44,54 @@ $outputfp = str_replace("TITLE", $forms, $outputfp);
 $outputfp = str_replace("ACTION", $action, $outputfp);
 $outputfp = str_replace("FORMULA", $show_formula, $outputfp);
 $outputfp = str_replace("FORM_SELECT", $formula, $outputfp);
+$outputfp = str_replace("LICENSE", $license, $outputfp);
+$outputfp = str_replace("HEADER", $header, $outputfp);
 try{
-	if ( count($cats[$cat]->functionInputs[$forms]) === 2 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$formula_fields = "$number, $number2";
+    if ( !is_numeric($_POST['number_input'])){
+        throw new Exception("not a float");
+    }
+    $iterator = new ArrayObject($active_cats->function_list);
+    $answer = $iterator->offsetGet($forms);
+    switch ( count($cats[$cat]->function_inputs[$forms]) ){
+        case 2:
+            $formula_fields = "$number, $number2";
+            $answer = $answer($number, $number2);
+            break;
+        case 3:
+            $formula_fields = "$number, $number2, $number3";
+            $answer = $answer($number, $number2, $number3);
+            break;
+        case 4:
+            $formula_fields = "$number, $number2, $number3, $number4";
+            $answer = $answer($number, $number2, $number3, $number4);
+            break;
+        case 5:
+            $formula_fields = "$number, $number2, $number3, $number4, $number5";
+            $answer = $answer($number, $number2, $number3, $number4, $number5);
+            break;
+        case 14:
+            $formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
 
-		$iterator = new ArrayObject($active_cats->function_list);
-		$answer = $iterator->offsetGet($forms);
-		$answer = $answer($number, $number2);
-
-	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 3 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$formula_fields = "$number, $number2, $number3";
-
-		$iterator = new ArrayObject($active_cats->function_list);
-		$answer = $iterator->offsetGet($forms);
-		$answer = $answer($number, $number2, $number3);
-
-	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 4 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$number4 = $_POST['number_input4'];
-		$formula_fields = "$number, $number2, $number3, $number4";
-
-		$iterator = new ArrayObject($active_cats->function_list);
-		$answer = $iterator->offsetGet($forms);
-		$answer = $answer($number, $number2, $number3, $number4);
-
-	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 5 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$number4 = $_POST['number_input4'];
-		$number5 = $_POST['number_input5'];
-		$formula_fields = "$number, $number2, $number3, $number4, $number5";
-
-		$iterator = new ArrayObject($active_cats->function_list);
-		$answer = $iterator->offsetGet($forms);
-		$answer = $answer($number, $number2, $number3, $number4, $number5);
-
-	} elseif ( count($cats[$cat]->functionInputs[$forms]) === 14 ) {
-		$number = $_POST['number_input'];
-		$number2 = $_POST['number_input2'];
-		$number3 = $_POST['number_input3'];
-		$number4 = $_POST['number_input4'];
-		$number5 = $_POST['number_input5'];
-		$number6 = $_POST['number_input6'];
-		$number7 = $_POST['number_input7'];
-		$number8 = $_POST['number_input8'];
-		$number9 = $_POST['number_input9'];
-		$number10 = $_POST['number_input10'];
-		$number11 = $_POST['number_input11'];
-		$number12 = $_POST['number_input12'];
-		$number13 = $_POST['number_input13'];
-		$number14 = $_POST['number_input14'];
-		$formula_fields = "$number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14";
-
-		$iterator = new ArrayObject($active_cats->function_list);
-		$answer = $iterator->offsetGet($forms);
-		$answer = $answer($number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14);
-
-	} else {
-		$number = $_POST['number_input'];
-		$formula_fields = "$number";
-		$iterator = new ArrayObject($active_cats->function_list);
-		$answer = $iterator->offsetGet($forms);
-		$answer = $answer($number);
-	}
-	$outscreen = "{$answer[0]} {$answer[1]}";
-	$outputfp = str_replace("INPUT", $inputs, $outputfp);
-	$outputfp = str_replace("ANSWER", $outscreen, $outputfp);
-	$outputfp = str_replace("ERROR", '', $outputfp);
-	statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
-	print $outputfp;
+            $answer = $answer($number, $number2, $number3, $number4, $number5, $number6, $number7, $number8, $number9, $number10, $number11, $number12, $number13, $number14);
+            break;
+        default:
+            $formula_fields = "$number";
+            $answer = $answer($number);
+            break;
+    }
+    $outscreen = "{$answer[0]} {$answer[1]}";
+    $outputfp = str_replace("INPUT", $inputs, $outputfp);
+    $outputfp = str_replace("ANSWER", $outscreen, $outputfp);
+    $outputfp = str_replace("ERROR", '', $outputfp);
+    statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
+    print $outputfp;
 } catch (Exception $e){
-	$outputfp = str_replace("INPUT", $inputs, $outputfp);
-	$outputfp = str_replace("ANSWER", '', $outputfp);
-	$outputfp = str_replace("ERROR", "<h1 class='error'>$e</h1>", $outputfp);
-	statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
-	print $outputfp;
+    $error = $e->getMessage();
+    $outputfp = str_replace("INPUT", $inputs, $outputfp);
+    $outputfp = str_replace("ANSWER", '', $outputfp);
+    $outputfp = str_replace("ERROR", "<h1 class='error'>{$error}</h1>", $outputfp);
+    statlogger($cat, $forms, $formula_fields, $outscreen, $_SERVER['REMOTE_ADDR']);
+    print $outputfp;
 }
 
 

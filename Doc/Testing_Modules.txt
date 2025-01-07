@@ -1,22 +1,12 @@
-Testing Created Modules
+        Testing Created Modules
 ----------------------------------------------
 
-Once you have created your new module there are a few steps that you have to follow.
 
-1) got to the test directory in Massive_Calculator.cgi
+go into the modules/test/.
 
-2) open the file modules_test.py
+run this command: ../utils/mkcalc_test.sh -t test_<module name> -a
 
-3) create a function using this naming convention:
-	def test_<module_name>():
+There are other flags other than -a. but you have to use -t otherwise the file name doesnt get set.
 
-4) create your tests
+There is already a starter test case for you. follow that format for all tests moving forward.
 
-5) pass your test module and actual module to the pass_fail function.
-
-6) run the modules_test.py from the base of Massive_Calculator.cgi
-
-7) If all tests pass then you can move on. if not fix all the issues that arise from the test
-
-8) If you make any changes to a module, you have to run all the tests again. This is really easy if you use the 
-modules_test.py file for your testing.

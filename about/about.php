@@ -5,6 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Wed 08 Sep 2021 07:36:18 PM PDT
+# Last Update: 2022-01-31: 22:05
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +25,7 @@
 #
 #
 
-$token = file_get_contents('./Doc/Special_Thanks.txt');
+$token = file_get_contents('./Special_Thanks.txt');
 $page = file_get_contents('./about.html');
 $page = str_replace("{THNX}", $token, $page);
 print $page;

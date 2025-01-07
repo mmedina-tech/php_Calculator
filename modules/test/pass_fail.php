@@ -1,19 +1,20 @@
 <?php
 # SYNOPSIS: Pass Fail test harness
-# 
+#
 # pass_fail.php
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 08:53:57 PM PDT
+# Last Update: 2022-03-01: 14:40
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or 
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
 # This Program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the 
+# MERCHANTABLILITY of FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You Should have recieved a copy of the GNU General Public License
@@ -24,49 +25,56 @@
 #
 #
 
-
-function pass_fail($funct, $main){
-	$fail_list = array();
-	$single_input = array();
-	$two_input = array();
-	$three_input = array();
-	$four_input = array();
-	$five_input = array();
-	$fourteen_input = array();
-
-	if ( $funct === null ) {
-		print get_class($main).": Pass\n";
-	} else {
-		print get_class($main).": Fail\n";
+class TestSuite{
+	function __construct(){
 	}
+	function set_pass($funct){
+		echo "Pass : ".strval($funct)."\n";
+	}
+	function set_fail($funct){
+		echo "Fail : ".strval($funct)."\n";
+	}
+	function pass_fail($main, $funct){
+		$fail_list = array();
+		$single_input = array();
+		$two_input = array();
+		$three_input = array();
+		$four_input = array();
+		$five_input = array();
+		$fourteen_input = array();
 
-	foreach( $main->function_list as $key => $value ) {
-		if ( count($main->functionInputs[$key]) === 1 and $main->formula_list[$key] ) {
-			$single_input[] = $key;
-		} elseif ( count($main->functionInputs[$key]) === 2 and $main->formula_list[$key] ) {
-			$two_input[] = $key;
-		} elseif ( count($main->functionInputs[$key]) === 3 and $main->formula_list[$key] ) {
-			$three_input[] = $key;
-		} elseif ( count($main->functionInputs[$key]) === 4 and $main->formula_list[$key] ) {
-			$four_input[] = $key;
-		} elseif ( count($main->functionInputs[$key]) === 5 and $main->formula_list[$key] ) {
-			$five_input[] = $key;
-		} elseif ( count($main->functionInputs[$key]) === 14 and $main->function_list[$key] ) {
-			$fourteen_input[] = $key;
+		if ( $funct === null ) {
+			echo "\nPass : ".get_class($main)."\n";
 		} else {
-			$fail_list[] = $key;
+			echo "Fail : ".get_class($main)."\n";
 		}
-	}
-	if (count($fail_list) !== 0){
-		print "\nFail (".strval(count($fail_list))."): \n";
-		foreach( $fail_list as $key => $value ) {
-			print $key."
-	Inputs: ".strval(count($main->functionInputs[$key]))."
-	Show Formula: ".strval($main->formula_list[$key])."\n";
+
+		foreach( $main->function_list as $key => $value ) {
+			if ( count($main->function_inputs[$key]) === 1 and $main->formula_list[$key] ) {
+				$single_input[] = $key;
+			} elseif ( count($main->function_inputs[$key]) === 2 and $main->formula_list[$key] ) {
+				$two_input[] = $key;
+			} elseif ( count($main->function_inputs[$key]) === 3 and $main->formula_list[$key] ) {
+				$three_input[] = $key;
+			} elseif ( count($main->function_inputs[$key]) === 4 and $main->formula_list[$key] ) {
+				$four_input[] = $key;
+			} elseif ( count($main->function_inputs[$key]) === 5 and $main->formula_list[$key] ) {
+				$five_input[] = $key;
+			} elseif ( count($main->function_inputs[$key]) === 14 and $main->formula_list[$key] ) {
+				$fourteen_input[] = $key;
+			} else {
+				$fail_list[] = $key;
+			}
+			if (count($fail_list) !== 0){
+				echo "\nFail (".strval(count($fail_list))."): \n";
+				echo $key."
+			Inputs: ".strval(count($main->function_inputs[$key]))."
+			Show Formula: ".strval($main->formula_list[$key])."\n";
+			}
 		}
-	} else {
-		print "All Formulas: Pass\n";
+		print "Pass : All Formula Inputs\nPass : Show Formula\n";
 	}
 }
 
-	
+
+

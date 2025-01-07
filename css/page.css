@@ -1,92 +1,92 @@
 legend {
     padding-left: 20px;
-	font-size: 1.5em;
-	margin: auto;
+    font-size: 1.5em;
+    margin: auto;
 }
 input[type='text']:focus, input[type='number']:focus {
     border: 3px solid darkslateblue;
 }
 input[type='text'], input[type='number'] {
-	height: 25px;
+    height: 25px;
     width: 180px;
-	border-radius: 4px;
-	font-size: 12px;
-	padding-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 10px;
 }
 input[type='submit'] {
-	height: 25px;
+    height: 25px;
     width: 180px;
-	border-radius: 4px;
-	font-size: 12px;
-	padding-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 10px;
 }
 input[type='link']:focus {
     border: 3px solid darkslateblue;
 }
 input[type='link'] {
-	height: 25px;
-	padding-left: 10px;
-	width: 250px;
-	border-radius: 4px;
-	font-size: 12px;
+    height: 25px;
+    padding-left: 10px;
+    width: 250px;
+    border-radius: 4px;
+    font-size: 12px;
 }
 select:focus {
     border: 3px solid darkslateblue;
 }
 select {
-	height: 20px;
-	border: 2px solid #cacaca;
-	border-radius: 4px;
-	font-size: 12px;
+    height: 20px;
+    border: 2px solid #cacaca;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 option {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 table {
     border: 1px solid #bbb;
-	border-collapse: collapse;
-	width: 100%;
-	margin: auto;
-	font-size: 12px;
-	overflow: auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    font-size: 12px;
+    overflow: auto;
 }
 thead {
-	width: 97%;
+    width: 97%;
 }
 tr {
-	border-radius: 4px;
+    border-radius: 4px;
 }
 th, td {
-	cursor: pointer;
-	padding: 7px;
-	border: none;
-	font-size: 12px;
+    cursor: pointer;
+    padding: 7px;
+    border: none;
+    font-size: 12px;
 }
 th {
-	text-align: left;
+    text-align: left;
 }
 .drow:hover {
     /*border: 1px solid gold;*/
     background-color: green;
-	color: gold;
-	font-weight: bold;
-	cursor: pointer;
+    color: gold;
+    font-weight: bold;
+    cursor: pointer;
 }
 .drow{
     /*border: 1px solid gold;*/
-	background-color: Blue;
-	color: white;
-	font-weight: bold;
+    background-color: Blue;
+    color: white;
+    font-weight: bold;
 }
 fieldset {
-	border-radius: 4px;
+    border-radius: 4px;
 }
 
 #displaybox {
-	min-height: 400px;
-	overflow: auto;
+    min-height: 400px;
+    overflow: auto;
 }
 .btm-left {
     border-bottom-left-radius: 10px;
@@ -121,118 +121,118 @@ fieldset {
 .formdiv {
 }
 .input { 
-	float: right;
+    float: right;
 }
 
 .textarea{
-	float: right;
+    float: right;
 }
 
 .label {
-	padding: 4px;
-	background-color: red;
-	color: white;
-	text-align: center;
-	border-radius: 4px;
+    padding: 4px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
     float: left;
 }
 
 .optional_label {
-	padding: 4px;
-	background-color: green;
-	color: white;
-	text-align: center;
-	border-radius: 4px;
+    padding: 4px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
     float: left;
 }
 
 /* used to align certain table colum's contents */
 .aleft {
-	text-align: left;
+    text-align: left;
 }
 .aright {
-	text-align: right;
+    text-align: right;
 }
 .acenter {
-	text-align: center;
+    text-align: center;
 }
 
 /* For table rows used as captions */
 /*FIXME:: needs to have the color separated out */
 .captrow {
-	text-align: center;
-	border-radius: 7px;
+    text-align: center;
+    border-radius: 7px;
 }            
 
 .formrow {
-	vertical-align: right;
-	height: 37px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: right;
+    height: 37px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .formrow_textarea {
-	vertical-align: middle;
-	height: 100px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: middle;
+    height: 100px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .optional_formrow {
-	vertical-align: middle;
-	height: 37px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: middle;
+    height: 37px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .optional_formrow_textarea {
-	vertical-align: middle;
-	min-height: 100px;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 4px;
-	border:1px solid #111;
-}	
+    vertical-align: middle;
+    min-height: 100px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border:1px solid #111;
+}    
 .optional_formrow_textarea:hover {
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 
 .formrow:hover {
-	/*FIXME:: MOVE COLOR DEFS TO THEMES */
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    /*FIXME:: MOVE COLOR DEFS TO THEMES */
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 .optional_formrow:hover {
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 .formrow_textarea:hover {
-	border: 2px solid darkslateblue;
-	padding-top: 3px;
+    border: 2px solid darkslateblue;
+    padding-top: 3px;
 }
 
 .buttonspan {
-	cursor: pointer;
-	background-color: blue;
-	color: black;
-	font-weight: bold;
+    cursor: pointer;
+    background-color: blue;
+    color: black;
+    font-weight: bold;
 }
 
 .disabled {
-	/*
-	color: black;
-	background-color: #acacac;
-	*/
-	visibility: hidden;
+    /*
+    color: black;
+    background-color: #acacac;
+    */
+    visibility: hidden;
 }
 .control {
-	margin-left: 15px;
+    margin-left: 15px;
 }
 .correct {
-	border: 3px solid red;
-	background-color: #ffe6e6;
+    border: 3px solid red;
+    background-color: #ffe6e6;
 }
