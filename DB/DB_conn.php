@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 08:02:58 AM PDT
-# Last Update: 2021-11-20: 17:27
+# Last Update: 2025-02-02: 15:36
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,12 +26,12 @@
 #
 
 $dbname = "Massive_Calculator";
-$user = "icio_ems";
-$passwd = "icio_ems";
+$user = "Massive-Calculator";
+$passwd = "Massive-Calculator";
 
 try{
-	$db = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $passwd);
-}catch (PDOException $e){
+	$db = new mysqli('host=localhost,dbname='.$dbname.",username=".$user.",password=".$passwd);
+}catch (Exception $e){
 	print "Couldn't connect to the database: ".$e->getMessage();
 	exit();
 }

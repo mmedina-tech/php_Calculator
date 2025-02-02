@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 03:55:19 PM PDT
-# Last Update: 2022-01-13: 15:26
+# Last Update: 2025-02-02: 15:33
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #
 
 
-require_once("DB/DB_conn.php");
+#require_once("DB/DB_conn.php");
 
 function logme($msg){
 	if ( file_exists("./Logs") ) {

@@ -1,6 +1,6 @@
 <?php
 $CONNECTION = 'localhost';
 $CALCPATH = '/var/www/html/php_Calculator';
-$USER = 'icio_ems';
-$PASSWD = 'icio_ems';
+$USER = 'Massive-Calculator';
+$PASSWD = 'Massive-Calculator';
 $DBNAME = 'Massive_Calculator';

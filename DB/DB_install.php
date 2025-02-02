@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Thu 09 Sep 2021 08:11:27 PM PDT
-# Last Update: 2022-02-14: 07:29
+# Last Update: 2025-02-02: 15:13
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 
 $page = file_get_contents('../admin/index.php');
 
-function pdo_conn(){
+function mysqli_conn(){
 	global $page;
 	if ( !file_exists("./calculator.config.php") ) {
 		$config = fopen('./calculator.config.php', 'a+');
@@ -80,8 +80,8 @@ function pdo_conn(){
 	}
 	$conn->close();
 	try{
-		$db = new PDO('mysql:host='.$CONNECTION.';dbname='.$DBNAME, $USER, $PASSWD);
-	}catch (PDOException $e){
+		$db = new mysqli('mysql:host='.$CONNECTION.';dbname='.$DBNAME, $USER, $PASSWD);
+	}catch (Exception $e){
 		$error = "<p>Couldn't connect to the database: ".$e->getMessage()."</p>";
 		$page .= str_replace("{ERROR}", $error, $page);
 		$page .= str_replace("<div class='error' hidden>", '<div>', $page);
@@ -139,7 +139,7 @@ function pdo_conn(){
 		}
 
 
-	}catch (PDOException $e){
+	}catch (Exception $e){
 		print $e;
 		exit();
 	}
@@ -155,6 +155,6 @@ function pdo_conn(){
 
 
 
-$page = pdo_conn();
+$page = mysqli_conn();
 echo $page;
 
