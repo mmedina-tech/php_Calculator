@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 08:02:58 AM PDT
-# Last Update: 2025-02-02: 15:36
+# Last Update: 2025-03-08: 12:04
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,12 +25,13 @@
 #
 #
 
+$conn  = "localhost";
 $dbname = "Massive_Calculator";
 $user = "Massive-Calculator";
 $passwd = "Massive-Calculator";
 
 try{
-	$db = new mysqli('host=localhost,dbname='.$dbname.",username=".$user.",password=".$passwd);
+	$db = new mysqli($conn, $user, $passwd, $dbname);
 }catch (Exception $e){
 	print "Couldn't connect to the database: ".$e->getMessage();
 	exit();

@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Thu 09 Sep 2021 08:11:27 PM PDT
-# Last Update: 2025-02-02: 15:13
+# Last Update: 2025-03-08: 11:58
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@ function mysqli_conn(){
 		$logs_dir = "<pre>Log: Logs Directory Already Exists</pre>";
 	}
 
-	if ( ! file_exists("$CAlCPATH/Logs/Calculator.log") ) {
+	if ( ! file_exists("$CALCPATH/Logs/Calculator.log") ) {
 		chdir("$CALCPATH/Logs");
 		touch("Calculator.log");
 		$logs = "<pre>Log: Calculator.log created</pre>";
@@ -80,7 +80,7 @@ function mysqli_conn(){
 	}
 	$conn->close();
 	try{
-		$db = new mysqli('mysql:host='.$CONNECTION.';dbname='.$DBNAME, $USER, $PASSWD);
+		$db = new mysqli($CONNECTION, $USER, $PASSWD);
 	}catch (Exception $e){
 		$error = "<p>Couldn't connect to the database: ".$e->getMessage()."</p>";
 		$page .= str_replace("{ERROR}", $error, $page);
@@ -89,21 +89,23 @@ function mysqli_conn(){
 		exit();
 	}
 	try{
-		if ($db->exec("create table if not exists `Formulas`(
-			`form_id` int(11) NOT NULL AUTO_INCREMENT,
-			`user_fname` varchar(256) NOT NULL,
-			`user_lname` varchar(256) NOT NULL,
-			`form_cat` varchar(256) NOT NULL,
-			`form_name` varchar(256) NOT NULL,
-			`Formula` varchar(256) NOT NULL,
-			`description` varchar(256) NOT NULL,
-			`Book_Title` varchar(256) NULL,
-			`Book_Author` varchar(256) NULL,
-			`Book_Publisher` varchar(256) NULL,
-			`Page_Number` varchar(256) NULL,
-			`Date_Entered` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			unique key`form_id` (`form_id`) USING BTREE)
-			ENGINE=InnoDB DEFAULT CHARSET=UTF8;")){
+        if ($db->exec("
+create table if not exists `Formulas`(
+`form_id` int(11) NOT NULL AUTO_INCREMENT,
+`user_fname` varchar(256) NOT NULL,
+`user_lname` varchar(256) NOT NULL,
+`form_cat` varchar(256) NOT NULL,
+`form_name` varchar(256) NOT NULL,
+`Formula` varchar(256) NOT NULL,
+`description` varchar(256) NOT NULL,
+`Book_Title` varchar(256) NULL,
+`Book_Author` varchar(256) NULL,
+`Book_Publisher` varchar(256) NULL,
+`Page_Number` varchar(256) NULL,
+`Date_Entered` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+unique key`form_id` (`form_id`) USING BTREE)
+ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+")){
 			$table1 = "<pre>Table: Formulas Created</pre>";
 		} else {
 			$table1 = "<pre>Table: Formulas Already Exists</pre>";

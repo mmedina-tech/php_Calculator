@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 12 Oct 2021 03:55:19 PM PDT
-# Last Update: 2025-02-02: 15:33
+# Last Update: 2025-03-08: 11:38
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,17 +26,27 @@
 #
 
 
-#require_once("DB/DB_conn.php");
+require_once("DB/DB_conn.php");
 
-function logme($msg){
-	if ( file_exists("./Logs") ) {
-		$fp = file_get_contents("./Logs/Calculator.log");
-		$fp = file_put_contents("./Logs/Calculator.log", $msg."\n");
-	}else{
-		mkdir("./Logs");
-		$fp = file_get_contents("./Logs/Calculator.log");
-		$fp = file_put_contents("./Logs/Calculator.log", $msg."\n");
-	}
+function logme($cat, $forms, $formula_fields, $outscreen, $user){
+    if ( ! file_exists("./Logs") ){
+        mkdir("./Logs");
+        if ( ! file_exists("./Logs/Calculator.log") ){
+            touch("./Logs/Calculator.log");
+        }
+    }
+    if ($user == "::1"){
+        $user = "localhost";
+    }
+    $msg = "
+Category: {$cat}
+Formula:  {$forms}
+Inputs:   {$formula_fields}
+Answer:   {$outscreen}
+Server:   {$user}
+    ";
+    $fp = file_get_contents("./Logs/Calculator.log");
+    $fp = file_put_contents("./Logs/Calculator.log", $msg."\n");
 }
 
 function statlogger($cat, $forms, $formula_fields, $outscreen, $user){

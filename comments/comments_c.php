@@ -5,7 +5,7 @@
 #
 # Author: Marcus Medina
 # Date: Tue 07 Sep 2021 07:52:44 AM PDT
-# Last Update: 2022-03-14: 07:15
+# Last Update: 2025-03-08: 12:01
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,8 +29,9 @@ require( '../DB/DB_conn.php' );
 
 $page = file_get_contents('comments.html');
 
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+if ($db->connect_error){
+    die("Connection Failed: ".$db->connect_error);
+}
 
 $stmt = $db->prepare('INSERT INTO Comments (first_name,last_name,comment) VALUES (?,?,?)');
 $stmt->execute(array(htmlentities($_POST['fname']), htmlentities($_POST['lname']), htmlentities($_POST['comment'])));
