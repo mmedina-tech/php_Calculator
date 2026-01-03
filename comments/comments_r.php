@@ -26,8 +26,10 @@
 #
 
 require( '../DB/DB_conn.php' );
+$calc_base = calc_base_url();
 
 
 $page = file_get_contents('comments.html');
+$page = str_replace('{{CALC_BASE}}', $calc_base, $page);
 $page = str_replace('{INSERT}', '', $page);
 print $page;

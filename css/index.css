@@ -45,5 +45,5 @@ a{
 body{
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('/php_Calculator/images/yellow_ruler_2.jpg');
+    background-image: url('../images/yellow_ruler_2.jpg');
 }

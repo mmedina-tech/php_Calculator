@@ -38,7 +38,7 @@ $show_formulas = $active_cats->show_Formulas($forms);
 
 $action = "./answer.php";
 
-$outputfp = str_replace("CALCPATH", "/php_Calculator", $outputfp);
+$outputfp = str_replace("CALCPATH", $calc_base, $outputfp);
 $outputfp = str_replace("TITLE", $forms, $outputfp);
 $outputfp = str_replace("CATEGORY", $category, $outputfp);
 $outputfp = str_replace("ACTION", $action, $outputfp);

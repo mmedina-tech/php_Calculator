@@ -29,22 +29,22 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Suggest a Formula</title>
 
-        <link rel='stylesheet' href='/php_Calculator/css/calculator.css' type='text/css'>
-        <link rel="stylesheet" href="/php_Calculator/css/suggestions.css" type="text/css" media="" title="" charset="" />
-        <link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
+        <link rel='stylesheet' href='{{CALC_BASE}}/css/calculator.css' type='text/css'>
+        <link rel="stylesheet" href="{{CALC_BASE}}/css/suggestions.css" type="text/css" media="" title="" charset="" />
+        <link rel="stylesheet" href="{{CALC_BASE}}/css/header.css" type="text/css" media="" title="" charset="" />
     </head>
     <body>
         <div id='maindisplay'>
             <div class='Head-Column'>
-                <h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='{{CALC_BASE}}/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
             </div>
             <div class='Head-Column'>
                 <h1 class="mainHeader2">
                     <nav class="menuItem">
-                        <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-                        <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-                        <a id='tabitem' href='/php_Calculator/comments/comments_r.php'>Leave a Comment</a>
-                        <a id='tabitem' href='/php_Calculator/calculator_front.php'>Back to Calculator</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/about/about.php'>About</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/index.php'>Instructions</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/comments/comments_r.php'>Leave a Comment</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/calculator_front.php'>Back to Calculator</a>
                     </nav>
                 </h1>
             </div>
@@ -53,7 +53,7 @@
         <h2 class='description'>Here is where you are able to suggest any formula that we 
             might not have and that will show up in future releases.<br>
         Please use your real name so that I can feature you in the special thanks section.</h2>
-        <form id='userform' action='/php_Calculator/f_suggestions/suggestion_c.php' method='post'>
+        <form id='userform' action='{{CALC_BASE}}/f_suggestions/suggestion_c.php' method='post'>
             <div class='column'>
                 <div class='user'>
                     <p class='titles'>First Name:</p>

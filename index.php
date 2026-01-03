@@ -1,3 +1,9 @@
+<?php
+require_once(__DIR__."/DB/config.php");
+$config = calc_require_config();
+$calc_base = $config['base_url'];
+$admin_path = ($calc_base !== '' ? $calc_base : '')."/admin/";
+?>
 <!DOCTYPE html>
 <!--//SYNOPSIS: Instructions for using the Massive Calculator-->
 <!--
@@ -29,20 +35,20 @@
         <meta name="author" content="Marcus Medina">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name='description' content=''>
-        <link rel='icon' href="/php_Calculator/images/massive.png" type='image/x-icon'>
-        <link rel="stylesheet" href="/php_Calculator/css/index.css" type="text/css" media="" title="" charset="" />
+        <link rel='icon' href="<?php echo htmlspecialchars($calc_base); ?>/images/massive.png" type='image/x-icon'>
+        <link rel="stylesheet" href="<?php echo htmlspecialchars($calc_base); ?>/css/index.css" type="text/css" media="" title="" charset="" />
         <title>Instructions</title>
 <?php
 if ( ! file_exists("Logs/Calculator.log") ){
     echo "<script>
-window.location('admin/');
+window.location = '".addslashes($admin_path)."';
 </script>";
 }
 ?>
     </head>
     <body>
         <div id='links'>
-        <center><a href='/php_Calculator/calculator_front.php'>The Massive Calculator</a></center>
+        <center><a href='<?php echo htmlspecialchars($calc_base); ?>/calculator_front.php'>The Massive Calculator</a></center>
             <center><p>&#8593;</p></center>
             <center><p>Click to get started</p></center>
         </div>

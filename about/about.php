@@ -26,6 +26,9 @@
 #
 
 $token = file_get_contents('./Special_Thanks.txt');
+require_once(__DIR__.'/../DB/config.php');
+$calc_base = calc_base_url();
 $page = file_get_contents('./about.html');
+$page = str_replace('{{CALC_BASE}}', $calc_base, $page);
 $page = str_replace("{THNX}", $token, $page);
 print $page;

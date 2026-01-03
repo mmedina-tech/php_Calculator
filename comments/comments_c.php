@@ -26,8 +26,10 @@
 #
 
 require( '../DB/DB_conn.php' );
+$calc_base = calc_base_url();
 
 $page = file_get_contents('comments.html');
+$page = str_replace('{{CALC_BASE}}', $calc_base, $page);
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -44,5 +46,4 @@ if ( $stmt ) {
 	$page = str_replace('{INSERT}', "<h2 class='fail'>Insert Fail</h2>", $page);
 	print $page;
 }
-
 

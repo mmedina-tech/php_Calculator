@@ -26,9 +26,12 @@
 #
 
 require( '../DB/DB_conn.php' );
+$calc_base = calc_base_url();
 
 $header = file_get_contents('../header.html');
+$header = str_replace("{{CALC_BASE}}", $calc_base, $header);
 $page = file_get_contents('suggestions.html');
+$page = str_replace('{{CALC_BASE}}', $calc_base, $page);
 $page = str_replace('{INSERT}', '', $page);
 $page = str_replace('HEADER', $header, $page);
 print $page;

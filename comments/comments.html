@@ -29,25 +29,25 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Leave a Comment!</title>
-        <link rel="stylesheet" type="text/css" href="/php_Calculator/css/calculator.css" />
-        <link rel='stylesheet' type='text/css' href='/php_Calculator/css/comments.css'>
-        <link rel="stylesheet" href="/php_Calculator/css/header.css" type="text/css" media="" title="" charset="" />
+        <link rel="stylesheet" type="text/css" href="{{CALC_BASE}}/css/calculator.css" />
+        <link rel='stylesheet' type='text/css' href='{{CALC_BASE}}/css/comments.css'>
+        <link rel="stylesheet" href="{{CALC_BASE}}/css/header.css" type="text/css" media="" title="" charset="" />
         <!--
-        <link rel="stylesheet" type="text/css" href="/php_Calculator/css/DataGridView.css" />
+        <link rel="stylesheet" type="text/css" href="{{CALC_BASE}}/css/DataGridView.css" />
         -->
     </head>
     <body>
         <div id='maindisplay'>
             <div class='Head-Column'>
-                <h1 class='mainHeader'><img id='mainlogo' align='center' src='/php_Calculator/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
+                <h1 class='mainHeader'><img id='mainlogo' align='center' src='{{CALC_BASE}}/images/massive01.svg' alt='Massive Calculator'> The Massive Calculator!</h1>
             </div>
             <div class='Head-Column'>
                 <h1 class="mainHeader2">
                     <nav class="menuItem">
-                        <a id='tabitem' href='/php_Calculator/about/about.php'>About</a>
-                        <a id='tabitem' href='/php_Calculator/index.php'>Instructions</a>
-                        <a id='tabitem' href='/php_Calculator/calculator_front.php'>Back to Calculator</a>
-                        <a id='tabitem' href='/php_Calculator/f_suggestions/suggestion_r.php'>Suggest a Formula</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/about/about.php'>About</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/index.php'>Instructions</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/calculator_front.php'>Back to Calculator</a>
+                        <a id='tabitem' href='{{CALC_BASE}}/f_suggestions/suggestion_r.php'>Suggest a Formula</a>
                     </nav>
                 </h1>
             </div>
@@ -56,7 +56,7 @@
         <h3 class='description'>All comments are subject to monitoring and may be deleted by staff.
             Please limit comments to being constructive and applicable to the
             product. Thank You.</h3>
-        <form id='userform' action='/php_Calculator/comments/comments_c.php' method='post'>
+        <form id='userform' action='{{CALC_BASE}}/comments/comments_c.php' method='post'>
             <div class="column">
                 <p class='titles'>First Name:</p>
                 <input type='text' id='fname' name='fname' required>

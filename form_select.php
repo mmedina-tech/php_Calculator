@@ -34,7 +34,7 @@ $active_cats = $cats[$cat];
 $formula = formSelect($active_cats->function_list, $attribs);
 $category = cateSelect($cats, $attrib, $cat);
 
-$outputfp = str_replace('CALCPATH', '/php_Calculator', $outputfp);
+$outputfp = str_replace('CALCPATH', $calc_base, $outputfp);
 $outputfp = str_replace('TITLE', '', $outputfp);
 $outputfp = str_replace('CATEGORY', $category, $outputfp);
 $outputfp = str_replace('ACTION', $action, $outputfp);
@@ -53,4 +53,3 @@ try{
 	$outputfp = str_replace('ERROR', '<h1>Please try Again</h1>');
 	print $outputfp;
 }
-

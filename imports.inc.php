@@ -24,7 +24,9 @@
 #
 #
 #
-include_once("DB/calculator.config.php");
+require_once(__DIR__."/DB/config.php");
+calc_require_config();
+$calc_base = calc_base_url();
 
 $cats = array();
 foreach(glob(__DIR__."/modules/*.Module.php") as $module){
@@ -35,7 +37,7 @@ foreach(glob(__DIR__."/modules/*.Module.php") as $module){
 $outputfp = file_get_contents("calculator_template.html");
 $license = file_get_contents("license.html");
 $header = file_get_contents("header.html");
-$CALCPATH = basename($CALCPATH);
+$header = str_replace("{{CALC_BASE}}", $calc_base, $header);
 
 
 $number = $_POST['number_input'] ?? null;

@@ -26,8 +26,10 @@
 #
 
 require( '../DB/DB_conn.php' );
+$calc_base = calc_base_url();
 
 $page = file_get_contents('suggestions.html');
+$page = str_replace('{{CALC_BASE}}', $calc_base, $page);
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
