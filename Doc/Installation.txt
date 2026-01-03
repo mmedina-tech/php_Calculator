@@ -21,3 +21,6 @@ Notes:
 - If you change the base URL, update it via the installer.
 - You can symlink the repo into your web root; ensure the web server allows
   FollowSymLinks and has write access to DB/ and Logs/.
+- Run a quick sanity check after install:
+  php scripts/healthcheck.php
+- For production guidance, see Doc/Production_Hardening.txt.

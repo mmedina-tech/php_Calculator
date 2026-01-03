@@ -1,0 +1,29 @@
+		Production Hardening Checklist
+---------------------------------------
+
+1) Installer and admin hardening
+- Ensure install.lock exists and remove install.unlock.php after install.
+- Restrict /admin/ to trusted IPs or disable it in production.
+
+2) Configuration secrecy
+- Store secrets in DB/calculator.config.local.php only.
+- Ensure file permissions are 0600 and owned by the deploy user.
+
+3) Web server access rules
+- Deny web access to DB/, Doc/, and scripts/ directories.
+- For Apache, add Directory rules or .htaccess if allowed.
+
+4) Filesystem permissions
+- DB/ and Logs/ should be writable by the web server user only.
+- Logs/Calculator.log should not be world-readable.
+
+5) Database least privilege
+- DB user should have only: SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER
+  on the app database. No global privileges.
+
+6) TLS and PHP settings
+- Serve over HTTPS only.
+- Disable display_errors in production and keep PHP patched.
+
+7) Logging and rotation
+- Rotate Logs/Calculator.log to avoid unbounded growth.
